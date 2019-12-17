@@ -1,11 +1,7 @@
-# Frequently Asked Questions (FAQs)
+# Conformance Tools (FAQs)
 
-- [Standards](./../standards)
-  - [Open Data API Specifications](./../standards/README.md#open-data-api-specifications)
-  - [Read Write Data Specification](./../standards/README.md#read-write-data-specification)
-  - [Dynamic Client Registration](./../standards/README.md#dynamic-client-registration)
-  - [Customer Experience Guidelines](../standards/README.md#customer-experience-guidelines)
-  - [Operational Guidelines](../standards/README.md#operational-guidelines)
+FAQs for conformance tools are organized in 3 categories, as follows:
+
 - [Dynamic Client Registration Tool](./dynamic-client-registration-tool)
 - [Functional Conformance Tool](./functional-conformance-tool)
 - [Security Conformance Tool](./security-conformance-tool)
