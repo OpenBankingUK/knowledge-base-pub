@@ -1,9 +1,8 @@
 # Functional Conformance Tool <!-- omit in toc -->
-- [How to I validate and trust the Conformance Tool image I'm downloading?](#how-to-i-validate-and-trust-the-conformance-tool-image-im-downloading)
-- [What is the High-level overview of the Conformance Tool and Dynamic Client Registration Roadmap for 2019/2020?](#what-is-the-high-level-overview-of-the-conformance-tool-and-dynamic-client-registration-roadmap-for-20192020)
-- [What is the High-level overview of the Conformance Tool and Dynamic Client Registration Roadmap for 2019/2020?](#what-is-the-high-level-overview-of-the-conformance-tool-and-dynamic-client-registration-roadmap-for-20192020-1)
-- [Where do I download the Conformance Tool?](#where-do-i-download-the-conformance-tool)
-- [Why does an ASPSP need to provide Functional Conformance?](#why-does-an-aspsp-need-to-provide-functional-conformance)
+1. [How to I validate and trust the Conformance Tool image I'm downloading?](#how-to-i-validate-and-trust-the-conformance-tool-image-im-downloading)
+2. [What is the High-level overview of the Conformance Tool and Dynamic Client Registration Roadmap for 2019/2020?](#what-is-the-high-level-overview-of-the-conformance-tool-and-dynamic-client-registration-roadmap-for-20192020)
+3. [Where do I download the Conformance Tool?](#where-do-i-download-the-conformance-tool)
+4. [Why does an ASPSP need to provide Functional Conformance?](#why-does-an-aspsp-need-to-provide-functional-conformance)
 
 ### **How to I validate and trust the Conformance Tool image I'm downloading?**
 
@@ -15,13 +14,7 @@ You can find full details on how to validate [here](https://bitbucket.org/openba
 
 Conformance Tool & Dynamic Client Registration Roadmap 2019/2020.
 
-https://bitbucket.org/openbankingteam/knowledge-base/src/master/conformance_tools_certification/roadmap.md
-
-### **What is the High-level overview of the Conformance Tool and Dynamic Client Registration Roadmap for 2019/2020?**
-
-Conformance Tool & Dynamic Client Registration Roadmap 2019/2020.
-
-- [Roadmap](./../roadmap.md)
+- [Roadmap](./roadmap.md)
 
 ### **Where do I download the Conformance Tool?**
 

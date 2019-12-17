@@ -2,7 +2,6 @@
 
 Highlevel overview of the Conformance Tool and Dynamic Client Registration Roadmap for 2019/2020:
 
-
 | Milestone 	                     | 7 Oct 	| 16 Oct 	| 26 Nov 	| 24 Dec 	| 29 Jan  	| 18 Mar 	|
 |----------                          |---------- |-------	|--------	|--------	|---------- |-------	|
 | Compatible with API Spec v3.1.2    | Beta      | Final    | 	        |	        |           |	        |

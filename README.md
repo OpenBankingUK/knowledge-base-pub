@@ -5,5 +5,5 @@ Welcome to the open source **Knowledge Base for Open Banking**. This repository 
 
 ---
 
-[Standards](./standards)
-[Conformance Tools Certification](./conformance-tools-certification)
+- [Standards](./standards/README.md)
+- [Conformance Tools](./conformance-tools/README.md)
