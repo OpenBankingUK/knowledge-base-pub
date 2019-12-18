@@ -9,8 +9,8 @@ Welcome to the open source **Knowledge Base for Open Banking**. This repository 
 
 ## Frequently Asked Questions (FAQs)
 
-- [Standards](./../standards/README.md)
-  - [Open Data API Specifications](./../standards/README.md#open-data-api-specifications)
+- [Standards](./standards/README.md)
+  - [Open Data API Specifications](./standards/README.md#open-data-api-specifications)
   - [Read Write Data Specification](./../standards/README.md#read-write-data-specification)
   - [Dynamic Client Registration](./../standards/README.md#dynamic-client-registration)
   - [Customer Experience Guidelines](../standards/README.md#customer-experience-guidelines)
