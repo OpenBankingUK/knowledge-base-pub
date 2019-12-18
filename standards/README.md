@@ -196,7 +196,7 @@ The Payment Initiation API Profile describes the flows and common functionality 
 * Optionally retrieve the status of a payment-order **consent** or payment-order **resource** .
 
 For more details refer to :
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/payment-initiation-api-profile.html/" class="external-link" rel="nofollow">Payment Initiation API Profile</a>
+<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/payment-initiation-api-profile.html" class="external-link" rel="nofollow">Payment Initiation API Profile</a>
 
 ### **Which payment-order types are supported by the PIS API?**
 
