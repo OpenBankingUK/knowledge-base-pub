@@ -170,7 +170,7 @@ The Confirmation of Funds API Profile describes the flows and common functionali
 This profile should be read in conjunction with a compatible Read/Write Data API Profile which provides a description of the elements that are common across all the Read/Write Data APIs, and compatible individual resources.
 
 For more details refer to :
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/confirmation-of-funds-api-profile.html/" class="external-link" rel="nofollow">Account &amp; Confirmation of Funds API Profile</a>
+<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/confirmation-of-funds-api-profile.html" class="external-link" rel="nofollow">Account &amp; Confirmation of Funds API Profile</a>
 
 ### **How can the ASPSP inform the AISP that access has been revoked?**
 
