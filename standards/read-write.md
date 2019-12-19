@@ -17,7 +17,7 @@
 - [Are there separate swagger specifications for Real-time (push) notifications and aggregated polling?](#are-there-separate-swagger-specifications-for-real-time-push-notifications-and-aggregated-polling)
 - [How should my redirect URIs be encoded?](#how-should-my-redirect-uris-be-encoded)
 - [What length of URIs should be allowed for redirect](#what-length-of-uris-should-be-allowed-for-redirect)
-- [What do we refer to as mandatory &quot;GET endpoints&quot;?](#what-do-we-refer-to-as-mandatory-quotget-endpointsquot)
+- [What do we refer to as mandatory GET endpoints?](#what-do-we-refer-to-as-mandatory-get-endpoints)
 - [How can ASPSPs provide relevant charges to a PISP?](#how-can-aspsps-provide-relevant-charges-to-a-pisp)
 - [Can a PISP display an ASPSP's charges to the PSU?](#can-a-pisp-display-an-aspsps-charges-to-the-psu)
 - [Can an ASPSP display their charges to the PSU during authentication?](#can-an-aspsp-display-their-charges-to-the-psu-during-authentication)
@@ -39,20 +39,20 @@
 - [When a TPP calls the Party or Parties endpoint, will they always receive the PartyType attribute?](#when-a-tpp-calls-the-party-or-parties-endpoint-will-they-always-receive-the-partytype-attribute)
 - [Is there a list of all ASPSPs participating in the Open Banking Ecosystem?](#is-there-a-list-of-all-aspsps-participating-in-the-open-banking-ecosystem)
 - [What error code should an ASPSP send back to a TPP if a wrong x-fapi-financial-id was sent in the request?](#what-error-code-should-an-aspsp-send-back-to-a-tpp-if-a-wrong-x-fapi-financial-id-was-sent-in-the-request)
-- [Are &quot;File Payments&quot; supported in the Standard for both personal and business accounts?](#are-quotfile-paymentsquot-supported-in-the-standard-for-both-personal-and-business-accounts)
+- [Are File Payments supported in the Standard for both personal and business accounts?](#are-file-payments-supported-in-the-standard-for-both-personal-and-business-accounts)
 - [How can we know if an ASPSP supports File Payment endpoint?](#how-can-we-know-if-an-aspsp-supports-file-payment-endpoint)
 - [Can ASPSPs create their own enumeration when required?](#can-aspsps-create-their-own-enumeration-when-required)
 - [Have any ASPSPs requested new values to be added to enumeration?](#have-any-aspsps-requested-new-values-to-be-added-to-enumeration)
 - [Which field should ASPSPs map to the TPP's name to show the PSU in the Consent UI?](#which-field-should-aspsps-map-to-the-tpps-name-to-show-the-psu-in-the-consent-ui)
 - [Does an AISP need to display OBIE defined data clusters and permission language in the UI?](#does-an-aisp-need-to-display-obie-defined-data-clusters-and-permission-language-in-the-ui)
 - [How can the ASPSP inform the AISP that access has been revoked?](#how-can-the-aspsp-inform-the-aisp-that-access-has-been-revoked-1)
-- [What Resource URI Path Structure should be used while implementing the Read/Write API Specification v3.1.2?](#what-resource-uri-path-structure-should-be-used-while-implementing-the-readwrite-api-specification-v312)
+- [What Resource URI Path Structure should be used while implementing the Read Write API Specification v3.1.2?](#what-resource-uri-path-structure-should-be-used-while-implementing-the-read-write-api-specification-v312)
 - [What is the correct way of creating and passing ConsentId?](#what-is-the-correct-way-of-creating-and-passing-consentid)
 - [What error should be returned if an account is in derogatory status (e.g. Fraud Stop)?](#what-error-should-be-returned-if-an-account-is-in-derogatory-status-eg-fraud-stop)
 - [Can a PISP create consent in a previous version and a payment order resources in a newer version?](#can-a-pisp-create-consent-in-a-previous-version-and-a-payment-order-resources-in-a-newer-version)
 - [Can a PISP create consent in a new version and a payment order resource using an older version?](#can-a-pisp-create-consent-in-a-new-version-and-a-payment-order-resource-using-an-older-version)
 - [Which error codes should be used when a TPP submits incorrect JSON (e.g. extra quotes, invalid date and time, etc)?](#which-error-codes-should-be-used-when-a-tpp-submits-incorrect-json-eg-extra-quotes-invalid-date-and-time-etc)
-- [Does a TPP need to return &quot;id_token_signed_response_alg&quot; if they only support &quot;code&quot; as response type?](#does-a-tpp-need-to-return-quotidtokensignedresponsealgquot-if-they-only-support-quotcodequot-as-response-type)
+- [Does a TPP need to return id_token_signed_response_alg if they only support code as response type?](#does-a-tpp-need-to-return-idtokensignedresponsealg-if-they-only-support-code-as-response-type)
 
 ### **What is the Read/Write API Specification?**
 
@@ -157,13 +157,13 @@ For more details refer to :
 
 The  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/event-notification-subscription-api-profile.html" class="external-link" rel="nofollow">Event Notification Subscription API Profile</a> and the  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/callback-url-api-profile.html" class="external-link" rel="nofollow">Callback URL API Profile</a> provide alternative mechanisms for TPPs to register for event notifications.
 * The Event Notification Subscription API allows TPPs to register to receive all or specific event types via the Real-Time Event Notification API and/or the Aggregated Polling API
-* The Callback URL API allows TPPs to register to receive aurn:uk:org:openbanking:events:resource-updateevent notification via the Real-Time Event Notification API.
+* The Callback URL API allows TPPs to register to receive `aurn:uk:org:openbanking:events:resource-updateevent` notification via the Real-Time Event Notification API.
 
 ### **How can a TPP register with the ASPSP to receive event notifications?**
 
 The  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/event-notification-subscription-api-profile.html" class="external-link" rel="nofollow">Event Notification Subscription API Profile</a> and the  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/callback-url-api-profile.html" class="external-link" rel="nofollow">Callback URL API Profile</a> provide alternative mechanisms for TPPs to register for event notifications.
 * The Event Notification Subscription API allows TPPs to register to receive all or specific event types via the Real-Time Event Notification API and/or the Aggregated Polling API
-* The Callback URL API allows TPPs to register to receive aurn:uk:org:openbanking:events:resource-updateevent notification via the Real-Time Event Notification API.
+* The Callback URL API allows TPPs to register to receive `aurn:uk:org:openbanking:events:resource-updateevent` notification via the Real-Time Event Notification API.
 
 ### **Are there separate swagger specifications for Real-time (push) notifications and aggregated polling?**
 
@@ -179,7 +179,7 @@ As of v3.1.3, there are four Swagger specification files, one for each Events Re
 
 ### **How should my redirect URIs be encoded?**
 
-Both ASPSPs and TPPs should format all URIs using URL encoding. Participants should accept all URLs which have been URL encoded. (see https://www.w3schools.com/tags/ref_urlencode.asp).
+Both ASPSPs and TPPs should format all URIs using URL encoding. Participants should accept all URLs which have been URL encoded. (see [here](https://www.w3schools.com/tags/ref_urlencode.asp)).
 
 ### **What length of URIs should be allowed for redirect**
 
@@ -189,7 +189,7 @@ The URI limit is something that is enforced by your server and client. It is rea
 
 Participants should be able to handle the URIs of unbounded length if they provide GET-based forms that could generate such URIs. In the event where the TPP has exceeded the maximum supported length, the ASPSP must return a 414 (Request-URI Too Long).
 
-### **What do we refer to as mandatory "GET endpoints"?**
+### **What do we refer to as mandatory GET endpoints?**
 
 The GET endpoint enables the PISP to check the status of the payment consent resource.
 
@@ -346,11 +346,11 @@ This shows key information including: contact details, which directory is being 
 
 ### **What error code should an ASPSP send back to a TPP if a wrong x-fapi-financial-id was sent in the request?**
 
-The x-fapi-financial-id header was required up until Version 3.1.1 of the OBIE Read-write API profile. ASPSPs that implement this version must reject an invalid request with a 403 (Forbidden).
+The `x-fapi-financial-id` header was required up until Version 3.1.1 of the OBIE Read-write API profile. ASPSPs that implement this version must reject an invalid request with a 403 (Forbidden).
 
-The requirement for providing x-fapi-financial-id in the request header was removed from FAPI and subsequently removed from Version 3.1.2 of the Read/Write API Specification.
+The requirement for providing `x-fapi-financial-id` in the request header was removed from FAPI and subsequently removed from Version 3.1.2 of the Read/Write API Specification.
 
-### **Are "File Payments" supported in the Standard for both personal and business accounts?**
+### **Are File Payments supported in the Standard for both personal and business accounts?**
 
 File Payments allow a file of payment requests to be uploaded to an ASPSP for payment initiation. Implementation of this endpoint is 'Conditional' which means the ASPSP must implement if the same functionality is supported for their PSUs (which could be for Business and/or Personal accounts) on their existing online channels.
 
@@ -390,7 +390,7 @@ When access is revoked at the ASPSP access dashboard by the PSU, the TPP can be 
 For more details refer to :
 <a href="https://standards.openbanking.org.uk/customer-experience-guidelines/ais-core-journeys/access-status-notifications-by-aspsps/latest/" class="external-link" rel="nofollow">Customer Experience Guidelines - Access Status notifications by ASPSPs</a>
 
-### **What Resource URI Path Structure should be used while implementing the Read/Write API Specification v3.1.2?**
+### **What Resource URI Path Structure should be used while implementing the Read Write API Specification v3.1.2?**
 
 If implementing Version 3.1.2, the major version is 3 and the minor version is 1. The last .2 indicates a patch release and must not be present in the URI path. In this case, the implementer must define the resource URI path as 3.1.
 
@@ -420,6 +420,6 @@ The ASPSP should respond with 400 (Bad Request) and the relevant Namespaced Enum
 
 Please see [incomplete-or-malformed-request-payload](https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/read-write-data-api-profile.html#incomplete-or-malformed-request-payload) and [namespaced-enumerations](https://openbankinguk.github.io/read-write-api-site3/v3.1.3/references/namespaced-enumerations.html)
 
-### **Does a TPP need to return "id_token_signed_response_alg" if they only support "code" as response type?**
+### **Does a TPP need to return id_token_signed_response_alg if they only support code as response type?**
 
-No. The TPP need to return "id_token_signed_response_alg" only when the response type is "code id_token". This is the algorithm that the TPP expects to sign the id_token if an id_token is returned.
+No. The TPP need to return `id_token_signed_response_alg` only when the response type is `code id_token`. This is the algorithm that the TPP expects to sign the id_token if an id_token is returned.
