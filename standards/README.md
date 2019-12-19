@@ -1,97 +1,73 @@
 # Standards  (FAQs) <!-- omit in toc -->
-1. [Dynamic Client Registration](#dynamic-client-registration)
-      1. [Where can I find the latest version of the Dynamic Client Registration?](#where-can-i-find-the-latest-version-of-the-dynamic-client-registration)
-      2. [What is Dynamic Client Registration?](#what-is-dynamic-client-registration)
-      3. [Is it mandatory for an ASPSP to implement all the operations (POST, PUT, GET, DELETE) specified in DCR?](#is-it-mandatory-for-an-aspsp-to-implement-all-the-operations-post-put-get-delete-specified-in-dcr)
-      4. [Does the DCR specification support ASPSPs who do not accept OBIE issued SSAs?](#does-the-dcr-specification-support-aspsps-who-do-not-accept-obie-issued-ssas)
-      5. [Can an ASPSP register a TPP client using different parameters than specified?](#can-an-aspsp-register-a-tpp-client-using-different-parameters-than-specified)
-      6. [How does a TPP identify the authentication methods, grant types and algorithms that an ASPSP supports?](#how-does-a-tpp-identify-the-authentication-methods-grant-types-and-algorithms-that-an-aspsp-supports)
-2. [Open Data API Specifications](#open-data-api-specifications)
-      1. [What are Open Data API specifications?](#what-are-open-data-api-specifications)
-      2. [What is Open Data API Dashboard?](#what-is-open-data-api-dashboard)
-      3. [Where can I find the latest Open Data API specifications?](#where-can-i-find-the-latest-open-data-api-specifications)
-3. [Read Write Data Specification](#read-write-data-specification)
-      1. [What is the Read/Write API Specification?](#what-is-the-readwrite-api-specification)
-      2. [Where can I find the latest version of API specifications?](#where-can-i-find-the-latest-version-of-api-specifications)
-      3. [Where can I find the timings for Implementing Open Banking Roadmap?](#where-can-i-find-the-timings-for-implementing-open-banking-roadmap)
-      4. [Are there any known issues in the latest version of Specifications?](#are-there-any-known-issues-in-the-latest-version-of-specifications)
-      5. [Where can I find the latest version of Swagger Specifications?](#where-can-i-find-the-latest-version-of-swagger-specifications)
-      6. [What APIs can an AISP access?](#what-apis-can-an-aisp-access)
-      7. [What APIs can an CBPII access?](#what-apis-can-an-cbpii-access)
-      8. [How can the ASPSP inform the AISP that access has been revoked?](#how-can-the-aspsp-inform-the-aisp-that-access-has-been-revoked)
-      9. [What APIs can an PISP access?](#what-apis-can-an-pisp-access)
-      10. [Which payment-order types are supported by the PIS API?](#which-payment-order-types-are-supported-by-the-pis-api)
-      11. [Are there different signing policies for Event Notifications?](#are-there-different-signing-policies-for-event-notifications)
-      12. [What is the Event Notification API?](#what-is-the-event-notification-api)
-      13. [How can a TPP register with the ASPSP to receive event notifications?](#how-can-a-tpp-register-with-the-aspsp-to-receive-event-notifications)
-      14. [How should my redirect URIs be encoded?](#how-should-my-redirect-uris-be-encoded)
-      15. [What length of URIs should be allowed for redirect](#what-length-of-uris-should-be-allowed-for-redirect)
-      16. [What do we refer to as mandatory &quot;GET endpoints&quot;?](#what-do-we-refer-to-as-mandatory-quotget-endpointsquot)
-      17. [How can ASPSPs provide relevant charges to a PISP?](#how-can-aspsps-provide-relevant-charges-to-a-pisp)
-      18. [Can a PISP display an ASPSP's charges to the PSU?](#can-a-pisp-display-an-aspsps-charges-to-the-psu)
-      19. [Can an ASPSP display their charges to the PSU during authentication?](#can-an-aspsp-display-their-charges-to-the-psu-during-authentication)
-      20. [What if a PISP does not provide the optional 'ChargeBearer' field?](#what-if-a-pisp-does-not-provide-the-optional-chargebearer-field)
-      21. [Which ChargeTypes would be used for a SEPA Credit Transfer or SWIFT payment?](#which-chargetypes-would-be-used-for-a-sepa-credit-transfer-or-swift-payment)
-      22. [Can an ASPSP provide statements to an AISPs in non-JSON file format?](#can-an-aspsp-provide-statements-to-an-aisps-in-non-json-file-format)
-      23. [What are the implementation timelines for a newly published specification or guidelines?](#what-are-the-implementation-timelines-for-a-newly-published-specification-or-guidelines)
-      24. [Do TPPs have to implement the Consent Dashboard?](#do-tpps-have-to-implement-the-consent-dashboard)
-      25. [Is OBErrorResponse1/Errors/Message mandatory, and what level of detail is expected?](#is-oberrorresponse1errorsmessage-mandatory-and-what-level-of-detail-is-expected)
-      26. [When should ASPSPs mark 'payment consent resource' as 'Rejected'?](#when-should-aspsps-mark-payment-consent-resource-as-rejected)
-      27. [When should ASPSPs reject a Payment-Order?](#when-should-aspsps-reject-a-payment-order)
-      28. [Can AISPs change the permission language?](#can-aisps-change-the-permission-language)
-      29. [Is it mandatory to implement refresh_token-expires_at?](#is-it-mandatory-to-implement-refresh_token-expires_at)
-      30. [Does an ASPSP need to delete Client related consents once TPP has deleted Client?](#does-an-aspsp-need-to-delete-client-related-consents-once-tpp-has-deleted-client)
-      31. [Is it possible to amend or revoke a standing order (SO) or scheduled payment (FDP)?](#is-it-possible-to-amend-or-revoke-a-standing-order-so-or-scheduled-payment-fdp)
-      32. [What types and lengths of account identification are supported?](#what-types-and-lengths-of-account-identification-are-supported)
-      33. [Does the ASPSP always have to redirect back to the TPP?](#does-the-aspsp-always-have-to-redirect-back-to-the-tpp)
-      34. [What message should an ASPSP return when a TPP requests permissions to an endpoint that is not implemented?](#what-message-should-an-aspsp-return-when-a-tpp-requests-permissions-to-an-endpoint-that-is-not-implemented)
-      35. [When a TPP calls the Party or Parties endpoint, will they always receive the PartyType attribute?](#when-a-tpp-calls-the-party-or-parties-endpoint-will-they-always-receive-the-partytype-attribute)
-      36. [Is there a list of all ASPSPs participating in the Open Banking Ecosystem?](#is-there-a-list-of-all-aspsps-participating-in-the-open-banking-ecosystem)
-      37. [What error code should an ASPSP send back to a TPP if a wrong x-fapi-financial-id was sent in the request?](#what-error-code-should-an-aspsp-send-back-to-a-tpp-if-a-wrong-x-fapi-financial-id-was-sent-in-the-request)
-      38. [Are &quot;File Payments&quot; supported in the Standard for both personal and business accounts?](#are-quotfile-paymentsquot-supported-in-the-standard-for-both-personal-and-business-accounts)
-      39. [How can we know if an ASPSP supports File Payment endpoint?](#how-can-we-know-if-an-aspsp-supports-file-payment-endpoint)
-      40. [Can ASPSPs create their own enumeration when required?](#can-aspsps-create-their-own-enumeration-when-required)
-      41. [Have any ASPSPs requested new values to be added to enumeration?](#have-any-aspsps-requested-new-values-to-be-added-to-enumeration)
-      42. [Which field should ASPSPs map to the TPP's name to show the PSU in the Consent UI?](#which-field-should-aspsps-map-to-the-tpps-name-to-show-the-psu-in-the-consent-ui)
-      43. [Does an AISP need to display OBIE defined data clusters and permission language in the UI?](#does-an-aisp-need-to-display-obie-defined-data-clusters-and-permission-language-in-the-ui)
-      44. [How can the ASPSP inform the AISP that access has been revoked?](#how-can-the-aspsp-inform-the-aisp-that-access-has-been-revoked-1)
-      45. [What Resource URI Path Structure should be used while implementing the Read/Write API Specification v3.1.2?](#what-resource-uri-path-structure-should-be-used-while-implementing-the-readwrite-api-specification-v312)
-      46. [What is the correct way of creating and passing ConsentId?](#what-is-the-correct-way-of-creating-and-passing-consentid)
-      47. [What error should be returned if an account is in derogatory status (e.g. Fraud Stop)?](#what-error-should-be-returned-if-an-account-is-in-derogatory-status-eg-fraud-stop)
-      48. [Can a PISP create consent in a previous version and a payment order resources in a newer version?](#can-a-pisp-create-consent-in-a-previous-version-and-a-payment-order-resources-in-a-newer-version)
-      49. [Can a PISP create consent in a new version and a payment order resource using an older version?](#can-a-pisp-create-consent-in-a-new-version-and-a-payment-order-resource-using-an-older-version)
-      50. [Which error codes should be used when a TPP submits incorrect JSON (e.g. extra quotes, invalid date and time, etc)?](#which-error-codes-should-be-used-when-a-tpp-submits-incorrect-json-eg-extra-quotes-invalid-date-and-time-etc)
-      51. [Does a TPP need to return &quot;id_token_signed_response_alg&quot; if they only support &quot;code&quot; as response type?](#does-a-tpp-need-to-return-quotid_token_signed_response_algquot-if-they-only-support-quotcodequot-as-response-type)
-4. [Customer Experience Guidelines](#customer-experience-guidelines)
-      1. [Where can I find the latest version of the Customer Experience Guidelines (CEG)?](#where-can-i-find-the-latest-version-of-the-customer-experience-guidelines-ceg)
-      2. [Is it mandatory for ASPSPs to provide Confirmation of Funds access history under a specific CBPII?](#is-it-mandatory-for-aspsps-to-provide-confirmation-of-funds-access-history-under-a-specific-cbpii)
-5. [Operational Guidelines](#operational-guidelines)
-      1. [Where can I find the latest version of the Operational Guidelines (OG)?](#where-can-i-find-the-latest-version-of-the-operational-guidelines-og)
-      2. [When should an interface be considered 'down' for the purposes of unplanned unavailability or a systems breakdown?](#when-should-an-interface-be-considered-down-for-the-purposes-of-unplanned-unavailability-or-a-systems-breakdown)
-# Dynamic Client Registration
-### **Where can I find the latest version of the Dynamic Client Registration?**
-
-Please see https://openbankinguk.github.io/dcr-docs-pub/
-
-### **What is Dynamic Client Registration?**
-
-Dynamic Client Registration (DCR) allows ASPSPs to register TPPs as OIDC clients without the need for a manual process. ASPSPs rely on the certificates and Software Statement Assertions (SSAs) submitted by the TPP.
-
-### **Is it mandatory for an ASPSP to implement all the operations (POST, PUT, GET, DELETE) specified in DCR?**
-
-No
-
-### **Does the DCR specification support ASPSPs who do not accept OBIE issued SSAs?**
-
-The DCR specification provides the extensibility to use an SSA from any trust anchor (not just the Open Banking Directory). However, the specification does not define these extension points. It is up to each ASPSP or Trust Anchor to define how other SSAs should be used in this case.
-
-### **Can an ASPSP register a TPP client using different parameters than specified?**
-
-Yes. The underlying standard that was used for the DCR specification permits this behaviour, without requiring the ASPSP to return an error. As a result, the OBIE profile continues to support this behaviour as well.
-
-### **How does a TPP identify the authentication methods, grant types and algorithms that an ASPSP supports?**
-
-The ASPSP's OpenID Connect discovery endpoint should provide all required parameters.
+- [Open Data API Specifications](#open-data-api-specifications)
+    - [What are Open Data API specifications?](#what-are-open-data-api-specifications)
+    - [What is Open Data API Dashboard?](#what-is-open-data-api-dashboard)
+    - [Where can I find the latest Open Data API specifications?](#where-can-i-find-the-latest-open-data-api-specifications)
+- [Read Write Data Specification](#read-write-data-specification)
+    - [What is the Read/Write API Specification?](#what-is-the-readwrite-api-specification)
+    - [Where can I find the latest version of API specifications?](#where-can-i-find-the-latest-version-of-api-specifications)
+    - [Where can I find the timings for Implementing Open Banking Roadmap?](#where-can-i-find-the-timings-for-implementing-open-banking-roadmap)
+    - [Are there any known issues in the latest version of Specifications?](#are-there-any-known-issues-in-the-latest-version-of-specifications)
+    - [Where can I find the latest version of Swagger Specifications?](#where-can-i-find-the-latest-version-of-swagger-specifications)
+    - [What APIs can an AISP access?](#what-apis-can-an-aisp-access)
+    - [What APIs can an CBPII access?](#what-apis-can-an-cbpii-access)
+    - [How can the ASPSP inform the AISP that access has been revoked?](#how-can-the-aspsp-inform-the-aisp-that-access-has-been-revoked)
+    - [What APIs can an PISP access?](#what-apis-can-an-pisp-access)
+    - [Which payment-order types are supported by the PIS API?](#which-payment-order-types-are-supported-by-the-pis-api)
+    - [Are there different signing policies for Event Notifications?](#are-there-different-signing-policies-for-event-notifications)
+    - [What is the Event Notification API?](#what-is-the-event-notification-api)
+    - [How can a TPP register with the ASPSP to receive event notifications?](#how-can-a-tpp-register-with-the-aspsp-to-receive-event-notifications)
+    - [How should my redirect URIs be encoded?](#how-should-my-redirect-uris-be-encoded)
+    - [What length of URIs should be allowed for redirect](#what-length-of-uris-should-be-allowed-for-redirect)
+    - [What do we refer to as mandatory &quot;GET endpoints&quot;?](#what-do-we-refer-to-as-mandatory-quotget-endpointsquot)
+    - [How can ASPSPs provide relevant charges to a PISP?](#how-can-aspsps-provide-relevant-charges-to-a-pisp)
+    - [Can a PISP display an ASPSP's charges to the PSU?](#can-a-pisp-display-an-aspsps-charges-to-the-psu)
+    - [Can an ASPSP display their charges to the PSU during authentication?](#can-an-aspsp-display-their-charges-to-the-psu-during-authentication)
+    - [What if a PISP does not provide the optional 'ChargeBearer' field?](#what-if-a-pisp-does-not-provide-the-optional-chargebearer-field)
+    - [Which ChargeTypes would be used for a SEPA Credit Transfer or SWIFT payment?](#which-chargetypes-would-be-used-for-a-sepa-credit-transfer-or-swift-payment)
+    - [Can an ASPSP provide statements to an AISPs in non-JSON file format?](#can-an-aspsp-provide-statements-to-an-aisps-in-non-json-file-format)
+    - [What are the implementation timelines for a newly published specification or guidelines?](#what-are-the-implementation-timelines-for-a-newly-published-specification-or-guidelines)
+    - [Do TPPs have to implement the Consent Dashboard?](#do-tpps-have-to-implement-the-consent-dashboard)
+    - [Is OBErrorResponse1/Errors/Message mandatory, and what level of detail is expected?](#is-oberrorresponse1errorsmessage-mandatory-and-what-level-of-detail-is-expected)
+    - [When should ASPSPs mark 'payment consent resource' as 'Rejected'?](#when-should-aspsps-mark-payment-consent-resource-as-rejected)
+    - [When should ASPSPs reject a Payment-Order?](#when-should-aspsps-reject-a-payment-order)
+    - [Can AISPs change the permission language?](#can-aisps-change-the-permission-language)
+    - [Is it mandatory to implement refresh_token-expires_at?](#is-it-mandatory-to-implement-refreshtoken-expiresat)
+    - [Does an ASPSP need to delete Client related consents once TPP has deleted Client?](#does-an-aspsp-need-to-delete-client-related-consents-once-tpp-has-deleted-client)
+    - [Is it possible to amend or revoke a standing order (SO) or scheduled payment (FDP)?](#is-it-possible-to-amend-or-revoke-a-standing-order-so-or-scheduled-payment-fdp)
+    - [What types and lengths of account identification are supported?](#what-types-and-lengths-of-account-identification-are-supported)
+    - [Does the ASPSP always have to redirect back to the TPP?](#does-the-aspsp-always-have-to-redirect-back-to-the-tpp)
+    - [What message should an ASPSP return when a TPP requests permissions to an endpoint that is not implemented?](#what-message-should-an-aspsp-return-when-a-tpp-requests-permissions-to-an-endpoint-that-is-not-implemented)
+    - [When a TPP calls the Party or Parties endpoint, will they always receive the PartyType attribute?](#when-a-tpp-calls-the-party-or-parties-endpoint-will-they-always-receive-the-partytype-attribute)
+    - [Is there a list of all ASPSPs participating in the Open Banking Ecosystem?](#is-there-a-list-of-all-aspsps-participating-in-the-open-banking-ecosystem)
+    - [What error code should an ASPSP send back to a TPP if a wrong x-fapi-financial-id was sent in the request?](#what-error-code-should-an-aspsp-send-back-to-a-tpp-if-a-wrong-x-fapi-financial-id-was-sent-in-the-request)
+    - [Are &quot;File Payments&quot; supported in the Standard for both personal and business accounts?](#are-quotfile-paymentsquot-supported-in-the-standard-for-both-personal-and-business-accounts)
+    - [How can we know if an ASPSP supports File Payment endpoint?](#how-can-we-know-if-an-aspsp-supports-file-payment-endpoint)
+    - [Can ASPSPs create their own enumeration when required?](#can-aspsps-create-their-own-enumeration-when-required)
+    - [Have any ASPSPs requested new values to be added to enumeration?](#have-any-aspsps-requested-new-values-to-be-added-to-enumeration)
+    - [Which field should ASPSPs map to the TPP's name to show the PSU in the Consent UI?](#which-field-should-aspsps-map-to-the-tpps-name-to-show-the-psu-in-the-consent-ui)
+    - [Does an AISP need to display OBIE defined data clusters and permission language in the UI?](#does-an-aisp-need-to-display-obie-defined-data-clusters-and-permission-language-in-the-ui)
+    - [How can the ASPSP inform the AISP that access has been revoked?](#how-can-the-aspsp-inform-the-aisp-that-access-has-been-revoked-1)
+    - [What Resource URI Path Structure should be used while implementing the Read/Write API Specification v3.1.2?](#what-resource-uri-path-structure-should-be-used-while-implementing-the-readwrite-api-specification-v312)
+    - [What is the correct way of creating and passing ConsentId?](#what-is-the-correct-way-of-creating-and-passing-consentid)
+    - [What error should be returned if an account is in derogatory status (e.g. Fraud Stop)?](#what-error-should-be-returned-if-an-account-is-in-derogatory-status-eg-fraud-stop)
+    - [Can a PISP create consent in a previous version and a payment order resources in a newer version?](#can-a-pisp-create-consent-in-a-previous-version-and-a-payment-order-resources-in-a-newer-version)
+    - [Can a PISP create consent in a new version and a payment order resource using an older version?](#can-a-pisp-create-consent-in-a-new-version-and-a-payment-order-resource-using-an-older-version)
+    - [Which error codes should be used when a TPP submits incorrect JSON (e.g. extra quotes, invalid date and time, etc)?](#which-error-codes-should-be-used-when-a-tpp-submits-incorrect-json-eg-extra-quotes-invalid-date-and-time-etc)
+    - [Does a TPP need to return &quot;id_token_signed_response_alg&quot; if they only support &quot;code&quot; as response type?](#does-a-tpp-need-to-return-quotidtokensignedresponsealgquot-if-they-only-support-quotcodequot-as-response-type)
+- [Customer Experience Guidelines](#customer-experience-guidelines)
+    - [Where can I find the latest version of the Customer Experience Guidelines (CEG)?](#where-can-i-find-the-latest-version-of-the-customer-experience-guidelines-ceg)
+    - [Is it mandatory for ASPSPs to provide Confirmation of Funds access history under a specific CBPII?](#is-it-mandatory-for-aspsps-to-provide-confirmation-of-funds-access-history-under-a-specific-cbpii)
+- [Operational Guidelines](#operational-guidelines)
+    - [Where can I find the latest version of the Operational Guidelines (OG)?](#where-can-i-find-the-latest-version-of-the-operational-guidelines-og)
+    - [When should an interface be considered 'down' for the purposes of unplanned unavailability or a systems breakdown?](#when-should-an-interface-be-considered-down-for-the-purposes-of-unplanned-unavailability-or-a-systems-breakdown)
+- [Dynamic Client Registration](#dynamic-client-registration)
+    - [Where can I find the latest version of the Dynamic Client Registration?](#where-can-i-find-the-latest-version-of-the-dynamic-client-registration)
+    - [What is Dynamic Client Registration?](#what-is-dynamic-client-registration)
+    - [Is it mandatory for an ASPSP to implement all the operations (POST, PUT, GET, DELETE) specified in DCR?](#is-it-mandatory-for-an-aspsp-to-implement-all-the-operations-post-put-get-delete-specified-in-dcr)
+    - [Does the DCR specification support ASPSPs who do not accept OBIE issued SSAs?](#does-the-dcr-specification-support-aspsps-who-do-not-accept-obie-issued-ssas)
+    - [Can an ASPSP register a TPP client using different parameters than specified?](#can-an-aspsp-register-a-tpp-client-using-different-parameters-than-specified)
+    - [How does a TPP identify the authentication methods, grant types and algorithms that an ASPSP supports?](#how-does-a-tpp-identify-the-authentication-methods-grant-types-and-algorithms-that-an-aspsp-supports)
 
 # Open Data API Specifications
 
@@ -120,6 +96,7 @@ This Open Data API Dashboard provides a list of Open Data API endpoints for each
 
 The latest version can be found under <a href="hhttps://openbanking.atlassian.net/wiki/spaces/DZ/pages/1103233381/Open+Data+API+Specifications+v2.3" class="external-link" rel="nofollow">
 Open Data API Specifications v2.3</a>
+
 
 # Read Write Data Specification
 
@@ -244,7 +221,6 @@ As of v3.1.3, there are four Swagger specification files, one for each Events Re
 * https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.3/dist/callback-urls-openapi.yaml
 * https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.3/dist/aggregated-polling-openapi.yaml
 * https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.3/dist/event-notifications-openapi.yaml
-
 
 
 ### **How should my redirect URIs be encoded?**
@@ -494,6 +470,7 @@ Please see https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/
 
 No. The TPP need to return "id_token_signed_response_alg" only when the response type is "code id_token". This is the algorithm that the TPP expects to sign the id_token if an id_token is returned.
 
+
 # Customer Experience Guidelines
 ### **Where can I find the latest version of the Customer Experience Guidelines (CEG)?**
 
@@ -520,3 +497,28 @@ The OBIE Calculation Guidelines specify that this should be calculated as follow
 * The clock for unavailability should start immediately after the first ‘failed’ request has been received within the 30-second timeframe.
 
 For more information, refer to : <a href="https://standards.openbanking.org.uk/operational-guidelines/availability-and-performance/key-indicators-for-availability-and-performance/availability/latest/" class="external-link" rel="nofollow">Operational Guidelines - Availability </a>
+
+# Dynamic Client Registration
+### **Where can I find the latest version of the Dynamic Client Registration?**
+
+Please see https://openbankinguk.github.io/dcr-docs-pub/
+
+### **What is Dynamic Client Registration?**
+
+Dynamic Client Registration (DCR) allows ASPSPs to register TPPs as OIDC clients without the need for a manual process. ASPSPs rely on the certificates and Software Statement Assertions (SSAs) submitted by the TPP.
+
+### **Is it mandatory for an ASPSP to implement all the operations (POST, PUT, GET, DELETE) specified in DCR?**
+
+No
+
+### **Does the DCR specification support ASPSPs who do not accept OBIE issued SSAs?**
+
+The DCR specification provides the extensibility to use an SSA from any trust anchor (not just the Open Banking Directory). However, the specification does not define these extension points. It is up to each ASPSP or Trust Anchor to define how other SSAs should be used in this case.
+
+### **Can an ASPSP register a TPP client using different parameters than specified?**
+
+Yes. The underlying standard that was used for the DCR specification permits this behaviour, without requiring the ASPSP to return an error. As a result, the OBIE profile continues to support this behaviour as well.
+
+### **How does a TPP identify the authentication methods, grant types and algorithms that an ASPSP supports?**
+
+The ASPSP's OpenID Connect discovery endpoint should provide all required parameters.
