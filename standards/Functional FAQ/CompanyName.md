@@ -16,7 +16,9 @@
 
 
 ### **Introduction**
-All TPPs have a legal name, which will appear in both their eIDAS certificate and their relevant National Competent Authority (NCA) register. It is also possible that they may have a customer-facing brand or trading name, TPPs are expected to ensure that the customer is kept aware of their name during the provision of open banking services. During the provision of an AISP, PISP or CBPII service, the customer will see this name in the TPP’s domain (when granting consent), as well as, the in the ASPSP domain during authentication. When TPPs are using the services of an agent,  TPP must ensure this relationship is clearly represented to the customer. It is also recommended that  ASPSPs display the name of an agent to the PSU  within their authentication journey. The names of TPPs and their associated agents (where relevant) will also need to be made available in the ASPSP’s access dashboard and a TPPs consent dashboard respectively. 
+In order to deliver the agreed Open Banking consumer principles of transparency and control, it is very important that consumers recognise the name of the party that they are granting consent to or which is listed on their access dashboard. It is also important that they also see the name of any agent who is involved. The key to this is the effective use of the Open Banking Directory software statement.
+
+All TPPs have a legal name, which will appear in both their eIDAS certificate and their relevant National Competent Authority (NCA) register. It is also possible that they may have a customer-facing brand or trading name. TPPs & ASPSPs are expected to ensure that the customer is kept aware of the TPP name during the provision of open banking services. During the provision of an AISP, PISP or CBPII service, the customer will see this name in the TPP’s domain (when granting consent), as well as, the in the ASPSP domain during authentication. When TPPs are using the services of an agent,  TPP must ensure this relationship is clearly represented to the customer. It is also recommended that  ASPSPs display the name of an agent to the PSU  within their authentication journey. The names of TPPs and their associated agents (where relevant) will also need to be made available in the ASPSP’s access dashboard and a TPPs consent dashboard respectively. 
 
 The Open Banking Directory allows TPPs to create software statements which have three available fields:
 
@@ -34,10 +36,10 @@ Further guidance around this will be provided in CEGs and Directory services in 
 A company name is the registered legal entity name of the business. This is also referred to as the Organisation Name or Business Name and is usually the name that will appear on the relevant NCA register, as well as, the eIDAS certificate.
 
 ### **What is a Trading Name?**
-A trading name is a name (or names) used by a person, partnership or company for carrying out business, which is not the same as their own name or official registered name. The trading name is the customer-facing entity name of the company or the name of a brand or product owned by the company.
+A trading name is a name (or names) used by a person, partnership or company for carrying out business, which is not the same as their own name or official registered name. The trading name is the customer-facing entity name of the company or the name of a brand or product owned by the company and should be registered with the FCA.
 
 ### **What is an Agent?**
-Under the PSRs, an agent means a person or entity who acts on behalf of an authorised payment institution or a small payment institution in the provision of payment service. 
+Under the PSRs, an agent means a person or entity who acts on behalf of an authorised payment institution or a small payment institution in the provision of payment service. Agents are registered with the FCA under their principal’s entry.
 
 For more guidance from FCA refer to https://www.fca.org.uk/firms/agency-models-under-psd2
 
@@ -45,7 +47,7 @@ For more guidance from FCA refer to https://www.fca.org.uk/firms/agency-models-u
 Client Name is the Trading Name or the name of a brand or product owned by the Company. The TPP must capture the Trading Name if it is different from the registered legal entity name. If the TPP is trading in the same name as the company name then the Client Name must be the same as the company name.
 
 ### **What must be captured in ‘On Behalf of’ field while defining a Software Statement?**
-‘On Behalf of’ field is the agent name (Trading Name of the Agent Company) acting on behalf of the TPP. This field should only be used if there is an agent acting on behalf of the TPP and therefore is not mandatory. 
+‘On Behalf of’ field is the agent name (Trading Name of the Agent Company) acting on behalf of the TPP. This field should only be used if there is an agent acting on behalf of the TPP and therefore is not mandatory. If no agent is involved, this field should be left blank.
 
 ### **Which name must TPPs display to the PSU?**
 TPPs must display the company’s trading name/brand name (i.e. the Client Name) to the PSU during the setup and revocation of consent. 
@@ -63,7 +65,7 @@ If the customer-facing entity is acting on behalf of a TPP as its agent, the PSU
 
 | Customer-facing entity name /Trading Name (Client Name in Software Statement) | Registered Legal Entity Name (Company Name/ Organisation Name) | ‘On Behalf of’ Name (‘On Behalf of’ field in Software Statement) | What to display                                      |
 |-------------------------------------------------------------------------------|----------------------------------------------------------------|------------------------------------------------------------------|------------------------------------------------------|
-| ABC Trades                                                                    | ABC Company Ltd                                                | None                                                             | ABC Trades                       |
-| ABC Company Ltd                                                               | ABC Company Ltd                                                | None                                                             | ABC Company Ltd                                      |
+| ABC Trades                                                                    | ABC Company Ltd                                                |                                                              | ABC Trades                       |
+| ABC Company Ltd                                                               | ABC Company Ltd                                                |                                                              | ABC Company Ltd                                      |
 | ABC Company Ltd                                                               | ABC Company Ltd                                                | OBO Ltd                                                          | OBO Ltd on behalf of ABC Company Ltd                 |
 | ABC Trades                                                                    | ABC Company Ltd                                                | OBO Ltd                                                          | OBO Ltd on behalf of ABC Trades  |
