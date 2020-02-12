@@ -9,7 +9,7 @@
 - [**Which name must TPPs display to the PSU?**](#which-name-must-tpps-display-to-the-psu)
 - [**Which TPP name must ASPSPs display to the PSU?**](#which-tpp-name-must-aspsps-display-to-the-psu)
 - [**Should TPPs or ASPSPs display the TSP name to the PSU?**](#should-tpps-or-aspsps-display-the-tsp-name-to-the-psu)
-- [**When must TPPs and ASPSPs display ‘On Behalf of’ to the PSU?**](#when-must-tpps-and-aspsps-display-on-behalf-of-to-the-psu)
+- [**When must TPPs and ASPSPs display 'On Behalf of' to the PSU?**](#when-must-tpps-and-aspsps-display-on-behalf-of-to-the-psu)
 - [**Examples**](#examples)
 
 ### **Introduction**
@@ -64,7 +64,7 @@ ASPSPs must display the TPPs trading name/brand name (i.e. the Client Name) to t
 
 No. The name displayed must always be that of the TPP, not the TSP.
 
-### **When must TPPs and ASPSPs display ‘On Behalf of’ to the PSU?**
+### **When must TPPs and ASPSPs display 'On Behalf of' to the PSU?**
 
 If the customer-facing entity is acting on behalf of a TPP as its agent, the PSU must be made aware of the agent name as the ‘On behalf of’ entity name.  Only in instances where there is an agent acting on behalf of the TPP, the ‘On Behalf of’ name has to be displayed to the PSU. This should also be displayed in the consent and access dashboards, as appropriate. TPPs must not populate the ' On behalf of' field with the details of their TSP.
 
