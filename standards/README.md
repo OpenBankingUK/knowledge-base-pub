@@ -5,5 +5,5 @@
 - [Customer Experience Guidelines](./ceg.md)
 - [Operational Guidelines](./og.md)
 - [Dynamic Client Registration](./dcr.md)
-- [General](./general/)
+- [General](./general/README.md)
   - [Company Name](./general/company-name.md)
