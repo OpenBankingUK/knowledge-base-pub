@@ -6,7 +6,7 @@
   - [Customer Experience Guidelines](./standards/ceg.md)
   - [Operational Guidelines](./standards/og.md)
   - [Dynamic Client Registration](./standards/dcr.md)
-  - [General](./general/)
+  - [General](./standards/general/)
     - [Company Name](./standards/general/company-name.md)
 - [Dynamic Client Registration Tool](./conformance-tools/dynamic-client-registration-tool/README.md)
 - [Functional Conformance Tool](./conformance-tools/functional-conformance-tool/README.md)

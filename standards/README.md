@@ -6,4 +6,4 @@
 - [Operational Guidelines](./og.md)
 - [Dynamic Client Registration](./dcr.md)
 - [General](./general/)
-  - [Company Name](./standards/general/company-name.md)
+  - [Company Name](./general/company-name.md)
