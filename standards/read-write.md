@@ -14,7 +14,7 @@
     - [**What is the Event Notification API?**](#what-is-the-event-notification-api)
     - [**How can a TPP register with the ASPSP to receive event notifications?**](#how-can-a-tpp-register-with-the-aspsp-to-receive-event-notifications)
     - [**How can a TPP register with the ASPSP to receive event notifications?**](#how-can-a-tpp-register-with-the-aspsp-to-receive-event-notifications)
-    - [**Are there separate swagger specifications for Real-time (push) notifications and aggregated polling?**](#are-there-separate-swagger-specifications-for-real-time-push-notifications-and-aggregated-polling)
+    - [**Are there separate swagger specifications for Real-time push notifications and aggregated polling?**](#are-there-separate-swagger-specifications-for-real-time-push-notifications-and-aggregated-polling)
     - [**How should my redirect URIs be encoded?**](#how-should-my-redirect-uris-be-encoded)
     - [**What length of URIs should be allowed for redirect**](#what-length-of-uris-should-be-allowed-for-redirect)
     - [**What do we refer to as mandatory GET endpoints?**](#what-do-we-refer-to-as-mandatory-get-endpoints)
@@ -30,9 +30,9 @@
     - [**When should ASPSPs mark 'payment consent resource' as 'Rejected'?**](#when-should-aspsps-mark-payment-consent-resource-as-rejected)
     - [**When should ASPSPs reject a Payment-Order?**](#when-should-aspsps-reject-a-payment-order)
     - [**Can AISPs change the permission language?**](#can-aisps-change-the-permission-language)
-    - [**Is it mandatory to implement refreshtoken-expiresat?**](#is-it-mandatory-to-implement-refreshtoken-expiresat)
+    - [**Is it mandatory to implement refresh_token-expires_at?**](#is-it-mandatory-to-implement-refresh_token-expires_at)
     - [**Does an ASPSP need to delete Client related consents once TPP has deleted Client?**](#does-an-aspsp-need-to-delete-client-related-consents-once-tpp-has-deleted-client)
-    - [**Is it possible to amend or revoke a standing order (SO) or scheduled payment (FDP)?**](#is-it-possible-to-amend-or-revoke-a-standing-order-so-or-scheduled-payment-fdp)
+    - [**Is it possible to amend or revoke a standing order SO or scheduled payment FDP?**](#is-it-possible-to-amend-or-revoke-a-standing-order-so-or-scheduled-payment-fdp)
     - [**What types and lengths of account identification are supported?**](#what-types-and-lengths-of-account-identification-are-supported)
     - [**Does the ASPSP always have to redirect back to the TPP?**](#does-the-aspsp-always-have-to-redirect-back-to-the-tpp)
     - [**What message should an ASPSP return when a TPP requests permissions to an endpoint that is not implemented?**](#what-message-should-an-aspsp-return-when-a-tpp-requests-permissions-to-an-endpoint-that-is-not-implemented)
@@ -47,30 +47,40 @@
     - [**How can the ASPSP inform the AISP that access has been revoked?**](#how-can-the-aspsp-inform-the-aisp-that-access-has-been-revoked)
     - [**What Resource URI Path Structure should be used while implementing the Read Write API Specification v3.1.2?**](#what-resource-uri-path-structure-should-be-used-while-implementing-the-read-write-api-specification-v312)
     - [**What is the correct way of creating and passing ConsentId?**](#what-is-the-correct-way-of-creating-and-passing-consentid)
-    - [**What error should be returned if an account is in derogatory status (e.g. Fraud Stop)?**](#what-error-should-be-returned-if-an-account-is-in-derogatory-status-eg-fraud-stop)
+    - [**What error should be returned if an account is in derogatory status e.g. Fraud Stop?**](#what-error-should-be-returned-if-an-account-is-in-derogatory-status-eg-fraud-stop)
     - [**Can a PISP create consent in a previous version and a payment order resources in a newer version?**](#can-a-pisp-create-consent-in-a-previous-version-and-a-payment-order-resources-in-a-newer-version)
     - [**Can a PISP create consent in a new version and a payment order resource using an older version?**](#can-a-pisp-create-consent-in-a-new-version-and-a-payment-order-resource-using-an-older-version)
-    - [**Which error codes should be used when a TPP submits incorrect JSON (e.g. extra quotes, invalid date and time, etc)?**](#which-error-codes-should-be-used-when-a-tpp-submits-incorrect-json-eg-extra-quotes-invalid-date-and-time-etc)
-    - [**Does a TPP need to return idtokensignedresponsealg if they only support code as response type?**](#does-a-tpp-need-to-return-idtokensignedresponsealg-if-they-only-support-code-as-response-type)
-    - [**What are the different types of charge bearer codes supported in single immediate (domestic) payment?**](#what-are-the-different-types-of-charge-bearer-codes-supported-in-single-immediate-domestic-payment)
+    - [**Which error codes should be used when a TPP submits incorrect JSON e.g. extra quotes, invalid date and time, etc?**](#which-error-codes-should-be-used-when-a-tpp-submits-incorrect-json-eg-extra-quotes-invalid-date-and-time-etc)
+    - [**Does a TPP need to return id_token_signed_response_alg if they only support code as response type?**](#does-a-tpp-need-to-return-id_token_signed_response_alg-if-they-only-support-code-as-response-type)
+    - [**What are the different types of charge bearer codes supported in single immediate domestic payment?**](#what-are-the-different-types-of-charge-bearer-codes-supported-in-single-immediate-domestic-payment)
     - [**In the Transaction API, is the transaction amount field inclusive/exclusive of ChargeAmount?**](#in-the-transaction-api-is-the-transaction-amount-field-inclusiveexclusive-of-chargeamount)
     - [**Does an ASPSP need to support all variants of DateTime format as per ISO 8601?**](#does-an-aspsp-need-to-support-all-variants-of-datetime-format-as-per-iso-8601)
     - [**What if an ASPSP is not able to support functionality or an attribute in the payload. Should the ASPSP reject the request from the TPP?**](#what-if-an-aspsp-is-not-able-to-support-functionality-or-an-attribute-in-the-payload-should-the-aspsp-reject-the-request-from-the-tpp)
     - [**How many days of transactions are allowed for credit card transactions in the transactions API aligning to the regulation?**](#how-many-days-of-transactions-are-allowed-for-credit-card-transactions-in-the-transactions-api-aligning-to-the-regulation)
     - [**In the event subscription API, should the single event subscription be the Organisation ID or Software ID?**](#in-the-event-subscription-api-should-the-single-event-subscription-be-the-organisation-id-or-software-id)
-    - [**Should the 'offers' resource be used only for the specific account (e.g. Credit Card Limit Increases) as opposed to all possible offers a customer could see online (e.g. a pre-approved loan offer based on their credit card payment history and credit file)?**](#should-the-offers-resource-be-used-only-for-the-specific-account-eg-credit-card-limit-increases-as-opposed-to-all-possible-offers-a-customer-could-see-online-eg-a-pre-approved-loan-offer-based-on-their-credit-card-payment-history-and-credit-file)
+    - [**Should the 'offers' resource be used only for the specific account e.g. Credit Card Limit Increases as opposed to all possible offers a customer could see online e.g. a pre-approved loan offer based on their credit card payment history and credit file?**](#should-the-offers-resource-be-used-only-for-the-specific-account-eg-credit-card-limit-increases-as-opposed-to-all-possible-offers-a-customer-could-see-online-eg-a-pre-approved-loan-offer-based-on-their-credit-card-payment-history-and-credit-file)
     - [**Should the offers endpoint be for the specific account or all possible offers a customer could see online?**](#should-the-offers-endpoint-be-for-the-specific-account-or-all-possible-offers-a-customer-could-see-online)
-    - [**For message signing, what should be the input payload for the signature (e.g. HTTP body, parsed JSON, canonicalised JSON etc)?**](#for-message-signing-what-should-be-the-input-payload-for-the-signature-eg-http-body-parsed-json-canonicalised-json-etc)
+    - [**For message signing, what should be the input payload for the signature e.g. HTTP body, parsed JSON, canonicalised JSON etc?**](#for-message-signing-what-should-be-the-input-payload-for-the-signature-eg-http-body-parsed-json-canonicalised-json-etc)
     - [**Should the trust anchor in detached JWS Signatures in Sandbox be openbanking.org.uk or openbankingtest.org.uk?**](#should-the-trust-anchor-in-detached-jws-signatures-in-sandbox-be-openbankingorguk-or-openbankingtestorguk)
     - [**Why does the OBIE standard not use standard security headers such as Content-Security-Policy, X-XSS-Protection etc ? Can an ASPSP add these headers to their responses?**](#why-does-the-obie-standard-not-use-standard-security-headers-such-as-content-security-policy-x-xss-protection-etc--can-an-aspsp-add-these-headers-to-their-responses)
+    - [**In the context of AIS, is it possible to have a longer-lived token over 90 days if only the balance is read?**](#in-the-context-of-ais-is-it-possible-to-have-a-longer-lived-token-over-90-days-if-only-the-balance-is-read)
+    - [**In the context of PIS, does the consent for payment expire if not used? Can the token expiry be set to 90 days and the token refreshed if not expired?**](#in-the-context-of-pis-does-the-consent-for-payment-expire-if-not-used-can-the-token-expiry-be-set-to-90-days-and-the-token-refreshed-if-not-expired)
+    - [**How long are transactions available via the transactions API after the bank account is closed?**](#how-long-are-transactions-available-via-the-transactions-api-after-the-bank-account-is-closed)
+    - [**Can you give a few examples to illustrate the use of InstructedAmount for an International Payment?**](#can-you-give-a-few-examples-to-illustrate-the-use-of-instructedamount-for-an-international-payment)
+    - [**Which error codes should the ASPSP use while responding back to the TPP in case of an error?**](#which-error-codes-should-the-aspsp-use-while-responding-back-to-the-tpp-in-case-of-an-error)
+    - [**Is it acceptable for an ASPSP to issue 302 redirects during the authorization code grant flow to the PSU’s user agent?**](#is-it-acceptable-for-an-aspsp-to-issue-302-redirects-during-the-authorization-code-grant-flow-to-the-psus-user-agent)
+    - [**What does each of the Balance types mean? Does an ASPSP have to provide specific balance types in its response?**](#what-does-each-of-the-balance-types-mean-does-an-aspsp-have-to-provide-specific-balance-types-in-its-response)
 - [FAPI](#fapi)
   - [**Is it mandatory to include the `scope` claim when calling the token end-point as part of an authorization_code grant?**](#is-it-mandatory-to-include-the-scope-claim-when-calling-the-token-end-point-as-part-of-an-authorization_code-grant)
   - [**As an ASPSP, which security certification should I request from Open ID if I see multiple types for FAPI?**](#as-an-aspsp-which-security-certification-should-i-request-from-open-id-if-i-see-multiple-types-for-fapi)
   - [**Which scope element should the TPPs use when requesting token (grant type=authorization_code)?**](#which-scope-element-should-the-tpps-use-when-requesting-token-grant-typeauthorization_code)
   - [**What should the ASPSP do if the TPP omits the scope parameter when requesting authorization?**](#what-should-the-aspsp-do-if-the-tpp-omits-the-scope-parameter-when-requesting-authorization)
-  - [**In the context of AIS, is it possible to have a longer-lived token over 90 days if only the balance is read?**](#in-the-context-of-ais-is-it-possible-to-have-a-longer-lived-token-over-90-days-if-only-the-balance-is-read)
-  - [**In the context of PIS, does the consent for payment expire if not used? Can the token expiry be set to 90 days and the token refreshed if not expired?**](#in-the-context-of-pis-does-the-consent-for-payment-expire-if-not-used-can-the-token-expiry-be-set-to-90-days-and-the-token-refreshed-if-not-expired)
   - [**Is it compliant for a PSU to be redirected within a redirect in a redirect/hybrid grant?**](#is-it-compliant-for-a-psu-to-be-redirected-within-a-redirect-in-a-redirecthybrid-grant)
+  - [**Can refresh token be issued without an HoK mechanism to avoid impacts on member and would it be in compliance with FAPI?**](#can-refresh-token-be-issued-without-an-hok-mechanism-to-avoid-impacts-on-member-and-would-it-be-in-compliance-with-fapi)
+  - [**CIf a refresh token is issued with MTLS HoK, would it force the PSU to re-authenticate? Would this be an acceptable user Journey?**](#cif-a-refresh-token-is-issued-with-mtls-hok-would-it-force-the-psu-to-re-authenticate-would-this-be-an-acceptable-user-journey)
+  - [**Is it acceptable for an ASPSP to have multiple authorization servers? How should these be discoverable?**](#is-it-acceptable-for-an-aspsp-to-have-multiple-authorization-servers-how-should-these-be-discoverable)
+    - [OIDC Discovery](#oidc-discovery)
+    - [Issues noted in the ecosystem](#issues-noted-in-the-ecosystem)
 
 <!-- /TOC -->
 
@@ -257,7 +267,7 @@ The  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profil
 
 Event Subscription, CallbackURLregistration and Aggregated Polling specifications are all hosted by the ASPSP, while the TPP hosts the endpoint to receivereal-time push notifications.
 
-As of v3.1.3, there are four Swagger specification files, one for each Events Resource:
+As of v3.1.3, there are four Swagger specification files, one for each Events Resource:s
 
 * [event-subscriptions-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.3/dist/event-subscriptions-openapi.yaml)
 * [read-write-api-specs](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.3/dist/callback-urls-openapi.yaml)
@@ -589,6 +599,52 @@ ASPSPs may add additional headers in their responses. The standard does not proh
 
 On the other hand, if the ASPSPs expect a specific header to be set by TPPs in the request, that would be possibly non-compliant behaviour.
 
+### **In the context of AIS, is it possible to have a longer-lived token over 90 days if only the balance is read?**
+
+Currently, under PSD2/RTS, SCA needs to be performed at least every 90 days by the ASPSP. This means that even if only balance is being accessed, SCA will need to be performed if more than 90 days have passed since the last SCA was applied by the ASPSP. 
+
+### **In the context of PIS, does the consent for payment expire if not used? Can the token expiry be set to 90 days and the token refreshed if not expired?**
+
+Payment-consents tokens are meant to be “short-lived” and should be expected to last for a few minutes at most. The RTS Art. 10 exemption which supports the 90-day access token functionality applies to AIS only. 
+
+### **How long are transactions available via the transactions API after the bank account is closed?**
+
+This will be dependant on whether and to what extent this information is available to the PSU in the direct channels. This will be up to each ASPSP to determine based on relevant regulatory obligations.
+
+### **Can you give a few examples to illustrate the use of `InstructedAmount` for an International Payment?**
+
+| Scenario                                                             | Debit Account denomination | Currency of Transfer | /InstructedAmount/Currency |
+|----------------------------------------------------------------------|----------------------------|----------------------|----------------------------|
+| Instruction that creditor should receive 100 EUR                     | GBP                        | EUR                  | EUR                        |
+| Instruction that creditor should receive EUR equivalent of 100 GBP   | GBP                        | EUR                  | GBP                        |
+| Transfer 100 GBP to GBP denominated account held in another country. | GBP                        | GBP                  | GBP                        |
+
+### **Which error codes should the ASPSP use while responding back to the TPP in case of an error?**
+
+The ASPSP should send the appropriate response depending on which spec applies to the end-point that is being called.
+
+For eg: When there is an error in relation to a token endpoint which is defined in OIDC and OAuth2, the error responses should comply with the OAuth2 / OIDC format.
+
+### **Is it acceptable for an ASPSP to issue 302 redirects during the authorization code grant flow to the PSU’s user agent?**
+
+OpenID Connect, OAuth2 and FAPI do not define the behaviour of the AS between the time that the authorization code grant has started and its end (signalled by a redirect to the TPP in most cases)
+
+For the journey to be a “compliant” OIDC/OAuth2 journey, there are a number of boxes to tick:
+
+1. The TPP constructs the authorization URL and issues it to the PSU’s browser. The URL should contain query parameters and request objects that are OIDC compliant. The URL should be the authorization_server in the ASPSP’s .well-known. The `redirect_uri` parameter should be the TPP’s registered URI.
+
+2. Once the PSU’s browser follows the redirect, the flow can be pretty much whatever the ASPSP wants to implement. The CEGs provide some standards on what those journeys should look like, but no technical constraints on redirects etc that take place.
+
+3. That journey MUST end with the PSU browser receiving a 30x Redirect response. The redirect must be to the redirect_uri in the query parameter in #1 above. This URL must have OIDC/OAuth2 format query or hashbang parameters (e.g. code, error, error_description, nonce(?) etc
+
+Practically, some browsers will cause issues with a TOO_MANY_REDIRECTS error - but the standard is silent on that.
+
+### **What does each of the Balance types mean? Does an ASPSP have to provide specific balance types in its response?**
+
+The enumeration for the Balance Type field is based on the ISO 20022 definition for the field. When we base data structures on an underlying standard, we do not generally provide additional descriptions on the usage, unless there is an OBIE specific deviation.
+
+The ASPSPs are free to determine which balance types they should publish. The general expectation is that an ASPSP should provide the same information through its APIs as it does through its online channels. In situations where the more than one Balance Type could be used to describe the balance provided by the ASPSP, it is for the ASPSP to determine the appropriate type to be used.
+
 ## FAPI
 
 ### **Is it mandatory to include the `scope` claim when calling the token end-point as part of an authorization_code grant?**
@@ -607,14 +663,6 @@ TPPs should follow FAPI guidelines for the `scope` element.
 
 The authorization server must either process the request using a pre-defined default value or fail the request indicating an invalid scope.
 
-### **In the context of AIS, is it possible to have a longer-lived token over 90 days if only the balance is read?**
-
-Currently, under PSD2/RTS, SCA needs to be performed at least every 90 days by the ASPSP. This means that even if only ‘balance’ is being accessed, SCA will need to be performed if more than 90 days have passed since the last SCA was applied by the ASPSP. 
-
-### **In the context of PIS, does the consent for payment expire if not used? Can the token expiry be set to 90 days and the token refreshed if not expired?**
-
-Payment-consents tokens are meant to be “short-lived” and should be expected to last for a few minutes at most. The RTS Art. 10 exemption which supports the 90-day access token functionality applies to AIS only. 
-
 ### **Is it compliant for a PSU to be redirected within a redirect in a redirect/hybrid grant?**
 
 For the journey to be a “compliant” OIDC/OAuth2 journey, there are a number of boxes to tick:
@@ -626,3 +674,76 @@ Once the PSU’s browser follows the redirect, the flow can be pretty much whate
 Finally, that journey MUST end with the PSU browser receiving a 30x Redirect response. The redirect must be to the redirect_uri in the query parameter in #1 above. This URL must have OIDC/OAuth2 format query or hashbang parameters (e.g. code, error, error_description, nonce(?) etc
 
 Practically, some browsers will cause issues with a TOO_MANY_REDIRECTS error - but the standard is silent on that. It is likely that old / non-evergreen browsers may cause some issues.
+
+### **Can refresh token be issued without an HoK mechanism to avoid impacts on member and would it be in compliance with FAPI?** 
+### **CIf a refresh token is issued with MTLS HoK, would it force the PSU to re-authenticate? Would this be an acceptable user Journey?**
+
+When using a refresh token, there should be no expectation on the PSU to re-authenticate each time they access token is renewed. The PSU should only be required to re-authenticate with their ASPSP within a 90 day period, and in this instance, TPPs are expected to use the “refreshing AISP access” journey in the CEGs.
+
+The certificate binding mechanism with RFC-8705 does allow this to be implemented correctly.
+
+The method for certificate binding is defined in https://tools.ietf.org/html/rfc8705#section-7.1. (Note that we do not have public clients and Section 4 of RF-8705 will not be applicable) 
+
+Effectively, a refresh token is not certificate bound directly but bound indirectly through the client. The client, in turn, needs to authenticate with the token endpoint using a strong method of authentication (`tls_client_auth` or `private_key_jwt`).
+
+If using `private_key_jwt`, the signature is based on a key pair in the client’s JWKS registered with the ASPSP. No certificates are involved. Done.
+
+If using `tls_client_auth`, the certificate is validated by comparing with tls_client_auth_subject_dn - not the certificate fingerprint. This would allow the TPP to make a call to the token endpoint with the new certs with their current refresh token. The new access token would be bound to the new cert. Done.
+
+### **Is it acceptable for an ASPSP to have multiple authorization servers? How should these be discoverable?**
+
+ASPSPs may have multiple AS and RS (e.g. to serve different brands and products). However, for ASPSPs that use the OBIE directory, these must be discoverable through the directory.
+
+Furthermore, the use of additional authorization servers should not result in invalid or incorrectly formed OIDC discovery documents.
+
+#### OIDC Discovery
+
+The OpenID Connect Discovery 
+<a href="https://openid.net/specs/openid-connect-discovery-1_0.html" class="external-link" rel="nofollow">RFC</a>
+ is the specification that defines the structure and content of the OIDC .well-known end-point.
+
+The document is meant to be “discoverable” by web-finger and by a static URL and should always be available at a URL that can be pre-determined.
+
+For example, the discovery document for the issuer example.com must be available at /.well-known/openid-configuration
+
+1. GET /.well-known/openid-configuration HTTP/1.1
+  2. Host: example.com 
+
+Subsequently, the discovery document that is returned must have example.com specified as the issuer URL.
+
+>issuer<br>
+>REQUIRED. URL using the `https` scheme with no query or fragment component that the OP asserts as its Issuer Identifier. If Issuer discovery is supported (see <a href="https://openid.net/specs/openid-connect-discovery-1_0.html#IssuerDiscovery" class="external-link" rel="nofollow">Section 2</a>
+), this value MUST be identical to the issuer value returned by WebFinger. This also MUST be identical to the `iss` Claim value in ID Tokens issued from this Issuer.
+
+Additionally, the `authorization_endpoint` specified must point to the OP’s authorization server. Note that there is no stipulated relationship between the URL for the authorization_endpoint and the issuer.
+
+>authorization_endpoint
+<br>
+>REQUIRED. URL of the OP's OAuth 2.0 Authorization Endpoint <a href="https://openid.net/specs/openid-connect-discovery-1_0.html#OpenID.Core" class="external-link" rel="nofollow">[OpenID.Core]</a>.
+
+(If the authorization endpoint supports MA-TLS and this end-point is available at a different URI, then RFC 8705 Section 9.2 registers `mtls_endpoint_aliases.authorization server` as a field in the discovery document.)
+
+#### Issues noted in the ecosystem
+
+The following have been observed by the OIDC FAPI compliance tests in the ecosystem. There are incorrect configurations and are non-compliant with the OIDC discovery specification:
+
+1. Some ASPSPs issue a discovery document where the `issuer` field does not match the discovery URL from which the document was retrieved.
+
+2. Some ASPSPs have one or more authorization servers (e.g. when supporting multiple brands) that are not discoverable through the discovery document.
+
+A checklist for correct implementations:
+
+1. ASPSPs must issue a discovery document for their authorization server.
+
+2. The ASPSP’s issuer URL when suffixed with `/.well-known/openid-configuration` must return the discovery document.
+
+3. The discovery document `issuer` field must have the same value as the ASPSP’s issuer URL.
+
+4. The ASPSP’s authorization server must be listed in the `authorization_server` field
+
+5. The ASPSP’s authorization server field may be optionally listed in the `mtls_endpoint_aliases.authorization` server field.
+
+6. If the ASPSP has multiple authorization servers, each authorization server must be discoverable through a separate discovery document. Each discovery document must meet the criteria above.
+
+7. ASPSPs that use the OBIE directory should register each authorization server on the OBIE directory with its corresponding discovery end-point.
+

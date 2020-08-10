@@ -1,5 +1,15 @@
 ## Message Signing FAQs
+<!-- TOC -->
 
+- [Message Signing FAQs](#message-signing-faqs)
+  - [**Are there different versions for message signing? As a TPP, which version should I be using?**](#are-there-different-versions-for-message-signing-as-a-tpp-which-version-should-i-be-using)
+  - [**What are the key differences between each of these versions?**](#what-are-the-key-differences-between-each-of-these-versions)
+  - [**What should be the `iss` when using an EIDAS certificate?**](#what-should-be-the-iss-when-using-an-eidas-certificate)
+  - [**What is the `tan` value for Directory Sandbox?**](#what-is-the-tan-value-for-directory-sandbox)
+  - [**Which API requests and responses should be signed?**](#which-api-requests-and-responses-should-be-signed)
+  - [**When signing an HTTP payload, should the input be the “raw” HTTP payload or a parsed and cleansed JSON object?**](#when-signing-an-http-payload-should-the-input-be-the-raw-http-payload-or-a-parsed-and-cleansed-json-object)
+
+<!-- /TOC -->
 
 ### **Are there different versions for message signing? As a TPP, which version should I be using?**
 There are primarily three versions of message signing in the OBIE specifications:
@@ -55,3 +65,17 @@ The specification is clear about which API requests and responses require signat
 The `Endpoints` table for resource documentation has a column called “Message Signing”. The column specifies whether the API has “signed requests”, “signed response” or both.
 
 The swagger specification indicates which requests and responses would have signatures through the presence of the `x-jws-signature`
+
+### **When signing an HTTP payload, should the input be the “raw” HTTP payload or a parsed and cleansed JSON object?**
+
+Signature generation and validation should always be based on the raw sequence of bytes that constitute the HTTP body (prior to the application of HTTP transformations such as multi-part encoding, gzip/deflate etc.)
+
+Some further notes:
+
+* The only consistent payload that is available to the sender and receiver is the byte representation of the HTTP body.
+
+* Using payloads at the JSON level would expose the sign/verify method to the vagaries of a JSON parser - this would make it impossible to cater to every permutation that could occur in the ecosystem.
+
+* The standard does not specifically talk about signatures on JSON bodies - it talks about signatures on any content-type as indicated by `cty`. This would further add to the interpretation that this needs to be the raw HTTP body.
+
+* Although we state “raw body” here, it leaves things to further interpretation around how HTTP handles the body part. The body can be gzip/deflate encoded and it could also be multi-part encoded. However, this encoding would take place at the HTTP level once the sender starts transmitting the message. Since this is likely to take place after the signature has been generated, we should not be thinking about this “raw” level of the body, but the byte representation of the body once the HTTP mechanisms have been accounted for.

@@ -1,4 +1,4 @@
-## Dynamic Client Registration <!-- omit in toc -->
+<!-- TOC -->
 
 - [**Where can I find the latest version of the Dynamic Client Registration?**](#where-can-i-find-the-latest-version-of-the-dynamic-client-registration)
 - [**What is Dynamic Client Registration?**](#what-is-dynamic-client-registration)
@@ -8,6 +8,21 @@
 - [**How does a TPP identify the authentication methods, grant types and algorithms that an ASPSP supports?**](#how-does-a-tpp-identify-the-authentication-methods-grant-types-and-algorithms-that-an-aspsp-supports)
 - [**For DCR, is there an expiry on the SSA request made by the TPP?**](#for-dcr-is-there-an-expiry-on-the-ssa-request-made-by-the-tpp)
 - [**Should TPPs accept only the FAPI compliant claim values in the client registration request for DCR?**](#should-tpps-accept-only-the-fapi-compliant-claim-values-in-the-client-registration-request-for-dcr)
+- [**What is the expected `content-type` for a Dynamic Client Registration request?**](#what-is-the-expected-content-type-for-a-dynamic-client-registration-request)
+- [**Why is the `aud` field of a different length from the other fields with a UUIDv4?**](#why-is-the-aud-field-of-a-different-length-from-the-other-fields-with-a-uuidv4)
+
+<!-- /TOC -->
+
+- [**Where can I find the latest version of the Dynamic Client Registration?**](#where-can-i-find-the-latest-version-of-the-dynamic-client-registration)
+- [**What is Dynamic Client Registration?**](#what-is-dynamic-client-registration)
+- [**Is it mandatory for an ASPSP to implement all the operations (POST, PUT, GET, DELETE) specified in DCR?**](#is-it-mandatory-for-an-aspsp-to-implement-all-the-operations-post-put-get-delete-specified-in-dcr)
+- [**Does the DCR specification support ASPSPs who do not accept OBIE issued SSAs?**](#does-the-dcr-specification-support-aspsps-who-do-not-accept-obie-issued-ssas)
+- [**Can an ASPSP register a TPP client using different parameters than specified?**](#can-an-aspsp-register-a-tpp-client-using-different-parameters-than-specified)
+- [**How does a TPP identify the authentication methods, grant types and algorithms that an ASPSP supports?**](#how-does-a-tpp-identify-the-authentication-methods-grant-types-and-algorithms-that-an-aspsp-supports)
+- [**For DCR, is there an expiry on the SSA request made by the TPP?**](#for-dcr-is-there-an-expiry-on-the-ssa-request-made-by-the-tpp)
+- [**Should TPPs accept only the FAPI compliant claim values in the client registration request for DCR?**](#should-tpps-accept-only-the-fapi-compliant-claim-values-in-the-client-registration-request-for-dcr)
+- [**What is the expected `content-type` for a Dynamic Client Registration request?**](#what-is-the-expected-content-type-for-a-dynamic-client-registration-request)
+- [**Why is the `aud` field of a different length from the other fields with a UUIDv4?**](#why-is-the-aud-field-of-a-different-length-from-the-other-fields-with-a-uuidv4)
 
 
 ### **Where can I find the latest version of the Dynamic Client Registration?**
@@ -41,3 +56,19 @@ Yes, there is an expiry time associated with the request. The time at which the 
 ### **Should TPPs accept only the FAPI compliant claim values in the client registration request for DCR?**
 
 The DCR standard is written as a generic standard, independent of the underlying security profile that the ASPSP has used. If the ASPSP is to be FAPI compliant, then it will have to disallow enumeration values that FAPI does not support. Similarly, if an ASPSP supports only `mtls` and not `private_key_jwt`, then it may only permit that one value.
+
+### **What is the expected `content-type` for a Dynamic Client Registration request?**
+
+There are two “competing” RFCs that define the content type for JWS payload:
+
+* https://tools.ietf.org/html/rfc7515#section-9.2.1 - It should be application/jose
+
+* https://tools.ietf.org/html/rfc7519#section-10.3.1 - It should be application/jwt
+
+An ASPSP may accept either or both `content-type` headers. They should provide clear documentation on their developer portal as to which content-type they support.
+
+### **Why is the `aud` field of a different length from the other fields with a UUIDv4?**
+
+When using OBIE issued SSA, the `aud` field is the value provided by OBIE directory and is 18 characters long.
+
+The field size is limited to that size to accommodate the FPS requirement to send information in Field 122 related to the software statement id and organization id.

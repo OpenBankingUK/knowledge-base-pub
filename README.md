@@ -8,6 +8,7 @@
   - [Dynamic Client Registration](./standards/dcr.md)
   - [General](./standards/general/README.md)
     - [Company Name](./standards/general/company-name.md)
+    - [Message Signing](./standards/general/message-sign.md)
 - [Dynamic Client Registration Tool](./conformance-tools/dynamic-client-registration-tool/README.md)
 - [Functional Conformance Tool](./conformance-tools/functional-conformance-tool/README.md)
 - [Security Conformance Tool](./conformance-tools/security-conformance-tool/README.md)
