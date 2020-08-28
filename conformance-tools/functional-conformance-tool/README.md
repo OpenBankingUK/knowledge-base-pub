@@ -1,29 +1,4 @@
-<!-- TOC -->
-
-- [**How to I validate and trust the Conformance Tool image I'm downloading?**](#how-to-i-validate-and-trust-the-conformance-tool-image-im-downloading)
-- [**What is the High-level overview of the Conformance Tool and Dynamic Client Registration Roadmap for 2019/2020?**](#what-is-the-high-level-overview-of-the-conformance-tool-and-dynamic-client-registration-roadmap-for-20192020)
-- [**Where do I download the Conformance Tool?**](#where-do-i-download-the-conformance-tool)
-- [**Why does an ASPSP need to provide Functional Conformance?**](#why-does-an-aspsp-need-to-provide-functional-conformance)
-- [**What version of the Read/Write specifications does the conformance tool support?**](#what-version-of-the-readwrite-specifications-does-the-conformance-tool-support)
-- [**Where can I download the conformance tool from?**](#where-can-i-download-the-conformance-tool-from)
-- [**To pass OIDF FAPI Security Conformance Suite, does the TPP need to disable the response type 'code'?**](#to-pass-oidf-fapi-security-conformance-suite-does-the-tpp-need-to-disable-the-response-type-code)
-- [**What does a ‘certificate signed by unknown authority’ error mean?**](#what-does-a-certificate-signed-by-unknown-authority-error-mean)
-- [**I want to run the functional conformance test suite. Is it an automated process?**](#i-want-to-run-the-functional-conformance-test-suite-is-it-an-automated-process)
-- [**When I run the conformance tool, I get a 500 error - 'Failed to Check for Updates'. What does that mean?**](#when-i-run-the-conformance-tool-i-get-a-500-error---failed-to-check-for-updates-what-does-that-mean)
-- [**Does the conformance tool support EIDAS certificate?**](#does-the-conformance-tool-support-eidas-certificate)
-
-<!-- /TOC -->
-- [**How to I validate and trust the Conformance Tool image I'm downloading?**](#how-to-i-validate-and-trust-the-conformance-tool-image-im-downloading)
-- [**What is the High-level overview of the Conformance Tool and Dynamic Client Registration Roadmap for 2019/2020?**](#what-is-the-high-level-overview-of-the-conformance-tool-and-dynamic-client-registration-roadmap-for-20192020)
-- [**Where do I download the Conformance Tool?**](#where-do-i-download-the-conformance-tool)
-- [**Why does an ASPSP need to provide Functional Conformance?**](#why-does-an-aspsp-need-to-provide-functional-conformance)
-- [**What version of the Read/Write specifications does the conformance tool support?**](#what-version-of-the-readwrite-specifications-does-the-conformance-tool-support)
-- [**Where can I download the conformance tool from?**](#where-can-i-download-the-conformance-tool-from)
-- [**To pass OIDF FAPI Security Conformance Suite, does the TPP need to disable the response type 'code'?**](#to-pass-oidf-fapi-security-conformance-suite-does-the-tpp-need-to-disable-the-response-type-code)
-- [**What does a ‘certificate signed by unknown authority’ error mean?**](#what-does-a-certificate-signed-by-unknown-authority-error-mean)
-- [**I want to run the functional conformance test suite. Is it an automated process?**](#i-want-to-run-the-functional-conformance-test-suite-is-it-an-automated-process)
-- [**When I run the conformance tool, I get a 500 error - 'Failed to Check for Updates'. What does that mean?**](#when-i-run-the-conformance-tool-i-get-a-500-error---failed-to-check-for-updates-what-does-that-mean)
-- [**Does the conformance tool support EIDAS certificate?**](#does-the-conformance-tool-support-eidas-certificate)
+[[toc]]
 
 ### **How to I validate and trust the Conformance Tool image I'm downloading?**
 
@@ -80,3 +55,15 @@ Executing the command: docker run --rm -it -p 8443:8443 "openbanking/conformance
 ### **Does the conformance tool support EIDAS certificate?**
 
 Yes, when using EIDAS certificates with the conformance tool, the user must enter the issuer string for payments and the signing key-id into the configuration screen. This allows the tool to create signed payment requests using EIDAS certificates.
+
+### **Can you explain the different Token endpoint authentication methods? And they preferred & secure method.**
+
+`client_secret_post` is seen as a weak authentication method, as the client secret is contained in the body of the request and it relies on a shared secret.
+
+The `client_secret_basic` is currently the most widely supported method, but this is one of the weaker auth methods, as the secret is contained in the request header and continues to rely on a shared secret.
+
+Neither of these two methods is FAPI compliant.
+
+We would recommend the two more preferred and secure methods in `tls_client_auth` and `private_key_jwt`, especially as they are FAPI compliant.
+
+It is also worth noting that the OB functional conformance tool supports `client_secret_basic`, `tls_client_auth` and `private_key_jwt`. It does not support `client_secret_post`.

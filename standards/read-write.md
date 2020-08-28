@@ -1,157 +1,4 @@
-<!-- TOC -->
-
-  - [**What is the Read/Write API Specification?**](#what-is-the-readwrite-api-specification)
-  - [**Where can I find the latest version of API specifications?**](#where-can-i-find-the-latest-version-of-api-specifications)
-  - [**Where can I find the timings for Implementing Open Banking Roadmap?**](#where-can-i-find-the-timings-for-implementing-open-banking-roadmap)
-  - [**Are there any known issues in the latest version of Specifications?**](#are-there-any-known-issues-in-the-latest-version-of-specifications)
-  - [**Where can I find the latest version of Swagger Specifications?**](#where-can-i-find-the-latest-version-of-swagger-specifications)
-  - [**What APIs can an AISP access?**](#what-apis-can-an-aisp-access)
-  - [**What APIs can an CBPII access?**](#what-apis-can-an-cbpii-access)
-  - [**How can the ASPSP inform the AISP that access has been revoked?**](#how-can-the-aspsp-inform-the-aisp-that-access-has-been-revoked)
-  - [**What APIs can an PISP access?**](#what-apis-can-an-pisp-access)
-  - [**Which payment-order types are supported by the PIS API?**](#which-payment-order-types-are-supported-by-the-pis-api)
-  - [**Are there different signing policies for Event Notifications?**](#are-there-different-signing-policies-for-event-notifications)
-  - [**What is the Event Notification API?**](#what-is-the-event-notification-api)
-  - [**How can a TPP register with the ASPSP to receive event notifications?**](#how-can-a-tpp-register-with-the-aspsp-to-receive-event-notifications)
-  - [**How can a TPP register with the ASPSP to receive event notifications?**](#how-can-a-tpp-register-with-the-aspsp-to-receive-event-notifications)
-  - [**Are there separate swagger specifications for Real-time push notifications and aggregated polling?**](#are-there-separate-swagger-specifications-for-real-time-push-notifications-and-aggregated-polling)
-  - [**How should my redirect URIs be encoded?**](#how-should-my-redirect-uris-be-encoded)
-  - [**What length of URIs should be allowed for redirect**](#what-length-of-uris-should-be-allowed-for-redirect)
-  - [**What do we refer to as mandatory GET endpoints?**](#what-do-we-refer-to-as-mandatory-get-endpoints)
-  - [**How can ASPSPs provide relevant charges to a PISP?**](#how-can-aspsps-provide-relevant-charges-to-a-pisp)
-  - [**Can a PISP display an ASPSP's charges to the PSU?**](#can-a-pisp-display-an-aspsps-charges-to-the-psu)
-  - [**Can an ASPSP display their charges to the PSU during authentication?**](#can-an-aspsp-display-their-charges-to-the-psu-during-authentication)
-  - [**What if a PISP does not provide the optional 'ChargeBearer' field?**](#what-if-a-pisp-does-not-provide-the-optional-chargebearer-field)
-  - [**Which ChargeTypes would be used for a SEPA Credit Transfer or SWIFT payment?**](#which-chargetypes-would-be-used-for-a-sepa-credit-transfer-or-swift-payment)
-  - [**Can an ASPSP provide statements to an AISPs in non-JSON file format?**](#can-an-aspsp-provide-statements-to-an-aisps-in-non-json-file-format)
-  - [**What are the implementation timelines for a newly published specification or guidelines?**](#what-are-the-implementation-timelines-for-a-newly-published-specification-or-guidelines)
-  - [**Do TPPs have to implement the Consent Dashboard?**](#do-tpps-have-to-implement-the-consent-dashboard)
-  - [**Is OBErrorResponse1/Errors/Message mandatory, and what level of detail is expected?**](#is-oberrorresponse1errorsmessage-mandatory-and-what-level-of-detail-is-expected)
-  - [**When should ASPSPs mark 'payment consent resource' as 'Rejected'?**](#when-should-aspsps-mark-payment-consent-resource-as-rejected)
-  - [**When should ASPSPs reject a Payment-Order?**](#when-should-aspsps-reject-a-payment-order)
-  - [**Can AISPs change the permission language?**](#can-aisps-change-the-permission-language)
-  - [**Is it mandatory to implement refresh_token-expires_at?**](#is-it-mandatory-to-implement-refresh_token-expires_at)
-  - [**Does an ASPSP need to delete Client related consents once TPP has deleted Client?**](#does-an-aspsp-need-to-delete-client-related-consents-once-tpp-has-deleted-client)
-  - [**Is it possible to amend or revoke a standing order SO or scheduled payment FDP?**](#is-it-possible-to-amend-or-revoke-a-standing-order-so-or-scheduled-payment-fdp)
-  - [**What types and lengths of account identification are supported?**](#what-types-and-lengths-of-account-identification-are-supported)
-  - [**Does the ASPSP always have to redirect back to the TPP?**](#does-the-aspsp-always-have-to-redirect-back-to-the-tpp)
-  - [**What message should an ASPSP return when a TPP requests permissions to an endpoint that is not implemented?**](#what-message-should-an-aspsp-return-when-a-tpp-requests-permissions-to-an-endpoint-that-is-not-implemented)
-  - [**When a TPP calls the Party or Parties endpoint, will they always receive the PartyType attribute?**](#when-a-tpp-calls-the-party-or-parties-endpoint-will-they-always-receive-the-partytype-attribute)
-  - [**Is there a list of all ASPSPs participating in the Open Banking Ecosystem?**](#is-there-a-list-of-all-aspsps-participating-in-the-open-banking-ecosystem)
-  - [**What error code should an ASPSP send back to a TPP if a wrong x-fapi-financial-id was sent in the request?**](#what-error-code-should-an-aspsp-send-back-to-a-tpp-if-a-wrong-x-fapi-financial-id-was-sent-in-the-request)
-  - [**Are File Payments supported in the Standard for both personal and business accounts?**](#are-file-payments-supported-in-the-standard-for-both-personal-and-business-accounts)
-  - [**How can we know if an ASPSP supports File Payment endpoint?**](#how-can-we-know-if-an-aspsp-supports-file-payment-endpoint)
-  - [**Can ASPSPs create their own enumeration when required?**](#can-aspsps-create-their-own-enumeration-when-required)
-  - [**Have any ASPSPs requested new values to be added to enumeration?**](#have-any-aspsps-requested-new-values-to-be-added-to-enumeration)
-  - [**Does an AISP need to display OBIE defined data clusters and permission language in the UI?**](#does-an-aisp-need-to-display-obie-defined-data-clusters-and-permission-language-in-the-ui)
-  - [**How can the ASPSP inform the AISP that access has been revoked?**](#how-can-the-aspsp-inform-the-aisp-that-access-has-been-revoked)
-  - [**What Resource URI Path Structure should be used while implementing the Read Write API Specification v3.1.2?**](#what-resource-uri-path-structure-should-be-used-while-implementing-the-read-write-api-specification-v312)
-  - [**What is the correct way of creating and passing ConsentId?**](#what-is-the-correct-way-of-creating-and-passing-consentid)
-  - [**What error should be returned if an account is in derogatory status e.g. Fraud Stop?**](#what-error-should-be-returned-if-an-account-is-in-derogatory-status-eg-fraud-stop)
-  - [**Can a PISP create consent in a previous version and a payment order resources in a newer version?**](#can-a-pisp-create-consent-in-a-previous-version-and-a-payment-order-resources-in-a-newer-version)
-  - [**Can a PISP create consent in a new version and a payment order resource using an older version?**](#can-a-pisp-create-consent-in-a-new-version-and-a-payment-order-resource-using-an-older-version)
-  - [**Which error codes should be used when a TPP submits incorrect JSON e.g. extra quotes, invalid date and time, etc?**](#which-error-codes-should-be-used-when-a-tpp-submits-incorrect-json-eg-extra-quotes-invalid-date-and-time-etc)
-  - [**Does a TPP need to return id_token_signed_response_alg if they only support code as response type?**](#does-a-tpp-need-to-return-id_token_signed_response_alg-if-they-only-support-code-as-response-type)
-  - [**What are the different types of charge bearer codes supported in single immediate domestic payment?**](#what-are-the-different-types-of-charge-bearer-codes-supported-in-single-immediate-domestic-payment)
-  - [**In the Transaction API, is the transaction amount field inclusive/exclusive of ChargeAmount?**](#in-the-transaction-api-is-the-transaction-amount-field-inclusiveexclusive-of-chargeamount)
-  - [**Does an ASPSP need to support all variants of DateTime format as per ISO 8601?**](#does-an-aspsp-need-to-support-all-variants-of-datetime-format-as-per-iso-8601)
-  - [**What if an ASPSP is not able to support functionality or an attribute in the payload. Should the ASPSP reject the request from the TPP?**](#what-if-an-aspsp-is-not-able-to-support-functionality-or-an-attribute-in-the-payload-should-the-aspsp-reject-the-request-from-the-tpp)
-  - [**How many days of transactions are allowed for credit card transactions in the transactions API aligning to the regulation?**](#how-many-days-of-transactions-are-allowed-for-credit-card-transactions-in-the-transactions-api-aligning-to-the-regulation)
-  - [**In the event subscription API, should the single event subscription be the Organisation ID or Software ID?**](#in-the-event-subscription-api-should-the-single-event-subscription-be-the-organisation-id-or-software-id)
-  - [**Should the 'offers' resource be used only for the specific account e.g. Credit Card Limit Increases as opposed to all possible offers a customer could see online e.g. a pre-approved loan offer based on their credit card payment history and credit file?**](#should-the-offers-resource-be-used-only-for-the-specific-account-eg-credit-card-limit-increases-as-opposed-to-all-possible-offers-a-customer-could-see-online-eg-a-pre-approved-loan-offer-based-on-their-credit-card-payment-history-and-credit-file)
-  - [**Should the offers endpoint be for the specific account or all possible offers a customer could see online?**](#should-the-offers-endpoint-be-for-the-specific-account-or-all-possible-offers-a-customer-could-see-online)
-  - [**For message signing, what should be the input payload for the signature e.g. HTTP body, parsed JSON, canonicalised JSON etc?**](#for-message-signing-what-should-be-the-input-payload-for-the-signature-eg-http-body-parsed-json-canonicalised-json-etc)
-  - [**Should the trust anchor in detached JWS Signatures in Sandbox be openbanking.org.uk or openbankingtest.org.uk?**](#should-the-trust-anchor-in-detached-jws-signatures-in-sandbox-be-openbankingorguk-or-openbankingtestorguk)
-  - [**Why does the OBIE standard not use standard security headers such as Content-Security-Policy, X-XSS-Protection etc ? Can an ASPSP add these headers to their responses?**](#why-does-the-obie-standard-not-use-standard-security-headers-such-as-content-security-policy-x-xss-protection-etc--can-an-aspsp-add-these-headers-to-their-responses)
-  - [**In the context of AIS, is it possible to have a longer-lived token over 90 days if only the balance is read?**](#in-the-context-of-ais-is-it-possible-to-have-a-longer-lived-token-over-90-days-if-only-the-balance-is-read)
-  - [**In the context of PIS, does the consent for payment expire if not used? Can the token expiry be set to 90 days and the token refreshed if not expired?**](#in-the-context-of-pis-does-the-consent-for-payment-expire-if-not-used-can-the-token-expiry-be-set-to-90-days-and-the-token-refreshed-if-not-expired)
-  - [**How long are transactions available via the transactions API after the bank account is closed?**](#how-long-are-transactions-available-via-the-transactions-api-after-the-bank-account-is-closed)
-  - [**Can you give a few examples to illustrate the use of InstructedAmount for an International Payment?**](#can-you-give-a-few-examples-to-illustrate-the-use-of-instructedamount-for-an-international-payment)
-  - [**Which error codes should the ASPSP use while responding back to the TPP in case of an error?**](#which-error-codes-should-the-aspsp-use-while-responding-back-to-the-tpp-in-case-of-an-error)
-  - [**Is it acceptable for an ASPSP to issue 302 redirects during the authorization code grant flow to the PSU’s user agent?**](#is-it-acceptable-for-an-aspsp-to-issue-302-redirects-during-the-authorization-code-grant-flow-to-the-psus-user-agent)
-  - [**What does each of the Balance types mean? Does an ASPSP have to provide specific balance types in its response?**](#what-does-each-of-the-balance-types-mean-does-an-aspsp-have-to-provide-specific-balance-types-in-its-response)
-- [FAPI](#fapi)
-  - [**Is it mandatory to include the `scope` claim when calling the token end-point as part of an authorization_code grant?**](#is-it-mandatory-to-include-the-scope-claim-when-calling-the-token-end-point-as-part-of-an-authorization_code-grant)
-  - [**As an ASPSP, which security certification should I request from Open ID if I see multiple types for FAPI?**](#as-an-aspsp-which-security-certification-should-i-request-from-open-id-if-i-see-multiple-types-for-fapi)
-  - [**Which scope element should the TPPs use when requesting token (grant type=authorization_code)?**](#which-scope-element-should-the-tpps-use-when-requesting-token-grant-typeauthorization_code)
-  - [**What should the ASPSP do if the TPP omits the scope parameter when requesting authorization?**](#what-should-the-aspsp-do-if-the-tpp-omits-the-scope-parameter-when-requesting-authorization)
-  - [**Is it compliant for a PSU to be redirected within a redirect in a redirect/hybrid grant?**](#is-it-compliant-for-a-psu-to-be-redirected-within-a-redirect-in-a-redirecthybrid-grant)
-  - [**Can refresh token be issued without an HoK mechanism to avoid impacts on member and would it be in compliance with FAPI?**](#can-refresh-token-be-issued-without-an-hok-mechanism-to-avoid-impacts-on-member-and-would-it-be-in-compliance-with-fapi)
-  - [**CIf a refresh token is issued with MTLS HoK, would it force the PSU to re-authenticate? Would this be an acceptable user Journey?**](#cif-a-refresh-token-is-issued-with-mtls-hok-would-it-force-the-psu-to-re-authenticate-would-this-be-an-acceptable-user-journey)
-  - [**Is it acceptable for an ASPSP to have multiple authorization servers? How should these be discoverable?**](#is-it-acceptable-for-an-aspsp-to-have-multiple-authorization-servers-how-should-these-be-discoverable)
-    - [OIDC Discovery](#oidc-discovery)
-    - [Issues noted in the ecosystem](#issues-noted-in-the-ecosystem)
-
-<!-- /TOC -->
-
-
-- [**What is the Read/Write API Specification?**](#what-is-the-readwrite-api-specification)
-- [**Where can I find the latest version of API specifications?**](#where-can-i-find-the-latest-version-of-api-specifications)
-- [**Where can I find the timings for Implementing Open Banking Roadmap?**](#where-can-i-find-the-timings-for-implementing-open-banking-roadmap)
-- [**Are there any known issues in the latest version of Specifications?**](#are-there-any-known-issues-in-the-latest-version-of-specifications)
-- [**Where can I find the latest version of Swagger Specifications?**](#where-can-i-find-the-latest-version-of-swagger-specifications)
-- [**What APIs can an AISP access?**](#what-apis-can-an-aisp-access)
-- [**What APIs can an CBPII access?**](#what-apis-can-an-cbpii-access)
-- [**How can the ASPSP inform the AISP that access has been revoked?**](#how-can-the-aspsp-inform-the-aisp-that-access-has-been-revoked)
-- [**What APIs can an PISP access?**](#what-apis-can-an-pisp-access)
-- [**Which payment-order types are supported by the PIS API?**](#which-payment-order-types-are-supported-by-the-pis-api)
-- [**Are there different signing policies for Event Notifications?**](#are-there-different-signing-policies-for-event-notifications)
-- [**What is the Event Notification API?**](#what-is-the-event-notification-api)
-- [**How can a TPP register with the ASPSP to receive event notifications?**](#how-can-a-tpp-register-with-the-aspsp-to-receive-event-notifications)
-- [**How can a TPP register with the ASPSP to receive event notifications?**](#how-can-a-tpp-register-with-the-aspsp-to-receive-event-notifications-1)
-- [**Are there separate swagger specifications for Real-time (push) notifications and aggregated polling?**](#are-there-separate-swagger-specifications-for-real-time-push-notifications-and-aggregated-polling)
-- [**How should my redirect URIs be encoded?**](#how-should-my-redirect-uris-be-encoded)
-- [**What length of URIs should be allowed for redirect**](#what-length-of-uris-should-be-allowed-for-redirect)
-- [**What do we refer to as mandatory GET endpoints?**](#what-do-we-refer-to-as-mandatory-get-endpoints)
-- [**How can ASPSPs provide relevant charges to a PISP?**](#how-can-aspsps-provide-relevant-charges-to-a-pisp)
-- [**Can a PISP display an ASPSP's charges to the PSU?**](#can-a-pisp-display-an-aspsps-charges-to-the-psu)
-- [**Can an ASPSP display their charges to the PSU during authentication?**](#can-an-aspsp-display-their-charges-to-the-psu-during-authentication)
-- [**What if a PISP does not provide the optional 'ChargeBearer' field?**](#what-if-a-pisp-does-not-provide-the-optional-chargebearer-field)
-- [**Which ChargeTypes would be used for a SEPA Credit Transfer or SWIFT payment?**](#which-chargetypes-would-be-used-for-a-sepa-credit-transfer-or-swift-payment)
-- [**Can an ASPSP provide statements to an AISPs in non-JSON file format?**](#can-an-aspsp-provide-statements-to-an-aisps-in-non-json-file-format)
-- [**What are the implementation timelines for a newly published specification or guidelines?**](#what-are-the-implementation-timelines-for-a-newly-published-specification-or-guidelines)
-- [**Do TPPs have to implement the Consent Dashboard?**](#do-tpps-have-to-implement-the-consent-dashboard)
-- [**Is OBErrorResponse1/Errors/Message mandatory, and what level of detail is expected?**](#is-oberrorresponse1errorsmessage-mandatory-and-what-level-of-detail-is-expected)
-- [**When should ASPSPs mark 'payment consent resource' as 'Rejected'?**](#when-should-aspsps-mark-payment-consent-resource-as-rejected)
-- [**When should ASPSPs reject a Payment-Order?**](#when-should-aspsps-reject-a-payment-order)
-- [**Can AISPs change the permission language?**](#can-aisps-change-the-permission-language)
-- [**Is it mandatory to implement refresh_token-expires_at?**](#is-it-mandatory-to-implement-refresh_token-expires_at)
-- [**Does an ASPSP need to delete Client related consents once TPP has deleted Client?**](#does-an-aspsp-need-to-delete-client-related-consents-once-tpp-has-deleted-client)
-- [**Is it possible to amend or revoke a standing order (SO) or scheduled payment (FDP)?**](#is-it-possible-to-amend-or-revoke-a-standing-order-so-or-scheduled-payment-fdp)
-- [**What types and lengths of account identification are supported?**](#what-types-and-lengths-of-account-identification-are-supported)
-- [**Does the ASPSP always have to redirect back to the TPP?**](#does-the-aspsp-always-have-to-redirect-back-to-the-tpp)
-- [**What message should an ASPSP return when a TPP requests permissions to an endpoint that is not implemented?**](#what-message-should-an-aspsp-return-when-a-tpp-requests-permissions-to-an-endpoint-that-is-not-implemented)
-- [**When a TPP calls the Party or Parties endpoint, will they always receive the PartyType attribute?**](#when-a-tpp-calls-the-party-or-parties-endpoint-will-they-always-receive-the-partytype-attribute)
-- [**Is there a list of all ASPSPs participating in the Open Banking Ecosystem?**](#is-there-a-list-of-all-aspsps-participating-in-the-open-banking-ecosystem)
-- [**What error code should an ASPSP send back to a TPP if a wrong x-fapi-financial-id was sent in the request?**](#what-error-code-should-an-aspsp-send-back-to-a-tpp-if-a-wrong-x-fapi-financial-id-was-sent-in-the-request)
-- [**Are File Payments supported in the Standard for both personal and business accounts?**](#are-file-payments-supported-in-the-standard-for-both-personal-and-business-accounts)
-- [**How can we know if an ASPSP supports File Payment endpoint?**](#how-can-we-know-if-an-aspsp-supports-file-payment-endpoint)
-- [**Can ASPSPs create their own enumeration when required?**](#can-aspsps-create-their-own-enumeration-when-required)
-- [**Have any ASPSPs requested new values to be added to enumeration?**](#have-any-aspsps-requested-new-values-to-be-added-to-enumeration)
-- [**Does an AISP need to display OBIE defined data clusters and permission language in the UI?**](#does-an-aisp-need-to-display-obie-defined-data-clusters-and-permission-language-in-the-ui)
-- [**How can the ASPSP inform the AISP that access has been revoked?**](#how-can-the-aspsp-inform-the-aisp-that-access-has-been-revoked-1)
-- [**What Resource URI Path Structure should be used while implementing the Read Write API Specification v3.1.2?**](#what-resource-uri-path-structure-should-be-used-while-implementing-the-read-write-api-specification-v312)
-- [**What is the correct way of creating and passing ConsentId?**](#what-is-the-correct-way-of-creating-and-passing-consentid)
-- [**What error should be returned if an account is in derogatory status (e.g. Fraud Stop)?**](#what-error-should-be-returned-if-an-account-is-in-derogatory-status-eg-fraud-stop)
-- [**Can a PISP create consent in a previous version and a payment order resources in a newer version?**](#can-a-pisp-create-consent-in-a-previous-version-and-a-payment-order-resources-in-a-newer-version)
-- [**Can a PISP create consent in a new version and a payment order resource using an older version?**](#can-a-pisp-create-consent-in-a-new-version-and-a-payment-order-resource-using-an-older-version)
-- [**Which error codes should be used when a TPP submits incorrect JSON (e.g. extra quotes, invalid date and time, etc)?**](#which-error-codes-should-be-used-when-a-tpp-submits-incorrect-json-eg-extra-quotes-invalid-date-and-time-etc)
-- [**Does a TPP need to return id_token_signed_response_alg if they only support code as response type?**](#does-a-tpp-need-to-return-id_token_signed_response_alg-if-they-only-support-code-as-response-type)
-- [**What are the different types of charge bearer codes supported in single immediate (domestic) payment?**](#what-are-the-different-types-of-charge-bearer-codes-supported-in-single-immediate-domestic-payment)
-- [**In the Transaction API, is the transaction amount field inclusive/exclusive of ChargeAmount?**](#in-the-transaction-api-is-the-transaction-amount-field-inclusiveexclusive-of-chargeamount)
-- [**Does an ASPSP need to support all variants of DateTime format as per ISO 8601?**](#does-an-aspsp-need-to-support-all-variants-of-datetime-format-as-per-iso-8601)
-- [**What if an ASPSP is not able to support functionality or an attribute in the payload. Should the ASPSP reject the request from the TPP?**](#what-if-an-aspsp-is-not-able-to-support-functionality-or-an-attribute-in-the-payload-should-the-aspsp-reject-the-request-from-the-tpp)
-- [**How many days of transactions are allowed for credit card transactions in the transactions API aligning to the regulation?**](#how-many-days-of-transactions-are-allowed-for-credit-card-transactions-in-the-transactions-api-aligning-to-the-regulation)
-- [**In the event subscription API, should the single event subscription be the Organisation ID or Software ID?**](#in-the-event-subscription-api-should-the-single-event-subscription-be-the-organisation-id-or-software-id)
-- [**Should the 'offers' resource be used only for the specific account (e.g. Credit Card Limit Increases) as opposed to all possible offers a customer could see online (e.g. a pre-approved loan offer based on their credit card payment history and credit file)?**](#should-the-offers-resource-be-used-only-for-the-specific-account-eg-credit-card-limit-increases-as-opposed-to-all-possible-offers-a-customer-could-see-online-eg-a-pre-approved-loan-offer-based-on-their-credit-card-payment-history-and-credit-file)
-- [**Should the offers endpoint be for the specific account or all possible offers a customer could see online?**](#should-the-offers-endpoint-be-for-the-specific-account-or-all-possible-offers-a-customer-could-see-online)
-- [FAPI](#fapi)
-- [**Is it mandatory to include the 'scope' claim when calling the token end-point as part of an authorization_code grant?**](#is-it-mandatory-to-include-the-scope-claim-when-calling-the-token-end-point-as-part-of-an-authorization_code-grant)
-- [**As an ASPSP, which security certification should I request from Open ID if I see multiple types for FAPI?**](#as-an-aspsp-which-security-certification-should-i-request-from-open-id-if-i-see-multiple-types-for-fapi)
-- [**Which scope element should the TPPs use when requesting token (grant type=authorization_code)?**](#which-scope-element-should-the-tpps-use-when-requesting-token-grant-typeauthorization_code)
-- [**What should the ASPSP do if the TPP omits the scope parameter when requesting authorization?**](#what-should-the-aspsp-do-if-the-tpp-omits-the-scope-parameter-when-requesting-authorization)
-- [**In the context of AIS, is it possible to have a longer-lived token over 90 days if only the balance is read?**](#in-the-context-of-ais-is-it-possible-to-have-a-longer-lived-token-over-90-days-if-only-the-balance-is-read)
-- [**In the context of PIS, does the consent for payment expire if not used? Can the token expiry be set to 90 days and the token refreshed if not expired?**](#in-the-context-of-pis-does-the-consent-for-payment-expire-if-not-used-can-the-token-expiry-be-set-to-90-days-and-the-token-refreshed-if-not-expired)
+[[toc]]
 
 ### **What is the Read/Write API Specification?**
 
@@ -615,7 +462,7 @@ This will be dependant on whether and to what extent this information is availab
 ### **Can you give a few examples to illustrate the use of `InstructedAmount` for an International Payment?**
 
 | Scenario                                                             | Debit Account denomination | Currency of Transfer | /InstructedAmount/Currency |
-| -------------------------------------------------------------------- | -------------------------- | -------------------- | -------------------------- |
+|----------------------------------------------------------------------|----------------------------|----------------------|----------------------------|
 | Instruction that creditor should receive 100 EUR                     | GBP                        | EUR                  | EUR                        |
 | Instruction that creditor should receive EUR equivalent of 100 GBP   | GBP                        | EUR                  | GBP                        |
 | Transfer 100 GBP to GBP denominated account held in another country. | GBP                        | GBP                  | GBP                        |
@@ -645,6 +492,58 @@ Practically, some browsers will cause issues with a TOO_MANY_REDIRECTS error - b
 The enumeration for the Balance Type field is based on the ISO 20022 definition for the field. When we base data structures on an underlying standard, we do not generally provide additional descriptions on the usage, unless there is an OBIE specific deviation.
 
 The ASPSPs are free to determine which balance types they should publish. The general expectation is that an ASPSP should provide the same information through its APIs as it does through its online channels. In situations where the more than one Balance Type could be used to describe the balance provided by the ASPSP, it is for the ASPSP to determine the appropriate type to be used.
+
+#### **As an ASPSP, do we need to support a specific file type for File Payments?**
+
+ASPSPs need to provide the ability for PISPs to initiate the same payment types, which can be initiated by the PSU on their online channels. The ASPSPs can define their own namespaced enumeration https://openbankinguk.github.io/read-write-api-site3/v3.1.6/profiles/read-write-data-api-profile.html#enumerations to list their custom file types.
+
+#### **As a TPP, do we need to support a specific file type for File Payments at an ASPSP?**
+
+Each ASPSPs will have their own existing legacy and proprietary file formats which enables the PSU to upload on the ASPSPs existing channels. The same should be made available via PISP.
+
+#### **Can you explain what is included in `InterimAvailable` balance type for credit cards?**
+
+As per ISO definition, `Available balance calculated in the course of the account servicer's business day, at the time specified, and subject to further changes during the business day. The interim balance is calculated on the basis of booked credit and debit items during the calculation time/period specified.`
+
+For e.g.: A credit card that has 30 GBP worth of transactions and a 100 GBP credit limit.
+
+`InterimBooked` balance would be 30 GBP Dr.
+
+`InterimAvailable` balance would be 70 GBP Cr (with a CreditLine.included = true and value of 100 GBP).
+
+We would suggest you refer to https://www.iso20022.org/standardsrepository/type/BalanceType10Code for more definitions on the different balance types.
+
+#### **When a payment is refunded, what should be the captured in the `Creditor` and `Agent` fields of the `Refund` block?**
+
+The `Refund` block must contain the refund account details of the party being refunded.
+
+For eg: If Mr X has made a purchase using ASPSP1 Bank and needs to be refunded then,
+
+Refund.Creditor = Mr X.
+
+Refund.Agent= ASPSP1 details.
+
+Refund.Account= Mr X account details that were used to make the purchase originally.
+
+#### **Are any of these attributes available for Credit Cards & Overdraft information?**
+
+1. Interest Rates (APRs) for Credit Cards and Overdraft.
+
+2. Balance subject to Purchase APR on credit cards. (so we can separate out balance transfers at 0%)
+
+3. Bill Due Date for Credit Cards.
+
+4. The minimum payment amount for Credit Cards.
+
+The R/W specification enables ASPSPs to provide this information (as per the endpoints) outlined below, however, it is up to the individual ASPSP to determine whether to populate this based on their relevant regulatory considerations: 
+
+1. Interest Rates (APRs) for Credit Cards and Overdraft-  Provided in `Products` endpoint.
+
+2. Balance subject to Purchase APR on credit cards. (so we can separate out balance transfers at 0%) - `StatementInterest` on the `statements` end-point.
+
+3. Bill Due Date for Credit Cards - `StatementDateTime` on `statements` end-point.
+
+4. The minimum payment amount for Credit Cards - `StatementAmount` on `statements` endpoint.
 
 ## FAPI
 
@@ -696,6 +595,16 @@ If using `tls_client_auth`, the certificate is validated by comparing with tls_c
 ASPSPs may have multiple AS and RS (e.g. to serve different brands and products). However, for ASPSPs that use the OBIE directory, these must be discoverable through the directory.
 
 Furthermore, the use of additional authorization servers should not result in invalid or incorrectly formed OIDC discovery documents.
+
+### **Is there any guidance on how long in advance of being FAPI complaint ASPSPs should send out notice?** 
+
+SCA - RTS, Article 30(4) contemplates that ASPSPs must give TPPs a minimum of three months’ notice of any change to the technical specification of their interface change except for emergency situations.
+
+For more details refer to https://standards.openbanking.org.uk/operational-guidelines/change-and-communication-management/changes-to-an-aspsps-infrastructure-configuration-or-software/latest/.
+
+### **As a TPP, when going through an authorization code grant, is the request object required even if I am not using a hybrid flow?**
+
+An ASPSP that is compliant with FAPI will require the use of a signed request object. This is a FAPI requirement.
 
 #### OIDC Discovery
 

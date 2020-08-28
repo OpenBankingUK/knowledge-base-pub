@@ -1,28 +1,4 @@
-<!-- TOC -->
-
-- [**Where can I find the latest version of the Dynamic Client Registration?**](#where-can-i-find-the-latest-version-of-the-dynamic-client-registration)
-- [**What is Dynamic Client Registration?**](#what-is-dynamic-client-registration)
-- [**Is it mandatory for an ASPSP to implement all the operations (POST, PUT, GET, DELETE) specified in DCR?**](#is-it-mandatory-for-an-aspsp-to-implement-all-the-operations-post-put-get-delete-specified-in-dcr)
-- [**Does the DCR specification support ASPSPs who do not accept OBIE issued SSAs?**](#does-the-dcr-specification-support-aspsps-who-do-not-accept-obie-issued-ssas)
-- [**Can an ASPSP register a TPP client using different parameters than specified?**](#can-an-aspsp-register-a-tpp-client-using-different-parameters-than-specified)
-- [**How does a TPP identify the authentication methods, grant types and algorithms that an ASPSP supports?**](#how-does-a-tpp-identify-the-authentication-methods-grant-types-and-algorithms-that-an-aspsp-supports)
-- [**For DCR, is there an expiry on the SSA request made by the TPP?**](#for-dcr-is-there-an-expiry-on-the-ssa-request-made-by-the-tpp)
-- [**Should TPPs accept only the FAPI compliant claim values in the client registration request for DCR?**](#should-tpps-accept-only-the-fapi-compliant-claim-values-in-the-client-registration-request-for-dcr)
-- [**What is the expected `content-type` for a Dynamic Client Registration request?**](#what-is-the-expected-content-type-for-a-dynamic-client-registration-request)
-- [**Why is the `aud` field of a different length from the other fields with a UUIDv4?**](#why-is-the-aud-field-of-a-different-length-from-the-other-fields-with-a-uuidv4)
-
-<!-- /TOC -->
-
-- [**Where can I find the latest version of the Dynamic Client Registration?**](#where-can-i-find-the-latest-version-of-the-dynamic-client-registration)
-- [**What is Dynamic Client Registration?**](#what-is-dynamic-client-registration)
-- [**Is it mandatory for an ASPSP to implement all the operations (POST, PUT, GET, DELETE) specified in DCR?**](#is-it-mandatory-for-an-aspsp-to-implement-all-the-operations-post-put-get-delete-specified-in-dcr)
-- [**Does the DCR specification support ASPSPs who do not accept OBIE issued SSAs?**](#does-the-dcr-specification-support-aspsps-who-do-not-accept-obie-issued-ssas)
-- [**Can an ASPSP register a TPP client using different parameters than specified?**](#can-an-aspsp-register-a-tpp-client-using-different-parameters-than-specified)
-- [**How does a TPP identify the authentication methods, grant types and algorithms that an ASPSP supports?**](#how-does-a-tpp-identify-the-authentication-methods-grant-types-and-algorithms-that-an-aspsp-supports)
-- [**For DCR, is there an expiry on the SSA request made by the TPP?**](#for-dcr-is-there-an-expiry-on-the-ssa-request-made-by-the-tpp)
-- [**Should TPPs accept only the FAPI compliant claim values in the client registration request for DCR?**](#should-tpps-accept-only-the-fapi-compliant-claim-values-in-the-client-registration-request-for-dcr)
-- [**What is the expected `content-type` for a Dynamic Client Registration request?**](#what-is-the-expected-content-type-for-a-dynamic-client-registration-request)
-- [**Why is the `aud` field of a different length from the other fields with a UUIDv4?**](#why-is-the-aud-field-of-a-different-length-from-the-other-fields-with-a-uuidv4)
+[[toc]]
 
 
 ### **Where can I find the latest version of the Dynamic Client Registration?**
@@ -72,3 +48,10 @@ An ASPSP may accept either or both `content-type` headers. They should provide c
 When using OBIE issued SSA, the `aud` field is the value provided by OBIE directory and is 18 characters long.
 
 The field size is limited to that size to accommodate the FPS requirement to send information in Field 122 related to the software statement id and organization id.
+
+### **In DCR v3.3, is it is mandatory to send `iss`, `iat`, `exp`, `aud` and `jti` claims as part of the DCR "response"?**
+
+Refer to the table in this section <a href="
+https://openbankinguk.github.io/dcr-docs-pub/v3.3/dynamic-client-registration.html#data-dictionary
+" class="external-link" rel="nofollow">DCR v3.3 - Data Dictionary</a>. The column Location specifies whether the field should be included in requests, responses or both. 
+
