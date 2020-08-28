@@ -1,15 +1,6 @@
 ## Message Signing FAQs
-<!-- TOC -->
 
-- [Message Signing FAQs](#message-signing-faqs)
-  - [**Are there different versions for message signing? As a TPP, which version should I be using?**](#are-there-different-versions-for-message-signing-as-a-tpp-which-version-should-i-be-using)
-  - [**What are the key differences between each of these versions?**](#what-are-the-key-differences-between-each-of-these-versions)
-  - [**What should be the `iss` when using an EIDAS certificate?**](#what-should-be-the-iss-when-using-an-eidas-certificate)
-  - [**What is the `tan` value for Directory Sandbox?**](#what-is-the-tan-value-for-directory-sandbox)
-  - [**Which API requests and responses should be signed?**](#which-api-requests-and-responses-should-be-signed)
-  - [**When signing an HTTP payload, should the input be the “raw” HTTP payload or a parsed and cleansed JSON object?**](#when-signing-an-http-payload-should-the-input-be-the-raw-http-payload-or-a-parsed-and-cleansed-json-object)
-
-<!-- /TOC -->
+[[toc]]
 
 ### **Are there different versions for message signing? As a TPP, which version should I be using?**
 There are primarily three versions of message signing in the OBIE specifications:
@@ -38,9 +29,9 @@ The structure of the `iss` field is defined by the trust anchor.
 
 1. If the certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor (as indicated by the tan value equal to `openbanking.org.uk`)
 
-    a. When issued by a TPP, `iss` has the form `{{orgi-id}}/{{software-statement-id}}`,
+    a. When issued by a TPP, `iss` has the form <span v-pre>`{{orgi-id}}/{{software-statement-id}}`</span>,
 
-   b. When issued by an ASPSP, `iss` has the form `{{org-id}}`
+   b. When issued by an ASPSP, `iss` has the form <span v-pre>`{{org-id}}`</span>
 
 2. If the certificate is lodged with another trust anchor, the trust anchor should specify the expected iss values that would identify the issuer of the signature.
 
@@ -48,9 +39,9 @@ The structure of the `iss` field is defined by the trust anchor.
 
 The specification does not state how a signature of the last type should be verified by the ASPSP. The ASPSP may have additional requirements for ensuring that the public key is securely transmitted and for the durability of the key.
 
-When a TPP EIDAS certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor, `iss` has the form `{{orgi-id}}/{{software-statement-id}}`.
+When a TPP EIDAS certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor, `iss` has the form <span v-pre>`{{orgi-id}}/{{software-statement-id}}`</span>.
 
-When an ASPSP EIDAS certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor, `iss` has the form `{{orgi-id}}`.
+When an ASPSP EIDAS certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor, `iss` has the form <span v-pre>`{{orgi-id}}`</span>.
 
 
 ### **What is the `tan` value for Directory Sandbox?**
