@@ -545,6 +545,54 @@ The R/W specification enables ASPSPs to provide this information (as per the end
 
 4. The minimum payment amount for Credit Cards - `StatementAmount` on `statements` endpoint.
 
+### **How do we know whether ASPSP supports PAIN file format for file/bulk payments?**
+
+ASPSPs are expected to make documentation available of the file formats & fields they support on their developer portals for the TPPs for any given implementation of the specification.
+
+It is not considered mandatory for ASPSPs to implement this format.
+
+### **What would be the appropriate `ErrorCode` in case the request contains a malformed body, e.g. incorrect JSON?**
+
+The closest would be `UK.OBIE.Field.Invalid` 
+
+If the JSON could be parsed, but some fields could not be validated, the error message should include the field (or if possible, fields) that were invalid.
+
+### **For the hybrid/authorization code grant, can you please provide a more complete list of the scenarios in which an ASPSP should not redirect back to the TPP, but should display an error page instead ?**
+
+The question arises from the following statement in the CEG:
+
+>The authorisation request may be malformed when submitted by the TPP. For >example, it may include an invalid redirection URL, invalid parameters, invalid signature on the request object etc. OAuth2 and OIDC define a whole list of potential errors. These are abnormal situations which indicate a significant technical issue at the TPP’s end or even an attacker trying to act as a TPP. For safety (and as per the standards) the ASPSP must not redirect the PSU back to the TPP in such situations. The ASPSP must display an error message and stop the execution at this point. It is at the ASPSPs’ discretion to display to the PSU the message they find most appropriate for this error case, however an error message must be displayed. In this situation, TPPs do not receive a response back from the ASPSPs about the malformed authorisation request. Therefore, TPPs are not able to display any message to the PSU in this situation.
+
+We would like to clarify that the CEG does not suggest that ASPSPs implement behaviour that is contrary to OAuth2, OIDC or FAPI.
+
+At the core of this requirement, is the statement in OAuth2 - https://tools.ietf.org/html/rfc6749#section-4.1.2.1
+
+>If the request fails due to a missing, invalid, or mismatching redirection URI, or if the client identifier is missing or invalid,  the authorization server SHOULD inform the resource owner of the error and MUST NOT automatically redirect the user-agent to the invalid redirection URI.
+
+In addition to that, ASPSPs may rely on OAuth Security BCP, https://tools.ietf.org/html/draft-ietf-oauth-security-topics-15#section-4.9.2 :
+
+>Based on its risk assessment, the ASPSP  needs to decide whether it can trust the redirect URI and SHOULD only automatically redirect the user agent if it trusts the redirect URI. If the URI is not trusted, the AS MAY inform the user and rely on the user to make the correct decision.
+
+Each ASPSP must reach its own reasoned decision. It may consider, for example, whether a missing, malformed or incorrectly signed request should be considered as a risky request.
+
+
+## Rate Limiting
+
+### **Can the ASPSPs implement rate-limiting?**
+
+While rate-limiting is supported by the specifications, ASPSPs will need to consider the factors below in line with relevant regulatory consideration when making a decision on an appropriate limit:
+
+* rate limiting is conducted in a manner that reasonable, non-discriminatory and not an obstacle to the TPPs.
+
+* provides at least the same level of availability/performance as existing PSU interfaces.
+
+* do not apply any measures to induce TPPs to adopt a new version of the APIs where rate limit is applied to an older version and better performance is provided on a newer version.
+
+ASPSPs must make documentation available to TPPs (e.g. on their developer portals) and clearly publish rate limits for each version.
+
+ASPSPs should respond with `429 - Too many requests` status code if they rate limit requests from TPPs (as specified here - https://openbankinguk.github.io/read-write-api-site3/v3.1.6/profiles/read-write-data-api-profile.html#http-status-codes)
+
+
 ## FAPI
 
 ### **Is it mandatory to include the `scope` claim when calling the token end-point as part of an authorization_code grant?**
