@@ -55,3 +55,8 @@ Refer to the table in this section <a href="
 https://openbankinguk.github.io/dcr-docs-pub/v3.3/dynamic-client-registration.html#data-dictionary
 " class="external-link" rel="nofollow">DCR v3.3 - Data Dictionary</a>. The column Location specifies whether the field should be included in requests, responses or both. 
 
+### **Does a TPP have to register all their redirect URIs with each bank? How should a TPP handle redirect URIs to direct to a merchant website instead of their website?** 
+
+It is necessary to register the redirect URI with each ASPSP.
+
+If the TPP wants to carry out redirects to a site not owned by the TPP, the TPP would still need to register the redirect URI with the OBIE directory. They would subsequently need to update their client registrations (using DCR PUT requests if supported) with each ASPSP.

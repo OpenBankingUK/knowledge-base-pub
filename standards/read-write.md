@@ -592,6 +592,27 @@ ASPSPs must make documentation available to TPPs (e.g. on their developer portal
 
 ASPSPs should respond with `429 - Too many requests` status code if they rate limit requests from TPPs (as specified here - https://openbankinguk.github.io/read-write-api-site3/v3.1.6/profiles/read-write-data-api-profile.html#http-status-codes)
 
+### **What is the expected response when an AISP tries to access AIS endpoints for a closed or switched account?**
+
+The standards define the behaviour that is expected <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.6/profiles/read-write-data-api-profile.html#_400-bad-request-v-s-404-not-found" class="external-link" rel="nofollow">here</a>.
+
+From Version 3.1.6, the ASPSPs may also return a flag to indicate the account’s switch status as part of the response to the accounts end-point.
+
+If a PSU has consented to multiple accounts and then closes one or more, but not all of the accounts in the consent, the ASPSP should allow continued access to the remaining accounts.
+
+### **As an ASPSP can we revoke access to TPPs following an account switch/closure? Does this conflict with the requirement of v3.1.6 to provide CASS status back to TPP?**
+
+It is up to each ASPSP to determine a suitable approach in relation to how to treat active AISP access to a closed account, taking into consideration the applicable regulatory requirements.  They should be viewed as separate to the requirement to provide a CASS status message back to the AISP.  
+
+### **What should be the ASPSPs response, when the AIS tries to access a PSU’s account that is switched out to another ASPSP and the ASPSP is not able to provide the switching status as it may not be available?**
+
+In this instance, it is recommended that ASPSPs consider the creation of their own namespaced enumeration and return that.
+
+### **Should `AccountId` be unique and immutable?**
+
+Yes, `AccountId` is a unique and immutable identifier used to identify the account resource.
+
+The value should be immutable across time - not just immutable for a given consent.
 
 ## FAPI
 
