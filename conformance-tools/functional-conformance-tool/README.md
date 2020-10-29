@@ -1,3 +1,5 @@
+[[toc]]
+=======
 # Functional Conformance Tool <!-- omit in toc -->
 - [**How to I validate and trust the Conformance Tool image I'm downloading?**](#how-to-i-validate-and-trust-the-conformance-tool-image-im-downloading)
 - [**What is the High-level overview of the Conformance Tool and Dynamic Client Registration Roadmap for 2019/2020?**](#what-is-the-high-level-overview-of-the-conformance-tool-and-dynamic-client-registration-roadmap-for-20192020)
@@ -45,3 +47,34 @@ No. An ASPSP may reject the request if any response type is not supported.
 ### **What does a ‘certificate signed by unknown authority’ error mean?**
 
 Both the DCR and Functional Conformance tools run in docker containers. Each container has a list of trusted certificate authorities installed into them when they are built. "certificate signed by unknown authority" means that the certificate authority used to sign the certificate being used to secure a connection isn't in the list of trusted certificate authorities installed in the docker container.
+
+### **I want to run the functional conformance test suite. Is it an automated process?** 
+
+Yes, the Functional Conformance test Suite tool automates the tests, but you will still need to access the tests on the web page to start them. 
+
+The conformance tool goes through the process of executing multiple tests in an automated manner. However, during the execution of these tests, some human intervention may be required (e.g. to authorise consents). In the absence of a standard to provide a “headless authentication” to avoid such steps, complete automation is not realistically possible.
+
+This is an area which we are looking to improve functionality such that the tool can be used in a fully automated manner. If you're interested in this area, please get in touch with the conformance tool team to discuss your requirement.
+
+### **When I run the conformance tool, I get a 500 error - 'Failed to Check for Updates'. What does that mean?**
+
+When the conformance tool is run, it checks to see if you're running the latest version by connecting to the host api.bitbucket.org. If this host is not accessible because of local network restrictions, you'll receive a 'Failed to Check for Updates, Got 500 Error'. The error doesn't prevent the suite from running. 
+Executing the command: docker run --rm -it -p 8443:8443 "openbanking/conformance-suite:latest" will ensure that you are running with the latest version of the tool.
+
+
+### **Does the conformance tool support EIDAS certificate?**
+
+Yes, when using EIDAS certificates with the conformance tool, the user must enter the issuer string for payments and the signing key-id into the configuration screen. This allows the tool to create signed payment requests using EIDAS certificates.
+
+### **Can you explain the different Token endpoint authentication methods? And they preferred & secure method.**
+
+`client_secret_post` is seen as a weak authentication method, as the client secret is contained in the body of the request and it relies on a shared secret.
+
+The `client_secret_basic` is currently the most widely supported method, but this is one of the weaker auth methods, as the secret is contained in the request header and continues to rely on a shared secret.
+
+Neither of these two methods is FAPI compliant.
+
+We would recommend the two more preferred and secure methods in `tls_client_auth` and `private_key_jwt`, especially as they are FAPI compliant.
+
+It is also worth noting that the OB functional conformance tool supports `client_secret_basic`, `tls_client_auth` and `private_key_jwt`. It does not support `client_secret_post`.
+

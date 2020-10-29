@@ -1,13 +1,5 @@
 
-<!-- TOC -->
-
-- [**What is meant by Online/Mobile Banking in MI reporting 3.1.2 specification?**](#what-is-meant-by-onlinemobile-banking-in-mi-reporting-312-specification)
-- [**Which reporting template should ASPSPs use to report MI to FCA?**](#which-reporting-template-should-aspsps-use-to-report-mi-to-fca)
-- [**Is the FCA reporting template same as the OBL MI reporting template?**](#is-the-fca-reporting-template-same-as-the-obl-mi-reporting-template)
-- [**While reporting to FCA using the reporting template, should the ASPSP publish statistics for both website and mobile app separately?**](#while-reporting-to-fca-using-the-reporting-template-should-the-aspsp-publish-statistics-for-both-website-and-mobile-app-separately)
-
-<!-- /TOC -->
-<!-- TOC -->
+[[toc]]
 
 ### **What is meant by Online/Mobile Banking in MI reporting 3.1.2 specification?**
 
@@ -36,3 +28,28 @@ There are two important issues to note in this context:
 
 2. **FCA Reporting:** When submitting quarterly reports to the FCA, the report comprises of a baseline of the information published on the ASPSP website, with a breakdown which provides more granular details the specified parameters of individual endpoints. 
 
+### **What version value should be used to report endpoint no 0 - OIDC endpoint or endpoint 92 - Generated OIDC Authorisation code (virtual endpoint) as they are virtual endpoints?**
+
+The OIDC endpoints do not follow the same versioning as the rest of the API endpoints, so the version value should be the same as the version implemented for the AIS, PIS and CBPII services endpoints.
+
+Example: If v3.1.5 is implemented then the reporting value for the endpoints should be v3.1.5.
+
+### **Does the 90-Days Re-authentication reporting metrics intend only to report delegated re-auth by the AISP?**
+
+Yes, the reporting table is created for reporting 90 days re-authentication only when the delegated re-auth proposition has been implemented.
+
+### **Is there a separate metrics to report 90-days re-authentication done at the ASPSP?**
+
+Not until v3.1.5 of the MI. This will be reviewed and added in the next version release.
+
+### **Does Section 3.4-B PSU Consent Adoption (OBIE) of v3.1.5 fo MI Data dictionary refer to ‘consent’ or ‘access’ from an ASPSP reporting perspective?**
+
+These are stated with PSU in mind (PSU perspective) and thus use of the word “consent” to indicate ‘consent’ given to the TPP by the PSU, which underpins the access at the ASPSP. However, this is ASPSP reporting and hence the section requires reporting access data statistics.
+
+### **What counts as a long-lived AIS consent? After how long?**
+
+From a technical perspective, consents that have an expiry of less or equal to 15 days are considered One-offs consents and beyond that are long-lived.
+
+### **Why is the implementation status ‘N/A’ for Authorisation code endpoint?**
+
+The Authorization Code endpoint is not a real OIDC endpoint, but it is simply an entry (a virtual endpoint) to be used for measuring the time period (Td) of the authorisation code generation by ASPSPs and hence the implementation status column is N/A.
