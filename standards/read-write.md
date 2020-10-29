@@ -1,3 +1,4 @@
+
 [[toc]]
 
 ### **What is the Read/Write API Specification?**
@@ -725,4 +726,3 @@ A checklist for correct implementations:
 6. If the ASPSP has multiple authorization servers, each authorization server must be discoverable through a separate discovery document. Each discovery document must meet the criteria above.
 
 7. ASPSPs that use the OBIE directory should register each authorization server on the OBIE directory with its corresponding discovery end-point.
-

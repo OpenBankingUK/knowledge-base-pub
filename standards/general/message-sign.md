@@ -2,6 +2,7 @@
 
 [[toc]]
 
+
 ### **Are there different versions for message signing? As a TPP, which version should I be using?**
 There are primarily three versions of message signing in the OBIE specifications:
 
@@ -42,6 +43,7 @@ The specification does not state how a signature of the last type should be veri
 When a TPP EIDAS certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor, `iss` has the form <span v-pre>`{{orgi-id}}/{{software-statement-id}}`</span>.
 
 When an ASPSP EIDAS certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor, `iss` has the form <span v-pre>`{{orgi-id}}`</span>.
+
 
 ### **What is the `tan` value for Directory Sandbox?**
 The specification does not define the expected `tan` value to be used by ASPSP’s (testing facilities) that use the Directory Sandbox. 
@@ -116,4 +118,3 @@ Note: ASPSPs must include details of which version they support in their API doc
 ### **Are ASPSPs expected to also support `b64` un-encoded & signed messages for version 3.1.4 onwards?**
 
 No, ASPSP may reject messages with a `b64` claim in the JOSE header.
-

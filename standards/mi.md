@@ -1,3 +1,4 @@
+
 [[toc]]
 
 ### **What is meant by Online/Mobile Banking in MI reporting 3.1.2 specification?**
@@ -52,4 +53,3 @@ From a technical perspective, consents that have an expiry of less or equal to 1
 ### **Why is the implementation status ‘N/A’ for Authorisation code endpoint?**
 
 The Authorization Code endpoint is not a real OIDC endpoint, but it is simply an entry (a virtual endpoint) to be used for measuring the time period (Td) of the authorisation code generation by ASPSPs and hence the implementation status column is N/A.
-

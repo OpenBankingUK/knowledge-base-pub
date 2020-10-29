@@ -1,4 +1,14 @@
 [[toc]]
+=======
+# Functional Conformance Tool <!-- omit in toc -->
+- [**How to I validate and trust the Conformance Tool image I'm downloading?**](#how-to-i-validate-and-trust-the-conformance-tool-image-im-downloading)
+- [**What is the High-level overview of the Conformance Tool and Dynamic Client Registration Roadmap for 2019/2020?**](#what-is-the-high-level-overview-of-the-conformance-tool-and-dynamic-client-registration-roadmap-for-20192020)
+- [**Where do I download the Conformance Tool?**](#where-do-i-download-the-conformance-tool)
+- [**Why does an ASPSP need to provide Functional Conformance?**](#why-does-an-aspsp-need-to-provide-functional-conformance)
+- [**What version of the Read/Write specifications does the conformance tool support?**](#what-version-of-the-readwrite-specifications-does-the-conformance-tool-support)
+- [**Where can I download the conformance tool from?**](#where-can-i-download-the-conformance-tool-from)
+- [**To pass OIDF FAPI Security Conformance Suite, does the TPP need to disable the response type 'code'?**](#to-pass-oidf-fapi-security-conformance-suite-does-the-tpp-need-to-disable-the-response-type-code)
+- [**What does a ‘certificate signed by unknown authority’ error mean?**](#what-does-a-certificate-signed-by-unknown-authority-error-mean)
 
 ### **How to I validate and trust the Conformance Tool image I'm downloading?**
 
@@ -67,3 +77,4 @@ Neither of these two methods is FAPI compliant.
 We would recommend the two more preferred and secure methods in `tls_client_auth` and `private_key_jwt`, especially as they are FAPI compliant.
 
 It is also worth noting that the OB functional conformance tool supports `client_secret_basic`, `tls_client_auth` and `private_key_jwt`. It does not support `client_secret_post`.
+

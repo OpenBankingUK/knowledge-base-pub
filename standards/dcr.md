@@ -1,4 +1,13 @@
-[[toc]]
+## Dynamic Client Registration <!-- omit in toc -->
+
+- [**Where can I find the latest version of the Dynamic Client Registration?**](#where-can-i-find-the-latest-version-of-the-dynamic-client-registration)
+- [**What is Dynamic Client Registration?**](#what-is-dynamic-client-registration)
+- [**Is it mandatory for an ASPSP to implement all the operations (POST, PUT, GET, DELETE) specified in DCR?**](#is-it-mandatory-for-an-aspsp-to-implement-all-the-operations-post-put-get-delete-specified-in-dcr)
+- [**Does the DCR specification support ASPSPs who do not accept OBIE issued SSAs?**](#does-the-dcr-specification-support-aspsps-who-do-not-accept-obie-issued-ssas)
+- [**Can an ASPSP register a TPP client using different parameters than specified?**](#can-an-aspsp-register-a-tpp-client-using-different-parameters-than-specified)
+- [**How does a TPP identify the authentication methods, grant types and algorithms that an ASPSP supports?**](#how-does-a-tpp-identify-the-authentication-methods-grant-types-and-algorithms-that-an-aspsp-supports)
+- [**For DCR, is there an expiry on the SSA request made by the TPP?**](#for-dcr-is-there-an-expiry-on-the-ssa-request-made-by-the-tpp)
+- [**Should TPPs accept only the FAPI compliant claim values in the client registration request for DCR?**](#should-tpps-accept-only-the-fapi-compliant-claim-values-in-the-client-registration-request-for-dcr)
 
 
 ### **Where can I find the latest version of the Dynamic Client Registration?**
@@ -60,3 +69,4 @@ https://openbankinguk.github.io/dcr-docs-pub/v3.3/dynamic-client-registration.ht
 It is necessary to register the redirect URI with each ASPSP.
 
 If the TPP wants to carry out redirects to a site not owned by the TPP, the TPP would still need to register the redirect URI with the OBIE directory. They would subsequently need to update their client registrations (using DCR PUT requests if supported) with each ASPSP.
+
