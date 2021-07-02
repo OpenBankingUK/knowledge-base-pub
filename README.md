@@ -51,7 +51,7 @@ To set up this project:
 Clone the repo
 
 ```sh
-git clone git@github.com:OpenBankingUK/mi-docs-pub.git
+git clone git@github.com:OpenBankingUK/knowledge-base-pub.git
 ```
 
 Install all node dependencies:
@@ -62,7 +62,7 @@ yarn install --non-interactive
 
 ### Running locally
 
-Run the following command and open your browser at `http://:8080/mi-docs-pub/` to see the generated website.
+Run the following command and open your browser at `http://:8080/knowledge-base-pub/` to see the generated website.
 
 ```sh
 yarn docs:dev
@@ -86,8 +86,8 @@ Check file [.github/workflows/deploy.yml](.github/workflows/deploy-production.ym
 
 There is no staging environment at the moment. If you really need to pre-publish follow these steps:
 
-- Create a repository that will host the staging github pages ex: mi-docs-page-stg
-- Change [vuepress config file](docs/.vuepress/config.js), property base to the name of the new repository ex:  `base: '/mi-docs-pub-stg/'`
+- Create a repository that will host the staging github pages ex: knowledge-base-pub-stg
+- Change [vuepress config file](docs/.vuepress/config.js), property base to the name of the new repository ex:  `base: '/knowledge-base-pub-stg/'`
 - Generate the content with `yarn docs:build`
 - Copy the generated content in `docs/.vuepress/dist` to the new repository on branch `gh-pages`
 - Enable github pages on the new repository, and it should become visible the website 
