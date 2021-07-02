@@ -1,0 +1,48 @@
+{
+  "name": "knowledge-base-external",
+  "version": "v0.0.1",
+  "description": "Knowledge Base",
+  "repository": "git@github.com:OpenBankingUK/knowledge-base-external.git",
+  "homepage": "https://github.com/OpenBankingUK/knowledge-base-external",
+  "private": true,
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OpenBankingUK/knowledge-base-external/issues"
+  },
+  "engines": {
+    "node": ">=8.6"
+  },
+  "devDependencies": {
+    "@textlint-rule/textlint-rule-no-unmatched-pair": "^1.0.7",
+    "@types/markdown-it": "^0.0.8",
+    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
+    "@vuepress/plugin-nprogress": "^1.0.0-rc.1",
+    "@vuepress/plugin-search": "^1.0.0-rc.1",
+    "markdown-it": "^9.1.0",
+    "node-sass": "^4.13.0",
+    "remark-cli": "^7.0.0",
+    "remark-lint": "^6.0.5",
+    "remark-preset-lint-consistent": "^2.0.3",
+    "remark-preset-lint-recommended": "^3.0.3",
+    "sass-loader": "^8.0.0",
+    "textlint": "^11.3.1",
+    "textlint-filter-rule-comments": "^1.2.2",
+    "textlint-rule-apostrophe": "^1.0.0",
+    "textlint-rule-common-misspellings": "^1.0.1",
+    "textlint-rule-diacritics": "^1.0.0",
+    "textlint-rule-en-capitalization": "^2.0.2",
+    "textlint-rule-stop-words": "^1.0.17",
+    "textlint-rule-terminology": "^1.1.30",
+    "textlint-rule-write-good": "^1.6.2",
+    "vuepress": "^1.1.0",
+    "vuepress-plugin-redirect": "^1.2.1"
+  },
+  "scripts": {
+    "docs:dev:no-cache": "vuepress dev docs --no-clear-screen --no-cache --debug",
+    "docs:dev": "vuepress dev docs --no-clear-screen --debug",
+    "docs:build": "vuepress build docs",
+    "lint-md:wording": "textlint ./docs/**/*.md",
+    "lint-md:style": "remark --frail .",
+    "lint-md": "EXIT_STATUS=0; yarn lint-md:style || EXIT_STATUS=$?; yarn lint-md:wording || EXIT_STATUS=$?; exit $EXIT_STATUS"
+  }
+}
