@@ -1,0 +1,17 @@
+{
+  "include": [
+    "./docs/.vuepress/*.js",
+    "./docs/.vuepress/**/*.js",
+    "./docs/*/*.js",
+    "./docs/**/*.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "docs/.vuepress/dist",
+    "docs/.vuepress/dist/",
+    "./docs/.vuepress/dist",
+    "./docs/.vuepress/dist/",
+    "./docs/.vuepress/dist/*",
+    "./docs/.vuepress/dist/**/*"
+  ]
+}

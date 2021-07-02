@@ -1,0 +1,16 @@
+:8080/knowledge-base-pub/, :8080/knowledge-base-pub {
+    tls off
+
+    log stdout
+    errors stdout
+
+    gzip
+
+    root .
+    browse
+}
+
+#0.0.0.0:8080/knowledge-base-pub/, localhost:8080/knowledge-base-pub/ {
+#	gzip
+#	root .
+#}
