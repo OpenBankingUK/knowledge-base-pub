@@ -161,12 +161,12 @@ The Open Banking Write specification enables the ASPSP to provide any relevant c
 For more details refer to : [api-specifications/red-write-specs/latest/](https://standards.openbanking.org.uk/api-specifications/red-write-specs/latest/)
 
 <a href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/1077805881/Domestic+Payments+v3.1.2">Domestic Payments v3.1.2</a>
-* Domestic Payment Consent - Response (xpath - OBWriteDomesticConsentResponse3/Data/Charges).
-* Domestic Payment - Response (xpath - OBWriteDomesticResponse3/Data/Charges).
+* Domestic payment consent - response (xpath - OBWriteDomesticConsentResponse3/Data/Charges).
+* Domestic payment - response (xpath - OBWriteDomesticResponse3/Data/Charges).
 
 <a href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/1077806166/International+Payments+v3.1.2">International Payments v3.1.2</a>
-* International Payment Consent - Response (xpath - OBWriteInternationalConsentResponse3/Data/Charges).
-* International Payment - Response (xpath - OBWriteInternationalResponse3/Data/Charges).
+* International payment consent - response (xpath - OBWriteInternationalConsentResponse3/Data/Charges).
+* International payment - response (xpath - OBWriteInternationalResponse3/Data/Charges).
 
 ### **Can a PISP display an ASPSP's charges to the PSU?**
 
@@ -205,7 +205,7 @@ Please refer to the Operational Guidelines: <a href="https://standards.openbanki
 
 ASPSPs should provide notification of any changes to TPPs at least three months prior to those changes taking effect.
 
-### **Do TPPs have to implement the Consent Dashboard?**
+### **Do TPPs have to implement the s Dashboard?**
 
 While there is no regulatory requirement for the provision of a consent dashboard by TPPs, OBIE strongly encourages all TPPs to provide a consent dashboard to their customers to enable view and revoke on-going consents.
 
@@ -739,4 +739,64 @@ A checklist for correct implementations:
 6. If the ASPSP has multiple authorization servers, each authorization server must be discoverable through a separate discovery document. Each discovery document must meet the criteria above.
 
 7. ASPSPs that use the OBIE directory should register each authorization server on the OBIE directory with its corresponding discovery end-point.
+
+## **VRP**
+*Where can I find the latest version of VRP specifications?
+
+Version 3.1.9 of specifications can be found here → [Variable recurring payments API profile v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/profiles/vrp-profile.html#variable-recurring-payments-api-profile-v3-1-9) 
+
+### **Does VRP payment support standing order/future dated payment?**
+
+The sequence diagram [Variable recurring payments API profile v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/profiles/vrp-profile.html#sequence-diagram) is generic. At present only single immediate payments are supported in the specifications, standing orders and forward dated payments are not supported.
+
+### **Is the `Data.Debtor` block to be provided by the ASPSP in the response block optional?**
+
+`Data.Debtor` block is optional and outside the initiation block. In scenarios where account selection is done by the PSU during authentication, the ASPSP must be able to update the `Data.Debtor` block with the debtor details after successful authorisation. This will enable the PISP to make a `GET` call to get the debtor account details to make future payments using the VRP consent.
+
+### **Where can I find namespaced enumerations for VRP?**
+
+You can find all the namespaced enumerations for VRP here → [Namespaced Enumerations - v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/references/namespaced-enumerations.html#variable-recurring-payments-namespaced-enumerations) 
+
+### **Does VRP support refunds? If yes, wherein the specs can we find this option?**
+
+PISP can request refund information by indicating yes/no in [Domestic VRP consents - v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/resources-and-data-models/vrp/domestic-vrp-consents.html#obdomesticvrpconsentrequest) `Data.ReadRefundAccount`
+
+The actual refund details will be provided by ASPSP in [Domestic VRPs - v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/resources-and-data-models/vrp/domestic-vrps.html#obdomesticvrpresponse) `Data.Refund`
+
+### **Why is the `FundsConfirmationId` max length 40?**
+`FundsConfirmationId` - is 40 characters as it is just an identifier and a UUIDv4 (36-38 characters) which is used in modern systems would fit in that size.
+
+### **As per the specs, `ValidFromDateTime` field is optional. Does that mean the consent start date can be a back or a future date?**
+
+`ValidFromDateTime` is an optional field which means if not provided the consent start date is when the consent is provided to the PISP by the PSU and successful authentication has taken place at the ASPSP. It must not be backdated because the PSU is only giving consent at that point. However, it could be a future date.
+
+### **Can `ValidToDateTime` be left blank?**
+
+`ValidToDateTime` can be left blank which means the validity of the consent is indefinite. 
+
+*Should the `ValidToDateTime` be populated by either the PISP or ASPSP when the consent is revoked?
+
+No consent parameters remain unchanged and so does ValidToDateTime even after the expiry of the consent. 
+
+### **Is there an expectation that `ValidFromDateTime` and `ValidToDateTime` must start at a specific time and does that need to be included in the pro-rata calculation?**
+
+Refer to specs section - OBDomesticVRPControlParameters - [Domestic VRP consents - v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/resources-and-data-models/vrp/domestic-vrp-consents.html#obdomesticvrpcontrolparameters)
+
+The time element of the date should be disregarded in computing the date range and pro-rating.
+
+### **Is `Expired` a valid consent status?**
+
+No, this was introduced in v3.18 of the specifications but has been removed in v3.1.9 of the specifications. Once consent is expired, the PISP will not be able to access the PSU’s account to initiate payment orders however the status of the resource remain unchanged.
+
+### **Is `Revoked` a valid consent status?**
+
+No, this was introduced in v3.18 of the specifications but has been removed in v3.1.9 of the specifications. Once consent is revoked by the PSU at the PISP, the PISP will need to ensure the `DELETE` endpoint is called to inform the ASPSP that consent is revoked. The ASPSP must delete the resource and respond to subsequent GET requests with an HTPP status of 400.
+
+### **Can an ASPSP provide a specific status reason if the VRP/sweeping payment cannot be processed due to asynchronous check failure?**
+
+No, but this is being considered. 
+
+### **Do PISPs have to provide the same `Reference` in the CoF check call as in the VRP consent?**
+
+Yes. `Reference` is an optional field in the VRP consent which means if it is provided, then it has to be provided in the CoF check call and the ASPSP can reject CoF request if the reference does not match.
 
