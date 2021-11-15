@@ -33,7 +33,7 @@ The OIDC endpoints do not follow the same versioning as the rest of the API endp
 
 Example: If v3.1.5 is implemented then the reporting value for the endpoints should be v3.1.5.
 
-### **Does the 90-Days Re-authentication reporting metrics intend only to report delegated re-auth by the AISP?**
+### **Does the 90-Days re-authentication reporting metrics intend only to report delegated re-auth by the AISP?**
 
 Yes, the reporting table is created for reporting 90 days re-authentication only when the delegated re-auth proposition has been implemented.
 
@@ -69,3 +69,6 @@ As this is part of the Daily Volumes MI, it is to report only on the day when th
 
 No, the ASPSPs need to only report on the endpoints that are supported by the current live versions.
 
+### **Does Auth Efficacy MI need to report separately on PIS for VRPs under the PISP API type reporting?**
+
+No. This has to be included under API type=PIS
