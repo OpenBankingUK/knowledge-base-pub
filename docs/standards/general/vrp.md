@@ -6,14 +6,6 @@
   - [**Where can we find VRP for Sweeping Access Journey?**](#where-can-we-find-vrp-for-sweeping-access-journey)
   - [**Where can we find VRP specifications for sweeping?**](#where-can-we-find-vrp-specifications-for-sweeping)
   - [**Where can we find more guidelines for sweeping?**](#where-can-we-find-more-guidelines-for-sweeping)
-  - [**Would paying a utility bill fall under the definition of Sweeping?**](#would-paying-a-utility-bill-fall-under-the-definition-of-sweeping)
-  - [**Can I pay into an investment account if funds are collected into a virtual account and distributed into different investment funds?**](#can-i-pay-into-an-investment-account-if-funds-are-collected-into-a-virtual-account-and-distributed-into-different-investment-funds)
-  - [**Can VRPs under Sweeping Access be used to fund my online wallet/account?**](#can-vrps-under-sweeping-access-be-used-to-fund-my-online-walletaccount)
-  - [**Can VRPs under sweeping access be used to repay my credit card?**](#can-vrps-under-sweeping-access-be-used-to-repay-my-credit-card)
-  - [**Could VRPs be used to pay for a buy now pay later purchase?**](#could-vrps-be-used-to-pay-for-a-buy-now-pay-later-purchase)
-  - [**Can I pay into a pension account?**](#can-i-pay-into-a-pension-account)
-  - [**Can I use Sweeping to fund my international money transfer service?**](#can-i-use-sweeping-to-fund-my-international-money-transfer-service)
-  - [**Can you provide a few use cases that explain whether they are included in the definition of sweeping?**](#can-you-provide-a-few-use-cases-that-explain-whether-they-are-included-in-the-definition-of-sweeping)
   - [**Where can we find a sweeping journey?**](#where-can-we-find-a-sweeping-journey)
   - [**Where can we find more information on dashboards for VRP/sweeping**](#where-can-we-find-more-information-on-dashboards-for-vrpsweeping)
   - [**Who is responsible to prove that the consent is sweeping consent and payment is made to the same customer or legal entity as the initiating account?**](#who-is-responsible-to-prove-that-the-consent-is-sweeping-consent-and-payment-is-made-to-the-same-customer-or-legal-entity-as-the-initiating-account)
@@ -105,6 +97,8 @@ Refer to Specifications - [Variable Recurring Payments API Profile - v3.1.9](htt
 
 Refer to Implementation guidelines in CEG [VRPs for sweeping](https://standards.openbanking.org.uk/tpp-guidelines/vrp-guidelines/latest/)
 
+<!--- These are sweeping related FAQs based on new defintion from RM. Need to review and publish at a later stage
+
 ### **Would paying a utility bill fall under the definition of Sweeping?**
 
 No.  When funds reach the destination account, they no longer belong to the customer, so this is not moving a customer’s own funds between account’s owned by them, but rather is a means of paying for goods and services which is explicitly excluded from the definition.
@@ -164,7 +158,7 @@ If the funds, after conversion, are transferred to another party then the transf
 | Paying into an international payments facility |                         |                       | Yes                   |                         | It is possible for there to be exceptions that meet the definition (see Q-Can I use Sweeping to fund my international money transfer service?) |
 | Paying into an e-commerce wallet               |                         |                       |                       | Yes                     | If wallet/ account’s sole purpose is e-commerce then it is not sweeping                                                                        |
 | Paying off a mortgage                          |                         |                       | Yes                   |                         | If debt account has to be regulated under the CCA then mortgages and other secured loans would be excluded from sweeping.                      |
-
+-->
 ### **Where can we find a sweeping journey?**
 
 Refer to CEG - [VRP Payments under Sweeping Access](https://standards.openbanking.org.uk/customer-experience-guidelines/pis-core-journeys/vrp/vrp-payments-under-sweeping-access/latest/)
