@@ -289,7 +289,7 @@ This is optional until the current versions of the specifications. However, the 
 
 It is only a recommendation that the ASPSP inform the TPP using events.
 
-### **Are there different authentication methods that a TPP can indicate as part of VRP consent? **
+### **Are there different authentication methods that a TPP can indicate as part of VRP consent?**
 
 TPP may specify one more PSU authentication method within the VRP consent. The TPP must specify the specific ‘PSU authentication method’ applied for each individual payment.
 
