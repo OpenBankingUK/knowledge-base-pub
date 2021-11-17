@@ -9,7 +9,7 @@
   - [**Where can we find a sweeping journey?**](#where-can-we-find-a-sweeping-journey)
   - [**Where can we find more information on dashboards for VRP/sweeping**](#where-can-we-find-more-information-on-dashboards-for-vrpsweeping)
   - [**Who is responsible to prove that the consent is sweeping consent and payment is made to the same customer or legal entity as the initiating account?**](#who-is-responsible-to-prove-that-the-consent-is-sweeping-consent-and-payment-is-made-to-the-same-customer-or-legal-entity-as-the-initiating-account)
-  - [**Is event notification mandatory for sweeping?**](#is-event-notification-mandatory-for-sweeping)
+  - [**Is event notification mandatory for sweeping when the linked account is no longer available either temporarily or permanently??**](#is-event-notification-mandatory-for-sweeping-when-the-linked-account-is-no-longer-available-either-temporarily-or-permanently)
   - [**What if an account linked to a VRP consent is no longer available (temporarily or permanently)?**](#what-if-an-account-linked-to-a-vrp-consent-is-no-longer-available-temporarily-or-permanently)
   - [**Can ASPSP define their specific list of VRP types for sweeping?**](#can-aspsp-define-their-specific-list-of-vrp-types-for-sweeping)
   - [**Can ASPSP allow only `Sweeping` VRP type if they implement only sweeping?**](#can-aspsp-allow-only-sweeping-vrp-type-if-they-implement-only-sweeping)
@@ -37,9 +37,9 @@
   - [**What proof do ASPSPs need to provide to PISP in order to claim money back from customer disputes?**](#what-proof-do-aspsps-need-to-provide-to-pisp-in-order-to-claim-money-back-from-customer-disputes)
   - [**Do ASPSPs need to differentiate between sweeping VRPs and non-sweeping VRPs from a customer perspective?**](#do-aspsps-need-to-differentiate-between-sweeping-vrps-and-non-sweeping-vrps-from-a-customer-perspective)
   - [**Can an ASPSP issue an open-ended access token or should they also issue a refresh token?**](#can-an-aspsp-issue-an-open-ended-access-token-or-should-they-also-issue-a-refresh-token)
-  - [**Is event notification mandatory for non-sweeping?**](#is-event-notification-mandatory-for-non-sweeping)
+  - [**Is event notification mandatory for non-sweeping when the linked account is no longer available either temporarily or permanently?**](#is-event-notification-mandatory-for-non-sweeping-when-the-linked-account-is-no-longer-available-either-temporarily-or-permanently)
   - [**What if an account linked to a VRP consent is no longer available (temporarily or permanently)?**](#what-if-an-account-linked-to-a-vrp-consent-is-no-longer-available-temporarily-or-permanently-1)
-  - [**Are there different authentication methods that a TPP can indicate as part of VRP consent? **](#are-there-different-authentication-methods-that-a-tpp-can-indicate-as-part-of-vrp-consent-)
+  - [**Are there different authentication methods that a TPP can indicate as part of VRP consent?**](#are-there-different-authentication-methods-that-a-tpp-can-indicate-as-part-of-vrp-consent)
   - [**How does PISP attest that the VRP consent is sweeping or non-sweeping?**](#how-does-pisp-attest-that-the-vrp-consent-is-sweeping-or-non-sweeping)
   - [**Can ASPSP define their specific list of VRP types for non-sweeping?**](#can-aspsp-define-their-specific-list-of-vrp-types-for-non-sweeping)
   - [**Can PISP specify a list of authentication methods that could be acceptable for VRP payments made under a specific VRP consent?**](#can-pisp-specify-a-list-of-authentication-methods-that-could-be-acceptable-for-vrp-payments-made-under-a-specific-vrp-consent)
@@ -172,9 +172,9 @@ Refer to CEG - [VRP Payments under Sweeping Access](https://standards.openbankin
 
 The PISP asserts it is sweeping and so would need to be able to prove that it is if questioned.
 
-### **Is event notification mandatory for sweeping?**
+### **Is event notification mandatory for sweeping when the linked account is no longer available either temporarily or permanently??**
 
-This is optional until the current versions of the specifications. However, the functionality can be supported.
+This is optional under the current versions of the specifications. However, the functionality can be supported.
 
 ### **What if an account linked to a VRP consent is no longer available (temporarily or permanently)?**
 
@@ -281,9 +281,9 @@ ASPSP could issue a long-lived access token that expires along with the consent 
 
 ASPSP could also issue a refresh token that is long-lived (expires with the consent expiry) where the PISP can use it to request an access token, in case the access tokens are short lived.
 
-### **Is event notification mandatory for non-sweeping?**
+### **Is event notification mandatory for non-sweeping when the linked account is no longer available either temporarily or permanently?**
 
-This is optional until the current versions of the specifications. However, the functionality can be supported.
+This is optional under the current versions of the specifications. However, the functionality can be supported.
 
 ### **What if an account linked to a VRP consent is no longer available (temporarily or permanently)?**
 
