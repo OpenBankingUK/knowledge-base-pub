@@ -18,15 +18,15 @@ module.exports = [
         link: 'https://standards.openbanking.org.uk/operational-guidelines/introduction/latest/',
     },
     {
-        text: 'FAQs',
-        link: 'https://openbankinguk.github.io/knowledge-base-pub/',
-    },
-    {
-        text: 'To Be State',
+        text: 'Other Guidelines',
         link: 'https://standards.openbanking.org.uk/tpp-guidelines/introduction/latest/',
     },
     {
-        text: 'Current State',
+        text: 'Reference Library',
         link: 'https://standards.openbanking.org.uk/document-library/',
+    },
+    {
+        text: 'FAQs',
+        link: 'https://openbankinguk.github.io/knowledge-base-pub/',
     },
 ];
