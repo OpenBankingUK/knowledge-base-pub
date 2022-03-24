@@ -54,6 +54,9 @@
   - [**Will VRP be extended to BACS/CHAPS for non-FPS enabled accounts?**](#will-vrp-be-extended-to-bacschaps-for-non-fps-enabled-accounts)
   - [**If no payment is made using a VRP/sweeping consent for over 13 months, is it appropriate that the consent remains active and who is expected to monitor?**](#if-no-payment-is-made-using-a-vrpsweeping-consent-for-over-13-months-is-it-appropriate-that-the-consent-remains-active-and-who-is-expected-to-monitor)
   - [**How can ASPSPs and PISPs communicate in case of a dispute?**](#how-can-aspsps-and-pisps-communicate-in-case-of-a-dispute)
+  - [**When a VRP payment is refunded (total amount or partial amount), should the ASPSP or PISP recalculate the pending amount per period limits?**](#when-a-VRP-payment-is-refunded-total-amount-or-partial-amount-should-the-ASPSP-or-PISP-recalculate-the-pending-amount-per-period-limits)
+  - [**If VRP consent is revoked OR account access revoked OR consent expired, can the PISP check the status of a payment that was initiated when the consent was still active?**](#if-VRP-consent-is-revoked-OR-account-access-revoked-OR-consent-expired,-can-the-PISP-check-the-status-of-a-payment-that-was-initiated-when-the-consent-was-still-active)
+  - [**Can an ASPSP ask the PSU to re-authenticate if the trusted beneficiary was removed and need to be added back to the PSU’s trusted list?**](#can-an-ASPSP-ask-the-PSU-to-re-authenticate-if-the-trusted-beneficiary-was-removed-and-need-to-be-added-back-to-the-PSU’s-trusted-list)
 - [**Consent Parameters**](#consent-parameters)
   - [**What is VRP consent parameters?**](#what-is-vrp-consent-parameters)
   - [**Whose responsibility is it to agree on the parameters?**](#whose-responsibility-is-it-to-agree-on-the-parameters)
@@ -74,6 +77,7 @@
   - [**Where VRP consent does not start on the first day of the calendar date, is it expected to calculate first-period payment as pro-rata?**](#where-vrp-consent-does-not-start-on-the-first-day-of-the-calendar-date-is-it-expected-to-calculate-first-period-payment-as-pro-rata)
   - [**Can ASPSP reject a VRP/sweeping consent request, if the `MaximumIndividualAmount` exceeds the individual transaction limit on their online channels?**](#can-aspsp-reject-a-vrpsweeping-consent-request-if-the-maximumindividualamount-exceeds-the-individual-transaction-limit-on-their-online-channels)
   - [**Whose responsibility is it to set a limit on the length of the consent - PSU, TPP or ASPSP?**](#whose-responsibility-is-it-to-set-a-limit-on-the-length-of-the-consent---psu-tpp-or-aspsp)
+  - [**While calculating the periodic limit amount, do we need to exclude the payments that have Rejected status?**](#while-calculating-the-periodic-limit-amount-do-we need-to-exclude-the-payments-that-have-Rejected-status)
 
 <!-- /TOC -->
 
@@ -359,6 +363,18 @@ There is no 13-month dormancy rule applicable for PISP payments (including VRPs)
 
 We encourage you to use DMS (Dispute Management System). For more refer to [Dispute Management System - Open Banking](https://www.openbanking.org.uk/dispute-management-system/)
 
+### **When a VRP payment is refunded (total amount or partial amount), should the ASPSP or PISP recalculate the pending amount per period limits?
+
+No
+
+### **If VRP consent is revoked OR account access revoked OR consent expired, can the PISP check the status of a payment that was initiated when the consent was still active?
+
+Yes, the PISP may use the GET endpoint to check the status of the payment, enabling the PISP to get the information using the client credentials grant.
+
+### **Can an ASPSP ask the PSU to re-authenticate if the trusted beneficiary was removed and need to be added back to the PSU’s trusted list?
+
+Yes, the creation of or amendment of a trusted beneficiary list will require SCA.  If the PSU has removed the payee from their trusted beneficiary (payee) list on their online channel after setting up a VRP/sweeping consent, the ASPSP will need the PSU to re-authenticate in order to enable future VRPs to that trusted beneficiary.
+
 ## **Consent Parameters**
 ### **What is VRP consent parameters?**
 
@@ -469,3 +485,6 @@ The ASPSP may not put restrictions when the consent is set up but should apply a
 
 All the consent parameters have to be agreed upon between the PISP and the PSU and the PSU has to give explicit consent.
 
+### ** While calculating the periodic limit amount, do we need to exclude the payments that have Rejected status?**
+
+Yes, you should exclude those with Rejected status.
