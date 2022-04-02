@@ -8,15 +8,15 @@ Online Banking covers both Desktop and Mobile browsers. Mobile Banking means onl
 
 ASPSPs must use REP020 Quarterly statistics on availability and performance of dedicated interfaces, available at https://www.handbook.fca.org.uk/form/sup/SUP_16_ann_46A_20190914.pdf
 
-ASPSPs may also find this reporting template (<a href="https://standards.openbanking.org.uk/wp-content/uploads/2020/03/Operational-Guidelines-ASPSP-Reporting-Template-v3.1.5.xlsx" class="external-link" rel="nofollow"> Operational Guidelines ASPSP Reporting Template v3.1.5</a>) useful in this regard.
+ASPSPs may also find this reporting template (<a href="https://standards.openbanking.org.uk/wp-content/uploads/2022/02/Operational-Guidelines-ASPSP-Reporting-Template-v3.1.10v1.xlsx" class="external-link" rel="nofollow"> Operational Guidelines ASPSP Reporting Template v3.1.10</a>) useful in this regard.
 
 ### **Is the FCA reporting template same as the OBL MI reporting template?**
 
 No. Please refer to relevant links for templates.
 
-* **FCA Reporting Template:** https://www.handbook.fca.org.uk/form/sup/SUP_16_ann_46A_20190914.pdf  & <a href="https://standards.openbanking.org.uk/wp-content/uploads/2020/03/Operational-Guidelines-ASPSP-Reporting-Template-v3.1.5.xlsx" class="external-link" rel="nofollow"> Operational Guidelines ASPSP Reporting Template v3.1.5</a>
+* **FCA Reporting Template:** https://www.handbook.fca.org.uk/form/sup/SUP_16_ann_46A_20190914.pdf  & <a href="https://standards.openbanking.org.uk/wp-content/uploads/2022/02/Operational-Guidelines-ASPSP-Reporting-Template-v3.1.10v1.xlsx" class="external-link" rel="nofollow"> Operational Guidelines ASPSP Reporting Template v3.1.10</a>
 
-* **OBL Reporting Template:** <a href="https://openbankinguk.github.io/mi-docs-pub/v3.1.5/specification/mi-reporting-profile.html#6-example-reporting-template " class="external-link" rel="nofollow"> MI Reporting Template - v3.1.5</a>
+* **OBL Reporting Template:** <a href="https://openbankinguk.github.io/mi-docs-pub/v3.1.10-aspsp/specification/example-reporting-template.html" class="external-link" rel="nofollow"> ASPSP MI Reporting Template - v3.1.10</a>
 
 
 ### **While reporting to FCA using the reporting template, should the ASPSP publish statistics for both website and mobile app separately?**
@@ -35,13 +35,13 @@ Example: If v3.1.5 is implemented then the reporting value for the endpoints sho
 
 ### **Does the 90-Days re-authentication reporting metrics intend only to report delegated re-auth by the AISP?**
 
-Yes, the reporting table is created for reporting 90 days re-authentication only when the delegated re-auth proposition has been implemented.
+Yes, the reporting table is created for reporting 90 days re-authentication only when the delegated re-auth proposition has been implemented. Applicable only to EU AISPs.
 
 ### **Is there a separate metrics to report 90-days re-authentication done at the ASPSP?**
 
-Not until v3.1.5 of the MI. This will be reviewed and added in the next version release.
+Not until v3.1.5 of the MI. 
 
-### **Does Section 3.4-B PSU Consent Adoption (OBIE) of v3.1.5 fo MI Data dictionary refer to ‘consent’ or ‘access’ from an ASPSP reporting perspective?**
+### **Does Section 3.4-B PSU Consent Adoption (OBIE) of ASPSP MI Data dictionary refer to ‘consent’ or ‘access’ from an ASPSP reporting perspective?**
 
 These are stated with PSU in mind (PSU perspective) and thus use of the word “consent” to indicate ‘consent’ given to the TPP by the PSU, which underpins the access at the ASPSP. However, this is ASPSP reporting and hence the section requires reporting access data statistics.
 
@@ -55,7 +55,7 @@ The Authorization Code endpoint is not a real OIDC endpoint, but it is simply an
 
 ### **Is Payment consent long-lived or short-lived?**
 
-Payment-consent tokens are meant to be “short-lived” and should be expected to last for a few minutes at most. 
+Payment-consent are meant to be “short-lived” and should be expected to last for a few minutes at most. However, a PIS Variable recurring payment consent is long-lived.
 
 ### **Do we need to report a count of all the successful authorisers as part of Multi Auth API Calls Successful (ID #13) of Daily Volumes MI?**
 

@@ -38,7 +38,7 @@ The Account and Transaction API Profile describes the flows and common functiona
 * Subsequently, retrieve account and transaction data.
 
 The links to the list of Account &amp; Transaction APIs :
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/account-and-transaction-api-profile.html/" class="external-link" rel="nofollow">Account &amp; Transaction APIs</a>
+<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/account-and-transaction-api-profile.html/" class="external-link" rel="nofollow">Account &amp; Transaction APIs</a>
 
 ### **What APIs can an CBPII access?**
 
@@ -51,7 +51,7 @@ The Confirmation of Funds API Profile describes the flows and common functionali
 This profile should be read in conjunction with a compatible Read/Write Data API Profile which provides a description of the elements that are common across all the Read/Write Data APIs, and compatible individual resources.
 
 For more details refer to :
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/confirmation-of-funds-api-profile.html" class="external-link" rel="nofollow">Account &amp; Confirmation of Funds API Profile</a>
+<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/confirmation-of-funds-api-profile" class="external-link" rel="nofollow">Account &amp; Confirmation of Funds API Profile</a>
 
 ### **How can the ASPSP inform the AISP that access has been revoked?**
 
@@ -62,7 +62,7 @@ When access is revoked at the ASPSP access dashboard by the PSU, the TPP can be 
 * Real-time/ Push Notifications: The functionality enables ASPSPs to notify AISPs in real-time (i.e. immediately) when a PSU revokes their access at their ASPSP dashboard or other account access changes events take place.
 * Aggregated polling / Pull Notifications: This enables the provision of notification of revocations from ASPSPs to AISPs, upon AISP request. It allows an AISP to request an aggregated set of access revocations and other account access events related to multiple access consents from multiple PSUs during a specific period.
 
-For more details refer to: [customer-experience-guidelines/ais-core-journeys/access-status-notifications-by-aspsps](https://standards.openbanking.org.uk/customer-experience-guidelines/ais-core-journeys/access-status-notifications-by-aspsps/latest/)
+For more details refer to: [customer-experience-guidelines - Dashboards - Notifications](https://standards.openbanking.org.uk/customer-experience-guidelines/dashboards/psu-notifications/latest/#psu_notif_sync/)
 
 ### **What APIs can an PISP access?**
 
@@ -77,7 +77,7 @@ The Payment Initiation API Profile describes the flows and common functionality 
 * Optionally retrieve the status of a payment-order **consent** or payment-order **resource** .
 
 For more details refer to :
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/payment-initiation-api-profile.html" class="external-link" rel="nofollow">Payment Initiation API Profile</a>
+<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/payment-initiation-api-profile.html" class="external-link" rel="nofollow">Payment Initiation API Profile</a>
 
 ### **Which payment-order types are supported by the PIS API?**
 
@@ -89,7 +89,7 @@ For more details refer to :
 
 ### **Are there different signing policies for Event Notifications?**
 
-The signing policy for any resource isn't dependent on the Swagger File. It is up to the ASPSP's implementation of the Events resource, e.g. <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/event-notification-api-profile.html#event-notification-message-signing" class="external-link" rel="nofollow">Event Notification Message Signing</a> and is similar to any other Read/Write API specification, other than the JWT's signature (JWS) which is sent in the HTTP body of the request, as opposed to a detached JWS sent in the HTTP header.
+The signing policy for any resource isn't dependent on the Swagger File. It is up to the ASPSP's implementation of the Events resource, e.g. <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/event-notification-api-profile.html#event-notification-message-signing" class="external-link" rel="nofollow">Event Notification Message Signing</a> and is similar to any other Read/Write API specification, other than the JWT's signature (JWS) which is sent in the HTTP body of the request, as opposed to a detached JWS sent in the HTTP header.
 
 ### **What is the Event Notification API?**
 
@@ -101,17 +101,17 @@ This covers a number of use cases, including:
 * Revocation of AISP access by the PSU in the ASPSP interface.
 
 For more details refer to :
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/event-notification-api-profile" class="external-link" rel="nofollow">event-notification-api-profile</a>
+<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/event-notification-api-profile" class="external-link" rel="nofollow">event-notification-api-profile</a>
 
 ### **How can a TPP register with the ASPSP to receive event notifications?**
 
-The  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/event-notification-subscription-api-profile.html" class="external-link" rel="nofollow">Event Notification Subscription API Profile</a> and the  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/callback-url-api-profile.html" class="external-link" rel="nofollow">Callback URL API Profile</a> provide alternative mechanisms for TPPs to register for event notifications.
+The  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/event-notification-subscription-api-profile.html" class="external-link" rel="nofollow">Event Notification Subscription API Profile</a> and the  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/callback-url-api-profile.html" class="external-link" rel="nofollow">Callback URL API Profile</a> provide alternative mechanisms for TPPs to register for event notifications.
 * The Event Notification Subscription API allows TPPs to register to receive all or specific event types via the Real-Time Event Notification API and/or the Aggregated Polling API
 * The Callback URL API allows TPPs to register to receive `aurn:uk:org:openbanking:events:resource-updateevent` notification via the Real-Time Event Notification API.
 
 ### **How can a TPP register with the ASPSP to receive event notifications?**
 
-The  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/event-notification-subscription-api-profile.html" class="external-link" rel="nofollow">Event Notification Subscription API Profile</a> and the  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/callback-url-api-profile.html" class="external-link" rel="nofollow">Callback URL API Profile</a> provide alternative mechanisms for TPPs to register for event notifications.
+The  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/event-notification-subscription-api-profile.html" class="external-link" rel="nofollow">Event Notification Subscription API Profile</a> and the  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/callback-url-api-profile.html" class="external-link" rel="nofollow">Callback URL API Profile</a> provide alternative mechanisms for TPPs to register for event notifications.
 * The Event Notification Subscription API allows TPPs to register to receive all or specific event types via the Real-Time Event Notification API and/or the Aggregated Polling API
 * The Callback URL API allows TPPs to register to receive `aurn:uk:org:openbanking:events:resource-updateevent` notification via the Real-Time Event Notification API.
 
@@ -119,12 +119,12 @@ The  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profil
 
 Event Subscription, CallbackURLregistration and Aggregated Polling specifications are all hosted by the ASPSP, while the TPP hosts the endpoint to receivereal-time push notifications.
 
-As of v3.1.3, there are four Swagger specification files, one for each Events Resource:s
+There are four Swagger specification files, one for each Events Resource:s
 
-* [event-subscriptions-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.3/dist/event-subscriptions-openapi.yaml)
-* [read-write-api-specs](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.3/dist/callback-urls-openapi.yaml)
-* [aggregated-polling-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.3/dist/aggregated-polling-openapi.yaml)
-* [event-notifications-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.3/dist/event-notifications-openapi.yaml)
+* [event-subscriptions-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.10/dist/event-subscriptions-openapi.yaml)
+* [read-write-api-specs](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.10/dist/callback-urls-openapi.yaml)
+* [aggregated-polling-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.10/dist/aggregated-polling-openapi.yaml)
+* [event-notifications-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.10/dist/event-notifications-openapi.yaml)
 
 
 ### **How should my redirect URIs be encoded?**
@@ -158,7 +158,7 @@ The Open Banking Write specification enables the ASPSP to provide any relevant c
 
 (b) When the PISP submits the payment order, the ASPSP can respond by including any relevant charges (including a breakdown) as part of the payment response, which is returned to the PISP.
 
-For more details refer to : [api-specifications/red-write-specs/latest/](https://standards.openbanking.org.uk/api-specifications/red-write-specs/latest/)
+For more details refer to : [api-specifications/read-write-specs/latest/](https://standards.openbanking.org.uk/api-specifications/red-write-specs/latest/)
 
 <a href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/1077805881/Domestic+Payments+v3.1.2">Domestic Payments v3.1.2</a>
 * Domestic payment consent - response (xpath - OBWriteDomesticConsentResponse3/Data/Charges).
@@ -193,7 +193,7 @@ Within the specified OBExternalPaymentChargeType1Code enum, the namespaced enume
 
 Yes, an ASPSP can provide a statement to the AISP using non JSON file format. The link to access this statement using a non JSON file format:
 
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.3/resources-and-data-models/aisp/Statements.html#get-accounts-accountid-statements-statementid-file/" class="external-link" rel="nofollow">GET /accounts/{AccountId}/statements/{StatementId}/file
+<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/aisp/Statements.html#get-accounts-accountid-statements-statementid-file/" class="external-link" rel="nofollow">GET /accounts/{AccountId}/statements/{StatementId}/file
 </a>
 
 ### **What are the implementation timelines for a newly published specification or guidelines?**
@@ -235,13 +235,14 @@ For more guidance, refer to [customer-experience-guidelines/account-information-
 
 ### **Is it mandatory to implement refresh_token-expires_at?**
 
-If the ASPSP issues a refresh token, the ASPSP must indicate the date-time at which the refresh token will expire in a claim named http://openbanking.org.uk/refresh_token_expires_at in the Id token (returned by the token end-point or user info end-point). Its value MUST be a number containing a NumericDate value, as specified in https://tools.ietf.org/html/rfc7519#section-2
+If the ASPSP issues a refresh token that expires, the ASPSP must indicate the date-time at which the refresh token will expire in a claim named `http://openbanking.org.uk/refresh_token_expires_at` in the Id token (returned by the token end-point or userinfo end-point). Its value MUST be a number containing a NumericDate value, as specified in `https://tools.ietf.org/html/rfc7519#section-2`
+* NumericDate is a JSON numeric value representing the number of seconds from 1970-01-01T00:00:00Z UTC until the specified UTC date-time, ignoring leap seconds.
 
-If the ASPSP does not issue a refresh token, the ASPSP **must not** populate the http://openbanking.org.uk/refresh_token_expires_at the claim in the Id token.
+If the ASPSP does not issue a refresh token, the ASPSP **must not** populate the `http://openbanking.org.uk/refresh_token_expires_at` claim in the Id token
 
-If the ASPSP issues a refresh token that does not expire, the ASPSP **must** populate the claim named http://openbanking.org.uk/refresh_token_expires_at in the Id token with a value representing the number of seconds to 03:14:07 UTC on 19 January 2038 (end of UNIX epoch).
+If the ASPSP issues a refresh token that does not expire, the ASPSP **must not** populate the claim named `http://openbanking.org.uk/refresh_token_expires_at` in the Id token.
 
-For more details refer to: [read-write-data-api-profile.html#token-expiry-time](https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/read-write-data-api-profile.html#token-expiry-time)
+For more details refer to: [read-write-data-api-profile.html#token-expiry-time](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/read-write-data-api-profile.html#token-expiry-time)
 
 ### **Does an ASPSP need to delete Client related consents once TPP has deleted Client?**
 
@@ -314,7 +315,7 @@ Yes, ASPSPs can create their own enumerations.
 
 The OBIE Specification includes various fields of Enumerated data types, where either the values are fixed to an OBIE defined set of alternatives (i.e. Static Enumerations), or flexible with an initial OBIE defined set of alternatives, and ASPSPs can use/extend these alternatives (i.e. Namespaced Enumerations).
 
-See : [namespaced-enumerations](https://openbankinguk.github.io/read-write-api-site3/v3.1.3/references/namespaced-enumerations.html)
+See : [namespaced-enumerations](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/references/namespaced-enumerations.html)
 
 ### **Have any ASPSPs requested new values to be added to enumeration?**
 
@@ -362,7 +363,7 @@ A PISP **must not** create a payment-order consent ConsentId on a newer version 
 
 The ASPSP should respond with 400 (Bad Request) and the relevant Namespaced Enumeration.
 
-Please see [incomplete-or-malformed-request-payload](https://openbankinguk.github.io/read-write-api-site3/v3.1.3/profiles/read-write-data-api-profile.html#incomplete-or-malformed-request-payload) and [namespaced-enumerations](https://openbankinguk.github.io/read-write-api-site3/v3.1.3/references/namespaced-enumerations.html)
+Please see [incomplete-or-malformed-request-payload](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/read-write-data-api-profile.html#incomplete-or-malformed-request-payload) and [namespaced-enumerations](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/references/namespaced-enumerations.html)
 
 ### **Does a TPP need to return id_token_signed_response_alg if they only support code as response type?**
 

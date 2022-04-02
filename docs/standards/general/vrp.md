@@ -4,7 +4,7 @@
   - [**Where can we find the definition of sweeping?**](#where-can-we-find-the-definition-of-sweeping)
   - [**Where can we find Sweeping requirements?**](#where-can-we-find-sweeping-requirements)
   - [**Where can we find VRP for Sweeping Access Journey?**](#where-can-we-find-vrp-for-sweeping-access-journey)
-  - [**Where can we find VRP specifications for sweeping?**](#where-can-we-find-vrp-specifications-for-sweeping)
+  - [**Where can we find latest VRP specifications for sweeping?**](#where-can-we-find-latest-vrp-specifications-for-sweeping)
   - [**Where can we find more guidelines for sweeping?**](#where-can-we-find-more-guidelines-for-sweeping)
   - [**Where can we find a sweeping journey?**](#where-can-we-find-a-sweeping-journey)
   - [**Where can we find more information on dashboards for VRP/sweeping**](#where-can-we-find-more-information-on-dashboards-for-vrpsweeping)
@@ -54,9 +54,9 @@
   - [**Will VRP be extended to BACS/CHAPS for non-FPS enabled accounts?**](#will-vrp-be-extended-to-bacschaps-for-non-fps-enabled-accounts)
   - [**If no payment is made using a VRP/sweeping consent for over 13 months, is it appropriate that the consent remains active and who is expected to monitor?**](#if-no-payment-is-made-using-a-vrpsweeping-consent-for-over-13-months-is-it-appropriate-that-the-consent-remains-active-and-who-is-expected-to-monitor)
   - [**How can ASPSPs and PISPs communicate in case of a dispute?**](#how-can-aspsps-and-pisps-communicate-in-case-of-a-dispute)
-  - [**When a VRP payment is refunded (total amount or partial amount), should the ASPSP or PISP recalculate the pending amount per period limits?**](#when-a-VRP-payment-is-refunded-total-amount-or-partial-amount-should-the-ASPSP-or-PISP-recalculate-the-pending-amount-per-period-limits)
-  - [**If VRP consent is revoked OR account access revoked OR consent expired, can the PISP check the status of a payment that was initiated when the consent was still active?**](#if-VRP-consent-is-revoked-OR-account-access-revoked-OR-consent-expired,-can-the-PISP-check-the-status-of-a-payment-that-was-initiated-when-the-consent-was-still-active)
-  - [**Can an ASPSP ask the PSU to re-authenticate if the trusted beneficiary was removed and need to be added back to the PSU’s trusted list?**](#can-an-ASPSP-ask-the-PSU-to-re-authenticate-if-the-trusted-beneficiary-was-removed-and-need-to-be-added-back-to-the-PSU’s-trusted-list)
+  - [**When a VRP payment is refunded (total amount or partial amount), should the ASPSP or PISP recalculate the pending amount per period limits?](#when-a-vrp-payment-is-refunded-total-amount-or-partial-amount-should-the-aspsp-or-pisp-recalculate-the-pending-amount-per-period-limits)
+  - [**If VRP consent is revoked OR account access revoked OR consent expired, can the PISP check the status of a payment that was initiated when the consent was still active?](#if-vrp-consent-is-revoked-or-account-access-revoked-or-consent-expired-can-the-pisp-check-the-status-of-a-payment-that-was-initiated-when-the-consent-was-still-active)
+  - [**Can an ASPSP ask the PSU to re-authenticate if the trusted beneficiary was removed and need to be added back to the PSU’s trusted list?](#can-an-aspsp-ask-the-psu-to-re-authenticate-if-the-trusted-beneficiary-was-removed-and-need-to-be-added-back-to-the-psus-trusted-list)
 - [**Consent Parameters**](#consent-parameters)
   - [**What is VRP consent parameters?**](#what-is-vrp-consent-parameters)
   - [**Whose responsibility is it to agree on the parameters?**](#whose-responsibility-is-it-to-agree-on-the-parameters)
@@ -67,7 +67,7 @@
   - [**Do ASPSPs need to support all periodic limits as part of a single VRP/sweeping consent?**](#do-aspsps-need-to-support-all-periodic-limits-as-part-of-a-single-vrpsweeping-consent)
   - [**Is the ASPSP able to limit the number of periodic limits in a single consent?**](#is-the-aspsp-able-to-limit-the-number-of-periodic-limits-in-a-single-consent)
   - [**Where can I find examples on periodic limits and periodic type?**](#where-can-i-find-examples-on-periodic-limits-and-periodic-type)
-  - [**WWho should specify the consent parameter limits - PSU or PISP?**](#wwho-should-specify-the-consent-parameter-limits---psu-or-pisp)
+  - [**Who should specify the consent parameter limits - PSU or PISP?**](#who-should-specify-the-consent-parameter-limits---psu-or-pisp)
   - [**Can the periodic alignments be mixed and matched?**](#can-the-periodic-alignments-be-mixed-and-matched)
   - [**Does the PISP need explicit permission i.e. consent from the PSU on all the consent parameters?**](#does-the-pisp-need-explicit-permission-ie-consent-from-the-psu-on-all-the-consent-parameters)
   - [**Does the ASPSP need to ensure each VRP/sweeping payment is within the consent parameters linked to the PSU’s consent?**](#does-the-aspsp-need-to-ensure-each-vrpsweeping-payment-is-within-the-consent-parameters-linked-to-the-psus-consent)
@@ -77,14 +77,14 @@
   - [**Where VRP consent does not start on the first day of the calendar date, is it expected to calculate first-period payment as pro-rata?**](#where-vrp-consent-does-not-start-on-the-first-day-of-the-calendar-date-is-it-expected-to-calculate-first-period-payment-as-pro-rata)
   - [**Can ASPSP reject a VRP/sweeping consent request, if the `MaximumIndividualAmount` exceeds the individual transaction limit on their online channels?**](#can-aspsp-reject-a-vrpsweeping-consent-request-if-the-maximumindividualamount-exceeds-the-individual-transaction-limit-on-their-online-channels)
   - [**Whose responsibility is it to set a limit on the length of the consent - PSU, TPP or ASPSP?**](#whose-responsibility-is-it-to-set-a-limit-on-the-length-of-the-consent---psu-tpp-or-aspsp)
-  - [**While calculating the periodic limit amount, do we need to exclude the payments that have Rejected status?**](#while-calculating-the-periodic-limit-amount-do-we need-to-exclude-the-payments-that-have-Rejected-status)
+  - [** While calculating the periodic limit amount, do we need to exclude the payments that have Rejected status?**](#-while-calculating-the-periodic-limit-amount-do-we-need-to-exclude-the-payments-that-have-rejected-status)
 
 <!-- /TOC -->
 
 ## **Sweeping**
 
 ### **Where can we find the definition of sweeping?**
-Refer to CEG - [VRPs for sweeping](https://standards.openbanking.org.uk/tpp-guidelines/vrp-guidelines/latest/#sweeping)
+Refer to CEG - [VRPs for sweeping](https://standards.openbanking.org.uk/other-guidelines/vrp-for-sweeping-guidelines/latest/#sweeping)
 
 ### **Where can we find Sweeping requirements?**
 Refer to Proposition - [Proposition - Variable Recurring Payments (VRPs) | 9.-Requirements-for-VRP-Sweeping-Access](https://openbanking.atlassian.net/wiki/spaces/DZ/pages/1939243099/Proposition+-+Variable+Recurring+Payments+VRPs#9.-Requirements-for-VRP-Sweeping-Access)
@@ -93,13 +93,13 @@ Refer to Proposition - [Proposition - Variable Recurring Payments (VRPs) | 9.-Re
 
 Refer to CEG - [VRP Payments under Sweeping Access](https://standards.openbanking.org.uk/customer-experience-guidelines/pis-core-journeys/vrp/vrp-payments-under-sweeping-access/latest/)
 
-### **Where can we find VRP specifications for sweeping?**
+### **Where can we find latest VRP specifications for sweeping?**
 
-Refer to Specifications - [Variable Recurring Payments API Profile - v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/profiles/vrp-profile.html) 
+Refer to Specifications - [Variable Recurring Payments API Profile](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/vrp-profile.html) 
 
 ### **Where can we find more guidelines for sweeping?**
 
-Refer to Implementation guidelines in CEG [VRPs for sweeping](https://standards.openbanking.org.uk/tpp-guidelines/vrp-guidelines/latest/)
+Refer to Implementation guidelines in CEG [VRPs for sweeping](https://standards.openbanking.org.uk/other-guidelines/vrp-for-sweeping-guidelines/latest/)
 
 <!--- These are sweeping related FAQs based on new defintion from RM. Need to review and publish at a later stage
 
@@ -435,7 +435,7 @@ The rationale for this is that allowing ASPSPs to set a limit risks ASPSPs adopt
 
 Examples of both consent and calendar types are in the specifications - [Domestic VRP consents - v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/resources-and-data-models/vrp/domestic-vrp-consents.html#examples-of-periodic-limits) 
 
-### **WWho should specify the consent parameter limits - PSU or PISP?**
+### **Who should specify the consent parameter limits - PSU or PISP?**
 
 PISPs should ensure that the consent parameters they agree with the PSU are appropriate for use cases and PSU’s individual circumstances. 
 
@@ -479,7 +479,7 @@ e.g. `Max amount per calendar month` is set to £31 and `ValidFromDateTime` is 1
 
 ### **Can ASPSP reject a VRP/sweeping consent request, if the `MaximumIndividualAmount` exceeds the individual transaction limit on their online channels?**
 
-The ASPSP may not put restrictions when the consent is set up but should apply account restrictions when the payment order is submitted and not process that payment if it exceeds the limit on their online channels.
+The ASPSP should not put restrictions when the consent is set up but should apply account restrictions when the payment order is submitted and not process that payment if it exceeds the limit on their online channels.
 
 ### **Whose responsibility is it to set a limit on the length of the consent - PSU, TPP or ASPSP?**
 
@@ -487,4 +487,4 @@ All the consent parameters have to be agreed upon between the PISP and the PSU a
 
 ### ** While calculating the periodic limit amount, do we need to exclude the payments that have Rejected status?**
 
-Yes, you should exclude those with Rejected status.
+Yes, you should exclude those with `Rejected` status.
