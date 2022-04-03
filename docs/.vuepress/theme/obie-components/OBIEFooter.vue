@@ -22,7 +22,7 @@
             <a href="https://www.openbanking.org.uk/privacy-policy/" target="_blank">Privacy Policy</a>
           </li>
           <li>
-            <a href="https://www.openbanking.org.uk/cookies/" target="_blank">Cookies</a>
+            <a href="https://www.openbanking.org.uk/cookie-policy/" target="_blank">Cookies</a>
           </li>
           <li>
             <a href="https://www.openbanking.org.uk/accessibility/" target="_blank">Accessibility</a>
