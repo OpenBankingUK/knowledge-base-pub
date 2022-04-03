@@ -78,7 +78,7 @@ Running the script `build.sh` will generate all HTML in `docs/.vuepress/dist/` f
 
 ## Deploy
 
-Deployment is achieved using github actions, they generate and  copy the content html/assets files into gihub pages branch, making it live.
+Deployment is achieved using GitHub Actions, they generate and copy the content html/assets files into GitHub pages branch, making it live.
 
 Check file [.github/workflows/deploy.yml](.github/workflows/deploy-production.yml) for details on CI/CD pipeline.
 
