@@ -1,85 +1,6 @@
-<!-- TOC -->
+# Variable Recurring Payments FAQs
 
-- [**Sweeping**](#sweeping)
-  - [**Where can we find the definition of sweeping?**](#where-can-we-find-the-definition-of-sweeping)
-  - [**Where can we find Sweeping requirements?**](#where-can-we-find-sweeping-requirements)
-  - [**Where can we find VRP for Sweeping Access Journey?**](#where-can-we-find-vrp-for-sweeping-access-journey)
-  - [**Where can we find latest VRP specifications for sweeping?**](#where-can-we-find-latest-vrp-specifications-for-sweeping)
-  - [**Where can we find more guidelines for sweeping?**](#where-can-we-find-more-guidelines-for-sweeping)
-  - [**Where can we find a sweeping journey?**](#where-can-we-find-a-sweeping-journey)
-  - [**Where can we find more information on dashboards for VRP/sweeping**](#where-can-we-find-more-information-on-dashboards-for-vrpsweeping)
-  - [**Who is responsible to prove that the consent is sweeping consent and payment is made to the same customer or legal entity as the initiating account?**](#who-is-responsible-to-prove-that-the-consent-is-sweeping-consent-and-payment-is-made-to-the-same-customer-or-legal-entity-as-the-initiating-account)
-  - [**Is event notification mandatory for sweeping when the linked account is no longer available either temporarily or permanently??**](#is-event-notification-mandatory-for-sweeping-when-the-linked-account-is-no-longer-available-either-temporarily-or-permanently)
-  - [**What if an account linked to a VRP consent is no longer available (temporarily or permanently)?**](#what-if-an-account-linked-to-a-vrp-consent-is-no-longer-available-temporarily-or-permanently)
-  - [**Can ASPSP define their specific list of VRP types for sweeping?**](#can-aspsp-define-their-specific-list-of-vrp-types-for-sweeping)
-  - [**Can ASPSP allow only `Sweeping` VRP type if they implement only sweeping?**](#can-aspsp-allow-only-sweeping-vrp-type-if-they-implement-only-sweeping)
-  - [**Does a PISP need to display T&Cs as part of a sweeping consent journey?**](#does-a-pisp-need-to-display-tcs-as-part-of-a-sweeping-consent-journey)
-  - [**Is Creditor account details mandatory to be part of the VRP consent for sweeping?**](#is-creditor-account-details-mandatory-to-be-part-of-the-vrp-consent-for-sweeping)
-  - [**Should a PISP ask the PSU to re-consent or re-authenticate if no payments have been taken for a period of time?**](#should-a-pisp-ask-the-psu-to-re-consent-or-re-authenticate-if-no-payments-have-been-taken-for-a-period-of-time)
-  - [**Can an ASPSP revoke access token if there are no payments made for a period of time?**](#can-an-aspsp-revoke-access-token-if-there-are-no-payments-made-for-a-period-of-time)
-  - [**Do we need any additional checks or handling for payments to hopper accounts such as credit card accounts and/or PayPal accounts to reduce payment failures or reversals?**](#do-we-need-any-additional-checks-or-handling-for-payments-to-hopper-accounts-such-as-credit-card-accounts-andor-paypal-accounts-to-reduce-payment-failures-or-reversals)
-- [**VRP**](#vrp)
-  - [**What is VRP?**](#what-is-vrp)
-  - [**Where can we find VRP requirements?**](#where-can-we-find-vrp-requirements)
-  - [**Where can we find VRP Specifications?**](#where-can-we-find-vrp-specifications)
-  - [**Can PSU revoke VRP consent at the PISP?**](#can-psu-revoke-vrp-consent-at-the-pisp)
-  - [**Does a PISP need to mark the consent status as ‘Revoked’ once the PSU has revoked consent at the PISP?**](#does-a-pisp-need-to-mark-the-consent-status-as-revoked-once-the-psu-has-revoked-consent-at-the-pisp)
-  - [**Can a PSU re-authenticate the same consent after revoking at the PISP?**](#can-a-psu-re-authenticate-the-same-consent-after-revoking-at-the-pisp)
-  - [**Can a PSU re-authenticate the same consent after revoking access at the ASPSP?**](#can-a-psu-re-authenticate-the-same-consent-after-revoking-access-at-the-aspsp)
-  - [**Can PSU revoke the VRP payment order once it has been initiated by the PISP?**](#can-psu-revoke-the-vrp-payment-order-once-it-has-been-initiated-by-the-pisp)
-  - [**Can PSU revoke VRP access at ASPSP?**](#can-psu-revoke-vrp-access-at-aspsp)
-  - [**Can an ASPSP revoke VRP consent for any reason?**](#can-an-aspsp-revoke-vrp-consent-for-any-reason)
-  - [**Does 90-day re-authentication apply to VRP?**](#does-90-day-re-authentication-apply-to-vrp)
-  - [**Can a PSU re-authenticate use an existing VRP consent and what would be the trigger situations for these?**](#can-a-psu-re-authenticate-use-an-existing-vrp-consent-and-what-would-be-the-trigger-situations-for-these)
-  - [**Where can the PSU select their debtor account at ASPSP for the VRP consent?**](#where-can-the-psu-select-their-debtor-account-at-aspsp-for-the-vrp-consent)
-  - [**How does PISP ensure that the source and destination account belong to the same PSU while performing a sweeping activity?**](#how-does-pisp-ensure-that-the-source-and-destination-account-belong-to-the-same-psu-while-performing-a-sweeping-activity)
-  - [**Can the ASPSP apply ‘Transfer to Self’ exemption over ‘Trusted Beneficiary’ SCA exemption when the PSU is transferring funds between their own accounts at the same ASPSP?**](#can-the-aspsp-apply-transfer-to-self-exemption-over-trusted-beneficiary-sca-exemption-when-the-psu-is-transferring-funds-between-their-own-accounts-at-the-same-aspsp)
-  - [**What proof do ASPSPs need to provide to PISP in order to claim money back from customer disputes?**](#what-proof-do-aspsps-need-to-provide-to-pisp-in-order-to-claim-money-back-from-customer-disputes)
-  - [**Do ASPSPs need to differentiate between sweeping VRPs and non-sweeping VRPs from a customer perspective?**](#do-aspsps-need-to-differentiate-between-sweeping-vrps-and-non-sweeping-vrps-from-a-customer-perspective)
-  - [**Can an ASPSP issue an open-ended access token or should they also issue a refresh token?**](#can-an-aspsp-issue-an-open-ended-access-token-or-should-they-also-issue-a-refresh-token)
-  - [**Is event notification mandatory for non-sweeping when the linked account is no longer available either temporarily or permanently?**](#is-event-notification-mandatory-for-non-sweeping-when-the-linked-account-is-no-longer-available-either-temporarily-or-permanently)
-  - [**What if an account linked to a VRP consent is no longer available (temporarily or permanently)?**](#what-if-an-account-linked-to-a-vrp-consent-is-no-longer-available-temporarily-or-permanently-1)
-  - [**Are there different authentication methods that a TPP can indicate as part of VRP consent?**](#are-there-different-authentication-methods-that-a-tpp-can-indicate-as-part-of-vrp-consent)
-  - [**How does PISP attest that the VRP consent is sweeping or non-sweeping?**](#how-does-pisp-attest-that-the-vrp-consent-is-sweeping-or-non-sweeping)
-  - [**Can ASPSP define their specific list of VRP types for non-sweeping?**](#can-aspsp-define-their-specific-list-of-vrp-types-for-non-sweeping)
-  - [**Can PISP specify a list of authentication methods that could be acceptable for VRP payments made under a specific VRP consent?**](#can-pisp-specify-a-list-of-authentication-methods-that-could-be-acceptable-for-vrp-payments-made-under-a-specific-vrp-consent)
-  - [**Can PISP specify a list of authentication methods for a single VRP payment?**](#can-pisp-specify-a-list-of-authentication-methods-for-a-single-vrp-payment)
-  - [**Does a PISP need to display T&Cs as part of the VRP consent journey?**](#does-a-pisp-need-to-display-tcs-as-part-of-the-vrp-consent-journey)
-  - [**Are the creditor account details mandatory as part of the VRP consent for non-sweeping?**](#are-the-creditor-account-details-mandatory-as-part-of-the-vrp-consent-for-non-sweeping)
-  - [**Can an ASPSP reject a VRP consent request from PISP if the creditor details are not provided and there is no appropriate contract in place between the PISP and the ASPSP?**](#can-an-aspsp-reject-a-vrp-consent-request-from-pisp-if-the-creditor-details-are-not-provided-and-there-is-no-appropriate-contract-in-place-between-the-pisp-and-the-aspsp)
-  - [**Can a PSU give multiple VRP/sweeping consent to pay the same beneficiary?**](#can-a-psu-give-multiple-vrpsweeping-consent-to-pay-the-same-beneficiary)
-  - [**What if a PSU has given multiple consents to a PISP to pay the same beneficiary with different periodic limits (e.g. one with `Max amount per consent year` and other with `Max amount per calendar month`)?**](#what-if-a-psu-has-given-multiple-consents-to-a-pisp-to-pay-the-same-beneficiary-with-different-periodic-limits-eg-one-with-max-amount-per-consent-year-and-other-with-max-amount-per-calendar-month)
-  - [**Are VRP and sweeping payments, domestic single immediate payments?**](#are-vrp-and-sweeping-payments-domestic-single-immediate-payments)
-  - [**What is the maximum number of transactions expected to show on the Access Dashboard History?**](#what-is-the-maximum-number-of-transactions-expected-to-show-on-the-access-dashboard-history)
-  - [**Will VRP be extended to BACS/CHAPS for non-FPS enabled accounts?**](#will-vrp-be-extended-to-bacschaps-for-non-fps-enabled-accounts)
-  - [**If no payment is made using a VRP/sweeping consent for over 13 months, is it appropriate that the consent remains active and who is expected to monitor?**](#if-no-payment-is-made-using-a-vrpsweeping-consent-for-over-13-months-is-it-appropriate-that-the-consent-remains-active-and-who-is-expected-to-monitor)
-  - [**How can ASPSPs and PISPs communicate in case of a dispute?**](#how-can-aspsps-and-pisps-communicate-in-case-of-a-dispute)
-  - [**When a VRP payment is refunded (total amount or partial amount), should the ASPSP or PISP recalculate the pending amount per period limits?](#when-a-vrp-payment-is-refunded-total-amount-or-partial-amount-should-the-aspsp-or-pisp-recalculate-the-pending-amount-per-period-limits)
-  - [**If VRP consent is revoked OR account access revoked OR consent expired, can the PISP check the status of a payment that was initiated when the consent was still active?](#if-vrp-consent-is-revoked-or-account-access-revoked-or-consent-expired-can-the-pisp-check-the-status-of-a-payment-that-was-initiated-when-the-consent-was-still-active)
-  - [**Can an ASPSP ask the PSU to re-authenticate if the trusted beneficiary was removed and need to be added back to the PSU’s trusted list?](#can-an-aspsp-ask-the-psu-to-re-authenticate-if-the-trusted-beneficiary-was-removed-and-need-to-be-added-back-to-the-psus-trusted-list)
-- [**Consent Parameters**](#consent-parameters)
-  - [**What is VRP consent parameters?**](#what-is-vrp-consent-parameters)
-  - [**Whose responsibility is it to agree on the parameters?**](#whose-responsibility-is-it-to-agree-on-the-parameters)
-  - [**Whose responsibility is it to ensure payments are within the consent parameters?**](#whose-responsibility-is-it-to-ensure-payments-are-within-the-consent-parameters)
-  - [**Can a PISP specify ‘Maximum cumulative amount per month /day/year etc’?**](#can-a-pisp-specify-maximum-cumulative-amount-per-month-dayyear-etc)
-  - [**Do ASPSPs need to support all periodic limits for VRP/sweeping consent?**](#do-aspsps-need-to-support-all-periodic-limits-for-vrpsweeping-consent)
-  - [**Do PISPs need to support all periodic limits for VRP/sweeping consent?**](#do-pisps-need-to-support-all-periodic-limits-for-vrpsweeping-consent)
-  - [**Do ASPSPs need to support all periodic limits as part of a single VRP/sweeping consent?**](#do-aspsps-need-to-support-all-periodic-limits-as-part-of-a-single-vrpsweeping-consent)
-  - [**Is the ASPSP able to limit the number of periodic limits in a single consent?**](#is-the-aspsp-able-to-limit-the-number-of-periodic-limits-in-a-single-consent)
-  - [**Where can I find examples on periodic limits and periodic type?**](#where-can-i-find-examples-on-periodic-limits-and-periodic-type)
-  - [**Who should specify the consent parameter limits - PSU or PISP?**](#who-should-specify-the-consent-parameter-limits---psu-or-pisp)
-  - [**Can the periodic alignments be mixed and matched?**](#can-the-periodic-alignments-be-mixed-and-matched)
-  - [**Does the PISP need explicit permission i.e. consent from the PSU on all the consent parameters?**](#does-the-pisp-need-explicit-permission-ie-consent-from-the-psu-on-all-the-consent-parameters)
-  - [**Does the ASPSP need to ensure each VRP/sweeping payment is within the consent parameters linked to the PSU’s consent?**](#does-the-aspsp-need-to-ensure-each-vrpsweeping-payment-is-within-the-consent-parameters-linked-to-the-psus-consent)
-  - [**Does the PISP need to ensure each VRP/sweeping payment is within the consent parameters linked to the PSU’s consent?**](#does-the-pisp-need-to-ensure-each-vrpsweeping-payment-is-within-the-consent-parameters-linked-to-the-psus-consent)
-  - [**Can an ASPSP define additional control parameters for non-sweeping?**](#can-an-aspsp-define-additional-control-parameters-for-non-sweeping)
-  - [**Can an ASPSP define additional control parameters for sweeping?**](#can-an-aspsp-define-additional-control-parameters-for-sweeping)
-  - [**Where VRP consent does not start on the first day of the calendar date, is it expected to calculate first-period payment as pro-rata?**](#where-vrp-consent-does-not-start-on-the-first-day-of-the-calendar-date-is-it-expected-to-calculate-first-period-payment-as-pro-rata)
-  - [**Can ASPSP reject a VRP/sweeping consent request, if the `MaximumIndividualAmount` exceeds the individual transaction limit on their online channels?**](#can-aspsp-reject-a-vrpsweeping-consent-request-if-the-maximumindividualamount-exceeds-the-individual-transaction-limit-on-their-online-channels)
-  - [**Whose responsibility is it to set a limit on the length of the consent - PSU, TPP or ASPSP?**](#whose-responsibility-is-it-to-set-a-limit-on-the-length-of-the-consent---psu-tpp-or-aspsp)
-  - [** While calculating the periodic limit amount, do we need to exclude the payments that have Rejected status?**](#-while-calculating-the-periodic-limit-amount-do-we-need-to-exclude-the-payments-that-have-rejected-status)
-
-<!-- /TOC -->
+[[toc]]
 
 ## **Sweeping**
 
@@ -297,9 +218,9 @@ It is only a recommendation that the ASPSP inform the TPP using events.
 
 TPP may specify one more PSU authentication method within the VRP consent. The TPP must specify the specific ‘PSU authentication method’ applied for each individual payment.
 
-<ul><li>Authentication not required - indicates authentication is not required for individual payments and payments can be made without the PSU being present. This is useful for sweeping but may be used for other situations.
+<ul><li>Authentication not required - indicates authentication is not required for individual payments and payments can be made without the PSU being present. This is useful for sweeping but may be used for other situations.</li>
 
-<li>SCA by TPP - This indicates SCA is carried out by the TPP. However, the ASPSP and TPP are expected to have a contract in place to accept this method.</ul>
+<li>SCA by TPP - This indicates SCA is carried out by the TPP. However, the ASPSP and TPP are expected to have a contract in place to accept this method.</li></ul>
 
 ### **How does PISP attest that the VRP consent is sweeping or non-sweeping?**
 
