@@ -61,6 +61,10 @@ module.exports = [
                 sidebarDepth,
                 children: [
                     {
+                        title: 'New SCA (Art 10A and Art 36(6) changes',
+                        path: '/standards/general/90days.md',
+                    },
+                    {
                         title: 'Company Name',
                         path: '/standards/general/company-name.md',
                     },
