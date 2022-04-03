@@ -2,9 +2,12 @@
 
 ### **How to I validate and trust the Conformance Tool image I'm downloading?**
 
-Docker Content Trust (DCT) allows Open Banking to sign docker images before they get published to the Docker Hub registry. These signatures allow client-side or runtime verification of the integrity and publisher of specific image tags.
+Docker Content Trust (DCT) allows Open Banking to sign docker images before they get published to the Docker Hub
+registry. These signatures allow client-side or runtime verification of the integrity and publisher of specific image
+tags.
 
-You can find full details on how to validate [here](https://bitbucket.org/openbankingteam/conformance-suite/src/develop/docs/docker_content_trust.md)
+You can find full details on how to
+validate [here](https://github.com/OpenBankingUK/conformance-suite/blob/develop/docs/docker_content_trust.md)
 
 ### **What is the High-level overview of the Conformance Tool and Dynamic Client Registration Roadmap for 2019/2020?**
 
@@ -14,9 +17,9 @@ Conformance Tool & Dynamic Client Registration Roadmap 2019/2020.
 
 ### **Where do I download the Conformance Tool?**
 
-The Conformance tool can be downloaded as an image from DockerHub or run as source code from Bitbucket.
-https://cloud.docker.com/u/openbanking/repository/docker/openbanking/conformance-suite
-https://bitbucket.org/openbankingteam/conformance-suite/
+The Conformance tool can be downloaded as an image
+from [DockerHub](https://hub.docker.com/r/openbanking/conformance-suite) or run as 
+source code from [GitHub](https://www.github.com/OpenBankingUK/conformance-suite).
 
 ### **Why does an ASPSP need to provide Functional Conformance?**
 
@@ -24,11 +27,12 @@ An ASPSP may use the Functional Conformance tool as a means of providing evidenc
 
 ### **What version of the Read/Write specifications does the conformance tool support?**
 
-The conformance tool currently supports the following versions 3.1.0, 3.1.1, 3.1.2, 3.1.3, 3.1.4, 3.1.5, and 3.1.6 (due end July 2020).
+The conformance tool currently supports versions
+listed [here](https://github.com/OpenBankingUK/conformance-suite#prerequisites) .
 
 ### **Where can I download the conformance tool from?**
 
-It can be found here https://bitbucket.org/openbankingteam/conformance-suite/src/develop/
+It can be found here https://www.github.com/OpenBankingUK/conformance-suite
 
 ### **To pass OIDF FAPI Security Conformance Suite, does the TPP need to disable the response type 'code'?**
 
@@ -48,8 +52,11 @@ This is an area which we are looking to improve functionality such that the tool
 
 ### **When I run the conformance tool, I get a 500 error - 'Failed to Check for Updates'. What does that mean?**
 
-When the conformance tool is run, it checks to see if you're running the latest version by connecting to the host api.bitbucket.org. If this host is not accessible because of local network restrictions, you'll receive a 'Failed to Check for Updates, Got 500 Error'. The error doesn't prevent the suite from running. 
-Executing the command: docker run --rm -it -p 8443:8443 "openbanking/conformance-suite:latest" will ensure that you are running with the latest version of the tool.
+When the conformance tool is run, it checks to see if you're running the latest version by connecting to the host
+api.github.com. If this host is not accessible because of local network restrictions, you'll receive a 'Failed to Check
+for Updates, Got 500 Error'. The error doesn't prevent the suite from running. Executing the command: docker run --rm
+-it -p 8443:8443 "openbanking/conformance-suite:latest" will ensure that you are running with the latest version of the
+tool.
 
 
 ### **Does the conformance tool support EIDAS certificate?**
