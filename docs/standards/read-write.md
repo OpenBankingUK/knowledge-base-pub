@@ -37,8 +37,8 @@ The Account and Transaction API Profile describes the flows and common functiona
 
 * Subsequently, retrieve account and transaction data.
 
-The links to the list of Account &amp; Transaction APIs :
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/account-and-transaction-api-profile.html/" class="external-link" rel="nofollow">Account &amp; Transaction APIs</a>
+The links to the list of Account and Transaction APIs :
+<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/account-and-transaction-api-profile.html" class="external-link" rel="nofollow">Account and Transaction APIs</a>
 
 ### **What APIs can an CBPII access?**
 
@@ -117,16 +117,13 @@ The  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profi
 
 ### **Are there separate swagger specifications for Real-time (push) notifications and aggregated polling?**
 
-Event Subscription, CallbackURLregistration and Aggregated Polling specifications are all hosted by the ASPSP, while the TPP hosts the endpoint to receivereal-time push notifications.
+Event Subscription, CallbackURLregistration and Aggregated Polling specifications are all hosted by the ASPSP, while the TPP hosts the endpoint to receive real-time push notifications.
 
-There are four Swagger specification files, one for each Events Resource:s
+There are two Swagger specification files, for Events Resources:
 
-* [event-subscriptions-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.10/dist/event-subscriptions-openapi.yaml)
-* [read-write-api-specs](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.10/dist/callback-urls-openapi.yaml)
-* [aggregated-polling-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.10/dist/aggregated-polling-openapi.yaml)
-* [event-notifications-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.10/dist/event-notifications-openapi.yaml)
-
-
+* [event-subscriptions-openapi & aggregated-polling-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.10/dist/openapi/events-openapi.yaml)
+* [event-notifications-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.10/dist/openapi/event-notifications-openapi.yaml)
+* 
 ### **How should my redirect URIs be encoded?**
 
 Both ASPSPs and TPPs should format all URIs using URL encoding. Participants should accept all URLs which have been URL encoded. (see [here](https://www.w3schools.com/tags/ref_urlencode.asp)).
@@ -158,15 +155,14 @@ The Open Banking Write specification enables the ASPSP to provide any relevant c
 
 (b) When the PISP submits the payment order, the ASPSP can respond by including any relevant charges (including a breakdown) as part of the payment response, which is returned to the PISP.
 
-For more details refer to : [api-specifications/read-write-specs/latest/](https://standards.openbanking.org.uk/api-specifications/red-write-specs/latest/)
+For more details refer to : [api-specifications/read-write-specs/latest/](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/read-write-data-api-profile.html)
+<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/pisp/domestic-payments.html">Domestic Payments v3.1.10</a>
+* Domestic payment consent - response (xpath - OBWriteDomesticConsentResponse5/Data/Charges).
+* Domestic payment - response (xpath - OBWriteDomesticResponse5/Data/Charges).
 
-<a href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/1077805881/Domestic+Payments+v3.1.2">Domestic Payments v3.1.2</a>
-* Domestic payment consent - response (xpath - OBWriteDomesticConsentResponse3/Data/Charges).
-* Domestic payment - response (xpath - OBWriteDomesticResponse3/Data/Charges).
-
-<a href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/1077806166/International+Payments+v3.1.2">International Payments v3.1.2</a>
-* International payment consent - response (xpath - OBWriteInternationalConsentResponse3/Data/Charges).
-* International payment - response (xpath - OBWriteInternationalResponse3/Data/Charges).
+<a href="hhttps://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/pisp/international-payment-consents.html">International Payments v3.1.10</a>
+* International payment consent - response (xpath - OBWriteInternationalConsentResponse6/Data/Charges).
+* International payment - response (xpath - OBWriteInternationalResponse5/Data/Charges).
 
 ### **Can a PISP display an ASPSP's charges to the PSU?**
 
@@ -333,7 +329,7 @@ When access is revoked at the ASPSP access dashboard by the PSU, the TPP can be 
 * Aggregated polling / Pull Notifications: This enables the provision of notification of revocations from ASPSPs to AISPs, upon AISP request. It allows an AISP to request an aggregated set of access revocations and other account access events related to multiple access consents from multiple PSUs during a specific period.
 
 For more details refer to :
-<a href="https://standards.openbanking.org.uk/customer-experience-guidelines/ais-core-journeys/access-status-notifications-by-aspsps/latest/" class="external-link" rel="nofollow">Customer Experience Guidelines - Access Status notifications by ASPSPs</a>
+<a href="https://standards.openbanking.org.uk/customer-experience-guidelines/dashboards/psu-notifications/latest/" class="external-link" rel="nofollow">Customer Experience Guidelines - PSU notifications</a>
 
 ### **What Resource URI Path Structure should be used while implementing the Read Write API Specification v3.1.2?**
 
@@ -381,7 +377,7 @@ The different types of charge bearers supported are:-
 
 * Shared
 
-See: https://openbankinguk.github.io/read-write-api-site3/v3.1.5/profiles/payment-initiation-api-profile.html#static-enumerations
+See: [Static enumerations](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/payment-initiation-api-profile.html#static-enumerations)
 
 ### **In the Transaction API, is the transaction amount field inclusive/exclusive of ChargeAmount?**
 
@@ -500,7 +496,7 @@ The ASPSPs are free to determine which balance types they should publish. The ge
 
 #### **As an ASPSP, do we need to support a specific file type for File Payments?**
 
-ASPSPs need to provide the ability for PISPs to initiate the same payment types, which can be initiated by the PSU on their online channels. The ASPSPs can define their own namespaced enumeration https://openbankinguk.github.io/read-write-api-site3/v3.1.6/profiles/read-write-data-api-profile.html#enumerations to list their custom file types.
+ASPSPs need to provide the ability for PISPs to initiate the same payment types, which can be initiated by the PSU on their online channels. The ASPSPs can define their own [namespaced enumeration](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/read-write-data-api-profile.html#enumerations) to list their custom file types.
 
 #### **As a TPP, do we need to support a specific file type for File Payments at an ASPSP?**
 
@@ -599,7 +595,7 @@ ASPSPs should respond with `429 - Too many requests` status code if they rate li
 
 ### **What is the expected response when an AISP tries to access AIS endpoints for a closed or switched account?**
 
-The standards define the behaviour that is expected <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.6/profiles/read-write-data-api-profile.html#_400-bad-request-v-s-404-not-found" class="external-link" rel="nofollow">here</a>.
+The standards define the behaviour that is expected <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/read-write-data-api-profile.html#_400-bad-request-v-s-404-not-found" class="external-link" rel="nofollow">here</a>.
 
 From Version 3.1.6, the ASPSPs may also return a flag to indicate the account’s switch status as part of the response to the accounts end-point.
 
@@ -744,11 +740,11 @@ A checklist for correct implementations:
 ## **VRP**
 *Where can I find the latest version of VRP specifications?
 
-Version 3.1.9 of specifications can be found here → [Variable recurring payments API profile v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/profiles/vrp-profile.html#variable-recurring-payments-api-profile-v3-1-9) 
+Version 3.1.10 of specifications can be found here → [Variable recurring payments API profile v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/vrp-profile.html#variable-recurring-payments-api-profile-v3-1-10) 
 
 ### **Does VRP payment support standing order/future dated payment?**
 
-The sequence diagram [Variable recurring payments API profile v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/profiles/vrp-profile.html#sequence-diagram) is generic. At present only single immediate payments are supported in the specifications, standing orders and forward dated payments are not supported.
+The sequence diagram [Variable recurring payments API profile v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/vrp-profile.html#sequence-diagram) is generic. At present only single immediate payments are supported in the specifications, standing orders and forward dated payments are not supported.
 
 ### **Is the `Data.Debtor` block to be provided by the ASPSP in the response block optional?**
 
@@ -756,13 +752,13 @@ The sequence diagram [Variable recurring payments API profile v3.1.9](https://op
 
 ### **Where can I find namespaced enumerations for VRP?**
 
-You can find all the namespaced enumerations for VRP here → [Namespaced Enumerations - v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/references/namespaced-enumerations.html#variable-recurring-payments-namespaced-enumerations) 
+You can find all the namespaced enumerations for VRP here → [Namespaced Enumerations - v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/references/namespaced-enumerations.html#variable-recurring-payments-namespaced-enumerations) 
 
 ### **Does VRP support refunds? If yes, wherein the specs can we find this option?**
 
-PISP can request refund information by indicating yes/no in [Domestic VRP consents - v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/resources-and-data-models/vrp/domestic-vrp-consents.html#obdomesticvrpconsentrequest) `Data.ReadRefundAccount`
+PISP can request refund information by indicating yes/no in [Domestic VRP consents - v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/vrp/domestic-vrp-consents.html#obdomesticvrpconsentrequest) `Data.ReadRefundAccount`
 
-The actual refund details will be provided by ASPSP in [Domestic VRPs - v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/resources-and-data-models/vrp/domestic-vrps.html#obdomesticvrpresponse) `Data.Refund`
+The actual refund details will be provided by ASPSP in [Domestic VRPs - v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/vrp/domestic-vrps.html#obdomesticvrpresponse) `Data.Refund`
 
 ### **Why is the `FundsConfirmationId` max length 40?**
 `FundsConfirmationId` - is 40 characters as it is just an identifier and a UUIDv4 (36-38 characters) which is used in modern systems would fit in that size.
@@ -781,7 +777,7 @@ No consent parameters remain unchanged and so does ValidToDateTime even after th
 
 ### **Is there an expectation that `ValidFromDateTime` and `ValidToDateTime` must start at a specific time and does that need to be included in the pro-rata calculation?**
 
-Refer to specs section - OBDomesticVRPControlParameters - [Domestic VRP consents - v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/resources-and-data-models/vrp/domestic-vrp-consents.html#obdomesticvrpcontrolparameters)
+Refer to specs section - OBDomesticVRPControlParameters - [Domestic VRP consents - v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/vrp/domestic-vrp-consents.html#obdomesticvrpcontrolparameters)
 
 The time element of the date should be disregarded in computing the date range and pro-rating.
 

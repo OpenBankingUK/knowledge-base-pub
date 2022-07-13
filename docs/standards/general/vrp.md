@@ -1,141 +1,152 @@
-# Variable Recurring Payments FAQs
+# Variable Recurring Payments / Sweeping FAQs
 
 [[toc]]
 
 ## **Sweeping**
 
 ### **Where can we find the definition of sweeping?**
-Refer to CEG - [VRPs for sweeping](https://standards.openbanking.org.uk/other-guidelines/vrp-for-sweeping-guidelines/latest/#sweeping)
+The Competition and Markets Authority (CMA) has published further clarification on the definition of sweeping. You can view this [here](https://assets.publishing.service.gov.uk/media/622ef71fd3bf7f5a86be8fa4/Sweeping_clarification_letter_to_be_sent_14_March_2022__.pdf). Please also refer to CEG - [Definition of VRP for sweeping](https://standards.openbanking.org.uk/other-guidelines/vrp-for-sweeping-guidelines/latest/#sweeping)
 
-### **Where can we find Sweeping requirements?**
+
+### **Where can I find more clarification on destination accounts?**
+Several questions have arisen regarding the interpretation of this clarification, so the OBIE has published answers to key questions. Refer to the below queries under heading "Sweeping-destination account queries" or download from [here](https://www.openbanking.org.uk/news/important-update-questions-and-answers-on-the-definition-of-sweeping/)
+
+### **Sweeping-destination account queries**
+These Q&As concern destination accounts for sweeping transactions which the nine mandated banks under the CMA Order (the “CMA9”) are required to grant sweeping access for under the Order. We anticipate that in addition to sweeping, individual CMA9 firms and Third Party Providers (“TPPs”) may wish to enter into commercial arrangements to access VRPs for purposes other than sweeping.  Nothing in the Q&As restrict this.
+#### **What account features are required for an e-money account to be a valid sweeping destination account?**
+The guidance provided by the CMA clarified that “e-money accounts that are used by consumers and SMEs as substitutes for current accounts [are in] scope”<sup>[1](https://assets.publishing.service.gov.uk/media/622ef71fd3bf7f5a86be8fa4/Sweeping_clarification_letter_to_be_sent_14_March_2022__.pdf)</sup>.  Therefore, the destination account should have all the following characteristics:
+
+* <u>The account should have the features of a current account</u>.<br>
+The account should have the features typically provided by a current account including supporting day-to-day payment transactions , for example receiving salary payments, setting up Direct Debits, receiving one off payments, using a debit card for purchases, making ATM withdrawals, setting up standing orders, and paying in funds.  
+
+* <u>The account should be promoted and marketed as an alternative to a traditional current account</u>
+
+* <u>The account should be used as an alternative to a traditional current account</u>.<br>
+The product should typically be used for day-to-day transactions such as paying-in funds, withdrawing cash, executing and receiving payment transactions to and from third parties including credit transfers.
+
+#### **Is a Buy Now Pay Later account a valid sweeping destination?**
+It is unlikely that a transfer into a Buy Now Pay Later (BNPL) account would meet the definition of sweeping.  These transactions are invariably linked to the purchase of goods or services and so would be excluded from the definition of sweeping because “sweeping to make e-commerce purchases” was identified by the CMA as clearly outside of the scope of the Order<sup>[1](https://assets.publishing.service.gov.uk/media/622ef71fd3bf7f5a86be8fa4/Sweeping_clarification_letter_to_be_sent_14_March_2022__.pdf)</sup>.  
+
+Even where the BNPL facility is potentially a form of credit providing a competitor to an overdraft, because the level of borrowing and repayment terms are directly linked with an e-commerce transaction it is out of scope.  
+
+#### **Can sweeping be used to repay an agreement under the Consumer Credit Act?**
+This depends on the nature of the proposition to the customer.  The CMA clearly states1 that one of the intended purposes of sweeping is to introduce competition for overdraft customers such as provision “of alternative forms of credit that closely compete with overdrafts”.  Some agreements under the Consumer Credit Act would meet the criteria but others would not.  For example, hire purchase (HP) or personal contract purchase (PCP)are unlikely to be considered sweeping as they are facilitating a purchase (which is explicitly ruled out) and it would be difficult to argue that these agreements provide a credible alternative to an overdraft, as an overdraft provides a line of credit with no formal repayment schedule.
+
+#### **Can sweeping be used to repay a business loan?**
+This depends on the nature of the of the proposition to the customer. The CMA clearly states<sup>[1](https://assets.publishing.service.gov.uk/media/622ef71fd3bf7f5a86be8fa4/Sweeping_clarification_letter_to_be_sent_14_March_2022__.pdf)</sup> that one of the intended purposes of sweeping is to increase competition for overdraft customers such as provision “of alternative forms of credit that closely compete with overdrafts”.  The proposition for the business loan would therefore need to be an alternative to an overdraft to qualify as a valid destination account for sweeping.
+
+#### **Is sweeping into a collection account allowed under the definition of sweeping?**
+For a transaction to be considered sweeping it needs to be between two accounts belonging to the same person or legal entity. There is nothing in the definition that prevents financial institutions from using collection accounts to facilitate the movement of funds if this ultimately results in a transaction between two accounts belonging to the same person.
+
+It is worth noting that some savings accounts, credit card accounts and other lending accounts use collection accounts to facilitate the processing of payments into customers’ accounts.
+
+For clarity, the ultimate destination account must be such that the definition of sweeping can be met.  There will be collection accounts that are NOT valid destination accounts for sweeping, for example mortgage accounts.
+
+#### **Does a destination account for sweeping have to have a unique sort code and account number?**
+No.  Destination accounts which fall within the definition of sweeping and fulfil the sweeping objectives set out in the letter<sup>[1](https://assets.publishing.service.gov.uk/media/622ef71fd3bf7f5a86be8fa4/Sweeping_clarification_letter_to_be_sent_14_March_2022__.pdf)</sup> must belong to the same customer as the source account, but there is no need for a valid sweeping destination account, to have a unique sort code and account number.
+
+#### **Can you sweep from a current account into a savings account from which funds can be transferred into investments?**
+A cash savings account is a valid destination account if it satisfies the following criteria:
+
+* <u>The cash savings destination account itself should support the intended outcomes of sweeping</u>
+One of the intended outcomes of sweeping was to help customers earn higher interest on their cash balances. The destination account will need to help customers achieve this outcome and fall within the definition of sweeping.
+
+* <u>The cash savings destination account must NOT be used as a transfer mechanism to enable sweeping into investments</u>.  
+  The CMA has stated that sweeping into investments is not within the scope of the Order[1](https://assets.publishing.service.gov.uk/media/622ef71fd3bf7f5a86be8fa4/Sweeping_clarification_letter_to_be_sent_14_March_2022__.pdf ). For example, if the destination account enabled the automatic transfer of funds into investments on receipt of a sweeping transaction, then the account is being used as a transfer mechanism to support sweeping into investments. 
+  However, if a customer decided to manually move funds from the savings account into investments, that would not invalidate the account from being a valid destination account for sweeping as the transfer into investments was completely independent from the sweeping transaction.
+
+#### **Are there limitations where money can be transferred after a sweep into a savings account?**
+There are no specific limitations on the use of funds after sweeping has taken place.  
+However, sweeping destinations must not be used as a transfer mechanism for destinations outside the scope of sweeping, so <u>the onward transfer must be completely independent of the sweep</u>.  For example, the transfer takes place following a specific request from the customer. If the onward transfer is carried out automatically and triggered by the receipt of the sweeping transaction, it is likely that the account would be considered to be enabling the sweeping of funds into the onward destination account which may not be within the scope of the Order.
+
+If this condition has been met, the limitations about onward transfer will be determined by the terms and conditions of the destination account receiving the sweeping transaction.
+
+#### **What should a party do if it disputes that a transaction or use case is sweeping?**
+In the first instance, we would expect the Account Servicing Payment Service Provider (ASPSP) and the Payment Initiation Services Provider (PISP) to discuss the issue and where possible, reach a common understanding.
+
+If the ASPSP and the PISP are unable to reach an agreement, we would expect both parties to do all they can to minimise any adverse impact on consumers and SMEs who are using sweeping-dependent services. For example, we would not expect ASPSPs to unilaterally switch off sweeping access to a PISP.
+
+In addition, we would expect  the parties to adopt the following process:
+
+1.	The ASPSP or PISP to inform the OBIE (including by raising a ticket via the Open Banking Service Desk) that they believe a particular use case does not meet the definition of sweeping within scope of the Order as clarified by the CMA in its March 2022 letter. 
+
+2.	OBIE will investigate the matter. For example, by requesting evidence from the ASPSP as to why they believe the use case is not sweeping and asking the PISP for evidence to support their assertion that a particular use case meets the definition of sweeping. 
+
+3.	Based on the evidence provided, the OBIE will make a recommendation as to whether a particular transaction meets the definition of sweeping.  This recommendation would be provided to the ASPSP and the PISP involved in the dispute. The CMA will also be informed by OBIE of its recommendation. 
+
+This process does not prevent the CMA from taking enforcement action against a breach of its remedy where appropriate, or for parties to undertake private enforcement action against a breach. 
+
+### **All other Sweeping queries**
+
+#### **Where can we find Sweeping requirements?**
 Refer to Proposition - [Proposition - Variable Recurring Payments (VRPs) | 9.-Requirements-for-VRP-Sweeping-Access](https://openbanking.atlassian.net/wiki/spaces/DZ/pages/1939243099/Proposition+-+Variable+Recurring+Payments+VRPs#9.-Requirements-for-VRP-Sweeping-Access)
 
-### **Where can we find VRP for Sweeping Access Journey?**
+#### **Where can we find VRP for Sweeping Access Journey?**
 
 Refer to CEG - [VRP Payments under Sweeping Access](https://standards.openbanking.org.uk/customer-experience-guidelines/pis-core-journeys/vrp/vrp-payments-under-sweeping-access/latest/)
 
-### **Where can we find latest VRP specifications for sweeping?**
+#### **Where can we find latest VRP specifications for sweeping?**
 
 Refer to Specifications - [Variable Recurring Payments API Profile](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/vrp-profile.html) 
 
-### **Where can we find more guidelines for sweeping?**
+#### **Where can we find more guidelines for sweeping?**
 
 Refer to Implementation guidelines in CEG [VRPs for sweeping](https://standards.openbanking.org.uk/other-guidelines/vrp-for-sweeping-guidelines/latest/)
 
-<!--- These are sweeping related FAQs based on new defintion from RM. Need to review and publish at a later stage
-
-### **Would paying a utility bill fall under the definition of Sweeping?**
-
-No.  When funds reach the destination account, they no longer belong to the customer, so this is not moving a customer’s own funds between account’s owned by them, but rather is a means of paying for goods and services which is explicitly excluded from the definition.
-
-### **Can I pay into an investment account if funds are collected into a virtual account and distributed into different investment funds?**
-
-If the funds remain under the ownership of the payer at all times and the destination accounts confer beneficial ownership to the payer then the transaction is likely to be considered to be the movement of a customer’s own funds between accounts owned by them and so qualifies as Sweeping. 
-
-### **Can VRPs under Sweeping Access be used to fund my online wallet/account?**
-
-This depends on the specific nature of the transaction.  
-
-If the VRP is being initiated to pay for a transaction(s) that has been completed (e.g. the purchase of goods using a prepaid card or a closed-loop payment system) then the transaction is unlikely to meet the criterion of moving a customer’s own funds between accounts owned by them but is being used to pay for goods and services which is explicitly excluded from the definition.  It should be noted that this constraint is independent of the residual balance on the purchasing instrument.  
-
-(e.g. if a PSU opted to hold a £100 balance on a prepaid card used for internet shopping and set up a VRP to top up the card back to £100 after every purchase/ at the end of each day, this would not be considered sweeping as the funds are being used to pay for a specific transaction(s)).    
-
-If the VRP is being initiated to fund a specific transaction that will be completed subject to successful VRP initiation (e.g. an online gambling wallet which allows a customer to place a bet if the VRP initiation is successful), this is unlikely to meet the criterion of moving a customer’s own funds between accounts owned by them as the funds have been committed already and so do not belong to the customer on arrival.   
-
-If the VRP is used to move funds to the online wallet which is used to store funds (e.g. e-money) which the payer could later choose to use to make purchases, or return funds back to their PCA/BCA, that is likely to meet the criterion of moving a customer’s own funds between accounts owned by them as the transfer of value is not linked to a specific transaction(s) (E.g., a Sweeping Service Provider may offer a service where surplus funds are moved into a “leisure spending” account and the payer may then choose how to use those funds to spend at a later date, and the payer retains ownership of the funds).   
-
-### **Can VRPs under sweeping access be used to repay my credit card?**
-
-If the movement of funds is used to pay down the debt on an account in the payer’s name and as soon as the payment is made those funds are allocated to the payer’s account, thereby reducing the amount owed, then the transaction is likely to meet the criterion of moving a customer’s own funds between accounts owned by them.   
-
-Paying off a credit card is paying down a debt that is regulated under the Consumer Credit Act rather than paying for the transactions that created that debt and therefore is within the definition of Sweeping.  
-
-### **Could VRPs be used to pay for a buy now pay later purchase?**
-
-This depends on the nature of the transaction.
-If the payer has signed a credit agreement, that is regulated under the Consumer Credit Act and there is an account in their name with a debit balance and as soon as the payment is made those funds are allocated to the payer’s account, thereby reducing the amount owed, then the transaction is likely to meet the criterion of moving a customer’s own funds between accounts owned by them.   
-
-If the payer has signed an agreement, that is not regulated under the Consumer Credit Act then it is likely that the purpose of the sweep would be deemed to be paying for goods and services, rather than the repayment of a debt and so is unlikely to meet the definition of Sweeping. 
-
-### **Can I pay into a pension account?**  
-
-If the funds remain under the ownership of the payer at all times and the destination pension account confers beneficial ownership to the payer then the transaction is likely to be considered to be the movement of a customer’s own funds between accounts owned by them and so qualifies as Sweeping. 
-
-### **Can I use Sweeping to fund my international money transfer service?** 
-
-It depends on the nature of the transfer service. If funds are sent into a sterling account and the funds transferred into foreign currency and reside in an account in the customer’s name then the transfer is likely to meet the definition of moving a customer’s own funds between accounts owned by them. 
-
-If the funds, after conversion, are transferred to another party then the transfer is unlikely to meet the definition of moving a customer’s own funds between accounts owned by them, as the purpose of the VRP transfer was to facilitate the transfer of foreign currency to another individual. 
-
-### **Can you provide a few use cases that explain whether they are included in the definition of sweeping?**
-
-| **Use Case**                                   | **Definitely included** | **Probably included** | **Probably excluded** | **Definitely excluded** | **Comments**                                                                                                                                   |
-| ---------------------------------------------- | ----------------------- | --------------------- | --------------------- | ----------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| Paying off my own credit card                  | Yes                     |                       |                       |                         |                                                                                                                                                |
-| Paying off someone else’s credit card          |                         |                       |                       | Yes                     |                                                                                                                                                |
-| Paying for a utility bill                      |                         |                       |                       | Yes                     |                                                                                                                                                |
-| Paying council tax                             |                         |                       |                       | Yes                     |                                                                                                                                                |
-| Moving funds into my investment account        | Yes                     |                       |                       |                         | Assuming PSU has beneficial ownership                                                                                                          |
-| Moving funds into my pension                   | Yes                     |                       |                       |                         |
-| Paying off my loan account                     | Yes                     |                       |                       |                         |                                                                                                                                                |
-| Paying off a BNPL account                      |                         |                       | Yes                   |                         | Depending on the nature of the BNPL offering                                                                                                   |
-| Paying of an alternative overdraft             | Yes                     |                       |                       |                         | If credit agreement in the customer's name                                                                                                     |
-| Paying into an international payments facility |                         |                       | Yes                   |                         | It is possible for there to be exceptions that meet the definition (see Q-Can I use Sweeping to fund my international money transfer service?) |
-| Paying into an e-commerce wallet               |                         |                       |                       | Yes                     | If wallet/ account’s sole purpose is e-commerce then it is not sweeping                                                                        |
-| Paying off a mortgage                          |                         |                       | Yes                   |                         | If debt account has to be regulated under the CCA then mortgages and other secured loans would be excluded from sweeping.                      |
+<!---
 -->
-### **Where can we find a sweeping journey?**
+#### **Where can we find a sweeping journey?**
 
 Refer to CEG - [VRP Payments under Sweeping Access](https://standards.openbanking.org.uk/customer-experience-guidelines/pis-core-journeys/vrp/vrp-payments-under-sweeping-access/latest/)
 
-### **Where can we find more information on dashboards for VRP/sweeping**
+#### **Where can we find more information on dashboards for VRP/sweeping**
 
 - Refer to CEG - [PIS-VRP Consent Dashboard](https://standards.openbanking.org.uk/customer-experience-guidelines/dashboards/vrp-consent-dashboard-revocation/latest/)
 - Refer to CEG - [PIS-VRP Access Dashboard](https://standards.openbanking.org.uk/customer-experience-guidelines/dashboards/pis-vrp-access-dashboard-revocation/latest/)
 
-### **Who is responsible to prove that the consent is sweeping consent and payment is made to the same customer or legal entity as the initiating account?**
+#### **Who is responsible to prove that the consent is sweeping consent and payment is made to the same customer or legal entity as the initiating account?**
 
 The PISP asserts it is sweeping and so would need to be able to prove that it is if questioned.
 
-### **Is event notification mandatory for sweeping when the linked account is no longer available either temporarily or permanently??**
+#### **Is event notification mandatory for sweeping when the linked account is no longer available either temporarily or permanently??**
 
 This is optional under the current versions of the specifications. However, the functionality can be supported.
 
-### **What if an account linked to a VRP consent is no longer available (temporarily or permanently)?**
+#### **What if an account linked to a VRP consent is no longer available (temporarily or permanently)?**
 
 It is recommended that the ASPSP inform the TPP using events.
 
-### **Can ASPSP define their specific list of VRP types for sweeping?**
+#### **Can ASPSP define their specific list of VRP types for sweeping?**
 
 Yes, as per current specifications two default enumerations are enabled - `sweeping` and `others`. The ASPSPs may define more specific enumerations related to sweeping and make this information available to the PISPs.
 
-### **Can ASPSP allow only `Sweeping` VRP type if they implement only sweeping?**
+#### **Can ASPSP allow only `Sweeping` VRP type if they implement only sweeping?**
 
 The specification supports the selection of both `sweeping` and `others` in the VRP type field. However, if an ASPSP is only implementing `sweeping` then they only need to accept sweeping.  
 
-### **Does a PISP need to display T&Cs as part of a sweeping consent journey?**
+#### **Does a PISP need to display T&Cs as part of a sweeping consent journey?**
 
 Yes, there is a CEG checklist requirement where the PISP must ensure that the PSU sees the T&Cs while giving sweeping consent.
 
-### **Is Creditor account details mandatory to be part of the VRP consent for sweeping?**
+#### **Is Creditor account details mandatory to be part of the VRP consent for sweeping?**
 
 Yes, creditor account details must be specified and cannot be changed.
 
-### **Should a PISP ask the PSU to re-consent or re-authenticate if no payments have been taken for a period of time?** 
+#### **Should a PISP ask the PSU to re-consent or re-authenticate if no payments have been taken for a period of time?** 
 
 PISP may ask the PSU to re-authenticate at any time if required but if there is a long-lived consent given by the PSU to the PISP then the token should be valid until the validity of the consent.
 
-### **Can an ASPSP revoke access token if there are no payments made for a period of time?**
+#### **Can an ASPSP revoke access token if there are no payments made for a period of time?**
 
 No, the ASPSP should not revoke access tokens given to a PISP for the sole reason that no payments have been made using the VRP consent for a set amount of time.  It is the responsibility of the PISP to ensure that they have the appropriate consent from the PSU to initiate a payment order within a VRP consent (see "Setting the appropriate consent parameters" section in VRPS for Sweeping Guidance document). Ensuring appropriate management of potentially dormant VRP consents should form part of the PISPs operational risk management processes."
 
-### **Do we need any additional checks or handling for payments to hopper accounts such as credit card accounts and/or PayPal accounts to reduce payment failures or reversals?**
+#### **Do we need any additional checks or handling for payments to hopper accounts such as credit card accounts and/or PayPal accounts to reduce payment failures or reversals?**
 
 This should be treated similar to any Open banking SIP payment via PISP.
 
 
 ## **VRP**
-### **What is VRP?**
+#### **What is VRP?**
 
 VRP means Variable Recurring Payment. For more refer to the Proposition paper- [Definition of VRP](https://openbanking.atlassian.net/wiki/spaces/DZ/pages/1939243099/Proposition+-+Variable+Recurring+Payments+VRPs#3.1-Definition-of-Variable-Recurring-Payments-(VRPs))
 
@@ -145,8 +156,7 @@ Refer to Proposition - [Proposition - Variable Recurring Payments (VRPs) | 8.-Re
 
 ### **Where can we find VRP Specifications?**
 
-Refer to Specifications -  https://openbankinguk.github.io/read-write-api-site3/v3.1.9/profiles/vrp-profile.html
-
+Refer to Specifications - https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/vrp-profile.html
 ### **Can PSU revoke VRP consent at the PISP?**
 
 Yes. The PISP is expected to provide a mechanism within their domain to enable the PSU to revoke their consent for initiation of any future payment orders, by revoking the authorisation of VRP consent. 
@@ -354,7 +364,8 @@ The rationale for this is that allowing ASPSPs to set a limit risks ASPSPs adopt
 
 ### **Where can I find examples on periodic limits and periodic type?**
 
-Examples of both consent and calendar types are in the specifications - [Domestic VRP consents - v3.1.9](https://openbankinguk.github.io/read-write-api-site3/v3.1.9/resources-and-data-models/vrp/domestic-vrp-consents.html#examples-of-periodic-limits) 
+Examples of both consent and calendar types are in the specifications - [Domestic VRP consents - v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/vrp/domestic-vrp-consents.html#examples-of-periodic-limits) 
+
 
 ### **Who should specify the consent parameter limits - PSU or PISP?**
 

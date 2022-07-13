@@ -13,7 +13,7 @@
 
 ### **Where can I find the latest version of the Customer Experience Guidelines (CEG)?**
 
-Please see <a href="https://standards.openbanking.org.uk/customer-experience-guidelines/introduction/section-a/latest/" class="external-link" rel="nofollow">https://standards.openbanking.org.uk/customer-experience-guidelines/introduction/section-a/latest/</a>
+Please see <a href="https://standards.openbanking.org.uk/get-started/" class="external-link" rel="nofollow">Customer experience guidelines - Getting started</a>
 
 ### **Is it mandatory for ASPSPs to provide Confirmation of Funds access history under a specific CBPII?**
 
