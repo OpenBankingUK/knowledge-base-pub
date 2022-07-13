@@ -160,7 +160,7 @@ For more details refer to : [api-specifications/read-write-specs/latest/](https:
 * Domestic payment consent - response (xpath - OBWriteDomesticConsentResponse5/Data/Charges).
 * Domestic payment - response (xpath - OBWriteDomesticResponse5/Data/Charges).
 
-<a href="hhttps://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/pisp/international-payment-consents.html">International Payments v3.1.10</a>
+<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/pisp/international-payment-consents.html">International Payments v3.1.10</a>
 * International payment consent - response (xpath - OBWriteInternationalConsentResponse6/Data/Charges).
 * International payment - response (xpath - OBWriteInternationalResponse5/Data/Charges).
 
