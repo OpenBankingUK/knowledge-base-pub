@@ -1,8 +1,8 @@
 ## Open Data API Specifications <!-- omit in toc -->
 
-- [What are Open Data API specifications?](#what-are-open-data-api-specifications)
-- [What is Open Data API Dashboard?](#what-is-open-data-api-dashboard)
-- [Where can I find the latest Open Data API specifications?](#where-can-i-find-the-latest-open-data-api-specifications)
+- [**What are Open Data API specifications?**](#what-are-open-data-api-specifications)
+- [**What is Open Data API Dashboard?**](#what-is-open-data-api-dashboard)
+- [**Where can I find the latest Open Data API specifications?**](#where-can-i-find-the-latest-open-data-api-specifications)
 
 ### **What are Open Data API specifications?**
 
@@ -27,5 +27,4 @@ This Open Data API Dashboard provides a list of Open Data API endpoints for each
 
 ### **Where can I find the latest Open Data API specifications?**
 
-The latest version can be found under <a href="hhttps://openbanking.atlassian.net/wiki/spaces/DZ/pages/1103233381/Open+Data+API+Specifications+v2.3" class="external-link" rel="nofollow">
-Open Data API Specifications v2.3</a>
+The latest version can be found under <a href="https://openbankinguk.github.io/opendata-api-docs-pub/v2.4.0/" class="external-link" rel="nofollow">Open Data API Specifications v2.4</a>

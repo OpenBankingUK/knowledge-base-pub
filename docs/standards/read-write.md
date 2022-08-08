@@ -109,12 +109,6 @@ The  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profi
 * The Event Notification Subscription API allows TPPs to register to receive all or specific event types via the Real-Time Event Notification API and/or the Aggregated Polling API
 * The Callback URL API allows TPPs to register to receive `aurn:uk:org:openbanking:events:resource-updateevent` notification via the Real-Time Event Notification API.
 
-### **How can a TPP register with the ASPSP to receive event notifications?**
-
-The  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/event-notification-subscription-api-profile.html" class="external-link" rel="nofollow">Event Notification Subscription API Profile</a> and the  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/callback-url-api-profile.html" class="external-link" rel="nofollow">Callback URL API Profile</a> provide alternative mechanisms for TPPs to register for event notifications.
-* The Event Notification Subscription API allows TPPs to register to receive all or specific event types via the Real-Time Event Notification API and/or the Aggregated Polling API
-* The Callback URL API allows TPPs to register to receive `aurn:uk:org:openbanking:events:resource-updateevent` notification via the Real-Time Event Notification API.
-
 ### **Are there separate swagger specifications for Real-time (push) notifications and aggregated polling?**
 
 Event Subscription, CallbackURLregistration and Aggregated Polling specifications are all hosted by the ASPSP, while the TPP hosts the endpoint to receive real-time push notifications.
@@ -174,8 +168,8 @@ Yes, the ASPSP can provide any supplementary information related to the payment,
 
 Please refer to the following example journeys in CEG:
 
-* International Payment Journey - CEG Checklist #9.
-* Domestic Payments - a/c selection @PISP (Supplementary Info) - Additional Information.
+* <a href="https://standards.openbanking.org.uk/customer-experience-guidelines/payment-initiation-services/international-payments/latest/">International Payment Journey</a> - CEG Checklist #9.
+* <a href="https://standards.openbanking.org.uk/customer-experience-guidelines/payment-initiation-services/single-domestic-payments-supplementary-information/latest/">Domestic Payments - a/c selection @PISP (Supplementary Info)</a> - Additional Information.
 
 ### **What if a PISP does not provide the optional 'ChargeBearer' field?**
 
@@ -287,7 +281,7 @@ ASPSPs **must** make documentation available to TPPs (e.g. on their developer po
 
 ### **Is there a list of all ASPSPs participating in the Open Banking Ecosystem?**
 
-Together with UK Finance and FDATA, OBIE has developed and maintains a list of ASPSPs here: <a href="https://openbanking.atlassian.net/wiki/spaces/DZ/pages/1145209627/Transparency+Calendar/" class="external-link" rel="nofollow">Transparency Calendar</a>
+Together with UK Finance and FDATA, OBIE has developed and maintains a list of ASPSPs here: <a href="https://openbanking.atlassian.net/wiki/spaces/AD/pages/1135346433/Transparency+Calendar/" class="external-link" rel="nofollow">Transparency Calendar</a>
 
 This shows key information including: contact details, which directory is being used, and a link to a page maintained by each ASPSP showing further details of the APIs being implemented by each. While this list does not guarantee to include all UK ASPSPs, it is intended to be as comprehensive as possible.
 
@@ -393,7 +387,7 @@ However, you should take the following into account:
 
 ### **Does an ASPSP need to support all variants of DateTime format as per ISO 8601?**
 
-An ASPSP must accept all valid <a href="https://www.iso.org/iso-8601-date-and-time-format.html date" class="external-link" rel="nofollow">ISO-8601</a> formats including its permitted variations (e.g. variations in how the time zone is defined, dates with or with a seconds or milliseconds part etc.) in API requests from TPPs. 
+An ASPSP must accept all valid <a href="https://www.iso.org/iso-8601-date-and-time-format.html date" class="external-link" rel="nofollow">ISO-8601 - Date and time format</a> formats including its permitted variations (e.g. variations in how the time zone is defined, dates with or with a seconds or milliseconds part etc.) in API requests from TPPs. 
 
 ### **What if an ASPSP is not able to support functionality or an attribute in the payload. Should the ASPSP reject the request from the TPP?**
 
