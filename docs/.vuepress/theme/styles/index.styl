@@ -17,6 +17,14 @@ body
   font-size 16px
   color $textColor
 
+ .container
+  width 90%
+  margin-right auto
+  margin-left auto
+  max-width 1268px
+  line-height 1
+ 
+
 .page
   padding-left $sidebarWidth
 
@@ -26,7 +34,7 @@ body
   top 0
   left 0
   right 0
-  height $navbarHeight
+  //height $navbarHeight
   background-color #fff
   box-sizing border-box
   border-bottom 1px solid $borderColor
@@ -42,7 +50,7 @@ body
 
 .sidebar
   font-size 16px
-  background-color #fff
+  background-color #FAFAFA
   width $sidebarWidth
   position fixed
   z-index 10
@@ -78,7 +86,7 @@ body
     max-width 100%
 
 a
-  font-weight 500
+  font-weight 400
   color $accentColor
   text-decoration none
 
@@ -106,6 +114,30 @@ blockquote
 ul, ol
   padding-left 1.2em
 
+  a
+    line-height 2
+
+  & > li
+    &:marker
+      color #000000
+
+ol
+  ol
+    list-style-type lower-alpha
+
+    ol
+      list-style-type: lower-roman
+
+ol ol ol ol
+  list-style-type: decimal
+
+.content__default
+  & > ul
+  & > ol
+    & > li
+      & > a[href*='#']
+        font-weight 700
+
 strong
   font-weight 600
 
@@ -113,14 +145,30 @@ h1, h2, h3, h4, h5, h6
   font-weight 600
   line-height 1.25
 
-  {$contentClass}:not(.custom) > &
+   {$contentClass}:not(.custom) > &
     margin-top (0.5rem - $navbarHeight)
     padding-top ($navbarHeight + 1rem)
     margin-bottom 0
 
+
+  &[id]
+    &:before
+      display block
+      content " "
+      margin-top (0 - $navbarHeight)
+      height $navbarHeight
+      visibility hidden
+      pointer-events none
+
+
+  {$contentClass}:not(.custom) > &
+    //margin-top (0.5rem - $navbarHeight)
+    //padding-top ($navbarHeight + 1rem)
+    //margin-bottom 0
+
     &:first-child
-      margin-top -1.5rem
-      margin-bottom 1rem
+      //margin-top -1.5rem
+      margin-bottom 1.75rem
 
       + p, + pre, + .custom-block
         margin-top 2rem
@@ -130,23 +178,58 @@ h1, h2, h3, h4, h5, h6
 
 h1
   font-size 2.2rem
+  color: $primaryBlue
+  margin-bottom 1rem
+  
+  &:after
+    content: "";
+    display: block;
+    width: 2em;
+    height: 0.2em;
+    margin-top: 0.225em;
+    background-color: currentColor;
 
 h2
-  font-size 1.65rem
+  font-size 2rem
   padding-bottom .3rem
   border-bottom 1px solid $borderColor
 
 h3
-  font-size 1.35rem
+  font-size 1.5rem
+  padding-top .5em
+  line-height 1.4
+  &[id]
+    &:before
+      margin-top calc(0px - 137px + 0.5em)
+      height calc(137px + 0.5em)
+
+ h4
+  font-size 1rem
+  padding-top .5em
+  line-height 1.4
+  &[id]
+    &:before
+      margin-top calc(0px - 137px + 0.5em)
+      height calc(137px + 0.5em)
+
+h5
+  padding-top .5em
+  line-height 1.4
+  &[id]
+    &:before
+      margin-top calc(0px - 137px + 0.5em)
+      height calc(137px + 0.5em)
 
 a.header-anchor
-  font-size 0.85em
+  font-size 1em
   float left
   margin-left -0.87em
   padding-right 0.23em
   margin-top 0.125em
   opacity 0
-
+  pre
+    white-space pre-wrap
+  
   &:hover
     text-decoration none
 
@@ -186,8 +269,14 @@ th, td
       margin-top 1.5rem
       padding-top 0
 
-    .sidebar
-      top 0
+.page-wrap
+  display flex
+  width 100%
+  flex-wrap wrap
+
+.sidebar
+    position sticky
+    height calc(100vh - 116px)
 
 
 @media (min-width: ($MQMobile + 1px))
@@ -197,5 +286,11 @@ th, td
 
     .page
       padding-left 0
-
+      padding-top $navbarHeight
+      width calc(100% - 25rem)
+      margin-right: auto;
+      margin-left: auto;
+      max-width: 1268px;
+      @media (min-width: $MQMobile + 1px)
+         width calc(100% - 25rem)
 @require 'mobile.styl'
