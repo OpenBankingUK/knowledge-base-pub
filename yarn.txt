@@ -1,0 +1,28 @@
+  
+  473  git clone https://github.com/OpenBankingUK/dcr-docs.git
+  474  brew install yarn
+  475  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" 
+  476  brew help
+  477  brew version
+  478  brew --version
+  479  brew install yarn
+  480  brew install node
+  481  brew install yarn
+  482  brew reinstall yarn
+  483  yarn --version
+  484  yarn init
+  485  yarn add [githubtest]
+  486  yarn docs
+  487  docs:dev
+  488  docs:dev:no-cache
+  489  docs
+  490  exit
+  491  exit
+ 
+  499  yarn docs:dev
+  500  http://:8080/knowledge-base-pub/
+  501  http://:8080/knowledge-base-pub/
+  502  yarn install --non-interactive
+  503  yarn docs:dev
+  504  history
+  505  history>yarn.txt
