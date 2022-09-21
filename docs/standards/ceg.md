@@ -1,10 +1,11 @@
-<!-- TOC -->
-
-- [**Where can I find the latest version of the Customer Experience Guidelines (CEG)?**](#where-can-i-find-the-latest-version-of-the-customer-experience-guidelines-ceg)
-- [**Is it mandatory for ASPSPs to provide Confirmation of Funds access history under a specific CBPII?**](#is-it-mandatory-for-aspsps-to-provide-confirmation-of-funds-access-history-under-a-specific-cbpii)
-- [**Can you provide guidance on how a balance transfer journey should look like?**](#can-you-provide-guidance-on-how-a-balance-transfer-journey-should-look-like)
+# Customer experience guidelines (CEG)
+- [Customer experience guidelines (CEG)](#customer-experience-guidelines-ceg)
+    - [**Where can I find the latest version of the Customer Experience Guidelines (CEG)?**](#where-can-i-find-the-latest-version-of-the-customer-experience-guidelines-ceg)
+    - [**Is it mandatory for ASPSPs to provide Confirmation of Funds access history under a specific CBPII?**](#is-it-mandatory-for-aspsps-to-provide-confirmation-of-funds-access-history-under-a-specific-cbpii)
+    - [**Can you provide guidance on how a balance transfer journey should look like?**](#can-you-provide-guidance-on-how-a-balance-transfer-journey-should-look-like)
 
 <!-- /TOC -->
+
 ### **Where can I find the latest version of the Customer Experience Guidelines (CEG)?**
 
 Please see <a href="https://standards.openbanking.org.uk/get-started/" class="external-link" rel="nofollow">Customer experience guidelines - Getting started</a>

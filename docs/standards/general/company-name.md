@@ -1,16 +1,16 @@
-## **How should TPP names be displayed during the provision of open banking services?**  <!-- omit in toc -->
+# **How should TPP names be displayed during the provision of open banking services?**  <!-- omit in toc -->
 
 - [**Introduction**](#introduction)
 - [**What is a Company Name?**](#what-is-a-company-name)
 - [**What is a Trading Name?**](#what-is-a-trading-name)
 - [**What is an Agent?**](#what-is-an-agent)
 - [**What must be captured in 'Client Name' while defining a Software Statement?**](#what-must-be-captured-in-client-name-while-defining-a-software-statement)
-- [**What must be captured in 'On Behalf' of field while defining a Software Statement?**](#what-must-be-captured-in-on-behalf-of-field-while-defining-a-software-statement)
+- [**What must be captured in 'On Behalf of' field while defining a Software Statement?**](#what-must-be-captured-in-on-behalf-of-field-while-defining-a-software-statement)
 - [**Which name must TPPs display to the PSU?**](#which-name-must-tpps-display-to-the-psu)
 - [**Which TPP name must ASPSPs display to the PSU?**](#which-tpp-name-must-aspsps-display-to-the-psu)
 - [**Should TPPs or ASPSPs display the TSP name to the PSU?**](#should-tpps-or-aspsps-display-the-tsp-name-to-the-psu)
 - [**When must TPPs and ASPSPs display 'On Behalf of' to the PSU?**](#when-must-tpps-and-aspsps-display-on-behalf-of-to-the-psu)
-- [**Examples**](#examples)
+- [Examples](#examples)
 
 ### **Introduction**
 

@@ -148,7 +148,7 @@ h1, h2, h3, h4, h5, h6
 
 &[id]
     &:before
-      display block
+      //display block
       content " "
       margin-top (0 - $navbarHeight)
       height $navbarHeight
@@ -186,8 +186,10 @@ h1
 h2
   //font-size 1.65rem
   font-size 2rem
-  padding-top .5em
-  padding-bottom .3rem
+  //padding-top .5em
+  //padding-bottom .3rem
+  margin-top .5em
+  margin-bottom .3rem
   border-bottom 1px solid $borderColor
   &[id]
     &:before
@@ -197,7 +199,8 @@ h2
 h3
   //font-size 1.35rem
   font-size 1.5rem
-  padding-top .5em
+  //padding-top .5em
+  margin-top .5em
   line-height 1.4
   &[id]
     &:before
@@ -206,7 +209,8 @@ h3
 
 h4
   font-size 1rem
-  padding-top .5em
+  //padding-top .5em
+  margin-top .5em
   line-height 1.4
   &[id]
     &:before
@@ -214,7 +218,8 @@ h4
       height calc(137px + 0.5em)
 
 h5
-  padding-top .5em
+  //padding-top .5em
+  margin-top .5em
   line-height 1.4
   &[id]
     &:before
@@ -226,6 +231,7 @@ a.header-anchor
   font-size 1em
   font-weight 700
   float left
+  line-height 1.4
   margin-left -0.87em
   padding-right 0.23em
   //margin-top 0.125em

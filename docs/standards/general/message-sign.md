@@ -1,4 +1,4 @@
-## Message Signing FAQs
+# Message Signing FAQs
 
 [[toc]]
 

@@ -1,3 +1,4 @@
+# Functional Conformance Tool <!-- omit in toc -->
 [[toc]]
 
 ### **How to I validate and trust the Conformance Tool image I'm downloading?**
