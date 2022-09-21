@@ -8,6 +8,10 @@
 #
 # Example:
 # $ docker run --rm -it -v $(pwd)/scripts/deploy.sh:/usr/bin/deploy alpine sh -c 'apk add --no-cache bash && bash --version && /usr/bin/deploy'
+# Fix memory leak issue
+export NODE_OPTIONS="--max-old-space-size=8192"
+printf "Setting node memory size to 8GB"
+
 printf "Starting build..."
 
 # abort on errors and more error-checking.

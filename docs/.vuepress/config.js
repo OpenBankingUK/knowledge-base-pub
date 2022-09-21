@@ -9,9 +9,9 @@ module.exports = {
     description: 'OBIE Knowledge Base',
     head,
     themeConfig: {
-        logo: '/assets/img/logo-dark.svg',
-        sidebar,
+        sidebar: sidebar,
         nav,
+        logo: '/assets/img/open-banking-logo.svg',
         sidebarDepth: 0,
         searchMaxSuggestions: 20,
         smoothScroll: true,

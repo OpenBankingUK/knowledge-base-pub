@@ -1,4 +1,4 @@
-## Open Data API Specifications <!-- omit in toc -->
+# Open Data API Specifications <!-- omit in toc -->
 
 - [**What are Open Data API specifications?**](#what-are-open-data-api-specifications)
 - [**What is Open Data API Dashboard?**](#what-is-open-data-api-dashboard)

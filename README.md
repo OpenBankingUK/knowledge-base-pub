@@ -7,6 +7,8 @@
   - [Operational Guidelines](./docs/standards/og.md)
   - [Dynamic Client Registration](./docs/standards/dcr.md)
   - [General](./docs/standards/general/README.md)
+    - [90 days](docs/standards/general/90days.md)
+    - [VRP](docs/standards/general/vrp.md)
     - [Company Name](./docs/standards/general/company-name.md)
     - [Message Signing](./docs/standards/general/message-sign.md)
 - [Dynamic Client Registration Tool](./conformance-tools/dynamic-client-registration-tool/README.md)

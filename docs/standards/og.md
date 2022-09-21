@@ -1,7 +1,7 @@
-## Operational Guidelines <!-- omit in toc -->
+# Operational Guidelines (OG)<!-- omit in toc -->
 
-- [Where can I find the latest version of the Operational Guidelines (OG)?](#where-can-i-find-the-latest-version-of-the-operational-guidelines-og)
-- [When should an interface be considered 'down' for the purposes of unplanned unavailability or a systems breakdown?](#when-should-an-interface-be-considered-down-for-the-purposes-of-unplanned-unavailability-or-a-systems-breakdown)
+- [**Where can I find the latest version of the Operational Guidelines (OG)?**](#where-can-i-find-the-latest-version-of-the-operational-guidelines-og)
+- [**When should an interface be considered 'down' for the purposes of unplanned unavailability or a systems breakdown?**](#when-should-an-interface-be-considered-down-for-the-purposes-of-unplanned-unavailability-or-a-systems-breakdown)
 
 ### **Where can I find the latest version of the Operational Guidelines (OG)?**
 

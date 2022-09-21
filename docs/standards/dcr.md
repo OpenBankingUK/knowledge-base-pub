@@ -1,5 +1,5 @@
+# Dynamic Client Registration (DCR)
 [[toc]]
-
 
 ### **Where can I find the latest version of the Dynamic Client Registration?**
 
