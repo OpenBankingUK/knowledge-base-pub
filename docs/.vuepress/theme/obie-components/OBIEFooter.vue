@@ -56,7 +56,7 @@
             <li id="menu-item-965" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-965">
               <a rel="noopener" tabindex="-1">About us</a>
               <ul class="sub-menu">
-                <li id="menu-item-966" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-966"><a target="_blank" rel="noopener" href="https://www.openbanking.org.uk/about-us/">About the OBIE</a></li>
+                <li id="menu-item-966" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-966"><a target="_blank" rel="noopener" href="https://www.openbanking.org.uk/about-us/">About OBL</a></li>
                 <li id="menu-item-1048" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1050"><a target="_blank" rel="noopener" href="https://www.openbanking.org.uk/delivering-the-roadmap/">Delivering the Roadmap</a></li>
                 <li id="menu-item-1049" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1050"><a target="_blank" rel="noopener" href="https://www.openbanking.org.uk/external-engagement/">External engagement</a></li>
                 <li id="menu-item-1050" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1050"><a target="_blank" rel="noopener" href="https://www.openbanking.org.uk/contact-us/">Contact us</a></li>
