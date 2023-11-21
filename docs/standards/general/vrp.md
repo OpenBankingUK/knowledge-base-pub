@@ -306,6 +306,16 @@ Yes, the PISP may use the GET endpoint to check the status of the payment, enabl
 
 Yes, the creation of or amendment of a trusted beneficiary list will require SCA.  If the PSU has removed the payee from their trusted beneficiary (payee) list on their online channel after setting up a VRP/sweeping consent, the ASPSP will need the PSU to re-authenticate in order to enable future VRPs to that trusted beneficiary.
 
+### **Is there any guidance for the use of VRPType for payments in 3.1.11?**
+
+The 3.1.11 release introduced VRPType as a required field in a payment submission for a VRP, which is a breaking change for some participants. Payloads sent to the 3.1.11 endpoints should include this field, submissions not including it should be rejected.
+
+In order to ease transition to 3.1.11 for existing VRP consents an ASPSP may optionally decide to accept both 3.1.10 and 3.1.11 payloads for a short time when processing payment submissions.
+ASPSPs opting to take this approach should ensure it is clearly documented on their developer portal and provide an end date indicating when support for the 3.1.10 payloads will end.
+Newly created VRPs must only use the 3.1.11 payload for payment submissions.
+
+Note: This guidance applies to the POST /domestic-vrps endpoint only.
+
 ## **Consent Parameters**
 ### **What is VRP consent parameters?**
 
