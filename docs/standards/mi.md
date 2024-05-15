@@ -17,7 +17,7 @@ No. Please refer to relevant links for templates.
 
 * **FCA Reporting Template:** https://www.handbook.fca.org.uk/form/sup/SUP_16_ann_46A_20190914.pdf  & <a href="https://standards.openbanking.org.uk/wp-content/uploads/2022/02/Operational-Guidelines-ASPSP-Reporting-Template-v3.1.10v1.xlsx" class="external-link" rel="nofollow"> Operational Guidelines ASPSP Reporting Template v3.1.10</a>
 
-* **OBL Reporting Template:** <a href="https://openbankinguk.github.io/mi-docs-pub/v3.1.10-aspsp/specification/example-reporting-template.html" class="external-link" rel="nofollow"> ASPSP MI Reporting Template - v3.1.10</a>
+* **OBL Reporting Template:** <a href="https://openbankinguk.github.io/mi-docs-pub/v4.0-aspsp/specification/example-reporting-template.html" class="external-link" rel="nofollow"> ASPSP MI Reporting Template - v4.0-draft1</a>
 
 
 ### **While reporting to FCA using the reporting template, should the ASPSP publish statistics for both website and mobile app separately?**

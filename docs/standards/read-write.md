@@ -491,7 +491,7 @@ The ASPSPs are free to determine which balance types they should publish. The ge
 
 #### **As an ASPSP, do we need to support a specific file type for File Payments?**
 
-ASPSPs need to provide the ability for PISPs to initiate the same payment types, which can be initiated by the PSU on their online channels. The ASPSPs can define their own [namespaced enumeration](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/read-write-data-api-profile.html#enumerations) to list their custom file types.
+ASPSPs need to provide the ability for PISPs to initiate the same payment types, which can be initiated by the PSU on their online channels. The ASPSPs can define their own [namespaced enumeration](https://openbankinguk.github.io/read-write-api-site3/v4.0-draft1/profiles/read-write-data-api-profile.html#enumerations) to list their custom file types.
 
 #### **As a TPP, do we need to support a specific file type for File Payments at an ASPSP?**
 

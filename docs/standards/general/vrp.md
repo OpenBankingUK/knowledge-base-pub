@@ -87,7 +87,7 @@ Refer to CEG - [VRP Payments under Sweeping Access](https://standards.openbankin
 
 #### **Where can we find latest VRP specifications for sweeping?**
 
-Refer to Specifications - [Variable Recurring Payments API Profile](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/vrp-profile.html) 
+Refer to Specifications - [Variable Recurring Payments API Profile](https://openbankinguk.github.io/read-write-api-site3/v4.0-draft1/profiles/vrp-profile.html) 
 
 #### **Where can we find more guidelines for sweeping?**
 
@@ -156,7 +156,7 @@ Refer to Proposition - [Proposition - Variable Recurring Payments (VRPs) | 8.-Re
 
 ### **Where can we find VRP Specifications?**
 
-Refer to Specifications - https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/vrp-profile.html
+Refer to Specifications - https://openbankinguk.github.io/read-write-api-site3/v4.0-draft1/profiles/vrp-profile.html
 ### **Can PSU revoke VRP consent at the PISP?**
 
 Yes. The PISP is expected to provide a mechanism within their domain to enable the PSU to revoke their consent for initiation of any future payment orders, by revoking the authorisation of VRP consent. 
@@ -374,7 +374,7 @@ The rationale for this is that allowing ASPSPs to set a limit risks ASPSPs adopt
 
 ### **Where can I find examples on periodic limits and periodic type?**
 
-Examples of both consent and calendar types are in the specifications - [Domestic VRP consents - v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/vrp/domestic-vrp-consents.html#examples-of-periodic-limits) 
+Examples of both consent and calendar types are in the specifications - [Domestic VRP consents - v4.0-draft1](https://openbankinguk.github.io/read-write-api-site3/v4.0-draft1/resources-and-data-models/vrp/domestic-vrp-consents.html#examples-of-periodic-limits) 
 
 
 ### **Who should specify the consent parameter limits - PSU or PISP?**
