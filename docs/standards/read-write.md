@@ -247,7 +247,7 @@ If a PSU has given consent to a PISP to initiate a SO or FDP, then the SO and FD
 
 ### **What types and lengths of account identification are supported?**
 
-UK.OBIE.SortCodeAccountNumber is specific to UK. The SchemeName field is namespaced, meaning the ASPSP/PISP may use a different scheme name, if it is not already defined in OBL specifications.
+UK.OB.SortCodeAccountNumber is specific to UK. The SchemeName field is namespaced, meaning the ASPSP/PISP may use a different scheme name, if it is not already defined in OBL specifications.
 
 The identification field is 256 characters long so you can add more than 14 characters if required.
 
@@ -269,7 +269,7 @@ For more details, please refer to Customer Experience Guidelines:
 
 The standards do not specify the response in this situation. ASPSPs may:
 
-* reject the account-access-consent with a status code of 400 and error code of `UK.OBIE.Field.Invalid` OR
+* reject the account-access-consent with a status code of 400 and error code of `UK.OB.Field.Invalid` OR
 * process the request successfully.
 
 ASPSPs **must** make documentation available to TPPs (e.g. on their developer portals) which should specify which 'Conditional' / 'Optional' endpoints and fields have been implemented.
@@ -549,7 +549,7 @@ It is not considered mandatory for ASPSPs to implement this format.
 
 ### **What would be the appropriate `ErrorCode` in case the request contains a malformed body, e.g. incorrect JSON?**
 
-The closest would be `UK.OBIE.Field.Invalid` 
+The closest would be `UK.OB.Field.Invalid` 
 
 If the JSON could be parsed, but some fields could not be validated, the error message should include the field (or if possible, fields) that were invalid.
 
