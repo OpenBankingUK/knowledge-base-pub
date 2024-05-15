@@ -28,7 +28,7 @@ On Behalf Of: the name of any agent of a TPP, who must also be registered as an 
 
 The information from these fields can then be displayed to the PSU by TPPs and ASPSPs during the process of consent, authentication and revocation. However, currently, there is no consistent approach between TPPs and ASPSPs in terms of which of the legal or trading names are displayed. There are also a number of TSPs, acting on behalf of TPPs, who are incorrectly using their name instead of the TPP name. This can create a poor customer experience, confuse customers, and reduce the adoption and benefits of open banking services. It is essential that  PSUs are clearly informed of the name of the TPP that is providing the payment service. 
 
-Further guidance around this will be provided in CEGs and Directory services in due course. In the meantime, OBIE has published some relevant FAQs below:
+Further guidance around this will be provided in CEGs and Directory services in due course. In the meantime, OBL has published some relevant FAQs below:
 
 ### **What is a Company Name?**
 

@@ -125,7 +125,7 @@ Both ASPSPs and TPPs should format all URIs using URL encoding. Participants sho
 
 ### **What length of URIs should be allowed for redirect**
 
-OBIE does not define a maximum URI length.
+OBL does not define a maximum URI length.
 
 The URI limit is something that is enforced by your server and client. It is reasonable to assume URIs could be as much as 2048 characters, which is the lowest limit of any of the major, modern browsers.
 
@@ -189,22 +189,22 @@ Yes, an ASPSP can provide a statement to the AISP using non JSON file format. Th
 
 ### **What are the implementation timelines for a newly published specification or guidelines?**
 
-Please refer to the Operational Guidelines: <a href="https://standards.openbanking.org.uk/operational-guidelines/change-and-communication-management/implementation-of-a-new-obie-standard/latest/" class="external-link" rel="nofollow">Implementation of a new OBIE Standard</a>
+Please refer to the Operational Guidelines: <a href="https://standards.openbanking.org.uk/operational-guidelines/change-and-communication-management/implementation-of-a-new-obie-standard/latest/" class="external-link" rel="nofollow">Implementation of a new OBL Standard</a>
 
 * It is up to ASPSPs to take their own position of which version of each component of the Standard they chose to implement in order to meet both regulatory and commercial requirements.
-* OBIE recommends that where an ASPSP chooses to implement a new version of any component of the Standard, they should implement each new major version within six months, and each new minor version within three months of the Standard being published by OBIE.
+* OBL recommends that where an ASPSP chooses to implement a new version of any component of the Standard, they should implement each new major version within six months, and each new minor version within three months of the Standard being published by OBL.
 
 ASPSPs should provide notification of any changes to TPPs at least three months prior to those changes taking effect.
 
 ### **Do TPPs have to implement the s Dashboard?**
 
-While there is no regulatory requirement for the provision of a consent dashboard by TPPs, OBIE strongly encourages all TPPs to provide a consent dashboard to their customers to enable view and revoke on-going consents.
+While there is no regulatory requirement for the provision of a consent dashboard by TPPs, OBL strongly encourages all TPPs to provide a consent dashboard to their customers to enable view and revoke on-going consents.
 
 ### **Is OBErrorResponse1/Errors/Message mandatory, and what level of detail is expected?**
 
 This is considered a mandatory field and ASPSPs must include a description of the error that occurred. E.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'
 
-OBIE does not standardise this field and it is up to each ASPSP to determine the appropriate level of detail to provide an adequate description of the error that has taken place to the TPP.
+OBL does not standardise this field and it is up to each ASPSP to determine the appropriate level of detail to provide an adequate description of the error that has taken place to the TPP.
 
 TPPs will need to determine which error codes to implement depending on the relevant error code(s) applicable to them and their service offerings.
 
@@ -239,7 +239,7 @@ For more details refer to: [read-write-data-api-profile.html#token-expiry-time](
 
 This relates to client registration that the TPP does with each ASPSP.
 
-The OBIE Standard is silent on Client registration and De-registration. It is up to ASPSPs to decide their approach in alignment with FAPI and OpenId Connect.
+The OBL Standard is silent on Client registration and De-registration. It is up to ASPSPs to decide their approach in alignment with FAPI and OpenId Connect.
 
 ### **Is it possible to amend or revoke a standing order (SO) or scheduled payment (FDP)?**
 
@@ -247,15 +247,15 @@ If a PSU has given consent to a PISP to initiate a SO or FDP, then the SO and FD
 
 ### **What types and lengths of account identification are supported?**
 
-UK.OBIE.SortCodeAccountNumber is specific to UK. The SchemeName field is namespaced, meaning the ASPSP/PISP may use a different scheme name, if it is not already defined in OBIE specifications.
+UK.OBIE.SortCodeAccountNumber is specific to UK. The SchemeName field is namespaced, meaning the ASPSP/PISP may use a different scheme name, if it is not already defined in OBL specifications.
 
 The identification field is 256 characters long so you can add more than 14 characters if required.
 
 ### **Does the ASPSP always have to redirect back to the TPP?**
 
-The OBIE Standard supports 2 methods of authentication: redirection and decoupled.
+The OBL Standard supports 2 methods of authentication: redirection and decoupled.
 
-For redirection, OBIE's research has suggested that redirection screens are a useful part of the process, providing customer trust. The following reasons are noted:
+For redirection, OBL's research has suggested that redirection screens are a useful part of the process, providing customer trust. The following reasons are noted:
 
 They help customers navigate their online journey and inform them of what is going to happen next.
 They help create a clear sense of separation between the TPP’s domain and the ASPSP’s domain.
@@ -282,13 +282,13 @@ ASPSPs **must** make documentation available to TPPs (e.g. on their developer po
 
 ### **Is there a list of all ASPSPs participating in the Open Banking Ecosystem?**
 
-Together with UK Finance and FDATA, OBIE has developed and maintains a list of ASPSPs here: <a href="https://openbanking.atlassian.net/wiki/spaces/AD/pages/1135346433/Transparency+Calendar/" class="external-link" rel="nofollow">Transparency Calendar</a>
+Together with UK Finance and FDATA, OBL has developed and maintains a list of ASPSPs here: <a href="https://openbanking.atlassian.net/wiki/spaces/AD/pages/1135346433/Transparency+Calendar/" class="external-link" rel="nofollow">Transparency Calendar</a>
 
 This shows key information including: contact details, which directory is being used, and a link to a page maintained by each ASPSP showing further details of the APIs being implemented by each. While this list does not guarantee to include all UK ASPSPs, it is intended to be as comprehensive as possible.
 
 ### **What error code should an ASPSP send back to a TPP if a wrong x-fapi-financial-id was sent in the request?**
 
-The `x-fapi-financial-id` header was required up until Version 3.1.1 of the OBIE Read-write API profile. ASPSPs that implement this version must reject an invalid request with a 403 (Forbidden).
+The `x-fapi-financial-id` header was required up until Version 3.1.1 of the OBL Read-write API profile. ASPSPs that implement this version must reject an invalid request with a 403 (Forbidden).
 
 The requirement for providing `x-fapi-financial-id` in the request header was removed from FAPI and subsequently removed from Version 3.1.2 of the Read/Write API Specification.
 
@@ -304,17 +304,17 @@ ASPSPs must make documentation available to TPPs (e.g. on their developer portal
 
 Yes, ASPSPs can create their own enumerations.
 
-The OBIE Specification includes various fields of Enumerated data types, where either the values are fixed to an OBIE defined set of alternatives (i.e. Static Enumerations), or flexible with an initial OBIE defined set of alternatives, and ASPSPs can use/extend these alternatives (i.e. Namespaced Enumerations).
+The OBL Specification includes various fields of Enumerated data types, where either the values are fixed to an OBL defined set of alternatives (i.e. Static Enumerations), or flexible with an initial OBL defined set of alternatives, and ASPSPs can use/extend these alternatives (i.e. Namespaced Enumerations).
 
 See : [namespaced-enumerations](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/references/namespaced-enumerations.html)
 
 ### **Have any ASPSPs requested new values to be added to enumeration?**
 
-ASPSPs do not need to approach OBIE before adding new enumerated values. They are free to do so, when necessary.
+ASPSPs do not need to approach OBL before adding new enumerated values. They are free to do so, when necessary.
 
-### **Does an AISP need to display OBIE defined data clusters and permission language in the UI?**
+### **Does an AISP need to display OBL defined data clusters and permission language in the UI?**
 
-While not a specific regulatory requirement, AISPs are strongly encouraged to clearly display the OBIE data clusters and permission language to the PSU as part of their consent journey.
+While not a specific regulatory requirement, AISPs are strongly encouraged to clearly display the OBL data clusters and permission language to the PSU as part of their consent journey.
 
 ### **How can the ASPSP inform the AISP that access has been revoked?**
 
@@ -429,13 +429,13 @@ The only workable option is to use a buffer or character array that represents t
 
 ### **Should the trust anchor in detached JWS Signatures in Sandbox be openbanking.org.uk or openbankingtest.org.uk?**
 
-The standard only specifies the trust anchor value to be used in production scenarios when using the OBIE Directory. The value openbanking.org.uk should be used to identify the OBIE Directory as the trust anchor.
+The standard only specifies the trust anchor value to be used in production scenarios when using the OBL Directory. The value openbanking.org.uk should be used to identify the OBL Directory as the trust anchor.
 
-The standard does not specify the trust anchor value to be used when the OBIE Sandbox Directory is used as a trust anchor.
+The standard does not specify the trust anchor value to be used when the OBL Sandbox Directory is used as a trust anchor.
 
-The model bank that is commissioned by the OBIE will accept either openbanking.org.uk or openbankingtest.org.uk as tan values.
+The model bank that is commissioned by the OBL will accept either openbanking.org.uk or openbankingtest.org.uk as tan values.
 
-### **Why does the OBIE standard not use standard security headers such as Content-Security-Policy, X-XSS-Protection etc ? Can an ASPSP add these headers to their responses?**
+### **Why does the OBL standard not use standard security headers such as Content-Security-Policy, X-XSS-Protection etc ? Can an ASPSP add these headers to their responses?**
 
 The APIs are not meant to be surfaced up in a browser directly and it does not make sense to include those headers in the context of these standards.
 
@@ -485,7 +485,7 @@ Practically, some browsers will cause issues with a TOO_MANY_REDIRECTS error - b
 
 ### **What does each of the Balance types mean? Does an ASPSP have to provide specific balance types in its response?**
 
-The enumeration for the Balance Type field is based on the ISO 20022 definition for the field. When we base data structures on an underlying standard, we do not generally provide additional descriptions on the usage, unless there is an OBIE specific deviation.
+The enumeration for the Balance Type field is based on the ISO 20022 definition for the field. When we base data structures on an underlying standard, we do not generally provide additional descriptions on the usage, unless there is an OBL specific deviation.
 
 The ASPSPs are free to determine which balance types they should publish. The general expectation is that an ASPSP should provide the same information through its APIs as it does through its online channels. In situations where the more than one Balance Type could be used to describe the balance provided by the ASPSP, it is for the ASPSP to determine the appropriate type to be used.
 
@@ -645,7 +645,7 @@ Finally, that journey MUST end with the PSU browser receiving a 30x Redirect res
 Practically, some browsers will cause issues with a TOO_MANY_REDIRECTS error - but the standard is silent on that. It is likely that old / non-evergreen browsers may cause some issues.
 
 ### **Can refresh token be issued without an HoK mechanism to avoid impacts on member and would it be in compliance with FAPI?** 
-### **CIf a refresh token is issued with MTLS HoK, would it force the PSU to re-authenticate? Would this be an acceptable user Journey?**
+### **If a refresh token is issued with MTLS HoK, would it force the PSU to re-authenticate? Would this be an acceptable user Journey?**
 
 When using a refresh token, there should be no expectation on the PSU to re-authenticate each time they access token is renewed. The PSU should only be required to re-authenticate with their ASPSP within a 90 day period, and in this instance, TPPs are expected to use the “refreshing AISP access” journey in the CEGs.
 
@@ -661,7 +661,7 @@ If using `tls_client_auth`, the certificate is validated by comparing with tls_c
 
 ### **Is it acceptable for an ASPSP to have multiple authorization servers? How should these be discoverable?**
 
-ASPSPs may have multiple AS and RS (e.g. to serve different brands and products). However, for ASPSPs that use the OBIE directory, these must be discoverable through the directory.
+ASPSPs may have multiple AS and RS (e.g. to serve different brands and products). However, for ASPSPs that use the OBL directory, these must be discoverable through the directory.
 
 Furthermore, the use of additional authorization servers should not result in invalid or incorrectly formed OIDC discovery documents.
 
@@ -730,7 +730,7 @@ A checklist for correct implementations:
 
 6. If the ASPSP has multiple authorization servers, each authorization server must be discoverable through a separate discovery document. Each discovery document must meet the criteria above.
 
-7. ASPSPs that use the OBIE directory should register each authorization server on the OBIE directory with its corresponding discovery end-point.
+7. ASPSPs that use the OBL directory should register each authorization server on the OBL directory with its corresponding discovery end-point.
 
 ## **VRP**
 *Where can I find the latest version of VRP specifications?

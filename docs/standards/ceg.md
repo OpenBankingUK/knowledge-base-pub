@@ -14,7 +14,7 @@ Please see <a href="https://standards.openbanking.org.uk/get-started/" class="ex
 
 ASPSPs must provide PSUs with the ability to request all the Confirmation of Funds (CoF) access history (i.e. all CoF requests and responses) under a specific CBPII.  This must include the identity of the CBPII who made the request, and the response (Y/N) given.
 
-While OBIE recommends the use of the Access Dashboard for provision of CoF Access History to the PSU, it is in the domain of each ASPSP to consider alternative options to meet their regulatory requirements for the provision of the COF access history.
+While OBL recommends the use of the Access Dashboard for provision of CoF Access History to the PSU, it is in the domain of each ASPSP to consider alternative options to meet their regulatory requirements for the provision of the COF access history.
 
 ### **Can you provide guidance on how a balance transfer journey should look like?**
 

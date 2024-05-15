@@ -9,7 +9,7 @@ The Competition and Markets Authority (CMA) has published further clarification 
 
 
 ### **Where can I find more clarification on destination accounts?**
-Several questions have arisen regarding the interpretation of this clarification, so the OBIE has published answers to key questions. Refer to the below queries under heading "Sweeping-destination account queries" or download from [here](https://www.openbanking.org.uk/news/important-update-questions-and-answers-on-the-definition-of-sweeping/)
+Several questions have arisen regarding the interpretation of this clarification, so the OBL has published answers to key questions. Refer to the below queries under heading "Sweeping-destination account queries" or download from [here](https://www.openbanking.org.uk/news/important-update-questions-and-answers-on-the-definition-of-sweeping/)
 
 ### **Sweeping-destination account queries**
 These Q&As concern destination accounts for sweeping transactions which the nine mandated banks under the CMA Order (the “CMA9”) are required to grant sweeping access for under the Order. We anticipate that in addition to sweeping, individual CMA9 firms and Third Party Providers (“TPPs”) may wish to enter into commercial arrangements to access VRPs for purposes other than sweeping.  Nothing in the Q&As restrict this.
@@ -68,11 +68,11 @@ If the ASPSP and the PISP are unable to reach an agreement, we would expect both
 
 In addition, we would expect  the parties to adopt the following process:
 
-1.	The ASPSP or PISP to inform the OBIE (including by raising a ticket via the Open Banking Service Desk) that they believe a particular use case does not meet the definition of sweeping within scope of the Order as clarified by the CMA in its March 2022 letter. 
+1.	The ASPSP or PISP to inform the OBL (including by raising a ticket via the Open Banking Service Desk) that they believe a particular use case does not meet the definition of sweeping within scope of the Order as clarified by the CMA in its March 2022 letter. 
 
-2.	OBIE will investigate the matter. For example, by requesting evidence from the ASPSP as to why they believe the use case is not sweeping and asking the PISP for evidence to support their assertion that a particular use case meets the definition of sweeping. 
+2.	OBL will investigate the matter. For example, by requesting evidence from the ASPSP as to why they believe the use case is not sweeping and asking the PISP for evidence to support their assertion that a particular use case meets the definition of sweeping. 
 
-3.	Based on the evidence provided, the OBIE will make a recommendation as to whether a particular transaction meets the definition of sweeping.  This recommendation would be provided to the ASPSP and the PISP involved in the dispute. The CMA will also be informed by OBIE of its recommendation. 
+3.	Based on the evidence provided, the OBL will make a recommendation as to whether a particular transaction meets the definition of sweeping.  This recommendation would be provided to the ASPSP and the PISP involved in the dispute. The CMA will also be informed by OBL of its recommendation. 
 
 This process does not prevent the CMA from taking enforcement action against a breach of its remedy where appropriate, or for parties to undertake private enforcement action against a breach. 
 
@@ -204,7 +204,7 @@ Note: The [VRP payments under sweeping access](https://standards.openbanking.org
 
 ### **What proof do ASPSPs need to provide to PISP in order to claim money back from customer disputes?**
 
-The regulatory requirements relating to ASPSP and PISP disputes, including the burden of proof are outlined in the PSRs. While OBIE is unable to provide advice on this issue, there is useful information on this in the June 2019 [FCA Approach document, specifically in paragraphs (8.189 -8.330)](https://www.fca.org.uk/publication/finalised-guidance/fca-approach-payment-services-electronic-money-2017.pdf) 
+The regulatory requirements relating to ASPSP and PISP disputes, including the burden of proof are outlined in the PSRs. While OBL is unable to provide advice on this issue, there is useful information on this in the June 2019 [FCA Approach document, specifically in paragraphs (8.189 -8.330)](https://www.fca.org.uk/publication/finalised-guidance/fca-approach-payment-services-electronic-money-2017.pdf) 
 
 ### **Do ASPSPs need to differentiate between sweeping VRPs and non-sweeping VRPs from a customer perspective?**
 

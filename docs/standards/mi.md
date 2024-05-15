@@ -42,7 +42,7 @@ Yes, the reporting table is created for reporting 90 days re-authentication only
 
 Not until v3.1.5 of the MI. 
 
-### **Does Section 3.4-B PSU Consent Adoption (OBIE) of ASPSP MI Data dictionary refer to ‘consent’ or ‘access’ from an ASPSP reporting perspective?**
+### **Does Section 3.4-B PSU Consent Adoption (OBL) of ASPSP MI Data dictionary refer to ‘consent’ or ‘access’ from an ASPSP reporting perspective?**
 
 These are stated with PSU in mind (PSU perspective) and thus use of the word “consent” to indicate ‘consent’ given to the TPP by the PSU, which underpins the access at the ASPSP. However, this is ASPSP reporting and hence the section requires reporting access data statistics.
 
