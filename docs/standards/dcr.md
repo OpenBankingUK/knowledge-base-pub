@@ -13,13 +13,13 @@ Dynamic Client Registration (DCR) allows ASPSPs to register TPPs as OIDC clients
 
 No
 
-### **Does the DCR specification support ASPSPs who do not accept OBIE issued SSAs?**
+### **Does the DCR specification support ASPSPs who do not accept OBL issued SSAs?**
 
 The DCR specification provides the extensibility to use an SSA from any trust anchor (not just the Open Banking Directory). However, the specification does not define these extension points. It is up to each ASPSP or Trust Anchor to define how other SSAs should be used in this case.
 
 ### **Can an ASPSP register a TPP client using different parameters than specified?**
 
-Yes. The underlying standard that was used for the DCR specification permits this behaviour, without requiring the ASPSP to return an error. As a result, the OBIE profile continues to support this behaviour as well.
+Yes. The underlying standard that was used for the DCR specification permits this behaviour, without requiring the ASPSP to return an error. As a result, the OBL profile continues to support this behaviour as well.
 
 ### **How does a TPP identify the authentication methods, grant types and algorithms that an ASPSP supports?**
 
@@ -45,7 +45,7 @@ An ASPSP may accept either or both `content-type` headers. They should provide c
 
 ### **Why is the `aud` field of a different length from the other fields with a UUIDv4?**
 
-When using OBIE issued SSA, the `aud` field is the value provided by OBIE directory and is 18 characters long.
+When using OBL issued SSA, the `aud` field is the value provided by OBL directory and is 18 characters long.
 
 The field size is limited to that size to accommodate the FPS requirement to send information in Field 122 related to the software statement id and organization id.
 
@@ -59,4 +59,4 @@ https://openbankinguk.github.io/dcr-docs-pub/v3.3/dynamic-client-registration.ht
 
 It is necessary to register the redirect URI with each ASPSP.
 
-If the TPP wants to carry out redirects to a site not owned by the TPP, the TPP would still need to register the redirect URI with the OBIE directory. They would subsequently need to update their client registrations (using DCR PUT requests if supported) with each ASPSP.
+If the TPP wants to carry out redirects to a site not owned by the TPP, the TPP would still need to register the redirect URI with the OBL directory. They would subsequently need to update their client registrations (using DCR PUT requests if supported) with each ASPSP.

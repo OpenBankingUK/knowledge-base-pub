@@ -5,11 +5,10 @@
 ## **Sweeping**
 
 ### **Where can we find the definition of sweeping?**
-The Competition and Markets Authority (CMA) has published further clarification on the definition of sweeping. You can view this [here](https://assets.publishing.service.gov.uk/media/622ef71fd3bf7f5a86be8fa4/Sweeping_clarification_letter_to_be_sent_14_March_2022__.pdf). Please also refer to CEG - [Definition of VRP for sweeping](https://standards.openbanking.org.uk/other-guidelines/vrp-for-sweeping-guidelines/latest/#sweeping)
-
+The Competition and Markets Authority (CMA) has published further clarification on the definition of sweeping. You can view this [here](https://assets.publishing.service.gov.uk/media/622ef71fd3bf7f5a86be8fa4/Sweeping_clarification_letter_to_be_sent_14_March_2022__.pdf). Please also refer to CEG - [Definition of VRP for sweeping](https://standards.openbanking.org.uk/good-practice/vrp-for-sweeping-guidelines/latest/)
 
 ### **Where can I find more clarification on destination accounts?**
-Several questions have arisen regarding the interpretation of this clarification, so the OBIE has published answers to key questions. Refer to the below queries under heading "Sweeping-destination account queries" or download from [here](https://www.openbanking.org.uk/news/important-update-questions-and-answers-on-the-definition-of-sweeping/)
+Several questions have arisen regarding the interpretation of this clarification, so the OBL has published answers to key questions. Refer to the below queries under heading "Sweeping-destination account queries" or download from [here](https://www.openbanking.org.uk/news/important-update-questions-and-answers-on-the-definition-of-sweeping/)
 
 ### **Sweeping-destination account queries**
 These Q&As concern destination accounts for sweeping transactions which the nine mandated banks under the CMA Order (the “CMA9”) are required to grant sweeping access for under the Order. We anticipate that in addition to sweeping, individual CMA9 firms and Third Party Providers (“TPPs”) may wish to enter into commercial arrangements to access VRPs for purposes other than sweeping.  Nothing in the Q&As restrict this.
@@ -68,11 +67,11 @@ If the ASPSP and the PISP are unable to reach an agreement, we would expect both
 
 In addition, we would expect  the parties to adopt the following process:
 
-1.	The ASPSP or PISP to inform the OBIE (including by raising a ticket via the Open Banking Service Desk) that they believe a particular use case does not meet the definition of sweeping within scope of the Order as clarified by the CMA in its March 2022 letter. 
+1.	The ASPSP or PISP to inform the OBL (including by raising a ticket via the Open Banking Service Desk) that they believe a particular use case does not meet the definition of sweeping within scope of the Order as clarified by the CMA in its March 2022 letter. 
 
-2.	OBIE will investigate the matter. For example, by requesting evidence from the ASPSP as to why they believe the use case is not sweeping and asking the PISP for evidence to support their assertion that a particular use case meets the definition of sweeping. 
+2.	OBL will investigate the matter. For example, by requesting evidence from the ASPSP as to why they believe the use case is not sweeping and asking the PISP for evidence to support their assertion that a particular use case meets the definition of sweeping. 
 
-3.	Based on the evidence provided, the OBIE will make a recommendation as to whether a particular transaction meets the definition of sweeping.  This recommendation would be provided to the ASPSP and the PISP involved in the dispute. The CMA will also be informed by OBIE of its recommendation. 
+3.	Based on the evidence provided, the OBL will make a recommendation as to whether a particular transaction meets the definition of sweeping.  This recommendation would be provided to the ASPSP and the PISP involved in the dispute. The CMA will also be informed by OBL of its recommendation. 
 
 This process does not prevent the CMA from taking enforcement action against a breach of its remedy where appropriate, or for parties to undertake private enforcement action against a breach. 
 
@@ -87,7 +86,7 @@ Refer to CEG - [VRP Payments under Sweeping Access](https://standards.openbankin
 
 #### **Where can we find latest VRP specifications for sweeping?**
 
-Refer to Specifications - [Variable Recurring Payments API Profile](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/vrp-profile.html) 
+Refer to Specifications - [Variable Recurring Payments API Profile](https://openbankinguk.github.io/read-write-api-site3/v4.0-draft1/profiles/vrp-profile.html) 
 
 #### **Where can we find more guidelines for sweeping?**
 
@@ -156,7 +155,7 @@ Refer to Proposition - [Proposition - Variable Recurring Payments (VRPs) | 8.-Re
 
 ### **Where can we find VRP Specifications?**
 
-Refer to Specifications - https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/vrp-profile.html
+Refer to Specifications - https://openbankinguk.github.io/read-write-api-site3/v4.0-draft1/profiles/vrp-profile.html
 ### **Can PSU revoke VRP consent at the PISP?**
 
 Yes. The PISP is expected to provide a mechanism within their domain to enable the PSU to revoke their consent for initiation of any future payment orders, by revoking the authorisation of VRP consent. 
@@ -204,7 +203,7 @@ Note: The [VRP payments under sweeping access](https://standards.openbanking.org
 
 ### **What proof do ASPSPs need to provide to PISP in order to claim money back from customer disputes?**
 
-The regulatory requirements relating to ASPSP and PISP disputes, including the burden of proof are outlined in the PSRs. While OBIE is unable to provide advice on this issue, there is useful information on this in the June 2019 [FCA Approach document, specifically in paragraphs (8.189 -8.330)](https://www.fca.org.uk/publication/finalised-guidance/fca-approach-payment-services-electronic-money-2017.pdf) 
+The regulatory requirements relating to ASPSP and PISP disputes, including the burden of proof are outlined in the PSRs. While OBL is unable to provide advice on this issue, there is useful information on this in the June 2019 [FCA Approach document, specifically in paragraphs (8.189 -8.330)](https://www.fca.org.uk/publication/finalised-guidance/fca-approach-payment-services-electronic-money-2017.pdf) 
 
 ### **Do ASPSPs need to differentiate between sweeping VRPs and non-sweeping VRPs from a customer perspective?**
 
@@ -374,7 +373,7 @@ The rationale for this is that allowing ASPSPs to set a limit risks ASPSPs adopt
 
 ### **Where can I find examples on periodic limits and periodic type?**
 
-Examples of both consent and calendar types are in the specifications - [Domestic VRP consents - v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/vrp/domestic-vrp-consents.html#examples-of-periodic-limits) 
+Examples of both consent and calendar types are in the specifications - [Domestic VRP consents - v4.0-draft1](https://openbankinguk.github.io/read-write-api-site3/v4.0-draft1/resources-and-data-models/vrp/domestic-vrp-consents.html#examples-of-periodic-limits) 
 
 
 ### **Who should specify the consent parameter limits - PSU or PISP?**
@@ -430,3 +429,43 @@ All the consent parameters have to be agreed upon between the PISP and the PSU a
 ### ** While calculating the periodic limit amount, do we need to exclude the payments that have Rejected status?**
 
 Yes, you should exclude those with `Rejected` status.
+
+### **What is a VRP Marker? What are the supported types?**
+
+VRP markers are introduced and defined by Pay.UK to identify and gather MI for different types of VRP payments. The various types that are required are classified in the below table.
+
+![Sweeping](../general/images/Sweeping.png)
+
+Note: V05 and V06 has been reserved for ‘attended’ payments, although most VRPs will be ‘unattended’ at this time. 
+
+### **Who is required to provide the VRP Marker? **
+All the ASPSPs to provide VRP Marker when each VRP payment (Sweeping [sVRP]or non sweeping [cVRP]) is submitted to the faster payments rail. OBL has enhanced existing guidance around VRP markers to provide additional guidance to PISPs and ASPSPs to support this requirement. 
+
+### **Is there a marker for normal non VRP open banking payments?**
+Yes. All the non VRP open banking payments must have the marker [A**]. For more guidance refer to here.  
+
+### **What if the sending ASPSP cannot derive the VRP marker due to insufficient information provided by the PISP?**
+The ASPSP must provide sufficient clarification on their developer portal for PISPs to provide the necessary information.
+
+### **Should the ASPSP reject a VRP payment if the PISP has not provided the necessary information (VRP Type or PSU Interaction Type)?**
+We recommend that ASPSPs do not hard reject VRP payments in cases where the PISP has not provided the necessary information, such as VRP Type or PSU Interaction Type. There may be unavoidable circumstances preventing the PISP from supplying this information. Instead, consider issuing a warning or providing guidance to the PISP to ensure the information is included in future transactions.
+
+### ** Where we can find more guidance for VRP markers?**
+The VRP markers are defined by [Pay.UK](https://pay.co.uk) and hence only required information is captured [here](https://openbankinguk.github.io/spec-pages-preview/v4.0-draft1/references/domestic-payment-message-formats.html#iso-8583)
+
+### **Is a VRP marker required for all types of VRP payments?**
+Yes, the OB Standards do not mandate this but it is required to be provided by the sending ASPSP for all types of VRP payments that are processed as faster payments. 
+### **Can you explain why Remittance Information is optional when VRP consent is setup, when it is required by the creditor for reconciliation?**
+Remittance Information MAY be provided in the Initiation section when a VRP Consent is setup. This means the same Remittance Information MUST be provided by the PISP in the Initiation and Instruction section of each VRP Payment. If each VRP Payment requires dynamic Remittance Information for each VRP Payment then the Remittance Information at the VRP Consent level MUST NOT be captured. The Remittance Information in the Initiation section provided at the VRP Payment level MUST match the Initiation section provided at the VRP Consent level.
+
+### **Can the PISP populate a value in the Data.Instruction.RemittanceInformation.Reference, when "Data.Initiation.RemittanceInformation.Reference" is "blank?**
+Yes, they can populate a value. Please refer to this specification : [Under the Instruction object for VRP](https://openbankinguk.github.io/read-write-api-site3/v3.1.11/resources-and-data-models/vrp/domestic-vrps.html#obdomesticvrpinstruction), it has a UML occurrence of 0..1, so it's a field that may or may not appear in this object. Under the definition that you referenced, if this field is populated in the initiation object, then the reference field in the instruction must match the initiation value. There are no other limitations placed on this field, so if the initiation reference field is left blank, then this field can be populated with a different reference.
+
+### **What is the purpose of not setting up Remittance information at the consent level when it is required for each payment in a VRP?**
+Remittance information includes information related to the transaction which is helpful to the creditor to reconcile the payment against. There are two types of scenarios in which this information can be used.
+a. Static Reference in the Remittance Information that allows the same Remittance Information (like Credit card no) to be passed on to each VRP payment - (Setup at VRP consent level) or
+b. Dynamic Reference in the Remittance Information that allows different Reference values (like Invoice number) to be passed on to each  VRP payment - (Not set at VRP consent level).
+
+
+
+

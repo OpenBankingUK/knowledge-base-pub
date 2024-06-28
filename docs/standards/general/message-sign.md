@@ -3,7 +3,7 @@
 [[toc]]
 
 ### **Are there different versions for message signing? As a TPP, which version should I be using?**
-There are primarily three versions of message signing in the OBIE specifications:
+There are primarily three versions of message signing in the OBL specifications:
 
 Read-Write API Specifications 3.0
 Read-Write API Specifications 3.1.3
@@ -13,7 +13,7 @@ The version that is to be used is determined by the Read-Write API profile versi
 https://openbanking.atlassian.net/wiki/spaces/AD/pages/1135346433/Transparency+Calendar
 " class="external-link" rel="nofollow">transparency calendar</a>.
 
-Note: The rest of this FAQ covers Version 3.1.x only. Version 3.0 signatures are no longer supported by OBIE.
+Note: The rest of this FAQ covers Version 3.1.x only. Version 3.0 signatures are no longer supported by OBL.
 
 
 ### **What are the key differences between each of these versions?**
