@@ -9,13 +9,14 @@ Online Banking covers both Desktop and Mobile browsers. Mobile Banking means onl
 
 ASPSPs must use REP020 Quarterly statistics on availability and performance of dedicated interfaces, available at https://www.handbook.fca.org.uk/form/sup/SUP_16_ann_46A_20190914.pdf
 
-ASPSPs may also find this reporting template (<a href="https://standards.openbanking.org.uk/wp-content/uploads/2022/02/Operational-Guidelines-ASPSP-Reporting-Template-v3.1.10v1.xlsx" class="external-link" rel="nofollow"> Operational Guidelines ASPSP Reporting Template v3.1.11</a>) useful in this regard.
+ASPSPs may also find this reporting template (<a href="https://standards.openbanking.org.uk/wp-content/uploads/2022/04/Operational-Guidelines-ASPSP-Reporting-Template-v3.1.10v1.xlsx" class="external-link" rel="nofollow"> Operational Guidelines ASPSP Reporting Template v4.0</a>) useful in this regard.
+
 
 ### **Is the FCA reporting template same as the OBL MI reporting template?**
 
 No. Please refer to relevant links for templates.
 
-* **FCA Reporting Template:** https://www.handbook.fca.org.uk/form/sup/SUP_16_ann_46A_20190914.pdf  & <a href="https://standards.openbanking.org.uk/wp-content/uploads/2022/02/Operational-Guidelines-ASPSP-Reporting-Template-v3.1.10v1.xlsx" class="external-link" rel="nofollow"> Operational Guidelines ASPSP Reporting Template v3.1.10</a>
+* **FCA Reporting Template:** https://www.handbook.fca.org.uk/form/sup/SUP_16_ann_46A_20190914.pdf  & <a href="https://standards.openbanking.org.uk/wp-content/uploads/2022/04/Operational-Guidelines-ASPSP-Reporting-Template-v3.1.10v1.xlsx" class="external-link" rel="nofollow"> Operational Guidelines ASPSP Reporting Template v4.0</a>
 
 * **OBL Reporting Template:** <a href="https://openbankinguk.github.io/mi-docs-pub/v3.1.11-aspsp/specification/example-reporting-template.html" class="external-link" rel="nofollow"> ASPSP MI Reporting Template - v3.1.11</a>
 
@@ -32,7 +33,7 @@ There are two important issues to note in this context:
 
 The OIDC endpoints do not follow the same versioning as the rest of the API endpoints, so the version value should be the same as the version implemented for the AIS, PIS and CBPII services endpoints.
 
-Example: If v3.1.5 is implemented then the reporting value for the endpoints should be v3.1.5.
+Example: If v3.1.11 is implemented then the reporting value for the endpoints should be v3.1.11.
 
 ### **Does the 90-Days re-authentication reporting metrics intend only to report delegated re-auth by the AISP?**
 
