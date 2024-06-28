@@ -5,8 +5,7 @@
 ## **Sweeping**
 
 ### **Where can we find the definition of sweeping?**
-The Competition and Markets Authority (CMA) has published further clarification on the definition of sweeping. You can view this [here](https://assets.publishing.service.gov.uk/media/622ef71fd3bf7f5a86be8fa4/Sweeping_clarification_letter_to_be_sent_14_March_2022__.pdf). Please also refer to CEG - [Definition of VRP for sweeping](https://standards.openbanking.org.uk/other-guidelines/vrp-for-sweeping-guidelines/latest/#sweeping)
-
+The Competition and Markets Authority (CMA) has published further clarification on the definition of sweeping. You can view this [here](https://assets.publishing.service.gov.uk/media/622ef71fd3bf7f5a86be8fa4/Sweeping_clarification_letter_to_be_sent_14_March_2022__.pdf). Please also refer to CEG - [Definition of VRP for sweeping](https://standards.openbanking.org.uk/good-practice/vrp-for-sweeping-guidelines/latest/)
 
 ### **Where can I find more clarification on destination accounts?**
 Several questions have arisen regarding the interpretation of this clarification, so the OBL has published answers to key questions. Refer to the below queries under heading "Sweeping-destination account queries" or download from [here](https://www.openbanking.org.uk/news/important-update-questions-and-answers-on-the-definition-of-sweeping/)
@@ -430,3 +429,43 @@ All the consent parameters have to be agreed upon between the PISP and the PSU a
 ### ** While calculating the periodic limit amount, do we need to exclude the payments that have Rejected status?**
 
 Yes, you should exclude those with `Rejected` status.
+
+### **What is a VRP Marker? What are the supported types?**
+
+VRP markers are introduced and defined by Pay.UK to identify and gather MI for different types of VRP payments. The various types that are required are classified in the below table.
+
+![Sweeping](../general/images/Sweeping.png)
+
+Note: V05 and V06 has been reserved for ‘attended’ payments, although most VRPs will be ‘unattended’ at this time. 
+
+### **Who is required to provide the VRP Marker? **
+All the ASPSPs to provide VRP Marker when each VRP payment (Sweeping [sVRP]or non sweeping [cVRP]) is submitted to the faster payments rail. OBL has enhanced existing guidance around VRP markers to provide additional guidance to PISPs and ASPSPs to support this requirement. 
+
+### **Is there a marker for normal non VRP open banking payments?**
+Yes. All the non VRP open banking payments must have the marker [A**]. For more guidance refer to here.  
+
+### **What if the sending ASPSP cannot derive the VRP marker due to insufficient information provided by the PISP?**
+The ASPSP must provide sufficient clarification on their developer portal for PISPs to provide the necessary information.
+
+### **Should the ASPSP reject a VRP payment if the PISP has not provided the necessary information (VRP Type or PSU Interaction Type)?**
+We recommend that ASPSPs do not hard reject VRP payments in cases where the PISP has not provided the necessary information, such as VRP Type or PSU Interaction Type. There may be unavoidable circumstances preventing the PISP from supplying this information. Instead, consider issuing a warning or providing guidance to the PISP to ensure the information is included in future transactions.
+
+### ** Where we can find more guidance for VRP markers?**
+The VRP markers are defined by [Pay.UK](https://pay.co.uk) and hence only required information is captured [here](https://openbankinguk.github.io/spec-pages-preview/v4.0-draft1/references/domestic-payment-message-formats.html#iso-8583)
+
+### **Is a VRP marker required for all types of VRP payments?**
+Yes, the OB Standards do not mandate this but it is required to be provided by the sending ASPSP for all types of VRP payments that are processed as faster payments. 
+### **Can you explain why Remittance Information is optional when VRP consent is setup, when it is required by the creditor for reconciliation?**
+Remittance Information MAY be provided in the Initiation section when a VRP Consent is setup. This means the same Remittance Information MUST be provided by the PISP in the Initiation and Instruction section of each VRP Payment. If each VRP Payment requires dynamic Remittance Information for each VRP Payment then the Remittance Information at the VRP Consent level MUST NOT be captured. The Remittance Information in the Initiation section provided at the VRP Payment level MUST match the Initiation section provided at the VRP Consent level.
+
+### **Can the PISP populate a value in the Data.Instruction.RemittanceInformation.Reference, when "Data.Initiation.RemittanceInformation.Reference" is "blank?**
+Yes, they can populate a value. Please refer to this specification : [Under the Instruction object for VRP](https://openbankinguk.github.io/read-write-api-site3/v3.1.11/resources-and-data-models/vrp/domestic-vrps.html#obdomesticvrpinstruction), it has a UML occurrence of 0..1, so it's a field that may or may not appear in this object. Under the definition that you referenced, if this field is populated in the initiation object, then the reference field in the instruction must match the initiation value. There are no other limitations placed on this field, so if the initiation reference field is left blank, then this field can be populated with a different reference.
+
+### **What is the purpose of not setting up Remittance information at the consent level when it is required for each payment in a VRP?**
+Remittance information includes information related to the transaction which is helpful to the creditor to reconcile the payment against. There are two types of scenarios in which this information can be used.
+a. Static Reference in the Remittance Information that allows the same Remittance Information (like Credit card no) to be passed on to each VRP payment - (Setup at VRP consent level) or
+b. Dynamic Reference in the Remittance Information that allows different Reference values (like Invoice number) to be passed on to each  VRP payment - (Not set at VRP consent level).
+
+
+
+

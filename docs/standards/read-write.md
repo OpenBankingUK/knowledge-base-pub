@@ -39,7 +39,7 @@ The Account and Transaction API Profile describes the flows and common functiona
 * Subsequently, retrieve account and transaction data.
 
 The links to the list of Account and Transaction APIs :
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/account-and-transaction-api-profile.html" class="external-link" rel="nofollow">Account and Transaction APIs</a>
+<a href="https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/account-and-transaction-api-profile.html" class="external-link" rel="nofollow">Account and Transaction APIs</a>
 
 ### **What APIs can an CBPII access?**
 
@@ -52,7 +52,7 @@ The Confirmation of Funds API Profile describes the flows and common functionali
 This profile should be read in conjunction with a compatible Read/Write Data API Profile which provides a description of the elements that are common across all the Read/Write Data APIs, and compatible individual resources.
 
 For more details refer to :
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/confirmation-of-funds-api-profile" class="external-link" rel="nofollow">Account &amp; Confirmation of Funds API Profile</a>
+<a href="https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/confirmation-of-funds-api-profile" class="external-link" rel="nofollow">Account &amp; Confirmation of Funds API Profile</a>
 
 ### **How can the ASPSP inform the AISP that access has been revoked?**
 
@@ -78,7 +78,7 @@ The Payment Initiation API Profile describes the flows and common functionality 
 * Optionally retrieve the status of a payment-order **consent** or payment-order **resource** .
 
 For more details refer to :
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/payment-initiation-api-profile.html" class="external-link" rel="nofollow">Payment Initiation API Profile</a>
+<a href="https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/payment-initiation-api-profile.html" class="external-link" rel="nofollow">Payment Initiation API Profile</a>
 
 ### **Which payment-order types are supported by the PIS API?**
 
@@ -90,7 +90,7 @@ For more details refer to :
 
 ### **Are there different signing policies for Event Notifications?**
 
-The signing policy for any resource isn't dependent on the Swagger File. It is up to the ASPSP's implementation of the Events resource, e.g. <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/event-notification-api-profile.html#event-notification-message-signing" class="external-link" rel="nofollow">Event Notification Message Signing</a> and is similar to any other Read/Write API specification, other than the JWT's signature (JWS) which is sent in the HTTP body of the request, as opposed to a detached JWS sent in the HTTP header.
+The signing policy for any resource isn't dependent on the Swagger File. It is up to the ASPSP's implementation of the Events resource, e.g. <a href="https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/event-notification-api-profile.html#event-notification-message-signing" class="external-link" rel="nofollow">Event Notification Message Signing</a> and is similar to any other Read/Write API specification, other than the JWT's signature (JWS) which is sent in the HTTP body of the request, as opposed to a detached JWS sent in the HTTP header.
 
 ### **What is the Event Notification API?**
 
@@ -102,11 +102,11 @@ This covers a number of use cases, including:
 * Revocation of AISP access by the PSU in the ASPSP interface.
 
 For more details refer to :
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/event-notification-api-profile" class="external-link" rel="nofollow">event-notification-api-profile</a>
+<a href="https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/event-notification-api-profile" class="external-link" rel="nofollow">event-notification-api-profile</a>
 
 ### **How can a TPP register with the ASPSP to receive event notifications?**
 
-The  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/event-notification-subscription-api-profile.html" class="external-link" rel="nofollow">Event Notification Subscription API Profile</a> and the  <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/callback-url-api-profile.html" class="external-link" rel="nofollow">Callback URL API Profile</a> provide alternative mechanisms for TPPs to register for event notifications.
+The  <a href="https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/event-notification-subscription-api-profile.html" class="external-link" rel="nofollow">Event Notification Subscription API Profile</a> and the  <a href="https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/callback-url-api-profile.html" class="external-link" rel="nofollow">Callback URL API Profile</a> provide alternative mechanisms for TPPs to register for event notifications.
 * The Event Notification Subscription API allows TPPs to register to receive all or specific event types via the Real-Time Event Notification API and/or the Aggregated Polling API
 * The Callback URL API allows TPPs to register to receive `aurn:uk:org:openbanking:events:resource-updateevent` notification via the Real-Time Event Notification API.
 
@@ -116,8 +116,8 @@ Event Subscription, CallbackURLregistration and Aggregated Polling specification
 
 There are two Swagger specification files, for Events Resources:
 
-* [event-subscriptions-openapi & aggregated-polling-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.10/dist/openapi/events-openapi.yaml)
-* [event-notifications-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v3.1.10/dist/openapi/event-notifications-openapi.yaml)
+* [event-subscriptions-openapi & aggregated-polling-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v4.0/dist/openapi/events-openapi.yaml)
+* [event-notifications-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v4.0/dist/openapi/event-notifications-openapi.yaml)
 * 
 ### **How should my redirect URIs be encoded?**
 
@@ -150,12 +150,12 @@ The Open Banking Write specification enables the ASPSP to provide any relevant c
 
 (b) When the PISP submits the payment order, the ASPSP can respond by including any relevant charges (including a breakdown) as part of the payment response, which is returned to the PISP.
 
-For more details refer to : [api-specifications/read-write-specs/latest/](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/read-write-data-api-profile.html)
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/pisp/domestic-payments.html">Domestic Payments v3.1.10</a>
+For more details refer to : [api-specifications/read-write-specs/latest/](https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/read-write-data-api-profile.html)
+<a href="https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/pisp/domestic-payments.html">Domestic Payments v4.0</a>
 * Domestic payment consent - response (xpath - OBWriteDomesticConsentResponse5/Data/Charges).
 * Domestic payment - response (xpath - OBWriteDomesticResponse5/Data/Charges).
 
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/pisp/international-payment-consents.html">International Payments v3.1.10</a>
+<a href="https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/pisp/international-payment-consents.html">International Payments v4.0</a>
 * International payment consent - response (xpath - OBWriteInternationalConsentResponse6/Data/Charges).
 * International payment - response (xpath - OBWriteInternationalResponse5/Data/Charges).
 
@@ -184,7 +184,7 @@ Within the specified OBExternalPaymentChargeType1Code enum, the namespaced enume
 
 Yes, an ASPSP can provide a statement to the AISP using non JSON file format. The link to access this statement using a non JSON file format:
 
-<a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/aisp/Statements.html#get-accounts-accountid-statements-statementid-file/" class="external-link" rel="nofollow">GET /accounts/{AccountId}/statements/{StatementId}/file
+<a href="https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/aisp/Statements.html#get-accounts-accountid-statements-statementid-file/" class="external-link" rel="nofollow">GET /accounts/{AccountId}/statements/{StatementId}/file
 </a>
 
 ### **What are the implementation timelines for a newly published specification or guidelines?**
@@ -233,7 +233,7 @@ If the ASPSP does not issue a refresh token, the ASPSP **must not** populate the
 
 If the ASPSP issues a refresh token that does not expire, the ASPSP **must not** populate the claim named `http://openbanking.org.uk/refresh_token_expires_at` in the Id token.
 
-For more details refer to: [read-write-data-api-profile.html#token-expiry-time](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/read-write-data-api-profile.html#token-expiry-time)
+For more details refer to: [read-write-data-api-profile.html#token-expiry-time](https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/read-write-data-api-profile.html#token-expiry-time)
 
 ### **Does an ASPSP need to delete Client related consents once TPP has deleted Client?**
 
@@ -306,7 +306,7 @@ Yes, ASPSPs can create their own enumerations.
 
 The OBL Specification includes various fields of Enumerated data types, where either the values are fixed to an OBL defined set of alternatives (i.e. Static Enumerations), or flexible with an initial OBL defined set of alternatives, and ASPSPs can use/extend these alternatives (i.e. Namespaced Enumerations).
 
-See : [namespaced-enumerations](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/references/namespaced-enumerations.html)
+See : [namespaced-enumerations](https://openbankinguk.github.io/read-write-api-site3/v4.0/references/namespaced-enumerations.html)
 
 ### **Have any ASPSPs requested new values to be added to enumeration?**
 
@@ -354,7 +354,7 @@ A PISP **must not** create a payment-order consent ConsentId on a newer version 
 
 The ASPSP should respond with 400 (Bad Request) and the relevant Namespaced Enumeration.
 
-Please see [incomplete-or-malformed-request-payload](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/read-write-data-api-profile.html#incomplete-or-malformed-request-payload) and [namespaced-enumerations](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/references/namespaced-enumerations.html)
+Please see [incomplete-or-malformed-request-payload](https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/read-write-data-api-profile.html#incomplete-or-malformed-request-payload) and [namespaced-enumerations](https://openbankinguk.github.io/read-write-api-site3/v4.0/references/namespaced-enumerations.html)
 
 ### **Does a TPP need to return id_token_signed_response_alg if they only support code as response type?**
 
@@ -372,7 +372,7 @@ The different types of charge bearers supported are:-
 
 * Shared
 
-See: [Static enumerations](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/payment-initiation-api-profile.html#static-enumerations)
+See: [Static enumerations](https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/payment-initiation-api-profile.html#static-enumerations)
 
 ### **In the Transaction API, is the transaction amount field inclusive/exclusive of ChargeAmount?**
 
@@ -590,7 +590,7 @@ ASPSPs should respond with `429 - Too many requests` status code if they rate li
 
 ### **What is the expected response when an AISP tries to access AIS endpoints for a closed or switched account?**
 
-The standards define the behaviour that is expected <a href="https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/read-write-data-api-profile.html#_400-bad-request-v-s-404-not-found" class="external-link" rel="nofollow">here</a>.
+The standards define the behaviour that is expected <a href="https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/read-write-data-api-profile.html#_400-bad-request-v-s-404-not-found" class="external-link" rel="nofollow">here</a>.
 
 From Version 3.1.6, the ASPSPs may also return a flag to indicate the account’s switch status as part of the response to the accounts end-point.
 
@@ -614,6 +614,89 @@ The value should be immutable across time - not just immutable for a given conse
 
 This should be the same period/length of time for which the information is available to the PSU when accessing their payment account in the direct channels.
 
+## Ultimate Parties (Ultimate Debtor / Ultimate Creditor) 
+
+### **What is the Ultimate Creditor in Payments?**
+
+Ultimate Creditor is the beneficiary that is the ultimate party who is going to receive the funds. 
+Few examples
+1. Payment is credited to a credit card collection account but the ultimate beneficiary is the customer whose credit card account is being paid.
+2. Payment is credited to an account of a financial company but the ultimate beneficiary is the customer of the company
+3. Payment is credited to e-wallet account of the Merchant or the PISP if holding a e-money licence but the ultimate beneficiary is another party.
+
+### **Who should provide the Ultimate creditor? Is it the PISP or the PSU?**
+
+The PISP must provide the Ultimate creditor in the payment chain when they know who the ultimate beneficiary is. 
+
+### **What is the benefit to the ASPSP of receiving Ultimate Creditor in single immediate domestic payment when faster payment cannot accept it?**
+
+The sending ASPSP do not have visibility of whom the payment is actually being made to, when the PISP or Merchant has that visibility.  Refer to example scenarios for more.
+
+### **Can Ultimate creditor be used to capture other information related to the creditor?**
+
+No. If only one party/person is being paid, only capture the Creditor and not duplicate it under both Creditor and UltimateCreditor.
+
+It must not be used to capture duplicate information, product information, or alias names or creditor agent details
+
+![Example 1](../standards/images/Image_1.png)
+
+### **Can you provide an example of how and when to provide ultimate creditor in a payment journey?**
+
+If Payment service provider is acting as a collection agency offering collection on behalf of services (COBO) for Credit card payment, Mortgage payment, Collection on behalf of Merchant etc., then capture the COBO details under Creditor and the account on behalf of whom the collection is made under ultimate creditor.
+
+Example : Customer paying a Merchant in return of delivery of goods. PISP is providing COBO service to the Merchant. PISP receives funds under a (Collecting Co Ltd) which is then passed on to the Merchant (GDSV Merchant Ltd).
+
+![Example 2](../standards/images/Image_2.png)
+
+### **Can you provide an example of when the PSU is the beneficiary of funds via a wallet provided by the PISP or the Merchant?**
+
+Scenario 1: If the beneficiary holds an account wallet with the service provider.
+
+Example: PSU (Mr Go Lang) funding their own wallet account on Gambling platform (holding e-money license) they fall under the e-money regulation. A Gambling Service Provider Merchant (GAMB Merchant Ltd) who might be using a PISP to provide services and holding an account at GAMB Merchant’s Bank.
+
+![Example 3](../standards/images/Image_3.png)
+
+Scenario 2 : If the beneficiary holds a wallet with the Payment service provider.
+
+Example: PSU (Mr Go Lang funding their own wallet account on a Gambling Platform (NOT holding e-money license and the ‘wallet’ would represent tokens for the usage of their 'gaming' services only). The Gambling Services Provider Merchant  (GAMB Merchant Ltd) uses PISP services as a collection agency funds from their clients.
+
+![Example 4](../standards/images/Image_4.png)
+
+### **What is the Ultimate Debtor in Payments?**
+
+Ultimate Debtor is the actual payer that is the ultimate party who is sending the funds or making the payment. 
+
+Few examples
+
+A person (ultimate debtor) purchasing a house from a seller, depositing funds in a trust or company account of the law firm.
+A group of companies where all purchases are made via a centralised company account (the ultimate debtor) that actually pays for the purchases.
+
+### **Should ASPSPs show the ultimate debtor and ultimate creditor on the PSU’s access dashboard?**
+
+Yes, if provided. But this is applicable only for long-lived consents i.e. VRP.
+
+### **Should ASPSPs show the ultimate debtor and ultimate creditor when the PSU is authenticating?**
+
+Yes if it is provided by the PISP.
+
+### **Should PISPs show the ultimate debtor and ultimate creditor on the PSU’s consent dashboard?**
+
+Yes, if provided. But this is applicable only for long-lived consents i.e. VRP.
+
+### **What is the difference between Consent Dashboard and Access Dashboard?**
+Consent Dashboard is provided by the TPPs. To view all the consents that the PSU has provided to them. Depending on the role of the TPP it could be a AISP, PISP and CBPII.  For more refer to Dashboards
+
+Access Dashboard is provided by the ASPSP to the PSU on their online channels
+
+
+
+
+
+
+
+
+
+
 ## FAPI
 
 ### **Is it mandatory to include the `scope` claim when calling the token end-point as part of an authorization_code grant?**
@@ -622,7 +705,7 @@ No, it is not mandatory for the client to include the 'scope' in the token reque
 
 ### **As an ASPSP, which security certification should I request from Open ID if I see multiple types for FAPI?** 
 
-ASPSP must select FAPI IDP certification.
+ASPSP must select FAPI-Advanced-Final- Authorization server test.
 
 ### **Which scope element should the TPPs use when requesting token (grant type=authorization_code)?**
 
@@ -647,7 +730,7 @@ Practically, some browsers will cause issues with a TOO_MANY_REDIRECTS error - b
 ### **Can refresh token be issued without an HoK mechanism to avoid impacts on member and would it be in compliance with FAPI?** 
 ### **If a refresh token is issued with MTLS HoK, would it force the PSU to re-authenticate? Would this be an acceptable user Journey?**
 
-When using a refresh token, there should be no expectation on the PSU to re-authenticate each time they access token is renewed. The PSU should only be required to re-authenticate with their ASPSP within a 90 day period, and in this instance, TPPs are expected to use the “refreshing AISP access” journey in the CEGs.
+When using a refresh token, there should be no expectation on the PSU to re-authenticate each time they access token is renewed. TPPs are expected to use the “refreshing AISP access” journey in the CEGs.
 
 The certificate binding mechanism with RFC-8705 does allow this to be implemented correctly.
 
@@ -679,7 +762,7 @@ FAPI requires that the call has a signed request. The request object must have a
 
 ### **As a TPP, when going through an authorization code grant, is the request object required even if I am not using a hybrid flow?**
 
-An ASPSP that is compliant with FAPI will require the use of a signed request object. This is a FAPI requirement.
+ASPSPs that use the OBL directory should register each authorization server on the OBIE directory with its corresponding discovery end-point.
 
 #### OIDC Discovery
 
@@ -735,11 +818,11 @@ A checklist for correct implementations:
 ## **VRP**
 *Where can I find the latest version of VRP specifications?
 
-Version 3.1.10 of specifications can be found here → [Variable recurring payments API profile v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/vrp-profile.html#variable-recurring-payments-api-profile-v3-1-10) 
+Version 4.0 of specifications can be found here → [Variable recurring payments API profile v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/vrp-profile.html#variable-recurring-payments-api-profile-v3-1-10) 
 
 ### **Does VRP payment support standing order/future dated payment?**
 
-The sequence diagram [Variable recurring payments API profile v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/profiles/vrp-profile.html#sequence-diagram) is generic. At present only single immediate payments are supported in the specifications, standing orders and forward dated payments are not supported.
+The sequence diagram [Variable recurring payments API profile v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/vrp-profile.html#sequence-diagram) is generic. At present only single immediate payments are supported in the specifications, standing orders and forward dated payments are not supported.
 
 ### **Is the `Data.Debtor` block to be provided by the ASPSP in the response block optional?**
 
@@ -747,13 +830,13 @@ The sequence diagram [Variable recurring payments API profile v3.1.10](https://o
 
 ### **Where can I find namespaced enumerations for VRP?**
 
-You can find all the namespaced enumerations for VRP here → [Namespaced Enumerations - v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/references/namespaced-enumerations.html#variable-recurring-payments-namespaced-enumerations) 
+You can find all the namespaced enumerations for VRP here → [Namespaced Enumerations - v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/references/namespaced-enumerations.html#variable-recurring-payments-namespaced-enumerations) 
 
 ### **Does VRP support refunds? If yes, wherein the specs can we find this option?**
 
-PISP can request refund information by indicating yes/no in [Domestic VRP consents - v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/vrp/domestic-vrp-consents.html#obdomesticvrpconsentrequest) `Data.ReadRefundAccount`
+PISP can request refund information by indicating yes/no in [Domestic VRP consents - v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/vrp/domestic-vrp-consents.html#obdomesticvrpconsentrequest) `Data.ReadRefundAccount`
 
-The actual refund details will be provided by ASPSP in [Domestic VRPs - v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/vrp/domestic-vrps.html#obdomesticvrpresponse) `Data.Refund`
+The actual refund details will be provided by ASPSP in [Domestic VRPs - v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/vrp/domestic-vrps.html#obdomesticvrpresponse) `Data.Refund`
 
 ### **Why is the `FundsConfirmationId` max length 40?**
 `FundsConfirmationId` - is 40 characters as it is just an identifier and a UUIDv4 (36-38 characters) which is used in modern systems would fit in that size.
@@ -772,7 +855,7 @@ No consent parameters remain unchanged and so does ValidToDateTime even after th
 
 ### **Is there an expectation that `ValidFromDateTime` and `ValidToDateTime` must start at a specific time and does that need to be included in the pro-rata calculation?**
 
-Refer to specs section - OBDomesticVRPControlParameters - [Domestic VRP consents - v3.1.10](https://openbankinguk.github.io/read-write-api-site3/v3.1.10/resources-and-data-models/vrp/domestic-vrp-consents.html#obdomesticvrpcontrolparameters)
+Refer to specs section - OBDomesticVRPControlParameters - [Domestic VRP consents - v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/vrp/domestic-vrp-consents.html#obdomesticvrpcontrolparameters)
 
 The time element of the date should be disregarded in computing the date range and pro-rating.
 

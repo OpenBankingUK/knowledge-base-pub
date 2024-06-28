@@ -9,7 +9,7 @@ Online Banking covers both Desktop and Mobile browsers. Mobile Banking means onl
 
 ASPSPs must use REP020 Quarterly statistics on availability and performance of dedicated interfaces, available at https://www.handbook.fca.org.uk/form/sup/SUP_16_ann_46A_20190914.pdf
 
-ASPSPs may also find this reporting template (<a href="https://standards.openbanking.org.uk/wp-content/uploads/2022/02/Operational-Guidelines-ASPSP-Reporting-Template-v3.1.10v1.xlsx" class="external-link" rel="nofollow"> Operational Guidelines ASPSP Reporting Template v3.1.10</a>) useful in this regard.
+ASPSPs may also find this reporting template (<a href="https://standards.openbanking.org.uk/wp-content/uploads/2022/02/Operational-Guidelines-ASPSP-Reporting-Template-v3.1.10v1.xlsx" class="external-link" rel="nofollow"> Operational Guidelines ASPSP Reporting Template v3.1.11</a>) useful in this regard.
 
 ### **Is the FCA reporting template same as the OBL MI reporting template?**
 
