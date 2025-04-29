@@ -82,21 +82,21 @@ Refer to Proposition - [Proposition - Variable Recurring Payments (VRPs) | 9.-Re
 
 #### **Where can we find VRP for Sweeping Access Journey?**
 
-Refer to CEG - [VRP Payments under Sweeping Access](https://standards.openbanking.org.uk/customer-experience-guidelines/pis-core-journeys/vrp/vrp-payments-under-sweeping-access/latest/)
+Refer to CEG - [VRP Payments under Sweeping Access] (https://standards.openbanking.org.uk/customer-experience-guidelines/payment-initiation-services/vrp-payments-under-sweeping-access/latest/)
 
 #### **Where can we find latest VRP specifications for sweeping?**
 
-Refer to Specifications - [Variable Recurring Payments API Profile](https://openbankinguk.github.io/read-write-api-site3/v4.0-draft1/profiles/vrp-profile.html) 
+Refer to Specifications - [Variable Recurring Payments API Profile](https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/vrp-profile.html) 
 
 #### **Where can we find more guidelines for sweeping?**
 
-Refer to Implementation guidelines in CEG [VRPs for sweeping](https://standards.openbanking.org.uk/other-guidelines/vrp-for-sweeping-guidelines/latest/)
+Refer to Implementation guidelines in CEG [VRPs for sweeping](https://standards.openbanking.org.uk/customer-experience-guidelines/payment-initiation-services/latest/)
 
 <!---
 -->
 #### **Where can we find a sweeping journey?**
 
-Refer to CEG - [VRP Payments under Sweeping Access](https://standards.openbanking.org.uk/customer-experience-guidelines/pis-core-journeys/vrp/vrp-payments-under-sweeping-access/latest/)
+Refer to CEG - [VRP Payments under Sweeping Access](https://standards.openbanking.org.uk/customer-experience-guidelines/payment-initiation-services/vrp-payments-under-sweeping-access/latest/)
 
 #### **Where can we find more information on dashboards for VRP/sweeping**
 
@@ -199,7 +199,7 @@ PISP must ensure that they have satisfied themselves that source and destination
 
 Yes, the ASPSP may apply ‘Transfer to Self’ over ‘Trusted Beneficiary’ or any other relevant SCA exemption if it is more appropriate.
 
-Note: The [VRP payments under sweeping access](https://standards.openbanking.org.uk/customer-experience-guidelines/pis-core-journeys/vrp/vrp-payments-under-sweeping-access/latest/) journey in CEG, demonstrates an example where sweeping is happening between two accounts of the same PSU but at different ASPSP and hence Trusted Beneficiary SCA exemption is demonstrated.
+Note: The [VRP payments under sweeping access](https://standards.openbanking.org.uk/customer-experience-guidelines/payment-initiation-services/vrp-payments-under-sweeping-access/latest/) journey in CEG, demonstrates an example where sweeping is happening between two accounts of the same PSU but at different ASPSP and hence Trusted Beneficiary SCA exemption is demonstrated.
 
 ### **What proof do ASPSPs need to provide to PISP in order to claim money back from customer disputes?**
 
@@ -257,9 +257,9 @@ Yes, there is a CEG checklist requirement where the PISP must ensure that the PS
 
 For VRP there are two ways in which a VRP can be set up. that are proposed in the VRP Proposition and the specification is enabled to handle these types
 
-1. [VRP Payments with an SCA exemption](https://standards.openbanking.org.uk/customer-experience-guidelines/pis-core-journeys/vrp/vrp-payments-with-an-sca-exemption/latest/)  - creditor (payee) details are fixed in the VRP consent
+1. [VRP Payments with an SCA exemption](https://standards.openbanking.org.uk/customer-experience-guidelines/payment-initiation-services/vrp-payments-with-an-sca-exemption/latest)  - creditor (payee) details are fixed in the VRP consent
 
-2. [VRP Payments with delegated SCA](https://standards.openbanking.org.uk/customer-experience-guidelines/pis-core-journeys/vrp-payments-with-delegated-sca/latest/) - creditor (payee) details are not part of the VRP consent but have to be specified each time VRP payment is initiated by the PISP.  
+2. [VRP Payments with delegated SCA](https://standards.openbanking.org.uk/customer-experience-guidelines/payment-initiation-services/vrp-payments-with-delegated-sca/latest/) - creditor (payee) details are not part of the VRP consent but have to be specified each time VRP payment is initiated by the PISP.  
 
 ### **Can an ASPSP reject a VRP consent request from PISP if the creditor details are not provided and there is no appropriate contract in place between the PISP and the ASPSP?**
 
@@ -373,7 +373,7 @@ The rationale for this is that allowing ASPSPs to set a limit risks ASPSPs adopt
 
 ### **Where can I find examples on periodic limits and periodic type?**
 
-Examples of both consent and calendar types are in the specifications - [Domestic VRP consents - v4.0-draft1](https://openbankinguk.github.io/read-write-api-site3/v4.0-draft1/resources-and-data-models/vrp/domestic-vrp-consents.html#examples-of-periodic-limits) 
+Examples of both consent and calendar types are in the specifications - [Domestic VRP consents - v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/vrp/domestic-vrp-consents.html) 
 
 
 ### **Who should specify the consent parameter limits - PSU or PISP?**
@@ -433,7 +433,7 @@ Yes, you should exclude those with `Rejected` status.
 
 ### **Where can I find the latest version of VRP specifications?**
 
-Version 4.0 of specifications can be found here → [Variable recurring payments API profile v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/vrp-profile.html#variable-recurring-payments-api-profile-v3-1-10) 
+Version 4.0 of specifications can be found here → [Variable recurring payments API profile v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/vrp-profile.html) 
 
 ### **Does VRP payment support standing order/future dated payment?**
 
@@ -511,7 +511,7 @@ The ASPSP must provide sufficient clarification on their developer portal for PI
 We recommend that ASPSPs do not hard reject VRP payments in cases where the PISP has not provided the necessary information, such as VRP Type or PSU Interaction Type. There may be unavoidable circumstances preventing the PISP from supplying this information. Instead, consider issuing a warning or providing guidance to the PISP to ensure the information is included in future transactions.
 
 ### ** Where we can find more guidance for VRP markers?**
-The VRP markers are defined by [Pay.UK](https://pay.co.uk) and hence only required information is captured [here](https://openbankinguk.github.io/spec-pages-preview/v4.0-draft1/references/domestic-payment-message-formats.html#iso-8583)
+The VRP markers are defined by [Pay.UK](https://pay.co.uk) and hence only required information is captured [here](https://openbankinguk.github.io/read-write-api-site3/v4.0/references/domestic-payment-message-formats.html#iso-8583)
 
 ### **Is a VRP marker required for all types of VRP payments?**
 Yes, the OB Standards do not mandate this but it is required to be provided by the sending ASPSP for all types of VRP payments that are processed as faster payments. 
