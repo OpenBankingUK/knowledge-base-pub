@@ -684,6 +684,13 @@ Yes if it is provided by the PISP.
 Yes, if provided. But this is applicable only for long-lived consents i.e. VRP.
 
 ### **What is the difference between Consent Dashboard and Access Dashboard?**
-Consent Dashboard is provided by the TPPs. To view all the consents that the PSU has provided to them. Depending on the role of the TPP it could be a AISP, PISP and CBPII.  For more refer to Dashboards
+Consent Dashboard is provided by the TPPs. To view all the consents that the PSU has provided to them. Depending on the role of the TPP it could be a AISP, PISP and CBPII.  For more refer to Dashboards.
 
-Access Dashboard is provided by the ASPSP to the PSU on their online channels
+Access Dashboard is provided by the ASPSP to the PSU on their online channels.
+
+### **Where can I find more details on payment statuses and definitions in v4.0? 
+You can refer to the flow diagrams and common repository introduced in v4.0 for definitions and mapping. <a href="https://github.com/OpenBankingUK/External_Internal_CodeSets" class="external-link" rel="nofollow">Codeset Repository</a>
+
+### ** What are the different frequencies that can be setup for standing orders?
+![Example 5](../standards/images/Image_5.png)
+![Example 6](../standards/images/Image_6.png)
