@@ -19,3 +19,9 @@ While OBL recommends the use of the Access Dashboard for provision of CoF Access
 ### **Can you provide guidance on how a balance transfer journey should look like?**
 
 Currently, this journey is not included in the CEG but it is anticipated that it would look similar to the single domestic payments supplementary information journey that is in the CEG where any additional information related to transfer rate etc can be displayed using the supplementary information screen by the ASPSP. This will ultimately be dependant on how/whether this is supported within the ASPSPs direct channel.
+
+### **Where can I find more details on SCA exemptions?**
+You can refer to the Customer Experience Guidelines for further information on how SCA exemptions works. Here is the link: <a href="https://standards.openbanking.org.uk/customer-experience-guidelines/authentication-methods/rts-sca-exemptions-aspsp-applies-an-available-exemption/latest/" class="external-link" rel="nofollow">RTS SCA Exemptions – ASPSP Applies an Available Exemption</a>
+
+ ### **Where can I find more details on erros codes and definitions? 
+  You can refer to the Customer Experience Guidelines for further information on common error scenarios. Here is the link: <a href="https://standards.openbanking.org.uk/customer-experience-guidelines/appendices/common-errors/latest/" class="external-link" rel="nofollow">Common Error Scenarios</a>

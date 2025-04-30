@@ -315,6 +315,9 @@ Newly created VRPs must only use the 3.1.11 payload for payment submissions.
 
 Note: This guidance applies to the POST /domestic-vrps endpoint only.
 
+### **Are multi-auth VRPs supported?**
+No, VRPs that require multiple authorisations are currently out of scope.
+
 ## **Consent Parameters**
 ### **What is VRP consent parameters?**
 
