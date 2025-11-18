@@ -514,7 +514,7 @@ The ASPSP must provide sufficient clarification on their developer portal for PI
 We recommend that ASPSPs do not hard reject VRP payments in cases where the PISP has not provided the necessary information, such as VRP Type or PSU Interaction Type. There may be unavoidable circumstances preventing the PISP from supplying this information. Instead, consider issuing a warning or providing guidance to the PISP to ensure the information is included in future transactions.
 
 ### ** Where we can find more guidance for VRP markers?**
-The VRP markers are defined by [Pay.UK](https://pay.co.uk) and hence only required information is captured [here](https://openbankinguk.github.io/read-write-api-site3/v4.0/references/domestic-payment-message-formats.html#iso-8583)
+The VRP markers are defined by [Pay.UK](https://wearepay.uk) and hence only required information is captured [here](https://openbankinguk.github.io/read-write-api-site3/v4.0/references/domestic-payment-message-formats.html#iso-8583)
 
 ### **Is a VRP marker required for all types of VRP payments?**
 Yes, the OB Standards do not mandate this but it is required to be provided by the sending ASPSP for all types of VRP payments that are processed as faster payments. 
