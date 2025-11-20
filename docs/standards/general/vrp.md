@@ -529,6 +529,12 @@ Remittance information includes information related to the transaction which is 
 a. Static Reference in the Remittance Information that allows the same Remittance Information (like Credit card no) to be passed on to each VRP payment - (Setup at VRP consent level) or
 b. Dynamic Reference in the Remittance Information that allows different Reference values (like Invoice number) to be passed on to each  VRP payment - (Not set at VRP consent level).
 
+### **How should ASPSPs handle VRP payment consents created in v3 when ASPSP is now on v4?**
 
+When accessing a v3 payment consent on v4 endpoints the ASPSP must map fields to the v4 equivalents.  For example;
 
+In v3, `OBDomestic2/RemittanceInformation/Unstructured` is a string, in v4 this field is an array of strings and is located in `OBRemittanceInformation2/Unstructured`. This should be represented as an array containing a single string: `“Unstructured”: [“Unstructured Information”]`
 
+The `Reference` field was previously located in `OBDomestic2/RemittanceInformation/Reference`.  In v4 is now located in `OBRemittanceInformation2/Structured/CreditorReferenceInformation/Reference`.
+
+There have been no changes to the length or schema of the `Reference` field.
