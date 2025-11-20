@@ -708,7 +708,7 @@ The Open Banking Standard is aligned with globally recognised ISO definitions an
 
 In version 4.0, `AcceptedSettlementCompleted` has been replaced by `AcceptedSettlementCompletedDebtorAccount`.  While the full code name of this status has changed, the four-character code value (`ACSC`) remains the same, as does its meaning.  If a payment reaches the `ACSC` state, it indicates that the payer’s account has been debited. However, this does not guarantee that the payee account (beneficiary) has been credited.  There remains a slim chance that the beneficiary may not receive the funds. The possible statuses following `ACSC` are in the flow diagram linked above.
 
-You can also refer to the definitions introduced in version 4.0 in our [repository](https://github.com/OpeBankingUK/External_Internal_CodeSets/blob/main/OB_Internal_Codeset.csv)
+You can also refer to the definitions introduced in version 4.0 in our [repository](https://github.com/OpenBankingUK/External_Internal_CodeSets/blob/main/OB_Internal_Codeset.csv)
 
 ### **What error code should be used if a TPP repeats an Idempotency ID within 24 hours?**
 
