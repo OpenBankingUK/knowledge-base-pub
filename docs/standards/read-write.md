@@ -571,9 +571,6 @@ In addition to that, ASPSPs may rely on OAuth Security BCP, https://tools.ietf.o
 
 Each ASPSP must reach its own reasoned decision. It may consider, for example, whether a missing, malformed or incorrectly signed request should be considered as a risky request.
 
-
-## Rate Limiting
-
 ### **Can the ASPSPs implement rate-limiting?**
 
 While rate-limiting is supported by the specifications, ASPSPs will need to consider the factors below in line with relevant regulatory consideration when making a decision on an appropriate limit:
@@ -613,8 +610,6 @@ The value should be immutable across time - not just immutable for a given conse
 ### **How many months/years backdated should transaction history be provided via AISP by the ASPSP?**
 
 This should be the same period/length of time for which the information is available to the PSU when accessing their payment account in the direct channels.
-
-## Ultimate Parties (Ultimate Debtor / Ultimate Creditor) 
 
 ### **What is the Ultimate Creditor in Payments?**
 
