@@ -442,9 +442,11 @@ Version 4.0 of specifications can be found here → [Variable recurring payments
 
 The sequence diagram [Variable recurring payments API profile v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/vrp-profile.html#sequence-diagram) is generic. At present only single immediate payments are supported in the specifications, standing orders and forward dated payments are not supported.
 
-### **Is the `Data.Debtor` block to be provided by the ASPSP in the response block optional?**
+### **Is the `Data.DebtorAccount` block to be provided by the ASPSP in the response block optional?**
 
-`Data.Debtor` block is optional and outside the initiation block. In scenarios where account selection is done by the PSU during authentication, the ASPSP must be able to update the `Data.Debtor` block with the debtor details after successful authorisation. This will enable the PISP to make a `GET` call to get the debtor account details to make future payments using the VRP consent.
+`Data.DebtorAccount` block is conditional and outside the initiation block. In scenarios where account selection is done by the PSU during authentication, the ASPSP must be able to update the `Data.Debtor` block with the debtor details after successful authorisation. This will enable the PISP to make a `GET` call to get the debtor account details to make future payments using the VRP consent.
+
+`Data.DebtorAccount` block is ~~optional~~ <span style="color: #336633;">conditional</span> and outside the initiation block. In scenarios where account selection is done by the PSU during authentication, the ASPSP must ~~be able to~~ update the `Data.DebtorAccount` block with the debtor details after successful authorisation. This will enable the PISP to ~~make a GET call to get the debtor account details to make~~ <span style="color: #336633;">use the debtor account details in any</span> future payments using the VRP consent.
 
 ### **Where can I find namespaced enumerations for VRP?**
 
