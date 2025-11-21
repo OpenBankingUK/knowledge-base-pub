@@ -15,3 +15,4 @@
 - [Dynamic Client Registration Tool](./conformance-tools/dynamic-client-registration-tool/README.md)
 - [Functional Conformance Tool](./conformance-tools/functional-conformance-tool/README.md)
 - [Security Conformance Tool](./conformance-tools/security-conformance-tool/README.md)
+- [Changelog](./CHANGELOG.md)

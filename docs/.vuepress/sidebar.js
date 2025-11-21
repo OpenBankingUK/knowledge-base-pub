@@ -80,5 +80,17 @@ module.exports = [
             }
         ],
     },
+    {
+        title: 'Changelog',
+        path:'./',
+        collapsable: collapsable,
+        sidebarDepth,
+        children: [
+            {
+                title: 'Changelog',
+                path: './CHANGELOG.md',
+            }
+        ],
+    },
 
 ];
