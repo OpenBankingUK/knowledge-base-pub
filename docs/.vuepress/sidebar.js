@@ -81,13 +81,13 @@ module.exports = [
         ],
     },
     {
-        title: 'Changelog',
+        title: 'Change log',
         path:'./',
         collapsable: collapsable,
         sidebarDepth,
         children: [
             {
-                title: 'Changelog',
+                title: 'Change log',
                 path: './CHANGELOG.md',
             }
         ],
