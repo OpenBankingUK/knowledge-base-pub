@@ -64,7 +64,7 @@ FAPI requires that the call has a signed request. The request object must have a
 
 ### **As a TPP, when going through an authorization code grant, is the request object required even if I am not using a hybrid flow?**
 
-ASPSPs that use the OBL directory should register each authorization server on the OBIE directory with its corresponding discovery end-point.
+ASPSPs that use the OBL directory should register each authorization server on the OBL directory with its corresponding discovery end-point.
 
 #### OIDC Discovery
 

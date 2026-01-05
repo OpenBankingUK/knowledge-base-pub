@@ -571,9 +571,6 @@ In addition to that, ASPSPs may rely on OAuth Security BCP, https://tools.ietf.o
 
 Each ASPSP must reach its own reasoned decision. It may consider, for example, whether a missing, malformed or incorrectly signed request should be considered as a risky request.
 
-
-## Rate Limiting
-
 ### **Can the ASPSPs implement rate-limiting?**
 
 While rate-limiting is supported by the specifications, ASPSPs will need to consider the factors below in line with relevant regulatory consideration when making a decision on an appropriate limit:
@@ -613,8 +610,6 @@ The value should be immutable across time - not just immutable for a given conse
 ### **How many months/years backdated should transaction history be provided via AISP by the ASPSP?**
 
 This should be the same period/length of time for which the information is available to the PSU when accessing their payment account in the direct channels.
-
-## Ultimate Parties (Ultimate Debtor / Ultimate Creditor) 
 
 ### **What is the Ultimate Creditor in Payments?**
 
@@ -694,3 +689,45 @@ You can refer to the flow diagrams and common repository introduced in v4.0 for 
 ### **What are the different frequencies that can be setup for standing orders?**
 ![Example 5](../standards/images/Image_5.png)
 ![Example 6](../standards/images/Image_6.png)
+
+### **How do ASPSPs apply payment value limits to their online channels, and does this apply to open banking (including VRP) initiated payments?**
+
+Every bank may have transaction/channel limits at different levels. For faster payments, transaction limit benchmarks can be found at [https://www.wearepay.uk/what-we-do/payment-systems/faster-payment-system/transaction-limits/](https://www.wearepay.uk/what-we-do/payment-systems/faster-payment-system/transaction-limits/) and are made available to customers by their ASPSP; each account at a bank may have its own daily limits or may have its own limits associated to that account which could cause open banking payments to fail.
+
+In addition to any parameter limits specific to an individual VRP consent, other control limits may apply depending on the ASPSP and/or the specific account being debited.  At an ASPSP level, most operate a faster payment maximum transaction value (details can be found [here](https://www.wearepay.uk/what-we-do/payment-systems/faster-payment-system/transaction-limits/) and a maximum daily limit.  These limits may vary by channel and by ASPSP.  Most ASPSPs have a single ‘daily' limit that will apply to the aggregate of any direct channel and OB-initiated payments.
+
+Note, some ASPSPs reset their limit every day of the week, while others treat weekends as an extension of the Friday preceding the weekend.  The other control that some ASPSPs have introduced allows PSUs to set their own control limit (transaction and/or daily limit) that can be any amount up to the ASPSPs default limit i.e., it can be lower than the ASPSP's default limit.
+
+### **Which payment status codes can be considered as a final status?**
+
+Open Banking version 4.0 has been enhanced to improve the consistency of payment statuses by aligning with ISO 20022 across ASPSPs.  Version 4.0 also introduces standardised error messaging in effort to further improve customer experience.
+
+There are a number of statuses marked as mandatory but the implementation of this aspect of version 4.0 was designated as optional for the CMA9, meaning it is up to each of the CMA9 ASPSPs to decide whether and when they wish to adopt them. For non-CMAP9 ASPSPs, adoption remains entirely at their discretion. We would encourage all participants to refer to each ASPSP’s developer portal for guidance and to understand what statuses they have implemented and thereby what they can expect to be returned.
+
+The Open Banking Standard is aligned with globally recognised ISO definitions and MUST be interpreted accordingly. Please see [Payment Status Flow](https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/pisp/domestic-payments.html) diagram.
+
+In version 4.0, `AcceptedSettlementCompleted` has been replaced by `AcceptedSettlementCompletedDebtorAccount`.  While the full code name of this status has changed, the four-character code value (`ACSC`) remains the same, as does its meaning.  If a payment reaches the `ACSC` state, it indicates that the payer’s account has been debited. However, this does not guarantee that the payee account (beneficiary) has been credited.  There remains a slim chance that the beneficiary may not receive the funds. The possible statuses following `ACSC` are in the flow diagram linked above.
+
+You can also refer to the definitions introduced in version 4.0 in our [repository](https://github.com/OpenBankingUK/External_Internal_CodeSets/blob/main/OB_Internal_Codeset.csv)
+
+### **What error code should be used if a TPP repeats an Idempotency ID within 24 hours?**
+
+If a TPP retries an Idempotency ID within 24 hours, with an identical payload, the ASPSP should respond with an `HTTP 400` and a `U029` (Resource already exists) error code for a possible duplicate transaction.  
+
+If a TPP repeats an Idempotency ID with a different payload, the ASPSP should respond with an `HTTP 422` status code and the `OBErrorResponse1/Errors/Url` should include a link to information about Idempotency code usage.
+
+### **Payload Validation**
+
+ASPSPs should determine an appropriate approach for payload validation, especially when validating that a payment initiation payload matches the data provided in the consent payload.
+
+Hashing the entire payload should be avoided if possible as this may cause issues with data, such as updated address information in the risk block or payment references in VRP, differing from the values supplied in the consent. Hashing of immutable elements of the payload may be appropriate, though ASPSPs may want to consider field level validation in some instances.
+
+### **Does the PointInTime field support negative values?**
+
+Yes, the `PointInTime` field is a two character field where “01” to “31” indicates a specific date in the month and “-1” to “-5” cover the last day of the month and the days leading up to the last day
+
+Note, this is a deviation from the ISO definition and will cause validation to fail against Exact2NumericText
+
+### **Should TPPs include LEI when initiating FI-FI CHAPS payments?**
+
+The Bank of England’s (BoE) ISO 20022 mandatory requirements for CHAPS payments states that for payments between Financial Institutions LEIs should be provided. If the Debtor and Creditor are customers (non-FIs), payments such as C2C, B2B, C2B, or B2C are outside the scope of the currently published BoE policy.  TPPs should check ASPSP developer portals for information on how LEIs should be included for FI-to-FI CHAPS payments.

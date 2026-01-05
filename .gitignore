@@ -2,3 +2,6 @@
 node_modules
 docs/.vuepress/dist
 mireporting.tar.gz
+docs/.vuepress/.DS_Store
+docs/.DS_Store
+.DS_Store

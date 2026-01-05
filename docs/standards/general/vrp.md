@@ -442,13 +442,13 @@ Version 4.0 of specifications can be found here → [Variable recurring payments
 
 The sequence diagram [Variable recurring payments API profile v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/vrp-profile.html#sequence-diagram) is generic. At present only single immediate payments are supported in the specifications, standing orders and forward dated payments are not supported.
 
-### **Is the `Data.Debtor` block to be provided by the ASPSP in the response block optional?**
+### **Is the `Data.DebtorAccount` block to be provided by the ASPSP in the response block optional?**
 
-`Data.Debtor` block is optional and outside the initiation block. In scenarios where account selection is done by the PSU during authentication, the ASPSP must be able to update the `Data.Debtor` block with the debtor details after successful authorisation. This will enable the PISP to make a `GET` call to get the debtor account details to make future payments using the VRP consent.
+`Data.DebtorAccount` block is conditional and outside the initiation block. In scenarios where account selection is done by the PSU during authentication, the ASPSP must update the `Data.DebtorAccount` block with the debtor details after successful authorisation. This will enable the PISP to use the debtor account details in any future payments using the VRP consent.
 
 ### **Where can I find namespaced enumerations for VRP?**
 
-You can find all the namespaced enumerations for VRP here → [OB Internal Codeset](https://github.com/OpenBankingUK/External_Internal_CodeSets) 
+You can find all the namespaced enumerations for VRP here → [OB Internal Codeset](https://github.com/OpenBankingUK/External_Internal_CodeSets)
 
 ### **Does VRP support refunds? If yes, wherein the specs can we find this option?**
 
@@ -457,6 +457,7 @@ PISP can request refund information by indicating yes/no in [Domestic VRP consen
 The actual refund details will be provided by ASPSP in [Domestic VRPs - v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/vrp/domestic-vrps.html#obdomesticvrpresponse) `Data.Refund`
 
 ### **Why is the `FundsConfirmationId` max length 40?**
+
 `FundsConfirmationId` - is 40 characters as it is just an identifier and a UUIDv4 (36-38 characters) which is used in modern systems would fit in that size.
 
 ### **As per the specs, `ValidFromDateTime` field is optional. Does that mean the consent start date can be a back or a future date?**
@@ -514,7 +515,7 @@ The ASPSP must provide sufficient clarification on their developer portal for PI
 We recommend that ASPSPs do not hard reject VRP payments in cases where the PISP has not provided the necessary information, such as VRP Type or PSU Interaction Type. There may be unavoidable circumstances preventing the PISP from supplying this information. Instead, consider issuing a warning or providing guidance to the PISP to ensure the information is included in future transactions.
 
 ### ** Where we can find more guidance for VRP markers?**
-The VRP markers are defined by [Pay.UK](https://pay.co.uk) and hence only required information is captured [here](https://openbankinguk.github.io/read-write-api-site3/v4.0/references/domestic-payment-message-formats.html#iso-8583)
+The VRP markers are defined by [Pay.UK](https://wearepay.uk) and hence only required information is captured [here](https://openbankinguk.github.io/read-write-api-site3/v4.0/references/domestic-payment-message-formats.html#iso-8583)
 
 ### **Is a VRP marker required for all types of VRP payments?**
 Yes, the OB Standards do not mandate this but it is required to be provided by the sending ASPSP for all types of VRP payments that are processed as faster payments. 
@@ -529,6 +530,12 @@ Remittance information includes information related to the transaction which is 
 a. Static Reference in the Remittance Information that allows the same Remittance Information (like Credit card no) to be passed on to each VRP payment - (Setup at VRP consent level) or
 b. Dynamic Reference in the Remittance Information that allows different Reference values (like Invoice number) to be passed on to each  VRP payment - (Not set at VRP consent level).
 
+### **How should ASPSPs handle VRP payment consents created in v3 when ASPSP is now on v4?**
 
+When accessing a v3 payment consent on v4 endpoints the ASPSP must map fields to the v4 equivalents.  For example;
 
+In v3, `OBDomestic2/RemittanceInformation/Unstructured` is a string, in v4 this field is an array of strings and is located in `OBRemittanceInformation2/Unstructured`. This should be represented as an array containing a single string: `“Unstructured”: [“Unstructured Information”]`
 
+The `Reference` field was previously located in `OBDomestic2/RemittanceInformation/Reference`.  In v4 is now located in `OBRemittanceInformation2/Structured/CreditorReferenceInformation/Reference`.
+
+There have been no changes to the length or schema of the `Reference` field.
