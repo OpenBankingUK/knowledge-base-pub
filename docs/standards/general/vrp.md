@@ -444,11 +444,11 @@ The sequence diagram [Variable recurring payments API profile v4.0](https://open
 
 ### **Is the `Data.DebtorAccount` block to be provided by the ASPSP in the response block optional?**
 
-`Data.DebtorAccount` block is ~~optional~~ <span style="color: #336633;">conditional</span> and outside the initiation block. In scenarios where account selection is done by the PSU during authentication, the ASPSP must ~~be able to~~ update the `Data.DebtorAccount` block with the debtor details after successful authorisation. This will enable the PISP to ~~make a GET call to get the debtor account details to make~~ <span style="color: #336633;">use the debtor account details in any</span> future payments using the VRP consent.
+`Data.DebtorAccount` block is conditional and outside the initiation block. In scenarios where account selection is done by the PSU during authentication, the ASPSP must update the `Data.DebtorAccount` block with the debtor details after successful authorisation. This will enable the PISP to use the debtor account details in any future payments using the VRP consent.
 
 ### **Where can I find namespaced enumerations for VRP?**
 
-You can find all the namespaced enumerations for VRP here → [OB Internal Codeset](https://github.com/OpenBankingUK/External_Internal_CodeSets) 
+You can find all the namespaced enumerations for VRP here → [OB Internal Codeset](https://github.com/OpenBankingUK/External_Internal_CodeSets)
 
 ### **Does VRP support refunds? If yes, wherein the specs can we find this option?**
 
@@ -457,6 +457,7 @@ PISP can request refund information by indicating yes/no in [Domestic VRP consen
 The actual refund details will be provided by ASPSP in [Domestic VRPs - v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/vrp/domestic-vrps.html#obdomesticvrpresponse) `Data.Refund`
 
 ### **Why is the `FundsConfirmationId` max length 40?**
+
 `FundsConfirmationId` - is 40 characters as it is just an identifier and a UUIDv4 (36-38 characters) which is used in modern systems would fit in that size.
 
 ### **As per the specs, `ValidFromDateTime` field is optional. Does that mean the consent start date can be a back or a future date?**
