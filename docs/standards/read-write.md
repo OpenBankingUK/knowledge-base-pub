@@ -711,10 +711,10 @@ In version 4.0, `AcceptedSettlementCompleted` has been replaced by `AcceptedSett
 You can also refer to the definitions introduced in version 4.0 in our [repository](https://github.com/OpenBankingUK/External_Internal_CodeSets/blob/main/OB_Internal_Codeset.csv)
 
 ### **What error code should be used if a TPP repeats an Idempotency ID within 24 hours?**
-
-If a TPP retries an Idempotency ID within 24 hours, with an identical payload, the ASPSP should respond with an `HTTP 400` and a `U029` (Resource already exists) error code for a possible duplicate transaction.  
-
+  
 If a TPP repeats an Idempotency ID with a different payload, the ASPSP should respond with an `HTTP 422` status code and the `OBErrorResponse1/Errors/Url` should include a link to information about Idempotency code usage.
+
+Further information on Idempotency scenarios can be found in the [API specification](https://openbankinguk.github.io/read-write-api-site3/v4.0.1/profiles/read-write-data-api-profile.html#idempotency-2)
 
 ### **Payload Validation**
 
