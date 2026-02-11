@@ -196,7 +196,7 @@ Please refer to the Operational Guidelines: <a href="https://standards.openbanki
 
 ASPSPs should provide notification of any changes to TPPs at least three months prior to those changes taking effect.
 
-### **Do TPPs have to implement the s Dashboard?**
+### **Do TPPs have to implement the Dashboard?**
 
 While there is no regulatory requirement for the provision of a consent dashboard by TPPs, OBL strongly encourages all TPPs to provide a consent dashboard to their customers to enable view and revoke on-going consents.
 
@@ -388,7 +388,7 @@ However, you should take the following into account:
 
 ### **Does an ASPSP need to support all variants of DateTime format as per ISO 8601?**
 
-An ASPSP must accept all valid <a href="https://www.iso.org/iso-8601-date-and-time-format.html date" class="external-link" rel="nofollow">ISO-8601 - Date and time format</a> formats including its permitted variations (e.g. variations in how the time zone is defined, dates with or with a seconds or milliseconds part etc.) in API requests from TPPs. 
+An ASPSP must accept all valid <a href="https://www.iso.org/standard/86124.html#lifecycle" class="external-link" rel="nofollow">ISO-8601 - Date and time format</a> formats including its permitted variations (e.g. variations in how the time zone is defined, dates with or with a seconds or milliseconds part etc.) in API requests from TPPs. 
 
 ### **What if an ASPSP is not able to support functionality or an attribute in the payload. Should the ASPSP reject the request from the TPP?**
 
@@ -422,8 +422,7 @@ The offers endpoint is used by an AISP to retrieve the offers available for a sp
 
 ### **For message signing, what should be the input payload for the signature (e.g. HTTP body, parsed JSON, canonicalised JSON etc)?**
 
-The standard states
-The HTTP body would form an un-encoded payload as defined in <a href="https://tools.ietf.org/html/rfc7797" class="external-link" rel="nofollow">RFG 7797</a>
+The standard states the HTTP body would form an un-encoded payload as defined in <a href="https://tools.ietf.org/html/rfc7797" class="external-link" rel="nofollow">RFC 7797</a>
 
 The only workable option is to use a buffer or character array that represents the HTTP body.
 
