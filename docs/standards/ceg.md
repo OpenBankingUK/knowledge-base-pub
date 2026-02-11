@@ -23,5 +23,5 @@ Currently, this journey is not included in the CEG but it is anticipated that it
 ### **Where can I find more details on SCA exemptions?**
 You can refer to the Customer Experience Guidelines for further information on how SCA exemptions works. Here is the link: <a href="https://standards.openbanking.org.uk/customer-experience-guidelines/authentication-methods/rts-sca-exemptions-aspsp-applies-an-available-exemption/latest/" class="external-link" rel="nofollow">RTS SCA Exemptions – ASPSP Applies an Available Exemption</a>
 
- ### **Where can I find more details on error codes and definitions?**
-  You can refer to the Customer Experience Guidelines for further information on common error scenarios. Here is the link: <a href="https://standards.openbanking.org.uk/customer-experience-guidelines/appendices/common-errors/latest/" class="external-link" rel="nofollow">Common Error Scenarios</a>
+### **Where can I find more details on error codes and definitions?**
+You can refer to the Customer Experience Guidelines for further information on common error scenarios. Here is the link: <a href="https://standards.openbanking.org.uk/customer-experience-guidelines/appendices/common-errors/latest/" class="external-link" rel="nofollow">Common Error Scenarios</a>
