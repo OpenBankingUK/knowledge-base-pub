@@ -155,7 +155,7 @@ Refer to Proposition - [Proposition - Variable Recurring Payments (VRPs) | 8.-Re
 
 ### **Where can we find VRP Specifications?**
 
-Refer to Specifications - https://openbankinguk.github.io/read-write-api-site3/v4.0-draft1/profiles/vrp-profile.html
+Refer to Specifications - https://openbankinguk.github.io/read-write-api-site3/v4.0.1/profiles/vrp-profile.html
 
 ### **Can PSU revoke VRP consent at the PISP?**
 
