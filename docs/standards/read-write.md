@@ -422,8 +422,7 @@ The offers endpoint is used by an AISP to retrieve the offers available for a sp
 
 ### **For message signing, what should be the input payload for the signature (e.g. HTTP body, parsed JSON, canonicalised JSON etc)?**
 
-The standard states
-The HTTP body would form an un-encoded payload as defined in <a href="https://tools.ietf.org/html/rfc7797" class="external-link" rel="nofollow">RFC 7797</a>
+The standard states the HTTP body would form an un-encoded payload as defined in <a href="https://tools.ietf.org/html/rfc7797" class="external-link" rel="nofollow">RFC 7797</a>
 
 The only workable option is to use a buffer or character array that represents the HTTP body.
 
