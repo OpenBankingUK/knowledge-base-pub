@@ -15,4 +15,4 @@ The OBL Calculation Guidelines specify that this should be calculated as follows
 * The total number of concurrent seconds per API call, per 24 hour period, starting and ending at midnight, that any element of the dedicated interface is not available divided by 86,400 (the number of seconds in 24 hours) and expressed as a percentage.
 * The clock for unavailability should start immediately after the first ‘failed’ request has been received within the 30-second timeframe.
 
-For more information, refer to : <a href="https://standards.openbanking.org.uk/operational-guidelines/availability-and-performance/key-indicators-for-availability-and-performance/availability/latest/" class="external-link" rel="nofollow">Operational Guidelines - Availability </a>
+For more information, refer to : <a href="https://standards.openbanking.org.uk/operational-guidelines/availability-and-performance/key-indicators-for-availability-and-performance-availability/latest/" class="external-link" rel="nofollow">Operational Guidelines - Availability </a>
