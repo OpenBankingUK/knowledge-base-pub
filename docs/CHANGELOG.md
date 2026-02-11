@@ -1,5 +1,11 @@
 # Version control
 
+## Unreleased
+
+### Updated
+
+- Fixed several broken links in R/W, CEG, OG, VRP FAQs, along with very minor typos
+
 ## v4.0.1 - 2025-11-20
 
 ### Updated
