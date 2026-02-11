@@ -156,6 +156,7 @@ Refer to Proposition - [Proposition - Variable Recurring Payments (VRPs) | 8.-Re
 ### **Where can we find VRP Specifications?**
 
 Refer to Specifications - https://openbankinguk.github.io/read-write-api-site3/v4.0-draft1/profiles/vrp-profile.html
+
 ### **Can PSU revoke VRP consent at the PISP?**
 
 Yes. The PISP is expected to provide a mechanism within their domain to enable the PSU to revoke their consent for initiation of any future payment orders, by revoking the authorisation of VRP consent. 
