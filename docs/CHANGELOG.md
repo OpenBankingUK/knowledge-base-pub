@@ -15,3 +15,9 @@
 - [Payload Validation](./standards/read-write.html#payload-validation)
 - [Does the PointInTime field support negative values?](./standards/read-write.html#does-the-pointintime-field-support-negative-values)
 - [Should TPPs include LEI when initiating FI-FI CHAPS payments?](./standards/read-write.html#should-tpps-include-lei-when-initiating-fi-fi-chaps-payments)
+
+## v4.0.1-RC2 - 2026-02-11
+
+### Updated
+
+- Fixed several broken links in R/W, CEG, OG, VRP FAQs, along with very minor typos
