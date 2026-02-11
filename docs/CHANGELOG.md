@@ -5,6 +5,7 @@
 ### Updated
 
 - [Is the Data.DebtorAccount block to be provided by the ASPSP in the response block optional?](./standards/general/vrp.html#is-the-data-debtoraccount-block-to-be-provided-by-the-aspsp-in-the-response-block-optional)
+- Fixed broken links and a minor typo in R/W, CEG, OG and VRP sections (actioned 2026-02-11).
 
 ### New
 
