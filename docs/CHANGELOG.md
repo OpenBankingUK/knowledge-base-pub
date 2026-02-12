@@ -1,6 +1,6 @@
 # Version control
 
-## Unreleased
+## v4.0.1 - 2025-02-11
 
 ### Updated
 
