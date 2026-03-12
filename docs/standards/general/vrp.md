@@ -430,7 +430,7 @@ The ASPSP should not put restrictions when the consent is set up but should appl
 
 All the consent parameters have to be agreed upon between the PISP and the PSU and the PSU has to give explicit consent.
 
-### ** While calculating the periodic limit amount, do we need to exclude the payments that have Rejected status?**
+### **While calculating the periodic limit amount, do we need to exclude the payments that have Rejected status?**
 
 Yes, you should exclude those with `Rejected` status.
 
