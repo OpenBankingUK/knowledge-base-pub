@@ -14,7 +14,7 @@
 
 
 
-### **While the new SCA regulation comes in force on 26 March 2022, will implementation timeframes differ amongst ASPSPs? **
+### **While the new SCA regulation comes in force on 26 March 2022, will implementation timeframes differ amongst ASPSPs?**
 
 Yes, while the regulatory change comes into force on 26 March 2022, the implementation timeframes will differ amongst ASPSPs. We note that the FCA is encouraging the use of the exemption by ASPSPs as soon as possible after the 26 March 2022 with widespread adoption by 30 September 2022.  We will encourage the use of the transparency calendar so ASPSPs can post their implementation dates, which should assist with providing clarity in this regard. We have also included a link. 
 
@@ -35,5 +35,6 @@ No, when the regulatory change comes into force on 26 March 2022, the AISP will 
 No, the AISP can only continue to access the PSUs account details if the PSU has reconfirmed their consent in the past 90 days.
 
 ### **Can the AISP access PSUs transaction details for more than 90 days worth of transactions?**
+
 
 In order to access more than 90 days' worth of transactions, the PSU will need to re-authenticate (SCA) at the ASPSP.
