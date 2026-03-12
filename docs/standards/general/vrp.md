@@ -294,17 +294,17 @@ There is no 13-month dormancy rule applicable for PISP payments (including VRPs)
 We encourage you to use DMS (Dispute Management System). For more refer to [Dispute //Management System - Open Banking](https://www.openbanking.org.uk/dispute-management-system/)
 -->
 
-### **When a VRP payment is refunded (total amount or partial amount), should the ASPSP or PISP recalculate the pending amount per period limits?
+### **When a VRP payment is refunded (total amount or partial amount), should the ASPSP or PISP recalculate the pending amount per period limits?**
 
 No
 
-### **If VRP consent is revoked OR account access revoked OR consent expired, can the PISP check the status of a payment that was initiated when the consent was still active?
+### **If VRP consent is revoked OR account access revoked OR consent expired, can the PISP check the status of a payment that was initiated when the consent was still active?**
 
 Yes, the PISP may use the GET endpoint to check the status of the payment, enabling the PISP to get the information using the client credentials grant.
 
-### **Can an ASPSP ask the PSU to re-authenticate if the trusted beneficiary was removed and need to be added back to the PSU’s trusted list?
+### **Can an ASPSP ask the PSU to re-authenticate if the trusted beneficiary was removed and need to be added back to the PSU’s trusted list?**
 
-Yes, the creation of or amendment of a trusted beneficiary list will require SCA.  If the PSU has removed the payee from their trusted beneficiary (payee) list on their online channel after setting up a VRP/sweeping consent, the ASPSP will need the PSU to re-authenticate in order to enable future VRPs to that trusted beneficiary.
+Yes, the creation of or amendment of a trusted beneficiary list will require SCA.  If the PSU has removed the payee from their trusted beneficiary (payee) list on their online channel after setting up a VRP/sweeping consent, the ASPSP will need the PSU to re-authenticate in order to enable future VRPs to that trusted beneficiary.  In this scenario, the ASPSP **may** advise the PISP via an Event Notification or by rejecting a VRP payment using StatusReason1Code U028 (Reauthentication is required by PSU).  If so, the PISP would need to get the PSU to go through the redirect again with the consentID previously used.
 
 ### **Is there any guidance for the use of VRPType for payments in 3.1.11?**
 
@@ -445,7 +445,7 @@ The sequence diagram [Variable recurring payments API profile v4.0](https://open
 
 ### **Is the `Data.DebtorAccount` block to be provided by the ASPSP in the response block optional?**
 
-`Data.DebtorAccount` block is conditional and outside the initiation block. In scenarios where account selection is done by the PSU during authentication, the ASPSP must update the `Data.DebtorAccount` block with the debtor details after successful authorisation. This will enable the PISP to use the debtor account details in any future payments using the VRP consent.
+`Data.DebtorAccount` block is **conditional** and outside the initiation block. In scenarios where account selection is done by the PSU during authentication, the ASPSP **must** update the `Data.DebtorAccount` block with the debtor details after successful authorisation. This will enable the PISP to use the debtor account details in any future payments using the VRP consent.
 
 ### **Where can I find namespaced enumerations for VRP?**
 
@@ -503,7 +503,7 @@ VRP markers are introduced and defined by Pay.UK to identify and gather MI for d
 
 Note: V05 and V06 has been reserved for ‘attended’ payments, although most VRPs will be ‘unattended’ at this time. 
 
-### **Who is required to provide the VRP Marker? **
+### **Who is required to provide the VRP Marker?**
 All the ASPSPs to provide VRP Marker when each VRP payment (Sweeping [sVRP]or non sweeping [cVRP]) is submitted to the faster payments rail. OBL has enhanced existing guidance around VRP markers to provide additional guidance to PISPs and ASPSPs to support this requirement. 
 
 ### **Is there a marker for normal non VRP open banking payments?**
@@ -533,9 +533,9 @@ b. Dynamic Reference in the Remittance Information that allows different Referen
 
 ### **How should ASPSPs handle VRP payment consents created in v3 when ASPSP is now on v4?**
 
-When accessing a v3 payment consent on v4 endpoints the ASPSP must map fields to the v4 equivalents.  For example;
+When accessing a v3 payment consent on v4 endpoints the ASPSP **must** map fields to the v4 equivalents.  For example;
 
-In v3, `OBDomestic2/RemittanceInformation/Unstructured` is a string, in v4 this field is an array of strings and is located in `OBRemittanceInformation2/Unstructured`. This should be represented as an array containing a single string: `“Unstructured”: [“Unstructured Information”]`
+In v3, `OBDomestic2/RemittanceInformation/Unstructured` is a string, in v4 this field is an array of strings and is located in `OBRemittanceInformation2/Unstructured`. This **should** be represented as an array containing a single string: `“Unstructured”: [“Unstructured Information”]`
 
 The `Reference` field was previously located in `OBDomestic2/RemittanceInformation/Reference`.  In v4 is now located in `OBRemittanceInformation2/Structured/CreditorReferenceInformation/Reference`.
 
