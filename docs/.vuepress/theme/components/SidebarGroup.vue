@@ -99,7 +99,7 @@ export default {
   &.is-sub-group
     padding-left 0
     & > .sidebar-heading
-      font-size 0.95em
+      font-size 1em
       line-height 1.4
       font-weight normal
       padding-left 2rem
@@ -108,7 +108,7 @@ export default {
     & > .sidebar-group-items
       padding-left 1rem
       & > li > .sidebar-link
-        font-size: 0.95em;
+        font-size: 1em;
         border-left none
   &.depth-2
     & > .sidebar-heading
@@ -153,6 +153,6 @@ export default {
 
 .sidebar-group-items
   transition height .1s ease-out
-  font-size 0.95em
+  font-size 1em
   overflow hidden
 </style>
