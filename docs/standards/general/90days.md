@@ -36,5 +36,4 @@ No, the AISP can only continue to access the PSUs account details if the PSU has
 
 ### **Can the AISP access PSUs transaction details for more than 90 days worth of transactions?**
 
-
 In order to access more than 90 days' worth of transactions, the PSU will need to re-authenticate (SCA) at the ASPSP.
