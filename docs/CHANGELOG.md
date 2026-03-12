@@ -4,12 +4,12 @@
 
 ### Added
 
-- [Why do PCC enums BillPayment, EcommerceGoods, EcommerceServices, PartyToParty, PispPayee and Other appear in the OpenAPI files as part of OBInternalPaymentContext1Code but not the codeset repo?](https://openbankinguk.github.io/knowledge-base-pub/standards/read-write.html#why-do-pcc-enums-billpayment-ecommercegoods-ecommerceservices-partytoparty-pisppayee-and-other-appear-in-the-openapi-files-as-part-of-obinternalpaymentcontext1code-but-not-the-codeset-repo)
+- [Why do PCC enums BillPayment, EcommerceGoods, EcommerceServices, PartyToParty, PispPayee and Other appear in the OpenAPI files as part of OBInternalPaymentContext1Code but not the codeset repo?](./standards/read-write.html#why-do-pcc-enums-billpayment-ecommercegoods-ecommerceservices-partytoparty-pisppayee-and-other-appear-in-the-openapi-files-as-part-of-obinternalpaymentcontext1code-but-not-the-codeset-repo)
 
 ### Changed
 - [What error code should be used if a TPP repeats an Idempotency ID within 24 hours?](./standards/read-write.html#what-error-code-should-be-used-if-a-tpp-repeats-an-idempotency-id-within-24-hours) Corrected answer which was factually incorrect
-- [Is the Data.DebtorAccount block to be provided by the ASPSP in the response block optional?](https://openbankinguk.github.io/knowledge-base-pub/standards/general/vrp.html#is-the-data-debtoraccount-block-to-be-provided-by-the-aspsp-in-the-response-block-optional)- amended response for additional clarity
-- [Can an ASPSP ask the PSU to re-authenticate if the trusted beneficiary was removed and need to be added back to the PSU’s trusted list?](https://openbankinguk.github.io/knowledge-base-pub/standards/general/vrp.html#can-an-aspsp-ask-the-psu-to-re-authenticate-if-the-trusted-beneficiary-was-removed-and-need-to-be-added-back-to-the-psu-s-trusted-list). Added sentence to clarify usage of Event Notifications.
+- [Is the Data.DebtorAccount block to be provided by the ASPSP in the response block optional?](./standards/general/vrp.html#is-the-data-debtoraccount-block-to-be-provided-by-the-aspsp-in-the-response-block-optional)- amended response for additional clarity
+- [Can an ASPSP ask the PSU to re-authenticate if the trusted beneficiary was removed and need to be added back to the PSU’s trusted list?](./standards/general/vrp.html#can-an-aspsp-ask-the-psu-to-re-authenticate-if-the-trusted-beneficiary-was-removed-and-need-to-be-added-back-to-the-psu-s-trusted-list). Added sentence to clarify usage of Event Notifications.
 
 ### Fixed
 
