@@ -118,7 +118,7 @@ There are two Swagger specification files, for Events Resources:
 
 * [event-subscriptions-openapi & aggregated-polling-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v4.0/dist/openapi/events-openapi.yaml)
 * [event-notifications-openapi](https://github.com/OpenBankingUK/read-write-api-specs/blob/v4.0/dist/openapi/event-notifications-openapi.yaml)
-* 
+  
 ### **How should my redirect URIs be encoded?**
 
 Both ASPSPs and TPPs should format all URIs using URL encoding. Participants should accept all URLs which have been URL encoded. (see [here](https://www.w3schools.com/tags/ref_urlencode.asp)).
