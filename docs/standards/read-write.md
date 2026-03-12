@@ -701,9 +701,9 @@ Note, some ASPSPs reset their limit every day of the week, while others treat we
 
 Open Banking version 4.0 has been enhanced to improve the consistency of payment statuses by aligning with ISO 20022 across ASPSPs.  Version 4.0 also introduces standardised error messaging in effort to further improve customer experience.
 
-There are a number of statuses marked as mandatory but the implementation of this aspect of version 4.0 was designated as optional for the CMA9, meaning it is up to each of the CMA9 ASPSPs to decide whether and when they wish to adopt them. For non-CMAP9 ASPSPs, adoption remains entirely at their discretion. We would encourage all participants to refer to each ASPSP’s developer portal for guidance and to understand what statuses they have implemented and thereby what they can expect to be returned.
+There are a number of statuses marked as **mandatory** but the implementation of this aspect of version 4.0 was designated as **optional** for the CMA9, meaning it is up to each of the CMA9 ASPSPs to decide whether and when they wish to adopt them. For non-CMAP9 ASPSPs, adoption remains entirely at their discretion. We would encourage all participants to refer to each ASPSP’s developer portal for guidance and to understand what statuses they have implemented and thereby what they can expect to be returned.
 
-The Open Banking Standard is aligned with globally recognised ISO definitions and MUST be interpreted accordingly. Please see [Payment Status Flow](https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/pisp/domestic-payments.html) diagram.
+The Open Banking Standard is aligned with globally recognised ISO definitions and **must** be interpreted accordingly. Please see [Payment Status Flow](https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/pisp/domestic-payments.html) diagram.
 
 In version 4.0, `AcceptedSettlementCompleted` has been replaced by `AcceptedSettlementCompletedDebtorAccount`.  While the full code name of this status has changed, the four-character code value (`ACSC`) remains the same, as does its meaning.  If a payment reaches the `ACSC` state, it indicates that the payer’s account has been debited. However, this does not guarantee that the payee account (beneficiary) has been credited.  There remains a slim chance that the beneficiary may not receive the funds. The possible statuses following `ACSC` are in the flow diagram linked above.
 
@@ -711,15 +711,15 @@ You can also refer to the definitions introduced in version 4.0 in our [reposito
 
 ### **What error code should be used if a TPP repeats an Idempotency ID within 24 hours?**
   
-If a TPP repeats an Idempotency ID with a different payload, the ASPSP should respond with an `HTTP 422` status code and the `OBErrorResponse1/Errors/Url` should include a link to information about Idempotency code usage.
+If a TPP repeats an Idempotency ID with a different payload, the ASPSP **must** respond to the request with the current status of the resource (or a status which is at least as current as what is available on existing online channels) and a HTTP status code of 201 (Created). If a TPP repeats an Idempotency ID with a different payload, the ASPSP **should** respond with HTTP 400 and a U029 (Resource already exists) error code. From v4.0.1 onwards the ASPSP **may** respond with an HTTP 422 status code and the OBErrorResponse1/Errors/Url **should** include a link to information about Idempotency usage.
 
 Further information on Idempotency scenarios can be found in the [API specification](https://openbankinguk.github.io/read-write-api-site3/v4.0.1/profiles/read-write-data-api-profile.html#idempotency-2)
 
 ### **Payload Validation**
 
-ASPSPs should determine an appropriate approach for payload validation, especially when validating that a payment initiation payload matches the data provided in the consent payload.
+ASPSPs **should** determine an appropriate approach for payload validation, especially when validating that a payment initiation payload matches the data provided in the consent payload.
 
-Hashing the entire payload should be avoided if possible as this may cause issues with data, such as updated address information in the risk block or payment references in VRP, differing from the values supplied in the consent. Hashing of immutable elements of the payload may be appropriate, though ASPSPs may want to consider field level validation in some instances.
+Hashing the entire payload **should** be avoided if possible as this may cause issues with data, such as updated address information in the risk block or payment references in VRP, differing from the values supplied in the consent. Hashing of immutable elements of the payload **may** be appropriate, though ASPSPs **may** want to consider field level validation in some instances.
 
 ### **Does the PointInTime field support negative values?**
 
@@ -729,4 +729,9 @@ Note, this is a deviation from the ISO definition and will cause validation to f
 
 ### **Should TPPs include LEI when initiating FI-FI CHAPS payments?**
 
-The Bank of England’s (BoE) ISO 20022 mandatory requirements for CHAPS payments states that for payments between Financial Institutions LEIs should be provided. If the Debtor and Creditor are customers (non-FIs), payments such as C2C, B2B, C2B, or B2C are outside the scope of the currently published BoE policy.  TPPs should check ASPSP developer portals for information on how LEIs should be included for FI-to-FI CHAPS payments.
+The Bank of England’s (BoE) ISO 20022 mandatory requirements for CHAPS payments states that for payments between Financial Institutions LEIs **should** be provided. If the Debtor and Creditor are customers (non-FIs), payments such as C2C, B2B, C2B, or B2C are outside the scope of the currently published BoE policy.  TPPs **should** check ASPSP developer portals for information on how LEIs should be included for FI-to-FI CHAPS payments.
+
+### **Why do PCC enums BillPayment, EcommerceGoods, EcommerceServices, PartyToParty, PispPayee and Other appear in the OpenAPI files as part of OBInternalPaymentContext1Code but not the codeset repo?**
+
+These PCC enumerations were deprecated in v3.1.10.  However, to support pre-existing consents & transactions along with those ASPSPs that populate their internal systems from the OpenAPI files, they have been retained in the OpenAPI files and removed from other sources such as the codeset repo.  They are only to be used for supporting legacy v3 PIS & VRP data where relevant, including migration of a v3 VRP consent to v4. 
+For the avoidance of doubt, these enums **must not** be used for any new consents.
