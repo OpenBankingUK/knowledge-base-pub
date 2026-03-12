@@ -14,7 +14,7 @@
 
 
 
-### **While the new SCA regulation comes in force on 26 March 2022, will implementation timeframes differ amongst ASPSPs? **
+### **While the new SCA regulation comes in force on 26 March 2022, will implementation timeframes differ amongst ASPSPs?**
 
 Yes, while the regulatory change comes into force on 26 March 2022, the implementation timeframes will differ amongst ASPSPs. We note that the FCA is encouraging the use of the exemption by ASPSPs as soon as possible after the 26 March 2022 with widespread adoption by 30 September 2022.  We will encourage the use of the transparency calendar so ASPSPs can post their implementation dates, which should assist with providing clarity in this regard. We have also included a link. 
 
