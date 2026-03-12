@@ -96,7 +96,7 @@ function renderExternal (h, to, text) {
 <style lang="stylus">
 .sidebar .sidebar-sub-headers
   padding-left 1rem
-  font-size 0.95em
+  font-size 1em
 
 a.sidebar-link
   font-size 1em
