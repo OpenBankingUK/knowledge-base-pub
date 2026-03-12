@@ -22,7 +22,7 @@
 - [Does the PointInTime field support negative values?](./standards/read-write.html#does-the-pointintime-field-support-negative-values)
 - [Should TPPs include LEI when initiating FI-FI CHAPS payments?](./standards/read-write.html#should-tpps-include-lei-when-initiating-fi-fi-chaps-payments)
 
-## V4.0.1 RC2 - 2026-03-12
+## V4.0.1 - 2026-03-12
 
 ### New
 
