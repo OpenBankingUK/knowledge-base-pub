@@ -18,7 +18,7 @@
     "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
     "@vuepress/plugin-nprogress": "^1.0.0-rc.1",
     "@vuepress/plugin-search": "^1.0.0-rc.1",
-    "markdown-it": "^9.1.0",
+    "markdown-it": "^13.0.2",
     "node-sass": "^4.13.0",
     "remark-cli": "^7.0.0",
     "remark-lint": "^6.0.5",
