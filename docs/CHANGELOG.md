@@ -1,5 +1,16 @@
 # Version control
 
+## V4.0.1 - 2026-03-30
+
+### Changed
+
+- Updated a number of FAQs related to VRP; fixing typos and poor language, making words like 'must' bold
+
+### Deleted
+
+- A number of duplicated FAQs related to VRP
+- A number of FAQs that are better answered by the publication of new Sweeping guidance
+
 ## V4.0.1 - 2026-03-12
 
 ### Added
