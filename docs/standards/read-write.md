@@ -711,7 +711,7 @@ Standing Orders can be set up with a wide range of frequency options, all based 
 | Payment to be made every 2 years on a specific date| TWYR|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
 | Payment has an unknown frequency| NONE||||
 
-Additionally, Standing Orders set up on v3 endpoints **may** use Regex Patterns to describe the frequency.  New Standing Orders **must not** be set up using these
+Additionally, Standing Orders set up on v3 endpoints **may** use Regex Patterns to describe the frequency.  Refer to ASPSP Developer Portals for guidance as to usage.  New Standing Orders **must not** be set up using these.
 
 | Use Case                                  | v3.0 Type | Regex Pattern     | Comments                     |
 |-------------------------------------------|-----------|------------       |------------------------------|
