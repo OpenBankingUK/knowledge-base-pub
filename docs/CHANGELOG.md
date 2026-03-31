@@ -5,6 +5,7 @@
 ### Changed
 
 - Updated a number of FAQs related to VRP; fixing typos and poor language, making words like 'must' bold
+- Updated FAQ re Standing Order Frequencies (per CDRW-5042)
 
 ### Deleted
 
