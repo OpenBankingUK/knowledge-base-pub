@@ -33,13 +33,13 @@ Refer to CEG - [VRP Payments under Sweeping Access] (https://standards.openbanki
 
 The PISP asserts it is sweeping and so would need to be able to prove that it is if questioned.
 
-#### **Is event notification mandatory for sweeping when the linked account is no longer available either temporarily or permanently?**
+### **Is event notification mandatory for sweeping when the linked account is no longer available either temporarily or permanently?**
 
 This is **optional** under the current versions of the specifications. However, the functionality can be supported.
 
 #### **What if an account linked to a VRP consent is no longer available (temporarily or permanently)?**
 
-It is recommended that the ASPSP inform the TPP using events. Note, events remains **optional** under the current version of the specifications, but ASPSPs are encouraged to support where possible.
+It is recommended that the ASPSP inform the TPP using events. Note, events is **mandatory** for CMA9 ASPSPs, but remains **optional** under the current version of the specifications for other ASPSPs, who are encouraged to support where possible.
 
 #### **Is there a specific VRP type for sweeping?**
 
@@ -53,7 +53,7 @@ Yes, ASPSPs can currently choose to only support VRP Type `sweeping`.
 
 Yes, there is a CEG checklist requirement where the PISP **must** ensure that the PSU sees the T&Cs while giving sweeping consent.
 
-#### **Is it mandatory to include Creditor account details as part of a VRP consent?**
+#### **Is it mandatory to include Creditor account details as part of a Sweeping VRP consent?**
 
 Yes, creditor account details **must** be specified and cannot be changed.
 
@@ -124,7 +124,7 @@ No, as long as the requirements for sweeping and non-sweeping are met.
 
 ### **Can an ASPSP issue an open-ended access token or should they also issue a refresh token?**
 
-ASPSPs **must** either issue a refresh token that is long-lived (expiring in line iwth the consent expiry), which the PISP csan use to request an access token when the access token is short lived, or **must** issue a long-lived access token that expires along with the consent expiry, in which case a refresh token is not required.
+ASPSPs **must** either issue a refresh token that is long-lived (expiring in line with the consent expiry), which the PISP can use to request an access token when the access token is short lived, or **must** issue a long-lived access token that expires along with the consent expiry, in which case a refresh token is not required.
 
 ### **Is event notification mandatory for non-sweeping when the linked account is no longer available either temporarily or permanently?**
 
@@ -148,7 +148,7 @@ The specifications can support both sweeping and non-sweeping as part of one con
 
 ### **Can ASPSP define their specific list of VRP types for non-sweeping?**
 
-Yes, there are several enumerations in the current specifications; `sweeping` plus some to support cVRP.  The exact usage of these will be determined by the MLA. ASPSPs **may** also define enumerations that are more specific and make this information available to PISPs.
+There are two enumerations in the current specifications; `sweeping` and `other`. Please contact UKPI for details of enumerations supporting cVRP.  The exact usage of these will be determined by the MLA. ASPSPs **may** also define enumerations that are more specific and make this information available to PISPs.
 
 ### **Can a PISP specify a list of authentication methods for a single VRP payment?**
 
@@ -206,37 +206,27 @@ Yes, the PISP **may** use the GET endpoint to check the status of the payment, e
 
 Yes, the creation of or amendment of a trusted beneficiary list requires SCA.  If the PSU has removed the payee from their trusted beneficiary (payee) list on their online channel after setting up a VRP/sweeping consent, the ASPSP will need the PSU to re-authenticate in order to enable future VRPs to that trusted beneficiary.  
 
-### **Is there any guidance for the use of VRPType for payments in 3.1.11?**
-
-The 3.1.11 release introduced VRPType as a required field in a payment submission for a VRP, which is a breaking change for some participants. Payloads sent to the 3.1.11 endpoints should include this field, submissions not including it should be rejected.
-
-In order to ease transition to 3.1.11 for existing VRP consents an ASPSP may **optionally** decide to accept both 3.1.10 and 3.1.11 payloads for a short time when processing payment submissions.
-ASPSPs opting to take this approach should ensure it is clearly documented on their developer portal and provide an end date indicating when support for the 3.1.10 payloads will end.
-Newly created VRPs **must** only use the 3.1.11 (or later) payload for payment submissions.
-
-Note: This guidance applies to the POST /domestic-vrps endpoint only.
-
 ### **Are multi-auth VRPs supported?**
 
 No, VRPs that require multiple authorisations are currently out of scope. This may be revisited by OBL.
 
 ## **Consent Parameters**
 
-### **What are VRP consent parameters?**
+### **What are VRP control parameters?**
 
-VRP consent parameters are a set of controls associated with a specific VRP consent that determine the maximum amount of an individual payment, the aggregate value of payments in a specified time period, and optionally an end-date for the consent.  This is agreed by the PSU in conjunction with their merchant counterparty (where relevant) and the PISP, and conveyed to the ASPSP, where the PSU authorises the agreed parameters.
+VRP control parameters are a set of controls associated with a specific VRP consent that determine the maximum amount of an individual payment, the aggregate value of payments in a specified time period, and optionally an end-date for the consent.  This is agreed by the PSU in conjunction with their merchant counterparty (where relevant) and the PISP, and conveyed to the ASPSP, where the PSU authorises the agreed parameters.
 
 ### **Whose responsibility is it to agree on the parameters?**
 
-It is the responsibility of the PISP to ensure the PSU explicitly agrees to the limits imposed by the consent parameters.  For example: A VRP consent may have one parameter as `Max Individual amount` which is set to £100 which means the PISP can initiate payments up to £100 at a given time, and another parameter of `Max amount per calendar month` which is set to £1000 which means the PISP can initiate payments that total up to not more than £1000 in a calendar month.
+It is the responsibility of the PISP to ensure the PSU explicitly agrees to the limits imposed by the control parameters.  For example: A VRP consent may have one parameter as `Max Individual amount` which is set to £100 which means the PISP can initiate payments up to £100 at a given time, and another parameter of `Max amount per calendar month` which is set to £1000 which means the PISP can initiate payments that total up to not more than £1000 in a calendar month.
 
-### **Whose responsibility is it to ensure payments are within the consent parameters?**
+### **Whose responsibility is it to ensure payments are within the control parameters?**
 
-It is the responsibility of the PISP to ensure that VRP payments are initiated within the consent parameters. It is the responsibility of the ASPSP to ensure that it does not execute VRP payment orders outside of the consent parameters. 
+It is the responsibility of the PISP to ensure that VRP payments are initiated within the control parameters. It is the responsibility of the ASPSP to ensure that it does not execute VRP payment orders outside of the control parameters. 
 
 ### **Can a PISP specify ‘Maximum cumulative amount per month /day/year etc’?**
 
-Yes, the specifications are flexible to set dynamic consent parameters as below:
+Yes, the specifications are flexible to set dynamic control parameters as below:
 
 <ul><li>Max cumulative amount per calendar day
 <li>Max cumulative amount per consent day
@@ -252,7 +242,7 @@ Yes, the specifications are flexible to set dynamic consent parameters as below:
 
 ### **Do ASPSPs need to support all periodic limits for VRP/sweeping consent?**
 
-For Sweeping VRP CMA9 ASPSPs **must** support all the periodic limits (day, week, fortnight, month, half-year, year) and all periodic alignment (consent and calendar). Other ASPSPs offering Sweeping VRP should support them all, but this is not mandatory. For cVRP, support for all limits and alignments is **mandatory**.
+For Sweeping VRP CMA9 ASPSPs **must** support all the periodic limits (day, week, fortnight, month, half-year, year) and all periodic alignment (consent and calendar). Other ASPSPs offering Sweeping VRP should support them all, but this is not mandatory. For cVRP, please refer to UKPI.
 
 Note: `Maximum cumulative amount per calendar fortnight` is not recommended as the ISO calendar does not support or provide any guidance on when a fortnight should start.
 
@@ -274,23 +264,23 @@ The ASPSP **must** be able to support the number of periodic limits that the PIS
 
 Examples of both consent and calendar types are in the specifications - [Domestic VRP consents - v4.0](https://openbankinguk.github.io/read-write-api-site3/v4.0/resources-and-data-models/vrp/domestic-vrp-consents.html) 
 
-### **Who should specify the consent parameter limits - PSU or PISP?**
+### **Who should specify the control parameter limits - PSU or PISP?**
 
-This is something that PISPs agree with the PSU.  PISPs **should** ensure that the consent parameters they agree with the PSU are appropriate for use cases and PSU’s individual circumstances. 
+This is something that PISPs agree with the PSU.  PISPs **should** ensure that the control parameters they agree with the PSU are appropriate for use cases and PSU’s individual circumstances. 
 
-PISPs **must** either allow PSUs to specify consent parameters or pre-populate them for the PSUs enabling the PSU to amend any of them as required. 
+PISPs **must** either allow PSUs to specify control parameters or pre-populate them for the PSUs enabling the PSU to amend any of them as required. 
 
 ### **Can the periodic alignments be mixed and matched?**
 
 Yes. For example: `Max cumulative amount per calendar year` and `Max cumulative amount per consent month` may be set in one VRP consent. 
 
-### **Does the PISP need explicit permission i.e. consent from the PSU on all the consent parameters?**
+### **Does the PISP need explicit permission i.e. consent from the PSU on all the control parameters?**
 
-Yes, in order for the PSU to provide their explicit consent to set up a VRP/sweeping payment, the PISP **must** present all the required consent parameters to ensure that they obtain explicit consent from the PSU and any subsequent payments are initiated within those consent parameters. The PISP **must** also ensure that the consent parameters are ‘sufficiently narrow’ and in line with the service offering. 
+Yes, in order for the PSU to provide their explicit consent to set up a VRP/sweeping payment, the PISP **must** present all the required control parameters to ensure that they obtain explicit consent from the PSU and any subsequent payments are initiated within those consent parameters. The PISP **must** also ensure that the control parameters are ‘sufficiently narrow’ and in line with the service offering. 
 
-### **Does the PISP need to ensure each VRP/sweeping payment is within the consent parameters linked to the PSU’s consent?**
+### **Does the PISP need to ensure each VRP/sweeping payment is within the control parameters linked to the PSU’s consent?**
 
-Yes, the PISP **must not** submit payment orders that are outside of the consent parameters. 
+Yes, the PISP **must not** submit payment orders that are outside of the control parameters. 
 
 ### **Can an ASPSP define additional control parameters for non-sweeping?**
 
@@ -370,7 +360,7 @@ No, but this is being considered.
 
 ### **Do PISPs have to provide the same `Reference` in the CoF check call as in the VRP consent?**
 
-Yes. `Reference` is an **optional** field in the VRP consent which means if it is provided, then it has to be provided in the CoF check call and the ASPSP can reject CoF request if the reference does not match.
+Yes. `Reference` is an **conditional** field in the VRP consent which means if it is provided, then it has to be provided in the CoF check call and the ASPSP can reject CoF request if the reference does not match.
 
 ### **What is a VRP Marker? What are the supported types?**
 
