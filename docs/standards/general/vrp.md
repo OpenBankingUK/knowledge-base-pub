@@ -306,7 +306,7 @@ All the consent parameters **must** be agreed upon between the PISP and the PSU,
 
 ### **While calculating the periodic limit amount, do ASPSPs and PISPs need to exclude the payments that have Rejected status?**
 
-Yes, ASPSPs and PISPS should exclude those with `Rejected` status.
+Yes, ASPSPs and PISPS should exclude those with `RJCT` status.
 
 ### **Does VRP payment support standing order/future dated payment?**
 
