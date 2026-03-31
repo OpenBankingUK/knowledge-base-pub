@@ -699,7 +699,7 @@ Standing Orders can be set up with a wide range of frequency options, all based 
 | Payment to be made on the last day of the month| MNTH| -X|| A negative PointInTime must be used to indicate payment date|
 | Payment to be made on the last working day of the month| LWMH| -X|| A negative PointInTime must be used to indicate payment date|
 | Payment to be made on the last X day of the month (e.g. last Monday)| LXMH| X|| PointInTime must be used to determine the day of the week, where Monday = 1, Tuesday = 2, through to Sunday = 7|
-| Payment to be made fortnightly| FRTN|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point. Use PointInTime|
+| Payment to be made fortnightly| FRTN|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point. Use PointInTime to indicate the day within the fortnight|
 | Payment to be made every 2 months| TWMH|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
 | Payment to be made on alternate months| ALMH|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
 | Payment to be made every 3 months on a specific date| QUAR|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
