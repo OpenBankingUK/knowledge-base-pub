@@ -37,31 +37,31 @@ The PISP asserts it is sweeping and so would need to be able to prove that it is
 
 This is **optional** under the current versions of the specifications. However, the functionality can be supported.
 
-#### **What if an account linked to a VRP consent is no longer available (temporarily or permanently)?**
+### **What if an account linked to a VRP consent is no longer available (temporarily or permanently)?**
 
 It is recommended that the ASPSP inform the TPP using events. Note, events is **mandatory** for CMA9 ASPSPs, but remains **optional** under the current version of the specifications for other ASPSPs, who are encouraged to support where possible.
 
-#### **Is there a specific VRP type for sweeping?**
+### **Is there a specific VRP type for sweeping?**
 
 Yes, the current enumerations include one specifically for sweeping (`sweeping`).
 
-#### **Can ASPSP allow only `Sweeping` VRP type?**
+### **Can ASPSP allow only `Sweeping` VRP type?**
 
 Yes, ASPSPs can currently choose to only support VRP Type `sweeping`.  
 
-#### **Does a PISP need to display T&Cs as part of a sweeping consent journey?**
+### **Does a PISP need to display T&Cs as part of a sweeping consent journey?**
 
 Yes, there is a CEG checklist requirement where the PISP **must** ensure that the PSU sees the T&Cs while giving sweeping consent.
 
-#### **Is it mandatory to include Creditor account details as part of a Sweeping VRP consent?**
+### **Is it mandatory to include Creditor account details as part of a Sweeping VRP consent?**
 
 Yes, creditor account details **must** be specified and cannot be changed.
 
-#### **Should a PISP ask the PSU to re-consent or re-authenticate if no payments have been taken for a period of time?**
+### **Should a PISP ask the PSU to re-consent or re-authenticate if no payments have been taken for a period of time?**
 
 The PISP **may** ask the PSU to re-authenticate at any time if required but if there is a long-lived consent given by the PSU to the PISP then the token **should** be valid for the duration of the consent.
 
-#### **Can an ASPSP revoke access token if there are no payments made for a period of time?**
+### **Can an ASPSP revoke access token if there are no payments made for a period of time?**
 
 No, the ASPSP **must not** revoke access tokens given to a PISP solely because no payments have been made using the VRP consent for a set amount of time.  The PISP **must** ensure they have the appropriate consent from the PSU to initiate a payment order within a VRP consent (see "Setting the appropriate consent parameters" section in VRPs for Sweeping Guidance document). Ensuring appropriate management of potentially dormant VRP consents **should** form part of the PISPs operational risk management processes.
 
