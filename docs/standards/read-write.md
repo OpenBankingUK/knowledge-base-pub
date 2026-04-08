@@ -716,9 +716,9 @@ Additionally, Standing Orders set up on v3 endpoints **may** use Regex Patterns 
 | Use Case                                  | v3.0 Type | Regex Pattern     | Comments                     |
 |-------------------------------------------|-----------|------------       |------------------------------|
 | Payment to be made every X weeks and Y days|| IntrvlWkDay:X:Y| Example of every 4th Wednesday would be ‘IntrvlWkDay:4:3’|
-| Payment to be made every English QuarterDay (25th March, 24th June, 29th September, 25th December)| QtrDay:ENGLISH|||
-| Payment to be made to ensure funds credited to Payee by every English QuarterDay (paid on 20th March, 19th June, 24th September, 20th December)| QtrDay:RECEIVED|||
-| Payment to be made every Scottish QuarterDay (28th February, 28th May, 28th August, 28th November)| QtrDay:SCOTTISH|||
+| Payment to be made every English QuarterDay (25th March, 24th June, 29th September, 25th December)|| QtrDay:ENGLISH||
+| Payment to be made to ensure funds credited to Payee by every English QuarterDay (paid on 20th March, 19th June, 24th September, 20th December)|| QtrDay:RECEIVED||
+| Payment to be made every Scottish QuarterDay (28th February, 28th May, 28th August, 28th November)|| QtrDay:SCOTTISH||
 | Payment to be made every month on the last day of the month|| IntrvlMnthDay:01:-1||
 | Payment to be made every 6 months on the 15th day of the month|| IntrvlMnthDay:06:15||
 | Payment to be made every 2 years on the 1st day of the month|| IntrvlMnthDay:24:01||
