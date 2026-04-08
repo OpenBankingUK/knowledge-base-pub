@@ -1,16 +1,16 @@
 # Version control
 
-## V4.0.1 - 2026-03-30
+## V4.0.1 - 2026-04-08
 
 ### Changed
 
-- Updated a number of FAQs related to VRP; fixing typos and poor language, making words like 'must' bold
-- Updated FAQ re Standing Order Frequencies (per CDRW-5042)
+- Updated a number of FAQs related to VRP; fixing typos and poor language, making words like 'must' bold.
+- Updated FAQ re Standing Order Frequencies (per CDRW-5042) to correct examples that previous answer gave incorrect information for.
 
 ### Deleted
 
-- A number of duplicated FAQs related to VRP
-- A number of FAQs that are better answered by the publication of new Sweeping guidance
+- A number of duplicated FAQs related to VRP.
+- A number of FAQs that are better answered by the publication of new [Sweeping guidance](https://www.openbanking.org.uk/news/questions-and-answers-on-the-definition-of-sweeping/).
 
 ## V4.0.1 - 2026-03-12
 
