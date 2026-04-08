@@ -39,7 +39,7 @@ This is **optional** under the current versions of the specifications. However, 
 
 ### **What if an account linked to a VRP consent is no longer available (temporarily or permanently)?**
 
-It is recommended that the ASPSP inform the TPP using events. Note, events is **mandatory** for CMA9 ASPSPs, but remains **optional** under the current version of the specifications for other ASPSPs, who are encouraged to support where possible.
+It is recommended that the ASPSP inform the TPP using Events Notifications. Note, Aggregated Polling is **mandatory** for CMA9 ASPSPs, but remains **optional** under the current version of the specifications for other ASPSPs, who are encouraged to support where possible.
 
 ### **Is there a specific VRP type for sweeping?**
 
@@ -63,7 +63,7 @@ The PISP **may** ask the PSU to re-authenticate at any time if required but if t
 
 ### **Can an ASPSP revoke access token if there are no payments made for a period of time?**
 
-No, the ASPSP **must not** revoke access tokens given to a PISP solely because no payments have been made using the VRP consent for a set amount of time.  The PISP **must** ensure they have the appropriate consent from the PSU to initiate a payment order within a VRP consent (see "Setting the appropriate consent parameters" section in VRPs for Sweeping Guidance document). Ensuring appropriate management of potentially dormant VRP consents **should** form part of the PISPs operational risk management processes.
+No, the ASPSP **must not** revoke access tokens given to a PISP solely because no payments have been made using the VRP consent for a set amount of time.  The PISP **must** ensure they have the appropriate consent from the PSU to initiate a payment order within a VRP consent. Ensuring appropriate management of potentially dormant VRP consents **should** form part of the PISPs operational risk management processes.
 
 
 ## **VRP**
@@ -74,7 +74,7 @@ Yes. The PISP **must** provide a mechanism within their domain and/or via the VR
 
 ### **Does a PISP need to mark the consent status as ‘Revoked’ once the PSU has revoked consent at the PISP?**
 
-Once the PSU revokes consent at the PISP, the PISP **must** use the `DELETE` endpoint to inform the ASPSP that consent is revoked. The ASPSP **must** delete the resource and respond to subsequent GET requests with an HTPP status of 400.
+Once the PSU revokes consent at the PISP, the PISP **must** use the `DELETE` endpoint to inform the ASPSP that consent is revoked. The ASPSP **must** delete the resource and respond to subsequent GET requests with an HTTP status of 400.
 
 ### **Can a PSU re-authenticate the same consent after revoking at the PISP?**
 
@@ -148,7 +148,7 @@ The specifications can support both sweeping and non-sweeping as part of one con
 
 ### **Can ASPSP define their specific list of VRP types for non-sweeping?**
 
-There are two enumerations in the current specifications; `sweeping` and `other`. Please contact UKPI for details of enumerations supporting cVRP.  The exact usage of these will be determined by the MLA. ASPSPs **may** also define enumerations that are more specific and make this information available to PISPs.
+There are two enumerations in the current specifications; `UK.OBIE.VRPType.Sweeping` and `UK.OBIE.VRPType.Other`. Please contact UKPI for details of enumerations supporting cVRP.  The exact usage of these will be determined by the MLA. ASPSPs **may** also define enumerations that are more specific and make this information available to PISPs.
 
 ### **Can a PISP specify a list of authentication methods for a single VRP payment?**
 
@@ -306,7 +306,7 @@ All the consent parameters **must** be agreed upon between the PISP and the PSU,
 
 ### **While calculating the periodic limit amount, do ASPSPs and PISPs need to exclude the payments that have Rejected status?**
 
-Yes, ASPSPs and PISPS should exclude those with `RJCT` status.
+Yes, ASPSPs and PISPS should exclude those with `RJCT` or `BLCK` status.
 
 ### **Does VRP payment support standing order/future dated payment?**
 
@@ -330,7 +330,7 @@ The PISP can request refund information by indicating yes/no in [Domestic VRP co
 
 ### **As per the specs, `ValidFromDateTime` field is optional. Does that mean the consent start date can be a back or a future date?**
 
-`ValidFromDateTime` is an **optional** field which means if not provided the consent start date is when the consent is provided to the PISP by the PSU and successful authentication has taken place at the ASPSP. It **must not** be backdated because the PSU is only giving consent at that point. However, it could be a future date.
+`ValidFromDateTime` is a **conditional** field which means if not provided the consent start date is when the consent is provided to the PISP by the PSU and successful authentication has taken place at the ASPSP. It **must not** be backdated because the PSU is only giving consent at that point. However, it could be a future date.
 
 ### **Can `ValidToDateTime` be left blank?**
 
@@ -396,7 +396,7 @@ Yes, the OBL Standards do not mandate this but it is required to be provided by 
 
 ### **Can the PISP populate a value in the Data.Instruction.RemittanceInformation.Reference, when "Data.Initiation.RemittanceInformation.Reference" is "blank?**
 
-Yes, PISPs can populate a value. Please refer to this specification : [Under the Instruction object for VRP](https://openbankinguk.github.io/read-write-api-site3/v4.0.1/resources-and-data-models/vrp/domestic-vrps.html#obdomesticvrpinstruction), it has a UML occurrence of 0..1, so it's a field that may or may not appear in this object. Under the definition that you referenced, if this field is populated in the initiation object, then the reference field in the instruction **must** match the initiation value. There are no other limitations placed on this field, so if the initiation reference field is not present, then this field can be populated with a different reference for each VRP payment.  So if the beneficiary requires a different reference for each VRP payment, the field **should not** be included when initiating the VRP consent, which will allow each VRP payment to contain a different reference.
+Yes, PISPs can populate a value. Please refer to this specification : [Under the Instruction object for VRP](https://openbankinguk.github.io/read-write-api-site3/v4.0.1/resources-and-data-models/vrp/domestic-vrps.html#obdomesticvrpinstruction), it has a UML occurrence of 0..1, so it's a field that may or may not appear in this object. If this field is populated in the initiation object, then the reference field in the instruction **must** match the initiation value. There are no other limitations placed on this field, so if the initiation reference field is not present, then this field can be populated with a different reference for each VRP payment.  So if the beneficiary requires a different reference for each VRP payment, the field **should not** be included when initiating the VRP consent, which will allow each VRP payment to contain a different reference.
 
 ### **How should ASPSPs handle VRP payment consents created in v3 when ASPSP is now on v4?**
 
