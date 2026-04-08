@@ -686,8 +686,43 @@ Access Dashboard is provided by the ASPSP to the PSU on their online channels.
 You can refer to the flow diagrams and common repository introduced in v4.0 for definitions and mapping. Here is the link: <a href="https://github.com/OpenBankingUK/External_Internal_CodeSets" class="external-link" rel="nofollow">Codeset Repository</a>
 
 ### **What are the different frequencies that can be setup for standing orders?**
-![Example 5](../standards/images/Image_5.png)
-![Example 6](../standards/images/Image_6.png)
+
+Standing Orders can be set up with a wide range of frequency options, all based on a combination of some/all of FrequencyType, FirstPaymentDateTime, RecurringPaymentDateTime and PointInTime objects.  Below are a number of usage examples showing how Type (frequency) and PointInTime (when within the stated frequency) **must** be used.  In all cases, TPPs **should** check ASPSP developer documentation to see how non-working days (Weekends, Public Holidays) and non-existent days (30 February, 31 April etc.) are handled.
+
+| Use Case                                  | v4.0 Type | PointInTime| DateTime                                                  | Comments                     |
+|-------------------------------------------|-----------|------------|-----------------------------------------------------------|------------------------------|
+| Payment to be made every day| DAIL||||
+| Payment to be made every X days| DAIL| X| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point, and then PointInTime to indicate the  number of days between each payment. Note, other Types (e.g. Weekly) may be more appropriate depending on the desired frequency|
+| Payment to be made every ‘working day’ | WODL||||
+| Payment to be made once per week| WEEK| X|| PointInTime **must** be used to determine the day of the week, where Monday = 1, Tuesday = 2, through to Sunday = 7|
+| Payment to be made once per month| MNTH| X|| PointInTime must be used to determine the date of the month (1-31)|
+| Payment to be made on the last day of the month| MNTH| -X|| A negative PointInTime must be used to indicate payment date|
+| Payment to be made on the last working day of the month| LWMH| -X|| A negative PointInTime must be used to indicate payment date|
+| Payment to be made on the last X day of the month (e.g. last Monday)| LXMH| X|| PointInTime must be used to determine the day of the week, where Monday = 1, Tuesday = 2, through to Sunday = 7|
+| Payment to be made fortnightly| FRTN|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point. Use PointInTime to indicate the day within the fortnight|
+| Payment to be made every 2 months| TWMH|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
+| Payment to be made on alternate months| ALMH|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
+| Payment to be made every 3 months on a specific date| QURT|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
+| Payment to be made on the last day of a quarter| QURT||| PointInTime **must** be -1.  Note, if for other days ahead of month-end, the PointInTime will be -2, -3 etc.|
+| Payment to be made every 4 months on a specific date| FOMH|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
+| Payment to be made every 5 months on a specific date| FIMH|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
+| Payment to be made every 6 months on a specific date| MIAN|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
+| Payment to be made every year on a specific date| YEAR|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
+| Payment to be made every 2 years on a specific date| TWYR|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
+| Payment has an unknown frequency| NONE||||
+
+Additionally, Standing Orders set up on v3 endpoints **may** use Regex Patterns to describe the frequency.  Refer to ASPSP Developer Portals for guidance as to usage.  New Standing Orders **must not** be set up using these.
+
+| Use Case                                  | Regex Pattern     | Comments                     |
+|-------------------------------------------|------------       |------------------------------|
+| Payment to be made every X weeks and Y days| IntrvlWkDay:X:Y| Example of every 4th Wednesday would be ‘IntrvlWkDay:4:3’|
+| Payment to be made every English QuarterDay (25th March, 24th June, 29th September, 25th December)| QtrDay:ENGLISH||
+| Payment to be made to ensure funds credited to Payee by every English QuarterDay (paid on 20th March, 19th June, 24th September, 20th December)| QtrDay:RECEIVED||
+| Payment to be made every Scottish QuarterDay (28th February, 28th May, 28th August, 28th November)| QtrDay:SCOTTISH||
+| Payment to be made every month on the last day of the month| IntrvlMnthDay:01:-1||
+| Payment to be made every 6 months on the 15th day of the month| IntrvlMnthDay:06:15||
+| Payment to be made every 2 years on the 1st day of the month| IntrvlMnthDay:24:01||
+| Payment to be made on the Thursday of the 2nd week every month| WkInMnthDay:02:04||
 
 ### **How do ASPSPs apply payment value limits to their online channels, and does this apply to open banking (including VRP) initiated payments?**
 
