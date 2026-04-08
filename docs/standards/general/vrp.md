@@ -12,24 +12,24 @@ The Competition and Markets Authority (CMA) has published further clarification 
 
 Several questions have arisen regarding the interpretation of this clarification, so OBL has published answers to key questions, which can be downloaded from [here](https://www.openbanking.org.uk/news/questions-and-answers-on-the-definition-of-sweeping/)
 
-#### **What should a party do if it disputes that a transaction or use case is sweeping?**
+### **What should a party do if it disputes that a transaction or use case is sweeping?**
 
 Please refer to Point 9 [here](https://www.openbanking.org.uk/news/questions-and-answers-on-the-definition-of-sweeping/).
 
-#### **Where can we find Sweeping requirements?**
+### **Where can we find Sweeping requirements?**
 
 Refer to Proposition - [Proposition - Variable Recurring Payments (VRPs) | 9.-Requirements-for-VRP-Sweeping-Access](https://openbanking.atlassian.net/wiki/spaces/DZ/pages/1939243099/Proposition+-+Variable+Recurring+Payments+VRPs#9.-Requirements-for-VRP-Sweeping-Access)
 
-#### **Where can we find VRP for Sweeping Access Journey?**
+### **Where can we find VRP for Sweeping Access Journey?**
 
 Refer to CEG - [VRP Payments under Sweeping Access] (https://standards.openbanking.org.uk/customer-experience-guidelines/payment-initiation-services/vrp-payments-under-sweeping-access/latest/)
 
-#### **Where can we find more information on dashboards for VRP/sweeping**
+### **Where can we find more information on dashboards for VRP/sweeping**
 
 - Refer to CEG - [PIS-VRP Consent Dashboard](https://standards.openbanking.org.uk/customer-experience-guidelines/dashboards/vrp-consent-dashboard-revocation/latest/)
 - Refer to CEG - [PIS-VRP Access Dashboard](https://standards.openbanking.org.uk/customer-experience-guidelines/dashboards/pis-vrp-access-dashboard-revocation/latest/)
 
-#### **Who is responsible to prove that the consent is sweeping consent and payment is made to the same customer or legal entity as the initiating account?**
+### **Who is responsible to prove that the consent is sweeping consent and payment is made to the same customer or legal entity as the initiating account?**
 
 The PISP asserts it is sweeping and so would need to be able to prove that it is if questioned.
 
