@@ -94,7 +94,7 @@ ASPSPs **must** provide a mechanism within their domain to enable the PSU to rev
 
 ### **Can an ASPSP revoke VRP consent for any reason?**
 
-ASPSPs **must not** revoke VRP consent given by the PSU to the PISP. They **must not** change the status of the consent either. They **must**, however, take necessary action to revoke access e.g. by revoking/expiring the access token provided to the PISP or any other action that will stop the PISP from accessing the PSU’s account and making payment using the specific VRP consent, when requested to by the PSU.
+ASPSPs **must not** revoke VRP consent given by the PSU to the PISP. They **must**, however, take necessary action to revoke access e.g. by revoking/expiring the access token provided to the PISP or any other action that will stop the PISP from accessing the PSU’s account and making payment using the specific VRP consent, when requested to by the PSU.
 
 ### **Can a PSU re-authenticate use an existing VRP consent and what would be the trigger situations for these?**
 
