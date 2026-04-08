@@ -702,7 +702,7 @@ Standing Orders can be set up with a wide range of frequency options, all based 
 | Payment to be made fortnightly| FRTN|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point. Use PointInTime to indicate the day within the fortnight|
 | Payment to be made every 2 months| TWMH|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
 | Payment to be made on alternate months| ALMH|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
-| Payment to be made every 3 months on a specific date| QUAR|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
+| Payment to be made every 3 months on a specific date| QURT|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
 | Payment to be made on the last day of a quarter| QURT||| PointInTime **must** be -1.  Note, if for other days ahead of month-end, the PointInTime will be -2, -3 etc.|
 | Payment to be made every 4 months on a specific date| FOMH|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
 | Payment to be made every 5 months on a specific date| FIMH|| Either FirstPaymentDateTime or RecurringPaymentDateTime| Use one of the DateTime objects to set the start point|
