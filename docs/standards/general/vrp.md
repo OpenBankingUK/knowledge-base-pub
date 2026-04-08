@@ -22,7 +22,7 @@ Refer to Proposition - [Proposition - Variable Recurring Payments (VRPs) | 9.-Re
 
 ### **Where can we find VRP for Sweeping Access Journey?**
 
-Refer to CEG - [VRP Payments under Sweeping Access] (https://standards.openbanking.org.uk/customer-experience-guidelines/payment-initiation-services/vrp-payments-under-sweeping-access/latest/)
+Refer to CEG - [VRP Payments under Sweeping Access](https://standards.openbanking.org.uk/customer-experience-guidelines/payment-initiation-services/vrp-payments-under-sweeping-access/latest/)
 
 ### **Where can we find more information on dashboards for VRP/sweeping**
 
