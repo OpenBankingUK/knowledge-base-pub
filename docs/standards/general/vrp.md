@@ -43,11 +43,11 @@ It is recommended that the ASPSP inform the TPP using Events Notifications. Note
 
 ### **Is there a specific VRP type for sweeping?**
 
-Yes, the current enumerations include one specifically for sweeping (`sweeping`).
+Yes, the current enumerations include one specifically for sweeping (`UK.OBIE.VRPType.Sweeping`).
 
 ### **Can ASPSP allow only `Sweeping` VRP type?**
 
-Yes, ASPSPs can currently choose to only support VRP Type `sweeping`.  
+Yes, ASPSPs can currently choose to only support `UK.OBIE.VRPType.Sweeping`.  
 
 ### **Does a PISP need to display T&Cs as part of a sweeping consent journey?**
 
