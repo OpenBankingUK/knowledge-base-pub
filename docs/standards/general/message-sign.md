@@ -29,15 +29,15 @@ The structure of the `iss` field is defined by the trust anchor.
 
 1. If the certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor (as indicated by the tan value equal to `openbanking.org.uk`)
 
-a. When issued by a TPP, `iss` has the form `{{orgi-id}}/{{software-statement-id}}`,
+a. When issued by a TPP, `iss` has the form `{orgi-id}/{{software-statement-id}}`,
 
-b. When issued by an ASPSP, `iss` has the form `{{org-id}}`
+b. When issued by an ASPSP, `iss` has the form `{org-id}`
 
-2. If the certificate is lodged with another trust anchor, the trust anchor should specify the expected iss values that would identify the issuer of the signature.
+2. If the certificate is lodged with another trust anchor, the trust anchor **should** specify the expected `iss` values that would identify the issuer of the signature.
 
-3. If the certificate is not lodged with a trust anchor, then the subject of the certificate should be used as the `iss`
+3. If the certificate is not lodged with a trust anchor, then the subject of the certificate **should** be used as the `iss`
 
-The specification does not state how a signature of the last type should be verified by the ASPSP. The ASPSP may have additional requirements for ensuring that the public key is securely transmitted and for the durability of the key.
+The specification does not state how a signature of the last type should be verified by the ASPSP. The ASPSP **may** have additional requirements for ensuring that the public key is securely transmitted and for the durability of the key.
 
 When a TPP EIDAS certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor, `iss` has the form <span v-pre>`{{orgi-id}}/{{software-statement-id}}`</span>.
 
@@ -53,11 +53,11 @@ The specification is clear about which API requests and responses require signat
 
 The `Endpoints` table for resource documentation has a column called “Message Signing”. The column specifies whether the API has “signed requests”, “signed response” or both.
 
-The swagger specification indicates which requests and responses would have signatures through the presence of the `x-jws-signature`
+The OpenAPI/swagger specification indicates which requests and responses would have signatures through the presence of the `x-jws-signature`
 
 ### **When signing an HTTP payload, should the input be the “raw” HTTP payload or a parsed and cleansed JSON object?**
 
-Signature generation and validation should always be based on the raw sequence of bytes that constitute the HTTP body (prior to the application of HTTP transformations such as multi-part encoding, gzip/deflate etc.)
+Signature generation and validation **should** always be based on the raw sequence of bytes that constitute the HTTP body (prior to the application of HTTP transformations such as multi-part encoding, gzip/deflate etc.)
 
 Some further notes:
 
@@ -111,9 +111,9 @@ A non-detached signature, `b64`=true
 >.<br>
 >`sign( concatenate( b64UrlEncode(header), ".", b64UrlEncode(payload) ) )`<br>
 
-Note: ASPSPs must include details of which version they support in their API documentation and must give TPPs at least three month's notice of any changes.
+Note: ASPSPs **must** include details of which version they support in their API documentation and **must** give TPPs at least three month's notice of any changes.
 
 ### **Are ASPSPs expected to also support `b64` un-encoded & signed messages for version 3.1.4 onwards?**
 
-No, ASPSP may reject messages with a `b64` claim in the JOSE header.
+No, ASPSP **may** reject messages with a `b64` claim in the JOSE header.
 
