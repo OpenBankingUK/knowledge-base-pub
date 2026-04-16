@@ -39,9 +39,9 @@ b. When issued by an ASPSP, `iss` has the form `{org-id}`
 
 The specification does not state how a signature of the last type should be verified by the ASPSP. The ASPSP **may** have additional requirements for ensuring that the public key is securely transmitted and for the durability of the key.
 
-When a TPP EIDAS certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor, `iss` has the form <span v-pre>`{{orgi-id}}/{{software-statement-id}}`</span>.
+When a TPP EIDAS certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor, `iss` has the form `{org-id}/{software-statement-id}`.
 
-When an ASPSP EIDAS certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor, `iss` has the form <span v-pre>`{{orgi-id}}`</span>.
+When an ASPSP EIDAS certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor, `iss` has the form `{org-id}`.
 
 ### **What is the `tan` value for Directory Sandbox?**
 The specification does not define the expected `tan` value to be used by ASPSP’s (testing facilities) that use the Directory Sandbox. 
@@ -92,7 +92,7 @@ A non-detached signature, `b64`=false would be encoded as follows. (This is for 
 >.<br>
 >`sign( concatenate( b64UrlEncode(header), ".", payload ))`<br>
 
-**For version 3.1.4 onward, ASPSPs must not include the `b64` claim in the header**, and any TPPs using these ASPSPs must do the same.
+**For version 3.1.4 onward, ASPSPs must not include the `b64` claim in the header**, and any TPPs using these ASPSPs **must** do the same.
 
 Eg:
 
