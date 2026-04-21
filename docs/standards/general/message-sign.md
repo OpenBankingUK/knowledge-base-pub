@@ -57,7 +57,7 @@ The OpenAPI/Swagger specification indicates which requests and responses would h
 
 ### **When signing an HTTP payload, should the input be the “raw” HTTP payload or a parsed and cleansed JSON object?**
 
-Signature generation and validation **should** always be based on the raw sequence of bytes that constitute the HTTP body (prior to the application of HTTP transformations such as multi-part encoding, gzip/deflate etc.)
+Signature generation and validation **should** always be based on the raw sequence of bytes that constitute the HTTP body (prior to the application of HTTP transformations such as multi-part encoding, gzip/deflate etc.).
 
 Some further notes:
 
