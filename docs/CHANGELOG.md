@@ -1,5 +1,15 @@
 # Version control
 
+## V4.0.1 - 2026-04-21
+
+### Added
+
+- New FAQ relating to the usage of free format `AddressLines` in `PostalAddress` object, giving usage guidance ahead of an ISO change in Nov 2026.
+
+### Changed
+
+- Amended Message Signing FAQs, fixing a typo re how `iss` is formed, applying bold font to must/should etc., and fixing some grammatical errors to improve readability.
+
 ## V4.0.1 - 2026-04-08
 
 ### Changed
