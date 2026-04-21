@@ -53,7 +53,7 @@ The specification is clear about which API requests and responses require signat
 
 The `Endpoints` table for resource documentation has a column called “Message Signing”. The column specifies whether the API has “signed requests”, “signed response” or both.
 
-The OpenAPI/swagger specification indicates which requests and responses would have signatures through the presence of the `x-jws-signature`
+The OpenAPI/Swagger specification indicates which requests and responses would have signatures through the presence of the `x-jws-signature`.
 
 ### **When signing an HTTP payload, should the input be the “raw” HTTP payload or a parsed and cleansed JSON object?**
 
