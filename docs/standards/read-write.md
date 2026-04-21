@@ -773,7 +773,7 @@ For the avoidance of doubt, these enums **must not** be used for any new consent
 
 ### **How should `PostalAddress` be populated?**
 
-TPPs and ASPSPs **should** use the structured address fields wherever possible. Use of free‑format AddressLine fields should be minimised and, where used, ideally limited to a maximum of two lines.  Although the current specifications permit up to seven AddressLine entries, ISO/SWIFT standards will reduce this to a maximum of two lines from November 2026. Link here [PowerPoint Presentation](https://www.swift.com/sites/default/files/files/pmpg-hybrid-postal-address-v1.12-05mar2026.pdf) Implementers should plan accordingly.
+TPPs and ASPSPs **should** use the structured address fields wherever possible. Use of free‑format AddressLine fields should be minimised and, where used, ideally limited to a maximum of two lines.  Although the current specifications permit up to seven AddressLine entries, ISO/SWIFT standards will reduce this to a maximum of two lines from November 2026. Link to ISO PMPG guidance here [PowerPoint Presentation](https://www.swift.com/sites/default/files/files/pmpg-hybrid-postal-address-v1.12-05mar2026.pdf). Implementers should plan accordingly.
 
 ASPSPs **must** clearly document in their TPP-facing documentation:
 - which address fields they support, and
