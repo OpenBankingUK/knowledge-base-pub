@@ -115,5 +115,5 @@ Note: ASPSPs **must** include details of which version they support in their API
 
 ### **Are ASPSPs expected to also support `b64` un-encoded & signed messages for version 3.1.4 onwards?**
 
-No, ASPSP **may** reject messages with a `b64` claim in the JOSE header.
+No, an ASPSP **may** reject messages with a `b64` claim in the JOSE header.
 
