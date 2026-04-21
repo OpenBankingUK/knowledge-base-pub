@@ -111,7 +111,7 @@ A non-detached signature, `b64`=true
 >.<br>
 >`sign( concatenate( b64UrlEncode(header), ".", b64UrlEncode(payload) ) )`<br>
 
-Note: ASPSPs **must** include details of which version they support in their API documentation and **must** give TPPs at least three month's notice of any changes.
+Note: ASPSPs **must** include details of which version they support in their API documentation and **must** give TPPs at least three months' notice of any changes.
 
 ### **Are ASPSPs expected to also support `b64` un-encoded & signed messages for version 3.1.4 onwards?**
 
