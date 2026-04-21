@@ -29,9 +29,9 @@ The structure of the `iss` field is defined by the trust anchor.
 
 1. If the certificate is lodged with the Open Banking Directory and Open Banking Directory is the trust anchor (as indicated by the tan value equal to `openbanking.org.uk`)
 
-a. When issued by a TPP, `iss` has the form `{org-id}/{software-statement-id}`.
+- When issued by a TPP, `iss` has the form `{org-id}/{software-statement-id}`.
 
-b. When issued by an ASPSP, `iss` has the form `{org-id}`
+- When issued by an ASPSP, `iss` has the form `{org-id}`
 
 2. If the certificate is lodged with another trust anchor, the trust anchor **should** specify the expected `iss` values that would identify the issuer of the signature.
 
