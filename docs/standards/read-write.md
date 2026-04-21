@@ -770,3 +770,11 @@ The Bank of England’s (BoE) ISO 20022 mandatory requirements for CHAPS payment
 
 These PCC enumerations were deprecated in v3.1.10.  However, to support pre-existing consents & transactions along with those ASPSPs that populate their internal systems from the OpenAPI files, they have been retained in the OpenAPI files and removed from other sources such as the codeset repo.  They are only to be used for supporting legacy v3 PIS & VRP data where relevant, including migration of a v3 VRP consent to v4. 
 For the avoidance of doubt, these enums **must not** be used for any new consents.
+
+### **How should `PostalAddress` be populated?**
+
+TPPs and ASPSPs **should** use the structured address fields wherever possible. Use of free‑format AddressLine fields should be minimised and, where used, ideally limited to a maximum of two lines.  Although the current specifications permit up to seven AddressLine entries, ISO/SWIFT standards will reduce this to a maximum of two lines from November 2026. Link here [PowerPoint Presentation](https://www.swift.com/sites/default/files/files/pmpg-hybrid-postal-address-v1.12-05mar2026.pdf) Implementers should plan accordingly.
+
+ASPSPs **must** clearly document in their TPP-facing documentation:
+- which address fields they support, and
+- how they handle API requests that exceed those limits (for example, whether excess address lines are truncated or the request is rejected).
