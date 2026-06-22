@@ -612,7 +612,7 @@ Where applicable, ASPSPs **should** provide information about thresholds and quo
 
 #### **Which rate limit algorithm should an ASPSP use?**
 
-Identify which rate limit algorithms your platform supports (such as sliding window, leaky bucket or others) and choose one that meets your over-arching requirements and approach. 
+Identify which rate limit algorithms your platform supports (such as sliding window, leaky bucket or others) and choose one that meets your overarching requirements and approach.
 
 #### **What other factors should an ASPSP consider when setting up rate limits?**
 
