@@ -616,7 +616,7 @@ Identify which rate limit algorithms your platform supports (such as sliding win
 
 #### **What other factors should an ASPSP consider when setting up rate limits?**
 
-The guidance above does not constitute legal advice - you **must** consider whether your approach to any use of rate limiting meet legal requirements, and what the consequences of that are.
+The guidance above does not constitute legal advice - you **must** consider whether your approach to any use of rate limiting meets legal requirements, and what the consequences of that are.
 
 ASPSPs **must** make documentation available to TPPs (e.g. on their developer portals) and clearly publish any rate limits for each version.
 
