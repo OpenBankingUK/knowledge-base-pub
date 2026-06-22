@@ -598,7 +598,7 @@ Under Article 33(1) SCA RTS, ASPSPs with a dedicated interface are required to h
 
 Under Article 33(7) of the FCA’s SCA RTS, the FCA are required to revoke an exemption from the contingency mechanism granted under Article 33(6) where, for more than two consecutive calendar weeks, either: an ASPSP fails to comply with all the obligations in SCA-RTS Article 32, or problems related to the dedicated interface have not been resolved without undue delay.
 
-### **What should be the rate limit/quota policy?**
+#### **What should be the rate limit/quota policy?**
 
 As outlined above, rate limits **should** only be used in a manner which is not discriminatory to TPPs and does not contradict an ASPSP’s regulatory obligations.
 
