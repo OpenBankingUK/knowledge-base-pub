@@ -602,7 +602,7 @@ Under Article 33(7) of the FCA’s SCA RTS, the FCA are required to revoke an ex
 
 As outlined above, rate limits **should** only be used in a manner which is not discriminatory to TPPs and does not contradict an ASPSP’s regulatory obligations.
 
-Defining separate quotas for specific endpoints and/or request types (e.g. client credentials vs user tokens) enables granular allocations tailored to the varying resource requirements of each operation and can provide better scaling and protection than a singular over-arching quota.
+Defining separate quotas for specific endpoints and/or request types (e.g. client credentials vs user tokens) enables granular allocations tailored to the varying resource requirements of each operation and can provide better scaling and protection than a singular overarching quota.
 
 #### **If an ASPSP sets quota limits, how does it make them accessible?**
 
