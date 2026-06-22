@@ -1,5 +1,19 @@
 # Version control
 
+## V4.0.1 - 2026-06-22
+
+### Added
+
+- New FAQs relating to revised Rate Limiting Guidance of June 2026.
+
+### Changed
+
+- Corrected two instance of 'an' being used instead of 'a' ('an PISP' becoming 'a PISP' and 'an CBPII' becoming 'a CBPII')
+
+### Deleted
+
+- Previous FAQ relating to Rate Limiting Guidance, as superceded by new guidance
+
 ## V4.0.1 - 2026-04-21
 
 ### Added
