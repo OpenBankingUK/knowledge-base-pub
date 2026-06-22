@@ -41,7 +41,7 @@ The Account and Transaction API Profile describes the flows and common functiona
 The links to the list of Account and Transaction APIs :
 <a href="https://openbankinguk.github.io/read-write-api-site3/v4.0/profiles/account-and-transaction-api-profile.html" class="external-link" rel="nofollow">Account and Transaction APIs</a>
 
-### **What APIs can an CBPII access?**
+### **What APIs can a CBPII access?**
 
 The Confirmation of Funds API Profile describes the flows and common functionality for the Confirmation of Funds API, which allows a Card Based Payment Instrument Issuer ('CBPII') to:
 
@@ -65,7 +65,7 @@ When access is revoked at the ASPSP access dashboard by the PSU, the TPP can be 
 
 For more details refer to: [customer-experience-guidelines - Dashboards - Notifications](https://standards.openbanking.org.uk/customer-experience-guidelines/dashboards/psu-notifications/latest/#psu_notif_sync/)
 
-### **What APIs can an PISP access?**
+### **What APIs can a PISP access?**
 
 The Payment Initiation API Profile describes the flows and common functionality for the Payment Initiation API, which allows a Payment Initiation Service Provider ('PISP') to:
 
@@ -570,19 +570,57 @@ In addition to that, ASPSPs may rely on OAuth Security BCP, https://tools.ietf.o
 
 Each ASPSP must reach its own reasoned decision. It may consider, for example, whether a missing, malformed or incorrectly signed request should be considered as a risky request.
 
-### **Can the ASPSPs implement rate-limiting?**
+### **Can ASPSPs implement rate-limiting? - Revised Guidance June 2026**
 
-While rate-limiting is supported by the specifications, ASPSPs will need to consider the factors below in line with relevant regulatory consideration when making a decision on an appropriate limit:
+OBL cannot prescribe specific quotas, implementation advice or advise whether rate limits meet legal requirements but can provide technical guidance.
 
-* rate limiting is conducted in a manner that reasonable, non-discriminatory and not an obstacle to the TPPs.
+#### **What factors should an ASPSP consider when defining a rate limit?**
 
-* provides at least the same level of availability/performance as existing PSU interfaces.
+Rate limits **should not** be used in a manner which is discriminatory to TPPs, and ASPSPs are reminded of their requirements to comply with their regulatory obligations. This includes Art 32(1) SCA RTS, which provides that ASPSPs that have put in place a dedicated interface shall ensure that the dedicated interface offers at all times the same level of availability and performance, including support, as their direct customer-facing interface.
 
-* do not apply any measures to induce TPPs to adopt a new version of the APIs where rate limit is applied to an older version and better performance is provided on a newer version.
+There **may** be certain circumstances where it is necessary for an ASPSP to use rate limiting in a manner which **may** restrict TPPs’ access to an interface for open banking, because not doing so would lead to the interface becoming inoperable. However, in practice, this should only impact TPPs in extreme circumstances, as ASPSPs are required to ensure that their dedicated interface is adequately stress tested and able to handle large volumes of requests from TPPs.
 
-ASPSPs must make documentation available to TPPs (e.g. on their developer portals) and clearly publish rate limits for each version.
+As referenced at paragraphs 17.116 and 17.117 of the FCA’s Payment Services and Electronic Money – Our Approach (**the Approach Document**), ASPSPs **should** have processes in place to establish and assess how the dedicated interface performs when subjected to an extremely high number of requests from AISPs, PISPs and CBPIIs, in terms of the impact that such stresses have on the availability and performance of the dedicated interface and the defined service level targets. The stress testing **should** be able to demonstrate that performance and availability of the interface will not be adversely affected by events that create stresses on the system, and the dedicated interface will be able to handle large volumes of requests (of different complexity) by AISPs, PISPs and CBPIIs.
 
-ASPSPs should respond with `429 - Too many requests` status code if they rate limit requests from TPPs (as specified here - https://openbankinguk.github.io/read-write-api-site3/v3.1.6/profiles/read-write-data-api-profile.html#http-status-codes)
+OBL expects ASPSPs to take all reasonable steps to anticipate API call volumes so that they can put sufficient capacity in place to handle requests made by TPPs. ASPSPs **should** identify the capacity and performance thresholds based on all infrastructure - including the network - involved in processing an API request, not just the API gateway service. This **should** include the core system processing the request and any connectivity layers or platforms.
+
+Paragraph 17.117 of the Approach Document encourages ASPSPs to engage with AISPs, PISPs and CBPIIs to understand and forecast when peak usage or other stresses may occur. As part of this engagement, if TPPs are aware that they will be increasing API call volumes to such an extent that there will be a significant impact on ASPSPs then they **should** let ASPSPs know about this well in advance.
+
+Rate limiting **should not**, therefore, be implemented in substitution for an ASPSP’s obligations to adequately stress test its interface.
+
+An example of a scenario in which it may be necessary to use rate limiting in a manner which may restrict TPPs’ access to the dedicated interface is where an extremely high volume of illegitimate requests are received, such as when a malicious actor carries out a dedicated denial of service attack designed to overwhelm and render an ASPSP’s interface inoperable.   
+
+#### **Reporting Requirements to the FCA and Contingency Measures**
+
+Under Article 33 (3) SCA RTS, problems with an ASPSP’s dedicated interface, as referred to in Article 33(1) of SCA RTS (including instances where such issues have arisen from the use of rate limiting), **must** be reported to the FCA by ASPSPs, AISPs, PISPs and CBPIIs without delay.
+
+Under Article 33(1) SCA RTS, ASPSPs with a dedicated interface are required to have contingency measures in place which come into effect in circumstances where the interface does not perform in compliance with Article 32, there is unplanned unavailability of the interface or a system breakdown. The contingency measures include communication plans to inform TPPs of measures to restore the system and a description of the immediately available alternative options payment service providers **may** have during this time.
+
+Under Article 33(7) of the FCA’s SCA RTS, the FCA are required to revoke an exemption from the contingency mechanism granted under Article 33(6) where, for more than two consecutive calendar weeks, either: an ASPSP fails to comply with all the obligations in SCA-RTS Article 32, or problems related to the dedicated interface have not been resolved without undue delay.
+
+#### **What should be the rate limit/quota policy?**
+
+As outlined above, rate limits **should** only be used in a manner which is not discriminatory to TPPs and does not contradict an ASPSP’s regulatory obligations.
+
+Defining separate quotas for specific endpoints and/or request types (e.g. client credentials vs user tokens) enables granular allocations tailored to the varying resource requirements of each operation and can provide better scaling and protection than a singular overarching quota.
+
+#### **If an ASPSP sets quota limits, how does it make them accessible?**
+
+Any limits **must** be documented on the ASPSP developer portal and **should** be measured in transactions per second per TPP. This is to enable TPPs to self-manage the API call volume that they are sending to the ASPSP.
+
+Where applicable, ASPSPs **should** provide information about thresholds and quotas using the HTTP Headers introduced in [v4.0.1 of the OBL specification](https://openbankinguk.github.io/read-write-api-site3/v4.0.1/profiles/read-write-data-api-profile.html#rate-limit-headers) which can be used by calling parties to automatically adjust the rate of API calls they make in specific circumstances, as described above, where it would be necessary for ASPSPs to implement rate limits in a way which may restrict TPPs’ access to the interface for open banking.
+
+#### **Which rate limit algorithm should an ASPSP use?**
+
+Identify which rate limit algorithms your platform supports (such as sliding window, leaky bucket or others) and choose one that meets your overarching requirements and approach.
+
+#### **What other factors should an ASPSP consider when setting up rate limits?**
+
+The guidance above does not constitute legal advice - you **must** consider whether your approach to any use of rate limiting meets legal requirements, and what the consequences of that are.
+
+ASPSPs **must** make documentation available to TPPs (e.g. on their developer portals) and clearly publish any rate limits for each version.
+
+ASPSPs **should** respond with the `HTTP 429 - Too many requests` status code if rate limits are active and a TPP has exceeded their quota, as specified [here](https://openbankinguk.github.io/read-write-api-site3/v4.0.1/profiles/read-write-data-api-profile.html#_429-too-many-requests).
 
 ### **What is the expected response when an AISP tries to access AIS endpoints for a closed or switched account?**
 
