@@ -1,5 +1,11 @@
 # Version control
 
+## V4.0.1 - 2026-07-14
+
+### Added
+
+- Additional text relating to handling of ISO PostalAddress changes.  Texy agreed at TDA (TDA Decision 287)
+
 ## V4.0.1 - 2026-06-22
 
 ### Added
