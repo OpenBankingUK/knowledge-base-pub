@@ -818,3 +818,7 @@ From November 2026, TPPs and ASPSPs **must** use the Structured or Hybrid addres
 ASPSPs **must** clearly document in their TPP-facing documentation:
 - which address fields they support, and
 - how they handle API requests that exceed those limits (for example, whether excess `AddressLines` are truncated or the request is rejected).
+
+### **Can a TPP obtain bulk re-confirmation from a PSU where the PSU has Power of Attorney/Deputyship arrangements over multiple accounts potentially in the name of multiple people/companies?**
+
+Yes, provided the TPP notifies the PSU when reconfirmation is required at the AISP.  The notification **must** clearly preserve explicit consent in order to ensure that PSUs (or the person acting on their behalf under a statutory deputyship) can clearly identify and actively reconfirm each account in scope, and retain the ability to withdraw consent at an individual account level.  At the next Standards Release, this will incorporated into the CEG Checklist as Reference 16e.
