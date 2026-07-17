@@ -813,6 +813,12 @@ For the avoidance of doubt, these enums **must not** be used for any new consent
 
 TPPs and ASPSPs **should** use the structured address fields wherever possible. Use of free format `AddressLine` fields should be minimised and, where used, ideally limited to a maximum of two lines.  Although the current specifications permit up to seven `AddressLine` entries, ISO/SWIFT standards will reduce this to a maximum of two lines from November 2026. Link to ISO PMPG guidance here [PowerPoint Presentation](https://www.swift.com/sites/default/files/files/pmpg-hybrid-postal-address-v1.12-05mar2026.pdf). Implementers should plan accordingly.
 
+From November 2026, TPPs and ASPSPs **must** use the Structured or Hybrid address formats, i.e. free format `AddressLine` fields **must** be limited to a maximum of two lines.
+
 ASPSPs **must** clearly document in their TPP-facing documentation:
 - which address fields they support, and
 - how they handle API requests that exceed those limits (for example, whether excess `AddressLines` are truncated or the request is rejected).
+
+### **Can a TPP obtain bulk re-confirmation from a PSU where the PSU has Power of Attorney/Deputyship arrangements over multiple accounts potentially in the name of multiple people/companies?**
+
+Yes, provided the TPP notifies the PSU when reconfirmation is required at the AISP.  The notification **must** clearly preserve explicit consent in order to ensure that PSUs (or the person acting on their behalf under a statutory deputyship) can clearly identify and actively reconfirm each account in scope, and retain the ability to withdraw consent at an individual account level.  At the next Standards Release, this will incorporated into the CEG Checklist as Reference 16e.
