@@ -1,5 +1,12 @@
 # Version control
 
+## V4.0.1 - 2026-07-17
+
+### Added
+
+- Additional text relating to handling of ISO PostalAddress changes.  Text agreed at TDA (TDA Decision 287)
+- New FAQ clarifying that bulk reconfirmation where Deputyship/Power of Attorney arrangements are in placve
+
 ## V4.0.1 - 2026-06-22
 
 ### Added
