@@ -1,5 +1,9 @@
 # Version control
 
+## V4.0.1 - 2026-07-30
+
+- Corrected FAQ response re '**What error code should be used if a TPP repeats an Idempotency ID within 24 hours?**' by differentiating between scenario of IdempotencyID & payload being identical and where IdempotencyID is duplicated & payload is different
+
 ## V4.0.1 - 2026-07-17
 
 ### Added
