@@ -784,7 +784,7 @@ You can also refer to the definitions introduced in version 4.0 in our [reposito
 
 ### **What error code should be used if a TPP repeats an Idempotency ID within 24 hours?**
   
-If a TPP repeats an Idempotency ID with a different payload, the ASPSP **must** respond to the request with the current status of the resource (or a status which is at least as current as what is available on existing online channels) and a HTTP status code of 201 (Created). If a TPP repeats an Idempotency ID with a different payload, the ASPSP **should** respond with HTTP 400 and a U029 (Resource already exists) error code. From v4.0.1 onwards the ASPSP **may** respond with an HTTP 422 status code and the OBErrorResponse1/Errors/Url **should** include a link to information about Idempotency usage.
+If a TPP repeats an Idempotency ID with an identical payload, the ASPSP **must** respond to the request with the current status of the resource (or a status which is at least as current as what is available on existing online channels) and a HTTP status code of 201 (Created). If a TPP repeats an Idempotency ID with a different payload, the ASPSP **should** respond with HTTP 400 and a U029 (Resource already exists) error code. From v4.0.1 onwards the ASPSP **may** respond with an HTTP 422 status code and the OBErrorResponse1/Errors/Url **should** include a link to information about Idempotency usage.
 
 Further information on Idempotency scenarios can be found in the [API specification](https://openbankinguk.github.io/read-write-api-site3/v4.0.1/profiles/read-write-data-api-profile.html#idempotency-2)
 
