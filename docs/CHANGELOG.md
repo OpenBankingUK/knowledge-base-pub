@@ -1,5 +1,11 @@
 # Version control
 
+## V4.0.1 - 2026-11-17
+
+### Changed
+
+- Updated FAQ re PostalAddress usage to reflect prevailing ISO/SWIFT requirement introduced on 13 Nov 2026
+
 ## V4.0.1 - 2026-07-30
 
 - Corrected FAQ response re '**What error code should be used if a TPP repeats an Idempotency ID within 24 hours?**' by differentiating between scenario of IdempotencyID & payload being identical and where IdempotencyID is duplicated & payload is different
